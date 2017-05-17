@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78A7F83B-A24A-49C7-8A9A-B661E1381F6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PixelCMS.Core</RootNamespace>
+    <AssemblyName>PixelCMS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\PixelCMS.Web\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.2.7.0\lib\net40-client\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.1.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.1.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Address.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Agent.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AttributeGroup.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AttributeValue.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChatModel\ChatHub.cs" />
+    <Compile Include="Models\ChatModel\Common\MessageDetail.cs" />
+    <Compile Include="Models\ChatModel\Common\UserDetail.cs" />
+    <Compile Include="Models\ChatModel\Startup.cs" />
+    <Compile Include="Models\Discount.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailCampaign.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailSubscribe\EmailSubscribeModel.cs" />
+    <Compile Include="Models\Extend\FileViewModel.cs" />
+    <Compile Include="Models\Extend\UserMailer.cs" />
+    <Compile Include="Models\ExtraUserInformation.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GroupVariant.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inventory.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryModel\InventoryModel.cs" />
+    <Compile Include="Models\LoginHistory.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Manufacturer.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OptionVariant.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post\PostModel.cs" />
+    <Compile Include="Models\Order\OrderModel.cs" />
+    <Compile Include="Models\Cat.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Counter.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\District.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Email.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailSubscribe.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Extend\ExtensionMethods.cs" />
+    <Compile Include="Models\Extend\ViewModels.cs" />
+    <Compile Include="Models\Language.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MediaFile.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuItem.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuPosition.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Option.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OptionGroup.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Details.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Item_Language.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Status.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pixelcms.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pixelcms.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pixelcms.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pixelcms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pixelcms.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PixelOption.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostAttribute.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostTag.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostType.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostType_Name.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post_PostAttribute.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductAttribute.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductAttributeGroup.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_ProductAttribute.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles_Access.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles_PostType.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shipping.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shipping\ShippingModel.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\ShoppingCartModels.cs" />
+    <Compile Include="Models\Slug.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SMTP.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpecialCat.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_CMS_TKTruyCap_Result.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockImport.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Variant.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VariantAttribute.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VariantAttributeCombination.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VariantAttribute\VariantAttribute.cs" />
+    <Compile Include="Models\webpages_Membership.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_OAuthMembership.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Roles.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_UsersInRoles.cs">
+      <DependentUpon>pixelcms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pixelcmsEntities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Models\pixelcms.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>pixelcms.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="bin\PixelCMS.Core.dll.config" />
+    <None Include="Models\pixelcms.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pixelcms.edmx</DependentUpon>
+      <LastGenOutput>pixelcms.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\pixelcms.edmx.diagram">
+      <DependentUpon>pixelcms.edmx</DependentUpon>
+    </None>
+    <None Include="Models\pixelcms.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pixelcms.edmx</DependentUpon>
+      <LastGenOutput>pixelcms.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\CsvHelper.dll" />
+    <Content Include="bin\CsvHelper.pdb" />
+    <Content Include="bin\CsvHelper.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.CSharp.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\PixelCMS.Core.dll" />
+    <Content Include="bin\PixelCMS.Core.pdb" />
+    <Content Include="bin\System.ComponentModel.DataAnnotations.dll" />
+    <Content Include="bin\System.Configuration.dll" />
+    <Content Include="bin\System.Data.DataSetExtensions.dll" />
+    <Content Include="bin\System.Data.dll" />
+    <Content Include="bin\System.Data.Entity.dll" />
+    <Content Include="bin\System.dll" />
+    <Content Include="bin\System.Runtime.Serialization.dll" />
+    <Content Include="bin\System.Security.dll" />
+    <Content Include="bin\System.Web.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Xml.dll" />
+    <Content Include="bin\System.Xml.Linq.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\WebMatrix.Data.dll" />
+    <Content Include="bin\WebMatrix.Data.xml" />
+    <Content Include="bin\WebMatrix.WebData.dll" />
+    <Content Include="bin\WebMatrix.WebData.xml" />
+    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

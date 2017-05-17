@@ -1,0 +1,46 @@
+﻿@{
+    HttpApplicationState application = HttpContext.Current.ApplicationInstance.Application;
+}
+@*@float.Parse(application["visitors_online"].ToString()).ToString("N0")*@
+@*<div class="module-content">
+    <ul class="visit">
+        <li>
+            <img src="/Theme/custom/images/users.png">Online: @float.Parse(@HttpContext.Current.Application["visitors_online"].ToString()).ToString("N0")</li>
+        <li>
+            <img src="/Theme/custom/images/today.png">Today: @float.Parse(@HttpContext.Current.Application["HomNay"].ToString()).ToString("N0")</li>
+        <li>
+            <img src="/Theme/custom/images/month.png">In month: @float.Parse(@HttpContext.Current.Application["ThangNay"].ToString()).ToString("N0")</li>
+        <li>
+            <img src="/Theme/custom/images/yesterdaymonth.png">Last month: @float.Parse(@HttpContext.Current.Application["ThangTruoc"].ToString()).ToString("N0")</li>
+        <li>
+            <img src="/Theme/custom/images/hits.png">Views: @float.Parse(@HttpContext.Current.Application["TatCa"].ToString()).ToString("N0")</li>
+    </ul>
+</div>  *@
+
+ <ul class="online">
+                    <li>
+                        <label class="pull-left"><i class="fa fa-user"></i><strong>Đang online</strong></label>
+                        <span class="red1 pull-right"><strong>@float.Parse(@HttpContext.Current.Application["visitors_online"].ToString()).ToString("N0")</strong></span>
+                    </li>
+                    <li>
+                        <label class="pull-left"><i class="fa fa-user"></i><strong>Hôm nay </strong></label>
+                        <span class="red1 pull-right"><strong>@float.Parse(@HttpContext.Current.Application["HomNay"].ToString()).ToString("N0")</strong></span>
+                    </li>
+                    <li>
+                        <label class="pull-left"><i class="fa fa-user"></i><strong>Lượt truy cập</strong></label>
+                        <span class="red1 pull-right"><strong>@float.Parse(@HttpContext.Current.Application["TatCa"].ToString()).ToString("N0")</strong></span>
+                    </li>
+                </ul>
+
+<style>
+.visit img{
+height:20px;
+}
+    .visit li{
+        list-style: none;
+        
+    }
+    .visit {
+        padding-left: 0px!important;
+    }
+</style>

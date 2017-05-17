@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="@PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture()">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="content-language" content="@PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture()" />
+    <title>@Resources.common_pagenotfound | @Html.Action("LoadOption", "Common", new { code = "common-sitename" })</title>
+    @if (Html.Action("LoadOption", "Common", new { code = "common-favicon" }) != null)
+    {
+        <link rel="shortcut icon" href="@Html.Action("LoadOption", "Common", new { code = "common-favicon" })" type="image/png" />
+    }
+    <link href="~/Content/Common.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f9f9f9;
+            color: #ccc;
+            font-family: Helvetica, Arial, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        
+        <h1>404</h1>
+        <h2>@Resources.common_pagenotfound</h2>
+        <p>@Html.Raw(Resources.common_pagenotfound_description)</p>
+
+        <div>
+            <a href="/" class="error-btn">@Resources.common_backtohome</a>
+            <a class="error-btn" href="javascript: window.history.go(-1)">@Resources.common_backstep</a>
+        </div>
+        <hr />
+        <div class="footer">
+            <p>Email: @Html.Action("LoadOption", "Common", new { code = "email-mail" })
+           </p>
+        </div>
+    </div>
+    
+</body>
+    </html>

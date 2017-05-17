@@ -1,0 +1,1879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pixelcmsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="pixelcmsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="pixelcmsModel.Address" />
+    <EntitySet Name="AttributeGroups" EntityType="pixelcmsModel.AttributeGroup" />
+    <EntitySet Name="AttributeValues" EntityType="pixelcmsModel.AttributeValue" />
+    <EntitySet Name="Cities" EntityType="pixelcmsModel.City" />
+    <EntitySet Name="Counters" EntityType="pixelcmsModel.Counter" />
+    <EntitySet Name="EmailSubscribes" EntityType="pixelcmsModel.EmailSubscribe" />
+    <EntitySet Name="Languages" EntityType="pixelcmsModel.Language" />
+    <EntitySet Name="MediaFiles" EntityType="pixelcmsModel.MediaFile" />
+    <EntitySet Name="Menus" EntityType="pixelcmsModel.Menu" />
+    <EntitySet Name="MenuPositions" EntityType="pixelcmsModel.MenuPosition" />
+    <EntitySet Name="OptionGroups" EntityType="pixelcmsModel.OptionGroup" />
+    <EntitySet Name="Order_Item_Language" EntityType="pixelcmsModel.Order_Item_Language" />
+    <EntitySet Name="Order_Status" EntityType="pixelcmsModel.Order_Status" />
+    <EntitySet Name="PixelOptions" EntityType="pixelcmsModel.PixelOption" />
+    <EntitySet Name="PostAttributes" EntityType="pixelcmsModel.PostAttribute" />
+    <EntitySet Name="PostTags" EntityType="pixelcmsModel.PostTag" />
+    <EntitySet Name="PostType_Name" EntityType="pixelcmsModel.PostType_Name" />
+    <EntitySet Name="Roles_PostType" EntityType="pixelcmsModel.Roles_PostType" />
+    <EntitySet Name="Slugs" EntityType="pixelcmsModel.Slug" />
+    <EntitySet Name="SpecialCats" EntityType="pixelcmsModel.SpecialCat" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="pixelcmsModel.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="pixelcmsModel.webpages_Roles" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="pixelcmsModel.webpages_UsersInRoles" />
+    <AssociationSet Name="FK__PostAttri__Group__56E8E7AB" Association="pixelcmsModel.FK__PostAttri__Group__56E8E7AB">
+      <End Role="AttributeGroup" EntitySet="AttributeGroups" />
+      <End Role="PostAttribute" EntitySet="PostAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostType___Attri__59C55456" Association="pixelcmsModel.FK__PostType___Attri__59C55456">
+      <End Role="AttributeGroup" EntitySet="AttributeGroups" />
+      <End Role="PostType_Name" EntitySet="PostType_Name" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Attribute__Attri__3B40CD36" Association="pixelcmsModel.FK__Attribute__Attri__3B40CD36">
+      <End Role="PostAttribute" EntitySet="PostAttributes" />
+      <End Role="AttributeValue" EntitySet="AttributeValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Menu__MenuPositi__41EDCAC5" Association="pixelcmsModel.FK__Menu__MenuPositi__41EDCAC5">
+      <End Role="MenuPosition" EntitySet="MenuPositions" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostType___Optio__5CA1C101" Association="pixelcmsModel.FK__PostType___Optio__5CA1C101">
+      <End Role="OptionGroup" EntitySet="OptionGroups" />
+      <End Role="PostType_Name" EntitySet="PostType_Name" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Ite__Statu__4B7734FF" Association="pixelcmsModel.FK__Order_Ite__Statu__4B7734FF">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Order_Item_Language" EntitySet="Order_Item_Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostType___Attri__5AB9788F" Association="pixelcmsModel.FK__PostType___Attri__5AB9788F">
+      <End Role="PostAttribute" EntitySet="PostAttributes" />
+      <End Role="PostType_Name" EntitySet="PostType_Name" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Roles_Pos__Role___5F7E2DAC" Association="pixelcmsModel.FK__Roles_Pos__Role___5F7E2DAC">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="Roles_PostType" EntitySet="Roles_PostType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__webpages___RoleI__634EBE90" Association="pixelcmsModel.FK__webpages___RoleI__634EBE90">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CMS_TKTruyCap" ReturnType="Collection(pixelcmsModel.sp_CMS_TKTruyCap_Result)" />
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(pixelcmsModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(pixelcmsModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Districts" EntityType="pixelcmsModel.District" />
+    <AssociationSet Name="FK__Address__Distric__395884C4" Association="pixelcmsModel.FK__Address__Distric__395884C4">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__District__City_I__40058253" Association="pixelcmsModel.FK__District__City_I__40058253">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="District" EntitySet="Districts" />
+    </AssociationSet>
+    <EntitySet Name="Shippings" EntityType="pixelcmsModel.Shipping" />
+    <AssociationSet Name="FK_Shipping_District" Association="pixelcmsModel.FK_Shipping_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Shipping" EntitySet="Shippings" />
+    </AssociationSet>
+    <EntitySet Name="Agents" EntityType="pixelcmsModel.Agent" />
+    <EntitySet Name="StockImports" EntityType="pixelcmsModel.StockImport" />
+    <EntitySet Name="Inventories" EntityType="pixelcmsModel.Inventory" />
+    <AssociationSet Name="FK_Inventory_Agent" Association="pixelcmsModel.FK_Inventory_Agent">
+      <End Role="Agent" EntitySet="Agents" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <EntitySet Name="SMTPs" EntityType="pixelcmsModel.SMTP" />
+    <EntitySet Name="EmailCampaigns" EntityType="pixelcmsModel.EmailCampaign" />
+    <AssociationSet Name="FK_EmailCampaign_SMTP" Association="pixelcmsModel.FK_EmailCampaign_SMTP">
+      <End Role="SMTP" EntitySet="SMTPs" />
+      <End Role="EmailCampaign" EntitySet="EmailCampaigns" />
+    </AssociationSet>
+    <AssociationSet Name="Webpages_EmailSubscribe" Association="pixelcmsModel.Webpages_EmailSubscribe">
+      <End Role="EmailSubscribe" EntitySet="EmailSubscribes" />
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+    </AssociationSet>
+    <EntitySet Name="Discounts" EntityType="pixelcmsModel.Discount" />
+    <AssociationSet Name="FK_Discount_webpages_Roles" Association="pixelcmsModel.FK_Discount_webpages_Roles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="Discount" EntitySet="Discounts" />
+    </AssociationSet>
+    <EntitySet Name="Product_ProductAttribute" EntityType="pixelcmsModel.Product_ProductAttribute" />
+    <EntitySet Name="ProductAttributes" EntityType="pixelcmsModel.ProductAttribute" />
+    <EntitySet Name="ProductAttributeGroups" EntityType="pixelcmsModel.ProductAttributeGroup" />
+    <AssociationSet Name="FK_Product_ProductAttribute_ProductAttribute" Association="pixelcmsModel.FK_Product_ProductAttribute_ProductAttribute">
+      <End Role="ProductAttribute" EntitySet="ProductAttributes" />
+      <End Role="Product_ProductAttribute" EntitySet="Product_ProductAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAttribute_ProductAttributeGroup" Association="pixelcmsModel.FK_ProductAttribute_ProductAttributeGroup">
+      <End Role="ProductAttributeGroup" EntitySet="ProductAttributeGroups" />
+      <End Role="ProductAttribute" EntitySet="ProductAttributes" />
+    </AssociationSet>
+    <EntitySet Name="webpages_Membership" EntityType="pixelcmsModel.webpages_Membership" />
+    <EntitySet Name="ExtraUserInformations" EntityType="pixelcmsModel.ExtraUserInformation" />
+    <EntitySet Name="MenuItems" EntityType="pixelcmsModel.MenuItem" />
+    <AssociationSet Name="FK__MenuItem__Menu__43D61337" Association="pixelcmsModel.FK__MenuItem__Menu__43D61337">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="MenuItem" EntitySet="MenuItems" />
+    </AssociationSet>
+    <EntitySet Name="Post_PostAttribute" EntityType="pixelcmsModel.Post_PostAttribute" />
+    <AssociationSet Name="FK__Post_Post__Id_At__51300E55" Association="pixelcmsModel.FK__Post_Post__Id_At__51300E55">
+      <End Role="PostAttribute" EntitySet="PostAttributes" />
+      <End Role="Post_PostAttribute" EntitySet="Post_PostAttribute" />
+    </AssociationSet>
+    <EntitySet Name="Products" EntityType="pixelcmsModel.Product" />
+    <AssociationSet Name="FK_Discount_Product" Association="pixelcmsModel.FK_Discount_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Discount" EntitySet="Discounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Product" Association="pixelcmsModel.FK_Inventory_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductAttribute_Product" Association="pixelcmsModel.FK_Product_ProductAttribute_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Product_ProductAttribute" EntitySet="Product_ProductAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockImport_Product" Association="pixelcmsModel.FK_StockImport_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="StockImport" EntitySet="StockImports" />
+    </AssociationSet>
+    <EntitySet Name="Orders" EntityType="pixelcmsModel.Order" />
+    <AssociationSet Name="FK__Order__Status_Id__47A6A41B" Association="pixelcmsModel.FK__Order__Status_Id__47A6A41B">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <EntitySet Name="GroupVariants" EntityType="pixelcmsModel.GroupVariant" />
+    <EntitySet Name="Variants" EntityType="pixelcmsModel.Variant" />
+    <EntitySet Name="VariantAttributes" EntityType="pixelcmsModel.VariantAttribute" />
+    <AssociationSet Name="FK_VariantAttribute_GroupVariant" Association="pixelcmsModel.FK_VariantAttribute_GroupVariant">
+      <End Role="GroupVariant" EntitySet="GroupVariants" />
+      <End Role="VariantAttribute" EntitySet="VariantAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variant_VariantAttribute" Association="pixelcmsModel.FK_Variant_VariantAttribute">
+      <End Role="VariantAttribute" EntitySet="VariantAttributes" />
+      <End Role="Variant" EntitySet="Variants" />
+    </AssociationSet>
+    <EntitySet Name="VariantAttributeCombinations" EntityType="pixelcmsModel.VariantAttributeCombination" />
+    <EntitySet Name="Order_Details" EntityType="pixelcmsModel.Order_Details" />
+    <AssociationSet Name="FK__Order_Det__Order__498EEC8D" Association="pixelcmsModel.FK__Order_Det__Order__498EEC8D">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <EntitySet Name="LoginHistories" EntityType="pixelcmsModel.LoginHistory" />
+    <EntitySet Name="Roles_Access" EntityType="pixelcmsModel.Roles_Access" />
+    <EntitySet Name="OptionVariants" EntityType="pixelcmsModel.OptionVariant" />
+    <AssociationSet Name="FK_OptionVariant_GroupVariant" Association="pixelcmsModel.FK_OptionVariant_GroupVariant">
+      <End Role="GroupVariant" EntitySet="GroupVariants" />
+      <End Role="OptionVariant" EntitySet="OptionVariants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variant_OptionVariant" Association="pixelcmsModel.FK_Variant_OptionVariant">
+      <End Role="OptionVariant" EntitySet="OptionVariants" />
+      <End Role="Variant" EntitySet="Variants" />
+    </AssociationSet>
+    <EntitySet Name="Options" EntityType="pixelcmsModel.Option" />
+    <AssociationSet Name="FK__Option__Group__46B27FE2" Association="pixelcmsModel.FK__Option__Group__46B27FE2">
+      <End Role="OptionGroup" EntitySet="OptionGroups" />
+      <End Role="Option" EntitySet="Options" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostType___Optio__5BAD9CC8" Association="pixelcmsModel.FK__PostType___Optio__5BAD9CC8">
+      <End Role="Option" EntitySet="Options" />
+      <End Role="PostType_Name" EntitySet="PostType_Name" />
+    </AssociationSet>
+    <EntitySet Name="Manufacturers" EntityType="pixelcmsModel.Manufacturer" />
+    <EntitySet Name="Posts" EntityType="pixelcmsModel.Post" />
+    <EntitySet Name="PostTypes" EntityType="pixelcmsModel.PostType" />
+    <AssociationSet Name="FK_Product_Supplier" Association="pixelcmsModel.FK_Product_Supplier">
+      <End Role="Manufacturer" EntitySet="Manufacturers" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MediaFile__Post___40F9A68C" Association="pixelcmsModel.FK__MediaFile__Post___40F9A68C">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="MediaFile" EntitySet="MediaFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuItem__Post__44CA3770" Association="pixelcmsModel.FK__MenuItem__Post__44CA3770">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="MenuItem" EntitySet="MenuItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuItem__PostTy__45BE5BA9" Association="pixelcmsModel.FK__MenuItem__PostTy__45BE5BA9">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="MenuItem" EntitySet="MenuItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Det__Produ__4A8310C6" Association="pixelcmsModel.FK__Order_Det__Produ__4A8310C6">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Order_Details" EntitySet="Order_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Post__Owner_Id__4C6B5938" Association="pixelcmsModel.FK__Post__Owner_Id__4C6B5938">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Post1" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Post_Post__Id_Po__5224328E" Association="pixelcmsModel.FK__Post_Post__Id_Po__5224328E">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Post_PostAttribute" EntitySet="Post_PostAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Slug__Post__6166761E" Association="pixelcmsModel.FK__Slug__Post__6166761E">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Slug" EntitySet="Slugs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_PostType" Association="pixelcmsModel.FK_Post_PostType">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_Product" Association="pixelcmsModel.FK_Post_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VariantAttribute_Post" Association="pixelcmsModel.FK_VariantAttribute_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="VariantAttribute" EntitySet="VariantAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VariantAttributeCombination_Post" Association="pixelcmsModel.FK_VariantAttributeCombination_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="VariantAttributeCombination" EntitySet="VariantAttributeCombinations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostType___Postt__5D95E53A" Association="pixelcmsModel.FK__PostType___Postt__5D95E53A">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="PostType_Name" EntitySet="PostType_Name" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Roles_Pos__PostT__5E8A0973" Association="pixelcmsModel.FK__Roles_Pos__PostT__5E8A0973">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="Roles_PostType" EntitySet="Roles_PostType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Slug__PostType__625A9A57" Association="pixelcmsModel.FK__Slug__PostType__625A9A57">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="Slug" EntitySet="Slugs" />
+    </AssociationSet>
+    <AssociationSet Name="Post_SpecialCat" Association="pixelcmsModel.Post_SpecialCat">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="SpecialCat" EntitySet="SpecialCats" />
+    </AssociationSet>
+    <AssociationSet Name="Post_Tag" Association="pixelcmsModel.Post_Tag">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="PostTag" EntitySet="PostTags" />
+    </AssociationSet>
+    <AssociationSet Name="PostAttribute_PostType" Association="pixelcmsModel.PostAttribute_PostType">
+      <End Role="PostAttribute" EntitySet="PostAttributes" />
+      <End Role="PostType" EntitySet="PostTypes" />
+    </AssociationSet>
+    <EntitySet Name="Cats" EntityType="pixelcmsModel.Cat" />
+    <AssociationSet Name="FK__Cat__Owner_Id__6442E2C9" Association="pixelcmsModel.FK__Cat__Owner_Id__6442E2C9">
+      <End Role="Cat" EntitySet="Cats" />
+      <End Role="Cat1" EntitySet="Cats" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cat__Type__3D2915A8" Association="pixelcmsModel.FK__Cat__Type__3D2915A8">
+      <End Role="PostType" EntitySet="PostTypes" />
+      <End Role="Cat" EntitySet="Cats" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuItem__Cat__6FB49575" Association="pixelcmsModel.FK__MenuItem__Cat__6FB49575">
+      <End Role="Cat" EntitySet="Cats" />
+      <End Role="MenuItem" EntitySet="MenuItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Slug__Cat__1209AD79" Association="pixelcmsModel.FK__Slug__Cat__1209AD79">
+      <End Role="Cat" EntitySet="Cats" />
+      <End Role="Slug" EntitySet="Slugs" />
+    </AssociationSet>
+    <AssociationSet Name="Post_Cat" Association="pixelcmsModel.Post_Cat">
+      <End Role="Cat" EntitySet="Cats" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <EntitySet Name="Emails" EntityType="pixelcmsModel.Email" />
+    <EntitySet Name="Comments" EntityType="pixelcmsModel.Comment" />
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="142" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="142" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="142" Unicode="false" FixedLength="false" />
+    <Property Name="Address1" Type="String" MaxLength="142" Unicode="true" FixedLength="false" />
+    <Property Name="District_Id" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="District" Relationship="pixelcmsModel.FK__Address__Distric__395884C4" FromRole="Address" ToRole="District" />
+  </EntityType>
+  <EntityType Name="AttributeGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="PostAttributes" Relationship="pixelcmsModel.FK__PostAttri__Group__56E8E7AB" FromRole="AttributeGroup" ToRole="PostAttribute" />
+    <NavigationProperty Name="PostType_Name" Relationship="pixelcmsModel.FK__PostType___Attri__59C55456" FromRole="AttributeGroup" ToRole="PostType_Name" />
+  </EntityType>
+  <EntityType Name="AttributeValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Attribute" Type="Int32" />
+    <Property Name="Value" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PostAttribute" Relationship="pixelcmsModel.FK__Attribute__Attri__3B40CD36" FromRole="AttributeValue" ToRole="PostAttribute" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="142" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Districts" Relationship="pixelcmsModel.FK__District__City_I__40058253" FromRole="City" ToRole="District" />
+  </EntityType>
+  <EntityType Name="Counter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SoLuongTryCap" Type="Int32" Nullable="false" />
+    <Property Name="LanTruyCapGanNhat" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmailSubscribe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="142" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="webpages_Roles" Relationship="pixelcmsModel.Webpages_EmailSubscribe" FromRole="EmailSubscribe" ToRole="webpages_Roles" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FullCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Code" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Flag" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Construction" Type="Boolean" Nullable="false" />
+    <Property Name="Admin" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Post_Id" Type="Int32" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="142" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Post" Relationship="pixelcmsModel.FK__MediaFile__Post___40F9A68C" FromRole="MediaFile" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Lang" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="MenuPosition" Type="Int32" />
+    <Property Name="Field_1_Enable" Type="Boolean" Nullable="false" />
+    <Property Name="Field_1_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Field_2_Enable" Type="Boolean" Nullable="false" />
+    <Property Name="Field_2_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Field_3_Enable" Type="Boolean" Nullable="false" />
+    <Property Name="Field_3_Label" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="MenuPosition1" Relationship="pixelcmsModel.FK__Menu__MenuPositi__41EDCAC5" FromRole="Menu" ToRole="MenuPosition" />
+    <NavigationProperty Name="MenuItems" Relationship="pixelcmsModel.FK__MenuItem__Menu__43D61337" FromRole="Menu" ToRole="MenuItem" />
+  </EntityType>
+  <EntityType Name="MenuPosition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="142" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Menus" Relationship="pixelcmsModel.FK__Menu__MenuPositi__41EDCAC5" FromRole="MenuPosition" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="OptionGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="PostType_Name" Relationship="pixelcmsModel.FK__PostType___Optio__5CA1C101" FromRole="OptionGroup" ToRole="PostType_Name" />
+    <NavigationProperty Name="Options" Relationship="pixelcmsModel.FK__Option__Group__46B27FE2" FromRole="OptionGroup" ToRole="Option" />
+  </EntityType>
+  <EntityType Name="Order_Item_Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Lang" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Status_Id" Type="Int32" />
+    <NavigationProperty Name="Order_Status" Relationship="pixelcmsModel.FK__Order_Ite__Statu__4B7734FF" FromRole="Order_Item_Language" ToRole="Order_Status" />
+  </EntityType>
+  <EntityType Name="Order_Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="Order_Item_Language" Relationship="pixelcmsModel.FK__Order_Ite__Statu__4B7734FF" FromRole="Order_Status" ToRole="Order_Item_Language" />
+    <NavigationProperty Name="Orders" Relationship="pixelcmsModel.FK__Order__Status_Id__47A6A41B" FromRole="Order_Status" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="PixelOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="142" Unicode="true" FixedLength="false" />
+    <Property Name="Desciption" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Order" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PostAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="140" Unicode="true" FixedLength="false" />
+    <Property Name="Edit_Type" Type="Int32" />
+    <Property Name="Group" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="AttributeGroup" Relationship="pixelcmsModel.FK__PostAttri__Group__56E8E7AB" FromRole="PostAttribute" ToRole="AttributeGroup" />
+    <NavigationProperty Name="AttributeValues" Relationship="pixelcmsModel.FK__Attribute__Attri__3B40CD36" FromRole="PostAttribute" ToRole="AttributeValue" />
+    <NavigationProperty Name="PostType_Name" Relationship="pixelcmsModel.FK__PostType___Attri__5AB9788F" FromRole="PostAttribute" ToRole="PostType_Name" />
+    <NavigationProperty Name="Post_PostAttribute" Relationship="pixelcmsModel.FK__Post_Post__Id_At__51300E55" FromRole="PostAttribute" ToRole="Post_PostAttribute" />
+    <NavigationProperty Name="PostTypes" Relationship="pixelcmsModel.PostAttribute_PostType" FromRole="PostAttribute" ToRole="PostType" />
+  </EntityType>
+  <EntityType Name="PostTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Posts" Relationship="pixelcmsModel.Post_Tag" FromRole="PostTag" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="PostType_Name">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="140" Unicode="true" FixedLength="false" />
+    <Property Name="Lang" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Posttype_id" Type="Int32" />
+    <Property Name="Attribute_id" Type="Int32" />
+    <Property Name="Option_id" Type="Int32" />
+    <Property Name="OptionGroup_id" Type="Int32" />
+    <Property Name="AttributeGroup_id" Type="Int32" />
+    <NavigationProperty Name="AttributeGroup" Relationship="pixelcmsModel.FK__PostType___Attri__59C55456" FromRole="PostType_Name" ToRole="AttributeGroup" />
+    <NavigationProperty Name="OptionGroup" Relationship="pixelcmsModel.FK__PostType___Optio__5CA1C101" FromRole="PostType_Name" ToRole="OptionGroup" />
+    <NavigationProperty Name="PostAttribute" Relationship="pixelcmsModel.FK__PostType___Attri__5AB9788F" FromRole="PostType_Name" ToRole="PostAttribute" />
+    <NavigationProperty Name="Option" Relationship="pixelcmsModel.FK__PostType___Optio__5BAD9CC8" FromRole="PostType_Name" ToRole="Option" />
+    <NavigationProperty Name="PostType" Relationship="pixelcmsModel.FK__PostType___Postt__5D95E53A" FromRole="PostType_Name" ToRole="PostType" />
+  </EntityType>
+  <EntityType Name="Roles_PostType">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+      <PropertyRef Name="PostType_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="Int32" Nullable="false" />
+    <Property Name="PostType_Id" Type="Int32" Nullable="false" />
+    <Property Name="View" Type="Boolean" Nullable="false" />
+    <Property Name="Create" Type="Boolean" Nullable="false" />
+    <Property Name="Edit" Type="Boolean" Nullable="false" />
+    <Property Name="Delete" Type="Boolean" Nullable="false" />
+    <Property Name="CatView" Type="Boolean" Nullable="false" />
+    <Property Name="CatCreate" Type="Boolean" Nullable="false" />
+    <Property Name="CatEdit" Type="Boolean" Nullable="false" />
+    <Property Name="CatDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="webpages_Roles" Relationship="pixelcmsModel.FK__Roles_Pos__Role___5F7E2DAC" FromRole="Roles_PostType" ToRole="webpages_Roles" />
+    <NavigationProperty Name="PostType" Relationship="pixelcmsModel.FK__Roles_Pos__PostT__5E8A0973" FromRole="Roles_PostType" ToRole="PostType" />
+  </EntityType>
+  <EntityType Name="Slug">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Post" Type="Int32" />
+    <Property Name="Cat" Type="Int32" />
+    <Property Name="PostType" Type="Int32" />
+    <Property Name="Slug1" Type="String" MaxLength="130" Unicode="false" FixedLength="false" />
+    <Property Name="Slug_Count" Type="Int32" />
+    <Property Name="Slug_Full" Type="String" MaxLength="140" Unicode="false" FixedLength="false" />
+    <Property Name="Lang" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Post1" Relationship="pixelcmsModel.FK__Slug__Post__6166761E" FromRole="Slug" ToRole="Post" />
+    <NavigationProperty Name="PostType1" Relationship="pixelcmsModel.FK__Slug__PostType__625A9A57" FromRole="Slug" ToRole="PostType" />
+    <NavigationProperty Name="Cat1" Relationship="pixelcmsModel.FK__Slug__Cat__1209AD79" FromRole="Slug" ToRole="Cat" />
+  </EntityType>
+  <EntityType Name="SpecialCat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="140" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Posts" Relationship="pixelcmsModel.Post_SpecialCat" FromRole="SpecialCat" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Roles_PostType" Relationship="pixelcmsModel.FK__Roles_Pos__Role___5F7E2DAC" FromRole="webpages_Roles" ToRole="Roles_PostType" />
+    <NavigationProperty Name="webpages_UsersInRoles" Relationship="pixelcmsModel.FK__webpages___RoleI__634EBE90" FromRole="webpages_Roles" ToRole="webpages_UsersInRoles" />
+    <NavigationProperty Name="EmailSubscribes" Relationship="pixelcmsModel.Webpages_EmailSubscribe" FromRole="webpages_Roles" ToRole="EmailSubscribe" />
+    <NavigationProperty Name="Discounts" Relationship="pixelcmsModel.FK_Discount_webpages_Roles" FromRole="webpages_Roles" ToRole="Discount" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="webpages_Roles" Relationship="pixelcmsModel.FK__webpages___RoleI__634EBE90" FromRole="webpages_UsersInRoles" ToRole="webpages_Roles" />
+  </EntityType>
+  <Association Name="FK__PostAttri__Group__56E8E7AB">
+    <End Role="AttributeGroup" Type="pixelcmsModel.AttributeGroup" Multiplicity="0..1" />
+    <End Role="PostAttribute" Type="pixelcmsModel.PostAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostAttribute">
+        <PropertyRef Name="Group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostType___Attri__59C55456">
+    <End Role="AttributeGroup" Type="pixelcmsModel.AttributeGroup" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PostType_Name" Type="pixelcmsModel.PostType_Name" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostType_Name">
+        <PropertyRef Name="AttributeGroup_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Attribute__Attri__3B40CD36">
+    <End Role="PostAttribute" Type="pixelcmsModel.PostAttribute" Multiplicity="0..1" />
+    <End Role="AttributeValue" Type="pixelcmsModel.AttributeValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeValue">
+        <PropertyRef Name="Attribute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Menu__MenuPositi__41EDCAC5">
+    <End Role="MenuPosition" Type="pixelcmsModel.MenuPosition" Multiplicity="0..1" />
+    <End Role="Menu" Type="pixelcmsModel.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuPosition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="MenuPosition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostType___Optio__5CA1C101">
+    <End Role="OptionGroup" Type="pixelcmsModel.OptionGroup" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PostType_Name" Type="pixelcmsModel.PostType_Name" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostType_Name">
+        <PropertyRef Name="OptionGroup_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Ite__Statu__4B7734FF">
+    <End Role="Order_Status" Type="pixelcmsModel.Order_Status" Multiplicity="0..1" />
+    <End Role="Order_Item_Language" Type="pixelcmsModel.Order_Item_Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_Item_Language">
+        <PropertyRef Name="Status_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostType___Attri__5AB9788F">
+    <End Role="PostAttribute" Type="pixelcmsModel.PostAttribute" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PostType_Name" Type="pixelcmsModel.PostType_Name" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostType_Name">
+        <PropertyRef Name="Attribute_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Roles_Pos__Role___5F7E2DAC">
+    <End Role="webpages_Roles" Type="pixelcmsModel.webpages_Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Roles_PostType" Type="pixelcmsModel.Roles_PostType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Roles_PostType">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__webpages___RoleI__634EBE90">
+    <End Role="webpages_Roles" Type="pixelcmsModel.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="pixelcmsModel.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_CMS_TKTruyCap_Result">
+    <Property Type="Int64" Name="HomNay" Nullable="true" />
+    <Property Type="Int64" Name="HomQua" Nullable="true" />
+    <Property Type="Int64" Name="TuanNay" Nullable="true" />
+    <Property Type="Int64" Name="TuanTruoc" Nullable="true" />
+    <Property Type="Int64" Name="ThangNay" Nullable="true" />
+    <Property Type="Int64" Name="ThangTruoc" Nullable="true" />
+    <Property Type="Int64" Name="TatCa" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="City_Id" />
+    <NavigationProperty Name="Addresses" Relationship="pixelcmsModel.FK__Address__Distric__395884C4" FromRole="District" ToRole="Address" />
+    <NavigationProperty Name="City" Relationship="pixelcmsModel.FK__District__City_I__40058253" FromRole="District" ToRole="City" />
+    <NavigationProperty Name="Shippings" Relationship="pixelcmsModel.FK_Shipping_District" FromRole="District" ToRole="Shipping" />
+  </EntityType>
+  <Association Name="FK__Address__Distric__395884C4">
+    <End Type="pixelcmsModel.District" Role="District" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="District_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__District__City_I__40058253">
+    <End Type="pixelcmsModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.District" Role="District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Shipping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Agent_Id" />
+    <Property Type="Int32" Name="District_Id" />
+    <Property Type="Decimal" Name="FixedFee" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MinWeight" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MaxWeight" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeOfUnit" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+    <NavigationProperty Name="District" Relationship="pixelcmsModel.FK_Shipping_District" FromRole="Shipping" ToRole="District" />
+  </EntityType>
+  <Association Name="FK_Shipping_District">
+    <End Type="pixelcmsModel.District" Role="District" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Shipping" Role="Shipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Shipping">
+        <PropertyRef Name="District_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Image" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="Inventories" Relationship="pixelcmsModel.FK_Inventory_Agent" FromRole="Agent" ToRole="Inventory" />
+  </EntityType>
+  <EntityType Name="StockImport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKU" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ProductId" />
+    <Property Type="DateTime" Name="ImportDate" Precision="3" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" />
+    <Property Type="Int32" Name="CurrentQuantity" />
+    <NavigationProperty Name="Product" Relationship="pixelcmsModel.FK_StockImport_Product" FromRole="StockImport" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="Product_Id" />
+      <PropertyRef Name="Agent_Id" />
+    </Key>
+    <Property Type="Int32" Name="Product_Id" Nullable="false" />
+    <Property Type="Int32" Name="Agent_Id" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <NavigationProperty Name="Agent" Relationship="pixelcmsModel.FK_Inventory_Agent" FromRole="Inventory" ToRole="Agent" />
+    <NavigationProperty Name="Product" Relationship="pixelcmsModel.FK_Inventory_Product" FromRole="Inventory" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Inventory_Agent">
+    <End Type="pixelcmsModel.Agent" Role="Agent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Inventory" Role="Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="Agent_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SMTP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Port" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Server" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="User" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmailCampaigns" Relationship="pixelcmsModel.FK_EmailCampaign_SMTP" FromRole="SMTP" ToRole="EmailCampaign" />
+  </EntityType>
+  <EntityType Name="EmailCampaign">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SMTP_Id" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+    <NavigationProperty Name="SMTP" Relationship="pixelcmsModel.FK_EmailCampaign_SMTP" FromRole="EmailCampaign" ToRole="SMTP" />
+  </EntityType>
+  <Association Name="FK_EmailCampaign_SMTP">
+    <End Type="pixelcmsModel.SMTP" Role="SMTP" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.EmailCampaign" Role="EmailCampaign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMTP">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailCampaign">
+        <PropertyRef Name="SMTP_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Webpages_EmailSubscribe">
+    <End Type="pixelcmsModel.EmailSubscribe" Role="EmailSubscribe" Multiplicity="*" />
+    <End Type="pixelcmsModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="DiscountAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="Int32" Name="Role_Id" Nullable="false" />
+    <Property Type="Int32" Name="Product_Id" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+    <NavigationProperty Name="webpages_Roles" Relationship="pixelcmsModel.FK_Discount_webpages_Roles" FromRole="Discount" ToRole="webpages_Roles" />
+    <NavigationProperty Name="Product" Relationship="pixelcmsModel.FK_Discount_Product" FromRole="Discount" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Discount_webpages_Roles">
+    <End Type="pixelcmsModel.webpages_Roles" Role="webpages_Roles" Multiplicity="1" />
+    <End Type="pixelcmsModel.Discount" Role="Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Discount">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Product_ProductAttribute">
+    <Key>
+      <PropertyRef Name="Product_Id" />
+      <PropertyRef Name="ProductAttribute_Id" />
+    </Key>
+    <Property Type="Int32" Name="Product_Id" Nullable="false" />
+    <Property Type="Int32" Name="ProductAttribute_Id" Nullable="false" />
+    <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+    <NavigationProperty Name="ProductAttribute" Relationship="pixelcmsModel.FK_Product_ProductAttribute_ProductAttribute" FromRole="Product_ProductAttribute" ToRole="ProductAttribute" />
+    <NavigationProperty Name="Product" Relationship="pixelcmsModel.FK_Product_ProductAttribute_Product" FromRole="Product_ProductAttribute" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="Int32" Name="Group" />
+    <NavigationProperty Name="Product_ProductAttribute" Relationship="pixelcmsModel.FK_Product_ProductAttribute_ProductAttribute" FromRole="ProductAttribute" ToRole="Product_ProductAttribute" />
+    <NavigationProperty Name="ProductAttributeGroup" Relationship="pixelcmsModel.FK_ProductAttribute_ProductAttributeGroup" FromRole="ProductAttribute" ToRole="ProductAttributeGroup" />
+  </EntityType>
+  <EntityType Name="ProductAttributeGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Order" />
+    <NavigationProperty Name="ProductAttributes" Relationship="pixelcmsModel.FK_ProductAttribute_ProductAttributeGroup" FromRole="ProductAttributeGroup" ToRole="ProductAttribute" />
+  </EntityType>
+  <Association Name="FK_Product_ProductAttribute_ProductAttribute">
+    <End Type="pixelcmsModel.ProductAttribute" Role="ProductAttribute" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Product_ProductAttribute" Role="Product_ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_ProductAttribute">
+        <PropertyRef Name="ProductAttribute_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAttribute_ProductAttributeGroup">
+    <End Type="pixelcmsModel.ProductAttributeGroup" Role="ProductAttributeGroup" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.ProductAttribute" Role="ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductAttributeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductAttribute">
+        <PropertyRef Name="Group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="ConfirmationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsConfirmed" />
+    <Property Type="DateTime" Name="LastPasswordFailureDate" Precision="3" />
+    <Property Type="Int32" Name="PasswordFailuresSinceLastSuccess" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PasswordChangedDate" Precision="3" />
+    <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PasswordVerificationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PasswordVerificationTokenExpirationDate" Precision="3" />
+    <Property Type="Int32" Name="Banned" />
+  </EntityType>
+  <EntityType Name="ExtraUserInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FullName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Link" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Verified" />
+  </EntityType>
+  <EntityType Name="MenuItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Menu" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="String" Name="Url" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Post" />
+    <Property Type="Int32" Name="Cat" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="Int32" Name="Level" />
+    <Property Type="Int32" Name="Owner_Id" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="Field_1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field_2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field_3" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PostType" />
+    <NavigationProperty Name="Menu1" Relationship="pixelcmsModel.FK__MenuItem__Menu__43D61337" FromRole="MenuItem" ToRole="Menu" />
+    <NavigationProperty Name="Post1" Relationship="pixelcmsModel.FK__MenuItem__Post__44CA3770" FromRole="MenuItem" ToRole="Post" />
+    <NavigationProperty Name="PostType1" Relationship="pixelcmsModel.FK__MenuItem__PostTy__45BE5BA9" FromRole="MenuItem" ToRole="PostType" />
+    <NavigationProperty Name="Cat1" Relationship="pixelcmsModel.FK__MenuItem__Cat__6FB49575" FromRole="MenuItem" ToRole="Cat" />
+  </EntityType>
+  <Association Name="FK__MenuItem__Menu__43D61337">
+    <End Type="pixelcmsModel.Menu" Role="Menu" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuItem">
+        <PropertyRef Name="Menu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Post_PostAttribute">
+    <Key>
+      <PropertyRef Name="Id_Post" />
+      <PropertyRef Name="Id_Attribute" />
+    </Key>
+    <Property Type="Int32" Name="Id_Post" Nullable="false" />
+    <Property Type="Int32" Name="Id_Attribute" Nullable="false" />
+    <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PostAttribute" Relationship="pixelcmsModel.FK__Post_Post__Id_At__51300E55" FromRole="Post_PostAttribute" ToRole="PostAttribute" />
+    <NavigationProperty Name="Post" Relationship="pixelcmsModel.FK__Post_Post__Id_Po__5224328E" FromRole="Post_PostAttribute" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK__Post_Post__Id_At__51300E55">
+    <End Type="pixelcmsModel.PostAttribute" Role="PostAttribute" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Post_PostAttribute" Role="Post_PostAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post_PostAttribute">
+        <PropertyRef Name="Id_Attribute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SKU" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Inv_Active" Nullable="false" />
+    <Property Type="Int32" Name="Inv_min_Quantity" Nullable="false" />
+    <Property Type="Boolean" Name="Inv_OutStock" Nullable="false" />
+    <Property Type="Boolean" Name="Inv_OutStockNoti" Nullable="false" />
+    <Property Type="Boolean" Name="Inv_Backorder" Nullable="false" />
+    <Property Type="String" Name="UpSell" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CrossSell" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Supplier_Id" />
+    <Property Type="Decimal" Name="Sale_Price" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="Sale_Start" Precision="3" />
+    <Property Type="DateTime" Name="Sale_End" Precision="3" />
+    <Property Type="Decimal" Name="Weight" Nullable="false" Precision="18" Scale="4" />
+    <NavigationProperty Name="Discounts" Relationship="pixelcmsModel.FK_Discount_Product" FromRole="Product" ToRole="Discount" />
+    <NavigationProperty Name="Inventories" Relationship="pixelcmsModel.FK_Inventory_Product" FromRole="Product" ToRole="Inventory" />
+    <NavigationProperty Name="Product_ProductAttribute" Relationship="pixelcmsModel.FK_Product_ProductAttribute_Product" FromRole="Product" ToRole="Product_ProductAttribute" />
+    <NavigationProperty Name="StockImports" Relationship="pixelcmsModel.FK_StockImport_Product" FromRole="Product" ToRole="StockImport" />
+    <NavigationProperty Name="Manufacturer" Relationship="pixelcmsModel.FK_Product_Supplier" FromRole="Product" ToRole="Manufacturer" />
+    <NavigationProperty Name="Posts" Relationship="pixelcmsModel.FK_Post_Product" FromRole="Product" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK_Discount_Product">
+    <End Type="pixelcmsModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Discount" Role="Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Discount">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Product">
+    <End Type="pixelcmsModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Inventory" Role="Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductAttribute_Product">
+    <End Type="pixelcmsModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Product_ProductAttribute" Role="Product_ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_ProductAttribute">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockImport_Product">
+    <End Type="pixelcmsModel.Product" Role="Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.StockImport" Role="StockImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StockImport">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Order_Code" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Username" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Shipping_Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Shipping_Email" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Shipping_Phone" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Shipping_Address" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Coupon_Id" />
+    <Property Type="DateTime" Name="Date_Add" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="Date_Modified" Precision="3" />
+    <Property Type="Decimal" Name="ShipFee" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Total" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Status_Id" />
+    <Property Type="Int32" Name="PaymentStatus" />
+    <Property Type="Boolean" Name="View" Nullable="false" />
+    <Property Type="Boolean" Name="IsDestroy" Nullable="false" />
+    <NavigationProperty Name="Order_Status" Relationship="pixelcmsModel.FK__Order__Status_Id__47A6A41B" FromRole="Order" ToRole="Order_Status" />
+    <NavigationProperty Name="Order_Details" Relationship="pixelcmsModel.FK__Order_Det__Order__498EEC8D" FromRole="Order" ToRole="Order_Details" />
+  </EntityType>
+  <Association Name="FK__Order__Status_Id__47A6A41B">
+    <End Type="pixelcmsModel.Order_Status" Role="Order_Status" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Status_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GroupVariant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Type" Nullable="false" />
+    <Property Type="Int32" Name="Order" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Boolean" Name="Required" Nullable="false" />
+    <NavigationProperty Name="VariantAttributes" Relationship="pixelcmsModel.FK_VariantAttribute_GroupVariant" FromRole="GroupVariant" ToRole="VariantAttribute" />
+    <NavigationProperty Name="OptionVariants" Relationship="pixelcmsModel.FK_OptionVariant_GroupVariant" FromRole="GroupVariant" ToRole="OptionVariant" />
+  </EntityType>
+  <EntityType Name="Variant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PriceOld" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Weight" Nullable="false" Precision="18" Scale="4" />
+    <Property Type="Int32" Name="Order" Nullable="false" />
+    <Property Type="Int32" Name="ImageId" />
+    <Property Type="String" Name="SKU" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Int32" Name="VariantAtt_Id" />
+    <Property Type="Int32" Name="VariantOption_Id" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="VariantAttribute" Relationship="pixelcmsModel.FK_Variant_VariantAttribute" FromRole="Variant" ToRole="VariantAttribute" />
+    <NavigationProperty Name="OptionVariant" Relationship="pixelcmsModel.FK_Variant_OptionVariant" FromRole="Variant" ToRole="OptionVariant" />
+  </EntityType>
+  <EntityType Name="VariantAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="VariantGroup_Id" Nullable="false" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="Int32" Name="PostId" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="GroupVariant" Relationship="pixelcmsModel.FK_VariantAttribute_GroupVariant" FromRole="VariantAttribute" ToRole="GroupVariant" />
+    <NavigationProperty Name="Variants" Relationship="pixelcmsModel.FK_Variant_VariantAttribute" FromRole="VariantAttribute" ToRole="Variant" />
+    <NavigationProperty Name="Post" Relationship="pixelcmsModel.FK_VariantAttribute_Post" FromRole="VariantAttribute" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK_VariantAttribute_GroupVariant">
+    <End Type="pixelcmsModel.GroupVariant" Role="GroupVariant" Multiplicity="1" />
+    <End Type="pixelcmsModel.VariantAttribute" Role="VariantAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupVariant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VariantAttribute">
+        <PropertyRef Name="VariantGroup_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variant_VariantAttribute">
+    <End Type="pixelcmsModel.VariantAttribute" Role="VariantAttribute" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Variant" Role="Variant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VariantAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Variant">
+        <PropertyRef Name="VariantAtt_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="VariantAttributeCombination">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PostId" Nullable="false" />
+    <Property Type="String" Name="Attribute" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Boolean" Name="AllowOutOfStockOrders" Nullable="false" />
+    <Property Type="String" Name="SKU" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ManufacturerPartNumber" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gtin" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Precision="18" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Post" Relationship="pixelcmsModel.FK_VariantAttributeCombination_Post" FromRole="VariantAttributeCombination" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Order_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Order_Id" />
+    <Property Type="Int32" Name="Product_Id" />
+    <Property Type="String" Name="Attribute" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="Unit_Price" Precision="18" Scale="0" />
+    <Property Type="String" Name="Product_Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SKU" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Image" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order" Relationship="pixelcmsModel.FK__Order_Det__Order__498EEC8D" FromRole="Order_Details" ToRole="Order" />
+    <NavigationProperty Name="Post" Relationship="pixelcmsModel.FK__Order_Det__Produ__4A8310C6" FromRole="Order_Details" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK__Order_Det__Order__498EEC8D">
+    <End Type="pixelcmsModel.Order" Role="Order" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Order_Details" Role="Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStart" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="TimeEnd" Precision="3" />
+    <Property Type="String" Name="IPAddress" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Browser" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="country" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Roles_Access">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+    </Key>
+    <Property Type="Int32" Name="Role_Id" Nullable="false" />
+    <Property Type="Boolean" Name="Admin" Nullable="false" />
+    <Property Type="Boolean" Name="PixelAdmin" Nullable="false" />
+    <Property Type="Boolean" Name="Option" Nullable="false" />
+    <Property Type="Boolean" Name="Menu" Nullable="false" />
+    <Property Type="Boolean" Name="User" Nullable="false" />
+    <Property Type="Boolean" Name="Email" Nullable="false" />
+    <Property Type="Boolean" Name="Header_Html" Nullable="false" />
+    <Property Type="Boolean" Name="Order_View" Nullable="false" />
+    <Property Type="Boolean" Name="Order_Control" Nullable="false" />
+    <Property Type="Boolean" Name="Stats_View" Nullable="false" />
+    <Property Type="Boolean" Name="Attribute" Nullable="false" />
+    <Property Type="Boolean" Name="Inventory" Nullable="false" />
+    <Property Type="Boolean" Name="Shipping" Nullable="false" />
+    <Property Type="Boolean" Name="Files" Nullable="false" />
+    <Property Type="Boolean" Name="History" Nullable="false" />
+    <Property Type="Boolean" Name="field1" Nullable="false" />
+    <Property Type="Boolean" Name="field2" Nullable="false" />
+    <Property Type="Boolean" Name="field3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OptionVariant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Order" Nullable="false" />
+    <Property Type="Int32" Name="GroupVariant_Id" />
+    <Property Type="Int32" Name="Variant_Id" />
+    <Property Type="String" Name="Color" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GroupVariant" Relationship="pixelcmsModel.FK_OptionVariant_GroupVariant" FromRole="OptionVariant" ToRole="GroupVariant" />
+    <NavigationProperty Name="Variants" Relationship="pixelcmsModel.FK_Variant_OptionVariant" FromRole="OptionVariant" ToRole="Variant" />
+  </EntityType>
+  <Association Name="FK_OptionVariant_GroupVariant">
+    <End Type="pixelcmsModel.GroupVariant" Role="GroupVariant" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.OptionVariant" Role="OptionVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupVariant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OptionVariant">
+        <PropertyRef Name="GroupVariant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variant_OptionVariant">
+    <End Type="pixelcmsModel.OptionVariant" Role="OptionVariant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Variant" Role="Variant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionVariant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Variant">
+        <PropertyRef Name="VariantOption_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Option">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Edit_Type" />
+    <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Int32" Name="Group" />
+    <Property Type="Boolean" Name="Public" Nullable="false" />
+    <NavigationProperty Name="OptionGroup" Relationship="pixelcmsModel.FK__Option__Group__46B27FE2" FromRole="Option" ToRole="OptionGroup" />
+    <NavigationProperty Name="PostType_Name" Relationship="pixelcmsModel.FK__PostType___Optio__5BAD9CC8" FromRole="Option" ToRole="PostType_Name" />
+  </EntityType>
+  <Association Name="FK__Option__Group__46B27FE2">
+    <End Type="pixelcmsModel.OptionGroup" Role="OptionGroup" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Option" Role="Option" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OptionGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Option">
+        <PropertyRef Name="Group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostType___Optio__5BAD9CC8">
+    <End Type="pixelcmsModel.Option" Role="Option" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.PostType_Name" Role="PostType_Name" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Option">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostType_Name">
+        <PropertyRef Name="Option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logo" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field3" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field4" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field5" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="pixelcmsModel.FK_Product_Supplier" FromRole="Manufacturer" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Thumb" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="String" Name="Meta_Title" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Meta_key" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Meta_Description" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Html_Head" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Owner_Id" />
+    <Property Type="Int32" Name="Level" />
+    <Property Type="String" Name="User_Create" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="User_Edit" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date_Create" Precision="3" />
+    <Property Type="DateTime" Name="Date_Edit" Precision="3" />
+    <Property Type="String" Name="Lang" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MainLang_Id" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="Code" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Rate" />
+    <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Price_Old" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Product_Id" />
+    <Property Type="Boolean" Name="feature" Nullable="false" />
+    <Property Type="Boolean" Name="onsale" Nullable="false" />
+    <Property Type="Boolean" Name="Callforprice" Nullable="false" />
+    <Property Type="Boolean" Name="newpost" Nullable="false" />
+    <Property Type="Boolean" Name="ActiveProduct" Nullable="false" />
+    <Property Type="String" Name="Field1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field3" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field4" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field5" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MediaFiles" Relationship="pixelcmsModel.FK__MediaFile__Post___40F9A68C" FromRole="Post" ToRole="MediaFile" />
+    <NavigationProperty Name="MenuItems" Relationship="pixelcmsModel.FK__MenuItem__Post__44CA3770" FromRole="Post" ToRole="MenuItem" />
+    <NavigationProperty Name="Order_Details" Relationship="pixelcmsModel.FK__Order_Det__Produ__4A8310C6" FromRole="Post" ToRole="Order_Details" />
+    <NavigationProperty Name="Post1" Relationship="pixelcmsModel.FK__Post__Owner_Id__4C6B5938" FromRole="Post" ToRole="Post1" />
+    <NavigationProperty Name="Post2" Relationship="pixelcmsModel.FK__Post__Owner_Id__4C6B5938" FromRole="Post1" ToRole="Post" />
+    <NavigationProperty Name="Post_PostAttribute" Relationship="pixelcmsModel.FK__Post_Post__Id_Po__5224328E" FromRole="Post" ToRole="Post_PostAttribute" />
+    <NavigationProperty Name="Slugs" Relationship="pixelcmsModel.FK__Slug__Post__6166761E" FromRole="Post" ToRole="Slug" />
+    <NavigationProperty Name="PostType" Relationship="pixelcmsModel.FK_Post_PostType" FromRole="Post" ToRole="PostType" />
+    <NavigationProperty Name="Product" Relationship="pixelcmsModel.FK_Post_Product" FromRole="Post" ToRole="Product" />
+    <NavigationProperty Name="VariantAttributes" Relationship="pixelcmsModel.FK_VariantAttribute_Post" FromRole="Post" ToRole="VariantAttribute" />
+    <NavigationProperty Name="VariantAttributeCombinations" Relationship="pixelcmsModel.FK_VariantAttributeCombination_Post" FromRole="Post" ToRole="VariantAttributeCombination" />
+    <NavigationProperty Name="SpecialCats" Relationship="pixelcmsModel.Post_SpecialCat" FromRole="Post" ToRole="SpecialCat" />
+    <NavigationProperty Name="PostTags" Relationship="pixelcmsModel.Post_Tag" FromRole="Post" ToRole="PostTag" />
+    <NavigationProperty Name="Cats" Relationship="pixelcmsModel.Post_Cat" FromRole="Post" ToRole="Cat" />
+  </EntityType>
+  <EntityType Name="PostType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="140" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Group" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Boolean" Name="Menu" Nullable="false" />
+    <Property Type="Boolean" Name="AsPost" Nullable="false" />
+    <Property Type="Boolean" Name="ShowType" Nullable="false" />
+    <Property Type="Boolean" Name="QuickCreate" Nullable="false" />
+    <Property Type="Boolean" Name="DashboardStats" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Cat" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Description" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Thumb" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Content" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Price" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Owner" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Meta" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Media" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Create" Nullable="false" />
+    <Property Type="Boolean" Name="Has_User_Create" Nullable="false" />
+    <Property Type="Boolean" Name="Has_User_Edit" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Date_Create" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Date_Edit" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Order" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Lang" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Parallel_Language" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Title" Nullable="false" />
+    <Property Type="Boolean" Name="Has_SpecialCat" Nullable="false" />
+    <Property Type="Boolean" Name="Show_Thumb" Nullable="false" />
+    <Property Type="Boolean" Name="Show_Cat" Nullable="false" />
+    <Property Type="Boolean" Name="Show_Slug" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Active" Nullable="false" />
+    <Property Type="String" Name="Icon" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Has_feature" Nullable="false" />
+    <Property Type="Boolean" Name="Has_onsale" Nullable="false" />
+    <Property Type="Boolean" Name="Has_oldprice" Nullable="false" />
+    <Property Type="Boolean" Name="Has_CatImage" Nullable="false" />
+    <Property Type="Boolean" Name="Has_CatDescription" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Callforprice" Nullable="false" />
+    <Property Type="Boolean" Name="Has_Catfeature" Nullable="false" />
+    <Property Type="Boolean" Name="Has_MediaDescription" Nullable="false" />
+    <Property Type="Boolean" Name="Has_CatBanner" Nullable="false" />
+    <Property Type="Boolean" Name="Has_New" Nullable="false" />
+    <Property Type="Boolean" Name="Active_Product" Nullable="false" />
+    <Property Type="Boolean" Name="Active_Position" Nullable="false" />
+    <Property Type="Int32" Name="Position" />
+    <Property Type="Boolean" Name="Tags" Nullable="false" />
+    <Property Type="Boolean" Name="Field1" Nullable="false" />
+    <Property Type="Boolean" Name="Field2" Nullable="false" />
+    <Property Type="Boolean" Name="Field3" Nullable="false" />
+    <Property Type="Boolean" Name="Field4" Nullable="false" />
+    <Property Type="Boolean" Name="Field5" Nullable="false" />
+    <NavigationProperty Name="MenuItems" Relationship="pixelcmsModel.FK__MenuItem__PostTy__45BE5BA9" FromRole="PostType" ToRole="MenuItem" />
+    <NavigationProperty Name="Posts" Relationship="pixelcmsModel.FK_Post_PostType" FromRole="PostType" ToRole="Post" />
+    <NavigationProperty Name="PostType_Name" Relationship="pixelcmsModel.FK__PostType___Postt__5D95E53A" FromRole="PostType" ToRole="PostType_Name" />
+    <NavigationProperty Name="Roles_PostType" Relationship="pixelcmsModel.FK__Roles_Pos__PostT__5E8A0973" FromRole="PostType" ToRole="Roles_PostType" />
+    <NavigationProperty Name="Slugs" Relationship="pixelcmsModel.FK__Slug__PostType__625A9A57" FromRole="PostType" ToRole="Slug" />
+    <NavigationProperty Name="PostAttributes" Relationship="pixelcmsModel.PostAttribute_PostType" FromRole="PostType" ToRole="PostAttribute" />
+    <NavigationProperty Name="Cats" Relationship="pixelcmsModel.FK__Cat__Type__3D2915A8" FromRole="PostType" ToRole="Cat" />
+  </EntityType>
+  <Association Name="FK_Product_Supplier">
+    <End Type="pixelcmsModel.Manufacturer" Role="Manufacturer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Supplier_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MediaFile__Post___40F9A68C">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.MediaFile" Role="MediaFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaFile">
+        <PropertyRef Name="Post_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuItem__Post__44CA3770">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuItem">
+        <PropertyRef Name="Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuItem__PostTy__45BE5BA9">
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuItem">
+        <PropertyRef Name="PostType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Det__Produ__4A8310C6">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Order_Details" Role="Order_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_Details">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Post__Owner_Id__4C6B5938">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Post" Role="Post1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post1">
+        <PropertyRef Name="Owner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Post_Post__Id_Po__5224328E">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Post_PostAttribute" Role="Post_PostAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post_PostAttribute">
+        <PropertyRef Name="Id_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Slug__Post__6166761E">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Slug" Role="Slug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slug">
+        <PropertyRef Name="Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_PostType">
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_Product">
+    <End Type="pixelcmsModel.Product" Role="Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VariantAttribute_Post">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.VariantAttribute" Role="VariantAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VariantAttribute">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VariantAttributeCombination_Post">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.VariantAttributeCombination" Role="VariantAttributeCombination" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VariantAttributeCombination">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostType___Postt__5D95E53A">
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.PostType_Name" Role="PostType_Name" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostType_Name">
+        <PropertyRef Name="Posttype_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Roles_Pos__PostT__5E8A0973">
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Roles_PostType" Role="Roles_PostType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Roles_PostType">
+        <PropertyRef Name="PostType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Slug__PostType__625A9A57">
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Slug" Role="Slug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slug">
+        <PropertyRef Name="PostType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Post_SpecialCat">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="*" />
+    <End Type="pixelcmsModel.SpecialCat" Role="SpecialCat" Multiplicity="*" />
+  </Association>
+  <Association Name="Post_Tag">
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="*" />
+    <End Type="pixelcmsModel.PostTag" Role="PostTag" Multiplicity="*" />
+  </Association>
+  <Association Name="PostAttribute_PostType">
+    <End Type="pixelcmsModel.PostAttribute" Role="PostAttribute" Multiplicity="*" />
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Cat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="140" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Type" />
+    <Property Type="Int32" Name="Owner_Id" />
+    <Property Type="Int32" Name="Level" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="String" Name="Meta_Title" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Meta_Key" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Meta_Description" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Html_Head" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Image" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="Lang" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MainLang_Id" />
+    <Property Type="String" Name="Description" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Feature" Nullable="false" />
+    <Property Type="String" Name="Banner_Image" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Position" />
+    <Property Type="String" Name="Parent_Path" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cat1" Relationship="pixelcmsModel.FK__Cat__Owner_Id__6442E2C9" FromRole="Cat" ToRole="Cat1" />
+    <NavigationProperty Name="Cat2" Relationship="pixelcmsModel.FK__Cat__Owner_Id__6442E2C9" FromRole="Cat1" ToRole="Cat" />
+    <NavigationProperty Name="PostType" Relationship="pixelcmsModel.FK__Cat__Type__3D2915A8" FromRole="Cat" ToRole="PostType" />
+    <NavigationProperty Name="MenuItems" Relationship="pixelcmsModel.FK__MenuItem__Cat__6FB49575" FromRole="Cat" ToRole="MenuItem" />
+    <NavigationProperty Name="Slugs" Relationship="pixelcmsModel.FK__Slug__Cat__1209AD79" FromRole="Cat" ToRole="Slug" />
+    <NavigationProperty Name="Posts" Relationship="pixelcmsModel.Post_Cat" FromRole="Cat" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK__Cat__Owner_Id__6442E2C9">
+    <End Type="pixelcmsModel.Cat" Role="Cat" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Cat" Role="Cat1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cat">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cat1">
+        <PropertyRef Name="Owner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cat__Type__3D2915A8">
+    <End Type="pixelcmsModel.PostType" Role="PostType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.Cat" Role="Cat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cat">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuItem__Cat__6FB49575">
+    <End Type="pixelcmsModel.Cat" Role="Cat" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="pixelcmsModel.MenuItem" Role="MenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cat">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuItem">
+        <PropertyRef Name="Cat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Slug__Cat__1209AD79">
+    <End Type="pixelcmsModel.Cat" Role="Cat" Multiplicity="0..1" />
+    <End Type="pixelcmsModel.Slug" Role="Slug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cat">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slug">
+        <PropertyRef Name="Cat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Post_Cat">
+    <End Type="pixelcmsModel.Cat" Role="Cat" Multiplicity="*" />
+    <End Type="pixelcmsModel.Post" Role="Post" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Username" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email1" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Subject" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Text" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Read" Nullable="false" />
+    <Property Type="DateTime" Name="DateSend" Precision="3" />
+    <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field3" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field4" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Field5" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Post_Id" />
+    <Property Type="Int32" Name="User_Id" />
+    <Property Type="String" Name="Name" MaxLength="142" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="142" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Content" MaxLength="2048" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Quote_Id" />
+    <Property Type="Int32" Name="Product_Rate" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Boolean" Name="View" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+  </EntityType>
+</Schema>

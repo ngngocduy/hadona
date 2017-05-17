@@ -1,0 +1,107 @@
+﻿@using PixelCMS.Core.Models
+@model Product_ProductAttribute
+
+@{
+    ViewBag.Title = "Sửa thuộc tính kỹ thuật";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Sửa thuộc tính kỹ thuật</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(x => x.ProductAttribute_Id)
+                @Html.HiddenFor(x => x.Product_Id)
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Sửa" class="btn btn-blue" />
+                        <a href="@Url.Action("P_PAttList", new { productid = Model.Product_Id })" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table  class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            @Resources.admin_attribute
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.ProductAttribute.Name, new { required = true, @readonly="readonly"})
+                            @Html.HiddenFor(model => model.ProductAttribute.Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Giá trị</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Value, new { required = true })
+                            @Html.ValidationMessageFor(model => model.Value)
+                        </td>
+                    </tr>
+
+                </table>
+            }
+
+        </div>
+    </div>
+
+</section>
+@*
+<script>
+    $.widget("custom.catcomplete", $.ui.autocomplete, {
+        _create: function () {
+            this._super();
+            this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+        },
+        _renderMenu: function (ul, items) {
+            var that = this,
+                currentCategory = "";
+            $.each(items, function (index, item) {
+                var li;
+                if (item.category != currentCategory) {
+                    ul.append("<li  class='ui-autocomplete-category'>" + item.category + "</li>");
+                    currentCategory = item.category;
+                }
+                li = that._renderItemData(ul, item);
+                if (item.category) {
+                    li.attr("aria-label", item.category + " : " + item.label);
+                }
+            });
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    var url = '@Url.Action("getAtt")';
+    $('#search').catcomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                data: { query: request.term },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.Name,
+                            value: item.Id,
+                            category: item.Category
+                        };
+                    }));
+                }
+            });
+        },
+        select: function (event, ui) {
+            $('#search').val(ui.item.label);
+            $('#ProductAttribute_Id').val(ui.item.value);
+            return false;
+        },
+        minLength: 0
+    });
+</script>*@

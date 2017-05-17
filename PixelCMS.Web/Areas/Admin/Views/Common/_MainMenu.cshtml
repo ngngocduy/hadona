@@ -1,0 +1,177 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.PostType>
+@using PixelCMS.Core.Models
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentroles = Roles.GetRolesForUser().ToList();
+    var access = db.Roles_PostType.ToList();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+
+    var access1 = db.Roles_Access.ToList();
+    bool a_attribute = false;
+    bool a_inventory = false;
+    foreach (var role in currentroles)
+    {
+        var ac = access1.FirstOrDefault(x => x.Role_Id == db.webpages_Roles.FirstOrDefault(r => r.RoleName == role).RoleId);
+        a_attribute = ac.Attribute;
+        a_inventory = ac.Inventory;
+
+    }
+    
+}
+@if (Model.Where(x => x.Group == 5).FirstOrDefault() != null)
+{ 
+    <li class="openable">
+        <a href="@Url.Action("Index", "Dashboard")">
+            <span class="isw-picture"></span><span class="text">Media
+            </span>
+        </a>
+        <ul>
+            @foreach (var item in Model.Where(x => x.Group == 5))
+            {
+                bool a_view = false;
+                foreach (var role in currentroles)
+                {
+                    var roleid = db.webpages_Roles.FirstOrDefault(x => x.RoleName == role).RoleId;
+                    a_view = access.FirstOrDefault(x => x.PostType_Id == item.Id && x.Role_Id == roleid).View;
+                }
+                if (a_view)
+                {
+                <li>
+                    <a href="@Url.Action("Index", "Content", new { type = item.Id })"> <span class="icon-list"></span><span class="text">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</span></a>
+                </li>
+                }
+            }
+        </ul>
+    </li>
+}
+
+<li class="openable">
+    <a href="@Url.Action("Index", "Dashboard")">
+        <span class="isw-folder"></span><span class="text">Tin tức
+        </span>
+    </a>
+    <ul>
+        @foreach (var item in Model.Where(x => x.Group == 1))
+        { 
+            <li>
+                <a href="@Url.Action("Index", "Content", new { type = item.Id })"> <span class="icon-list"></span><span class="text">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</span></a>
+            </li>
+        }
+        <!--trang-->
+        @if (Model.Where(x => x.Group == 2).FirstOrDefault() != null)
+        { 
+            <li>
+                <a href="#">@Resources.admin_common_page</a>
+                <ul>
+                    @foreach (var item in Model.Where(x => x.Group == 2))
+                    {
+                        bool a_view = false;
+                        foreach (var role in currentroles)
+                        {
+                            var roleid = db.webpages_Roles.FirstOrDefault(x => x.RoleName == role).RoleId;
+                            a_view = access.FirstOrDefault(x => x.PostType_Id == item.Id && x.Role_Id == roleid).View;
+                        }
+                        if (a_view)
+                        {
+                        <li>
+                            <a href="@Url.Action("Index", "Content", new { type = item.Id })"><span class="icon-list"></span><span class="text">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</span></a>
+                        </li>
+                        }
+                    }
+                </ul>
+            </li>
+        }
+
+        @if (Model.Where(x => x.Group == 3).FirstOrDefault() != null)
+        { 
+            <li>
+                <a href="#">@Resources.admin_common_content</a>
+                <ul>
+                    @foreach (var item in Model.Where(x => x.Group == 3))
+                    {
+                        bool a_view = false;
+                        foreach (var role in currentroles)
+                        {
+                            var roleid = db.webpages_Roles.FirstOrDefault(x => x.RoleName == role).RoleId;
+                            a_view = access.FirstOrDefault(x => x.PostType_Id == item.Id && x.Role_Id == roleid).View;
+                        }
+                        if (a_view)
+                        {
+                        <li>
+                            <a href="@Url.Action("Index", "Content", new { type = item.Id })"><span class="icon-list"></span><span class="text">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</span></a>
+                        </li>
+                        }
+                    }
+                </ul>
+            </li>
+        }
+
+    </ul>
+</li>
+
+@if (Model.Where(x => x.Group == 4).FirstOrDefault() != null)
+{ 
+    <li class="openable">
+        <a href="@Url.Action("Index", "Dashboard")">
+            <span class="isw-cart"></span><span class="text">
+                @Resources.admin_common_product
+            </span>
+        </a>
+        <ul>
+            @foreach (var item in Model.Where(x => x.Group == 4))
+            {
+                bool a_view = false;
+                foreach (var role in currentroles)
+                {
+                    var roleid = db.webpages_Roles.FirstOrDefault(x => x.RoleName == role).RoleId;
+                    a_view = access.FirstOrDefault(x => x.PostType_Id == item.Id && x.Role_Id == roleid).View;
+                }
+                if (a_view)
+                {
+                <li>
+                    <a href="@Url.Action("Index", "Content", new { type = item.Id })"> <span class="icon-list"></span><span class="text"> @item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name </span></a>
+                </li>
+                }
+            }
+
+            @if (a_attribute)
+            {
+                <li>
+                    <a href="@Url.Action("Index", "ProductAttribute")"> <span class="icon-list"></span><span class="text">Thuộc tính kỹ thuật</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "VariantOption")"> <span class="icon-list"></span><span class="text">Thuộc tính biến thể</span></a>
+                </li>
+            }
+            @if (a_inventory)
+            {
+                <li>
+                    <a href="@Url.Action("Inventories", "Inventory")"> <span class="icon-list"></span><span class="text">Hàng tồn kho cao</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Inventory")"> <span class="icon-list"></span><span class="text">Hàng tồn kho thấp</span></a>
+                </li>
+                <li>
+                    <a href="@Url.Action("StockImport", "Inventory")"> <span class="icon-list"></span><span class="text">Nhập kho</span></a>
+                </li>  
+                <li>
+                    <a href="@Url.Action("Index", "Manufacturer")"> <span class="icon-list"></span><span class="text">Nhà sản xuất</span></a>
+                </li>
+            }
+
+        </ul>
+    </li>
+}
+
+
+<style>
+    .main-navigation > ul > li > a {
+        display: block;
+        text-align: center;
+        color: #d9d9d9;
+        padding: 10px;
+        font-size: 11px;
+        min-width: 60px;
+    }
+</style>

@@ -1,0 +1,90 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.Order_Details>
+@{
+    ViewBag.Title = "Kết quả";
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = db.Languages.Where(x => x.Active == true).OrderBy(x => x.Order).FirstOrDefault().Code;
+}
+
+<section class="main">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Kết quả thanh toán</a>
+        </li>
+    </ul>
+    <div class="product-detail">
+        <div class="cf">
+           <div class="checkout-content clearfix">
+                <h4 style="color: royalblue">@Html.ValidationSummary(true) @TempData["result"]</h4>
+            </div>
+            @if (TempData["OrderId"] != null)
+            {
+
+                <div class="main-account float-right">
+                    <div class="form-title"><i class="fa fa-play-circle"></i>Chi tiết đơn hàng của bạn</div>
+                    <div class="tbl cart-detail">
+                        <div class="tbl-head">
+                            <ul class="cf">
+                                <li class="photo-cart"></li>
+                                <li class="name-cart">@Resources.admin_common_name</li>
+                                <li class="name-cart-attribute">Thuộc tính</li>
+                                <li class="quantity-cart"></li>
+                               @* <li class="name-cart">Mã sản phẩm(SKU)</li>*@
+                                <li class="price-cart">@Resources.admin_content_price</li>
+
+                            </ul>
+                        </div>
+                        <!-- End tbl-head -->
+                        <div class="tbl-body">
+                            @{decimal total = 0;}
+                            @foreach (var item in Model)
+                            {
+                                <ul class="cf">
+                                    <li class="photo-cart">
+                                        <img src="@item.Image"/></li>
+                                    <li class="name-cart">@item.Product_Name</li>
+                                    <li class="name-cart-attribute">@Html.Raw(item.Attribute)</li>
+                                    <li class="quantity-cart">x @item.Quantity</li>
+                                    @*<li class="name-cart">@item.SKU</li>*@
+                                    <li class="price-cart">@(((decimal)item.Unit_Price).ToString("N0")) ₫</li>
+                                </ul>
+                                total += ((decimal)item.Quantity * (decimal)item.Unit_Price);
+                            }
+                        </div>
+                        <!-- End tbl-body -->
+                        <div class="tbl-foot">
+                            <ul class="cf">
+                                <li class="total"><strong>Tổng tiền phải trả</strong></li>
+                                <li class="total-price" style="color: red"><strong>@total.ToString("N0") ₫</strong></li>
+                            </ul>
+                        </div>
+                        <!-- End tbl-foot -->
+                    </div>
+
+
+
+                </div>
+            }
+             <a href="@Url.Action("Index", "Home")">Trở về trang chủ</a>
+            <!-- End tbl -->
+        </div>
+        <!-- End main-account -->
+    </div>
+</section>
+
+    <link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/cart.css" rel="stylesheet" type="text/css">
+
+@*
+@Scripts.Render("~/bundles/SignalR")
+<script src="/signalr/hubs" type="text/javascript"></script>*@
+<script>
+    $(function () {
+        var chatHub = $.connection.chatHub;
+        // Start Hub
+        $.connection.hub.start().done(function () {
+            chatHub.server.message("order");
+        });
+    })
+</script>

@@ -1,0 +1,129 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@{
+    if(ViewBag.CatTitle != null){
+        ViewBag.Title = ViewBag.CatTitle;
+    }else{
+        ViewBag.Title = ViewBag.TypeName;
+    }
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    else
+    {
+        <meta name="keywords" content="@Html.Action("LoadOption", "Common", new { code = "meta-keywords" })" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content ="@ViewBag.CatDescription" />
+    }
+    else
+    {
+        <meta name="description" content="@Html.Action("LoadOption", "Common", new { code = "meta-description" })" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        @ViewBag.CatHead
+    }
+    else
+    {
+        @Html.Action("LoadOption", "Common", new { code = "meta-htmlheader" })
+    }
+}
+
+@if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin")){
+    @section adminpanel{
+     @Html.Action("AdminPanel","Common")
+    }
+}
+
+<!-- Page Subtitle -->
+<div id="subtitle">
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>
+                @ViewBag.CategoryCurrent
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sixteen columns">
+        @Html.Action("Breadcrumb", "Common", new { type = "cat", id = ViewBag.CatId })
+    </div>
+    <!-- Posts Container-->
+    <div class="eleven columns">
+
+        @if (Model.FirstOrDefault() != null)
+        {
+            <div id="blog_post_container">
+                @foreach (var item in Model)
+                { 
+                    <!-- Post-->
+                    <div class="post">
+                        <h2><a href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Id })">@item.Title</a></h2>
+                        <div class="post-meta">@item.Date_Create<span class="sep">|</span>@Resources.common_by @item.User_Create</div>
+                        @if (item.PostType.Has_Thumb == true)
+                        {
+                            <div class="post-thumb"><a href="@item.Thumb" rel="prettyPhoto" title="@item.Title.">
+                                <img src="@item.Thumb" alt=""/><div class="overlay zoom"></div>
+                            </a></div>
+                        }
+                        <div class="post-content">
+                            <p>@item.Description</p>
+                        </div>
+                        <a class="post-entry" href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Id })">@Resources.common_readmore</a>
+                    </div>
+                    <!-- End Post-->
+                }
+            </div>
+            <!-- End Posts Container-->
+				
+            <div>
+                <br />
+                @Html.PagedListPager(Model, page => Url.Action("Cat", new { page }))
+                @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.common_page)
+                <br />
+            </div>
+        }
+        else
+        {
+            <div class="alert light_pink">
+                @Resources.common_nopost
+            </div>
+        }
+    </div>
+
+    <!-- Widget Container-->
+    <div class="five columns">
+        <div id="blog_widget_container">
+
+            <div class="widget">
+                <div class="widget-title">
+                    <h3>Categories</h3>
+                </div>
+                <div class="widget-archives">
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">CMS Development</a></li>
+                        <li><a href="#">Creative</a></li>
+                        <li><a href="#">Business</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Widget Container-->
+
+</div>
+
+

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+<div class="tabs slide-brands slide-general">
+    @if (Model.FirstOrDefault() != null)
+                {
+                    int count = 0;
+                    foreach (var item in Model.OrderByDescending(x => x.Order))
+                    {
+            count++;
+                        var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+            <div class="item">
+                <a href="#anchor@(count)" title="Brands"><img src="@item.Thumb" alt="Brands" title="Brands" /></a>
+            </div>
+        }
+    }
+</div>

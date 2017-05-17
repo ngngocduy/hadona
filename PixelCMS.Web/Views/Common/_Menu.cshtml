@@ -1,0 +1,125 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.MenuItem>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var count1 = Request.Url.Segments.Count();
+    var slug = Request.Url.Segments[count1 - 1];
+    var fullslug = db.Slugs.FirstOrDefault(x => x.Slug_Full == slug);
+}
+@*<script src="~/Scripts/jquery-1.8.2.js"></script>*@
+    <script>
+        //active breadrumb và danh mục con
+        $(function () {
+            if ('@(slug)' == '/') {
+                $("#cssmenu > ul > li a[href='/@currentlang']").closest("li").addClass('active');
+            }
+            else if ('@(slug)' != '@currentlang') {
+                $("#cssmenu > ul > li a[href='/@currentlang/@slug']").closest("li").addClass('active');
+            } else {
+                $("#cssmenu > ul > li a[href='/@currentlang']").closest("li").addClass('active');
+            }
+            //active product
+            // $("#navigation > ul > li a[href='/@currentlang/san-pham']").closest("#navigation > ul > li").addClass('active');
+            // $("#navigation > ul > li a[href='/@currentlang/product']").closest("#navigation > ul > li").addClass('active');
+        }
+            )
+    </script>
+
+@helper renderlevel(MenuItem menuItem)
+{
+int countchild = 0;
+
+foreach (var item in Model.Where(x => x.Owner_Id == menuItem.Id))
+{
+    var checkchild = Model.Any(x => x.Owner_Id == item.Id);
+    string liClass = "";
+    string aClass = "";
+    countchild++;
+        <li class="">
+            @switch (item.Type)
+            {
+                case 1:
+            <a @aClass href="@item.Url">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 100:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "posttype", id = item.PostType})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 2:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "post", id = item.Post})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 3:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "cat", id = item.Cat})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 4:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "home"})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 5:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "contact"})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 6:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "search"})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+            }
+            @if (checkchild)
+            {
+            <ul>
+                @renderlevel(item)
+            </ul>
+            }
+        </li>
+}
+
+}
+<nav class="top_menu">
+    <div id="cssmenu">
+        <ul>
+            @{int count = 0;}
+            @foreach (var item1 in Model.Where(x => x.Owner_Id == null))
+            {
+                var checkchild = Model.Any(x => x.Owner_Id == item1.Id);
+                count++;
+
+                string liClass = "";//checkchild ? "active" : "";
+                var i = @Html.Raw("");
+                string aClass = ""; //checkchild ? "class=dropdown-toggle": "";
+
+                <li class="@liClass">
+                    <h3>
+                        @switch (item1.Type)
+                {
+                    case 1:
+                                <a @aClass href="@item1.Url">@item1.Name @i</a>
+                                break;
+                            case 100:
+                                <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "posttype", id = item1.PostType})">@item1.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item1.Id })</a>
+                                break;
+                            case 2:
+                                <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "post", id = item1.Post})">@item1.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item1.Id })</a>
+                                break;
+                            case 3:
+                                <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "cat", id = item1.Cat})">@item1.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item1.Id })</a>
+                                break;
+                            case 4:
+                                <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "home"})">@item1.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item1.Id })</a>
+                                break;
+                            case 5:
+                                <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "contact"})">@item1.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item1.Id })</a>
+                                break;
+                            case 6:
+                                <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "search"})">@item1.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item1.Id })</a>
+                                break;
+                        }
+                    </h3>
+                    @if (checkchild)
+                    {
+                        <ul>
+                            @renderlevel(item1)
+                        </ul>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</nav>
+

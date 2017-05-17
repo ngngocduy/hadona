@@ -1,0 +1,180 @@
+﻿@model PixelCMS.Core.Models.PostType
+@using PixelCMS.Core.Models
+@{
+    ViewBag.Title = Resources.admin_posttype_access;
+    ViewBag.PTitle = Resources.admin_posttype_access;
+    ViewBag.PDescription = Resources.admin_posttype_access;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    pixelcmsEntities db = new pixelcmsEntities();
+    var postroles = db.Roles_PostType.Where(x => x.PostType_Id == Model.Id).OrderBy(o => o.Role_Id).ToList();
+    var rolesname = db.webpages_Roles.ToList();
+}
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_updatesuccessfully
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_posttype_access</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_update" class="btn btn-blue" />
+                            <a href="@Url.Action("Index", "Type")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th>@Resources.admin_user_role</th>
+                            <th colspan="4">@Resources.admin_common_content</th>
+                            <th colspan="4">@Resources.admin_content_category</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <th>@Resources.admin_posttype_view</th>
+                            <th>@Resources.admin_posttype_create</th>
+                            <th>@Resources.admin_posttype_delete</th>
+                            <th>@Resources.admin_posttype_edit</th>
+                            <th>@Resources.admin_posttype_view</th>
+                            <th>@Resources.admin_posttype_create</th>
+                            <th>@Resources.admin_posttype_delete</th>
+                            <th>@Resources.admin_posttype_edit</th>
+                        </tr>
+
+
+                        @foreach (var item in postroles)
+                        {
+                            var postrole = postroles.FirstOrDefault(x => x.Role_Id == item.Role_Id);
+                           
+                            <tr>
+                                <td style="cursor: pointer">
+                                    @rolesname.FirstOrDefault(x => x.RoleId == item.Role_Id).RoleName
+                                </td>
+
+                                <td>
+                                    @if (postrole.View == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="View-@item.Role_Id" name="View-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="View-@item.Role_Id" name="View-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+                                <td>
+                                    @if (postrole.Create == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="Create-@item.Role_Id" name="Create-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="Create-@item.Role_Id" name="Create-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+                                <td>
+                                    @if (postrole.Delete == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="Delete-@item.Role_Id" name="Delete-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="Delete-@item.Role_Id" name="Delete-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+                                <td>
+                                    @if (postrole.Edit == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="Edit-@item.Role_Id" name="Edit-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="Edit-@item.Role_Id" name="Edit-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+
+                                <td>
+                                    @if (postrole.CatView == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="CatView-@item.Role_Id" name="CatView-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="CatView-@item.Role_Id" name="CatView-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+                                <td>
+                                    @if (postrole.CatCreate == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="CatCreate-@item.Role_Id" name="CatCreate-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="CatCreate-@item.Role_Id" name="CatCreate-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+                                <td>
+                                    @if (postrole.CatDelete == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="CatDelete-@item.Role_Id" name="CatDelete-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="CatDelete-@item.Role_Id" name="CatDelete-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+                                <td>
+                                    @if (postrole.CatEdit == true)
+                                    {
+                                        <input checked="checked" class="check-box" data-val="true" id="CatEdit-@item.Role_Id" name="CatEdit-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                    else
+                                    {
+                                        <input class="check-box" data-val="true" id="CatEdit-@item.Role_Id" name="CatEdit-@item.Role_Id" type="checkbox" value="true">
+                                    }
+                                </td>
+
+                            </tr>
+                        }
+
+                    </table> 
+                }
+
+                <div class="hint">
+                    <h4><i class="fa fa-info-circle"></i>@Resources.admin_content_note</h4>
+                    <p>@Resources.admin_posttype_accessdescription
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('.form-input tr').click(function (event) {
+            if (event.target.type !== 'checkbox') {
+                $(':checkbox', this).trigger('click');
+            }
+        });
+    });
+</script>
+
+@if (ViewBag.Status == "edit-done")
+{ 
+    <script>
+        $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+@if (Model != null)
+{
+    <div class="cart-info grid_9">
+        <table>
+            <thead>
+                <tr>
+                    <td class="image"></td>
+                    <td class="name">@Resources.cart_productname</td>
+                    <td class="quantity">@Resources.cart_quantity</td>
+                    <td class="price">@Resources.cart_unitprice</td>
+                    <td class="total">@Resources.cart_total</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Distinct())
+                {
+                    <tr>
+                        <td class="image">
+                            <img alt="@item.Title" src="@item.Thumb" style="max-width: 50px; max-height: 50px;" />
+                        </td>
+                        <td class="name">
+                            <a href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Id })">@item.Title</a>
+                        </td>
+                        <td class="quantity">
+                            <input value="@Model.Count(x=>x.Id==item.Id)" id="quantity-post-@item.Id" title="@Resources.cart_quantity" name="thanh toan" class="text" type="text" disabled="disabled"/>
+                            @*<span aria-hidden="true" data-icon="&#xe00b;" class="update_cart icomoon" onclick="return UpdateQuantity(@item.Id,$('#quantity-post-@item.Id').val());"></span>*@
+                        </td>
+                        <td class="price">@item.Price.ToString() &#8363;</td>
+                        <td class="total">@(@Model.Count(x=>x.Id==item.Id)*item.Price) &#8363;</td>
+                        <td><a aria-hidden="true" data-icon="&#xe004;" class="remove_cart icomoon" href="#" onclick="return RemoveFromWishList(@item.Id);"></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}
+else
+{
+    <p>Danh sách yêu thích trống</p>
+}

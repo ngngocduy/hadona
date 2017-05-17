@@ -1,0 +1,44 @@
+﻿
+@Html.Action("Menu", "Common", new { positioncode = "menu-left" })
+
+@*<div>
+    <section class="box-category">
+        <div class="heading"><span>Hỗ trợ trực tuyến</span></div>
+
+        <div class="support-html">
+            @Html.Raw(Html.Action("LoadOption", "Common", new { code = "httt" }))
+        </div>
+    </section>
+</div>
+<div>
+    <!-- Vertical Menu -->
+    <section class="box-category">
+        <div class="heading">
+            <span>Danh mục</span>
+        </div>
+        @Html.Action("Menu", "Common", new { positioncode = "menu-left" })
+    </section>
+    <script>
+        var url_cat = document.URL;
+        $(".panelvmenu a[href='" + url_cat + "']").addClass('active');
+        $(".panelvmenu a[href='" + url_cat + "'].active").parents('collapse').addClass('in');
+    </script>
+</div>
+<div>
+    <div class="banner-small">
+        @Html.Raw(Html.Action("LoadOption", "Common", new { code = "banner-left" }))
+    </div>
+</div>
+@Html.Action("GetPostInCat", "Widget", new { vitri = 4 })<!--sidebar newsinhome-->
+<div>
+    <section class="box-category">
+        <div class="heading">
+            <span>Lượt truy cập</span>
+        </div>
+        <div class="main">
+            @Html.Partial("_Counter")
+        </div>
+    </section>
+</div>*@
+
+

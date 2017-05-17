@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.PostType>
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = Resources.admin_common_dashboard;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var currentculture = @PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var mainlangcode = db.Languages.OrderBy(o => o.Order).FirstOrDefault(x => x.Active == true).Code;
+    //thông kê đơn hàng
+    var chuaxem = db.Orders.Where(x => x.View == false).Count();
+    var dangcho = db.Orders.Where(x => x.Order_Status.Order == 1).Count();
+    var dangxuly = db.Orders.Where(x => x.Order_Status.Order == 2).Count();
+    var danggiaohang = db.Orders.Where(x => x.Order_Status.Order == 3).Count();
+    var hoanthanh = db.Orders.Where(x => x.Order_Status.Order == 4).Count();
+    var huy = db.Orders.Where(x => x.Order_Status.Order == 5).Count();
+    
+}
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_common_dashboard</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting">
+            @*   <div class="sixteen columns">*@
+            @*@Html.Action("Quicksetting","Common")*@
+
+            @Html.Action("QuickCreate", "Common")
+
+            <table class="grid">
+                <tr>
+                    <th colspan="2">@Resources.admin_common_stats</th>
+                </tr>
+                @foreach (var item in Model)
+                { 
+                    <tr>
+                        <td>@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</td>
+                        <td>
+                            @if (item.Has_Parallel_Language == true)
+                            {
+                                @item.Posts.Where(x => x.Active == true && x.Lang == mainlangcode).Count()
+                            }
+                            else if (item.Has_Lang == true)
+                            { 
+                                @item.Posts.Where(x => x.Active == true).Count()
+                            }
+                            else
+                            {
+                                @item.Posts.Where(x => x.Active == true && x.Lang == mainlangcode).Count()
+                            }
+                        </td>
+                    </tr>
+                }
+                @* <tr>
+                    <td>Đơn hàng mới(chưa xem)</td>
+                    <td>@chuaxem</td>
+                </tr>
+                <tr>
+                    <td>Đơn hàng đang chờ</td>
+                    <td>@dangcho</td>
+                </tr>
+                <tr>
+                    <td>Đơn hàng đang xử lý</td>
+                    <td>@dangxuly</td>
+                </tr>
+                <tr>
+                    <td>Đơn hàng đang giao</td>
+                    <td>@danggiaohang</td>
+                </tr>
+                <tr>
+                    <td>Đơn hàng hoàn thành</td>
+                    <td>
+                        @hoanthanh
+                    </td>
+                </tr>
+                <tr>
+                    <td>Đơn hàng đã hủy</td>
+                    <td>
+                        @huy
+                    </td>
+                </tr>*@
+            </table>
+            <div class="">@Html.Partial("_Chart")</div>
+
+        </div>
+        @* </div>*@
+        @*   <div class="five colums">
+            <iframe scrolling="yes" height="600" src="@Html.Action("LoadOption","Common",new{code="ifarm-tkm"})"></iframe>
+        </div>*@
+
+
+    </div>
+</section>

@@ -1,0 +1,164 @@
+﻿@Scripts.Render("~/bundles/SignalR")
+<script src="/signalr/hubs" type="text/javascript"></script>
+@*<link href="~/Content/ChatStyle.css" rel="stylesheet" />*@
+<div id="wdchat" style="text-align: center; position: fixed; right: 0px; bottom: 0px; width: 250px; border: 1px solid; z-index: 100; background-color: steelblue">
+    <h5 id="wdchat_title" style="cursor: pointer; padding-left: 0px; color: white">Chat với chúng tôi!!!</h5>
+    <div id="wdchat_form" style="display: none; margin-bottom: 10px">
+        <div id="divContainer">
+            <div id="divLogin" class="login">
+                <div>
+                    <input style="width: 100%" id="txtNickName" type="email" class="textBox" placeholder="Vui lòng điền Email" />
+                </div>
+                <br />
+                <div id="divButton">
+                    <input id="btnStartChat" type="button" class="submitButton" value="Bắt đầu Chat" />
+                </div>
+            </div>
+            <div id="divChat" class="chatRoom">
+                <div style="text-align: left; font-size: 14px; background-color: white; width: 100%; height: 200px; overflow-y: scroll" id="divMessage" class="messageArea">
+                </div>
+                <input id="txtPrivateMessage" style="border-top: 1px solid; width: 100%" placeholder="Nhập nội dung và nhấn 'Enter' để chat" type="text" />
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#wdchat_title").click(function () {
+            $("#wdchat_form").toggle(300);
+        });
+    })
+</script>
+<script type="text/javascript">
+
+    $(function () {
+
+        setScreen(false);
+
+        // Declare a proxy to reference the hub. 
+        var chatHub = $.connection.chatHub;
+
+
+        registerClientMethods(chatHub);
+
+        // Start Hub
+        $.connection.hub.start().done(function () {
+            
+            chatHub.server.sendUserAdmin('@Html.Action("LoadOption","Common",new{code="adminid"})');
+
+            registerEvents(chatHub);
+
+        });
+
+    });
+
+    function setScreen(isLogin) {
+
+        if (!isLogin) {
+
+            $("#divChat").hide();
+            $("#divLogin").show();
+        }
+        else {
+
+            $("#divChat").show();
+            $("#divLogin").hide();
+        }
+    }
+
+    function registerEvents(chatHub) {
+
+        function IsEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+        }
+
+        $("#btnStartChat").click(function () {
+            var name = $("#txtNickName").val();
+
+            if (name.length > 0) {
+                if (IsEmail(name)) {
+                    $("#txtPrivateMessage").focus();
+                    chatHub.server.connect(name);
+                } else {
+                    alert("Email ko hợp lệ");
+                }
+            }
+            else {
+                alert("Please enter name");
+            }
+
+        });
+
+        /*$('#btnSendMsg').click(function () {
+
+            var msg = $("#txtMessage").val();
+            if (msg.length > 0) {
+
+                var userName = $('#hdUserName').val();
+                chatHub.server.sendMessageToAll(userName, msg);
+                $("#txtMessage").val('');
+            }
+        });*/
+
+
+        $("#txtNickName").keypress(function (e) {
+            if (e.which == 13) {
+                $("#btnStartChat").click();
+            }
+        });
+
+        $("#txtMessage").keypress(function (e) {
+            if (e.which == 13) {
+                $('#btnSendMsg').click();
+            }
+        });
+      
+    }
+
+    function registerClientMethods(chatHub) {
+
+        // Calls when user successfully logged in
+        chatHub.client.onConnected = function (id, userName, allUsers, messages) {
+
+            setScreen(true);
+        }
+
+        chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message) {
+            // windowId = '@Html.Action("LoadOption", "Common", new { code = "adminid" })';
+            // var ctrId = 'private_' + windowId;
+
+            /*  if ($('#' + ctrId).length == 0) {
+  
+                  createPrivateChatWindow(chatHub, windowId, ctrId, fromUserName);
+              }*/
+
+            $('#divMessage').append('<div class="message"><span class="userName">' + fromUserName + '</span>:<span style="color:#31A8D2"> ' + message + '</span></div>');
+
+
+            // set scrollbar
+            var height = $('#divMessage')[0].scrollHeight;
+            $('#divMessage').scrollTop(height);
+        };
+      
+
+        var idadmin = "";
+        //get idadmin
+        chatHub.client.getuserid = function (id) {
+            idadmin = id;
+        };
+
+        // Text Box event
+        $("#divChat").find("#txtPrivateMessage").keypress(function (e) {
+            if (e.which == 13) {
+                $textBox = $("#divChat").find("#txtPrivateMessage");
+                var msg = $textBox.val();
+                if (msg.length > 0) {
+                    chatHub.server.sendPrivateMessage(idadmin, msg);
+                    $textBox.val('');
+                }
+            }
+        });
+    }
+</script>

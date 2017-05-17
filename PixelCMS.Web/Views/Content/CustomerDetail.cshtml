@@ -1,0 +1,138 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+    <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+    <meta name="description" content ="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+    @Html.Raw(Model.Html_Head)
+    }
+}
+
+@if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin")){
+    @section adminpanel{
+     @Html.Action("AdminPanel","Common",new{postid=Model.Id,posttype=Model.PostType.Name})
+    }
+}
+
+@{
+    var imagelink = db.MediaFiles.Where(x => x.Post.Id == Model.Id).OrderBy(o=>o.Order).ToList();    
+}
+
+        <!-- Page title -->
+        <div id="page-title">
+            <div class="container">
+                <div class="sixteen columns alpha omega">
+                    <h1>@Model.Title</h1>
+                </div>
+            </div>
+        </div>
+        <!-- /Page title -->
+        
+        <div id="breadcrumbs">
+            <div class="container">
+                <div class="sixteen columns alpha omega">
+		@Html.Action("Breadcrumb","Common",new{breadcrumb = ViewBag.BreadCrumb})
+                </div>
+            </div>
+        </div>
+
+
+   <!-- Content -->
+    <section id="content">
+        <div class="container">
+            <div class="nine columns">
+            <div class="project-image portfolio"> 
+                @if(imagelink.FirstOrDefault() != null){
+				<div class="flexslider">
+                  <ul class="slides">
+                    @foreach (var image in imagelink) { 
+                        <li><a href="@image.URL" rel="prettyPhoto[portfolio]"><img src="@image.URL" alt="" /></a></li>    
+                        }
+
+				</ul>
+                </div> 
+                }
+                else{
+                    <span>@Resources.common_nopic</span>
+                }
+                </div>
+            </div>
+            
+            <div class="seven columns">
+                <div class="project-details">
+				<h2>@Model.Title</h2>
+				
+				<div class="clear"></div>
+				<hr />
+
+				<ul>
+					<li><span>@Resources.common_date:</span>@Html.Action("LoadAttribute","Common",new{id=Model.Id,code="project-date"})</li>
+					<li><span>@Resources.common_customer:</span>@Html.Action("LoadAttribute","Common",new{id=Model.Id,code="project-customer"})</li>
+					<li><span>@Resources.common_description:</span>@Model.Description</li>
+				</ul>
+                    <a class="btn-image" href="@Html.Action("LoadAttribute","Common",new{id=Model.Id,code="project-link"})" target="_blank">@Resources.project_visitwebsite</a>
+			    </div>
+
+                <article class="project-description">
+				@Html.Raw(Model.Content)
+			    </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+@section css{
+    <link rel="stylesheet" href="~/Theme/css/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="~/Theme/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+    }
+
+@section scripts{
+    @Scripts.Render("~/Theme/js/prettyPhoto")
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $("area[rel^='prettyPhoto']").prettyPhoto();
+
+            $(".portfolio:first a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'fast', theme: 'pp_default', slideshow: 4000, opacity: 0.50, deeplinking: false, overlay_gallery: false, autoplay_slideshow: false });
+
+        });
+	</script>
+
+    <!-- FlexSlider -->    
+    <script src="~/Theme/js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+            $(function(){
+              SyntaxHighlighter.all();
+            });
+            $(window).load(function(){
+              $('.flexslider').flexslider({
+                animation: "fade",
+                start: function(slider){
+                  $('body').removeClass('loading');
+                }
+              });
+            });
+	</script>
+    <!-- /FlexSlider -->
+    }

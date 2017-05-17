@@ -1,0 +1,103 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.webpages_Roles>
+
+@if (Model != null)
+{
+    int count = 0;
+    int stt = 1;
+    <h4>Nhóm</h4>
+        <table id="GroupMail-grid" class="grid" style="width: 30%">
+            <tr>
+                 <th><input type="checkbox" id="group_matter"/></th>
+                <th>STT</th>
+                <th>Tên nhóm</th>
+            </tr>
+            @foreach (var item in Model.Where(x => x.RoleName != "tkmadmin"))
+            {
+                count++;
+                stt = Model.PageSize * (Model.PageNumber - 1) + count;
+                <tr>
+                    <td><input type="checkbox" class="group_child" value="@item.RoleId"/></td>
+                    <td>@stt</td>
+                    <td>@Html.DisplayFor(modelItem => item.RoleName)</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3"><div class="pager">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+       
+        @for (int i = 1; i < Model.PageCount + 1; i++)
+        {
+            if (i == Model.PageNumber)
+            {
+            <b>
+                <a style="font-size: large;">@i</a>@Html.Raw(" ")
+            </b>
+            }
+            else
+            {
+            @Ajax.ActionLink(i.ToString(), "Group",
+                             new
+                                 {
+                                     page = i,
+                                     // timviec = ViewBag.SearchValue
+                                 },
+                             new AjaxOptions
+                                 {
+                                     UpdateTargetId = "update1",
+                                     LoadingElementId = "ajaxloading",
+                                     HttpMethod = "post"
+                                 }
+                 )
+            @Html.Raw(" ")
+            }
+        }
+        
+    </div></td>
+            </tr>
+        </table>
+    
+}
+
+<script>
+    $(function() {
+        $('#group_matter').click(function () {
+            $('.group_child').attr('checked', $(this).prop("checked")).prop('checked', this.checked).change();
+        });
+        //wire up checkboxes Group .
+        $('#GroupMail-grid').on('change', 'input[type=checkbox][class=group_child]', function (e) {
+            var $check = $(this);
+            if ($check.is(":checked") == true) {
+                //tìm trong mảng
+                var checked = jQuery.inArray($check.val(), selectedIdsGroup);
+                //=-1 là ko có trong mảng .thêm vào mảng
+                if (checked == -1) {
+                    //add id to selectedIdsGroup.
+                    selectedIdsGroup.push($check.val());
+                }
+            }
+            else {
+                var checked1 = jQuery.inArray($check.val(), selectedIdsGroup);
+                if (checked1 > -1){
+                    //remove id from selectedIdsGroup.
+                    selectedIdsGroup = $.grep(selectedIdsGroup, function (item, index) {
+                        return item != $check.val();
+                    });
+                }
+            }
+        });
+        
+        //update checkbox paging
+        $('#GroupMail-grid input[type=checkbox][id!=mastercheckbox]').each(function () {
+            var currentId = $(this).val();
+            var checked = jQuery.inArray(currentId, selectedIdsGroup);
+            //set checked based on if current checkbox's value is in selectedIds.
+            $(this).attr('checked', checked > -1);
+        });
+
+        //update checkbox matter
+            var numChkBoxes = $('#GroupMail-grid input[type=checkbox][id!=group_matter]').length;
+            var numChkBoxesChecked = $('#GroupMail-grid input[type=checkbox][checked][id!=group_matter]').length;
+            $('#group_matter').attr('checked', numChkBoxes == numChkBoxesChecked && numChkBoxes > 0);
+
+    })
+</script>

@@ -1,0 +1,902 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ElFinder.Net.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ElFinder.Fakes.ShimConnector">
+            <summary>Shim type of ElFinder.Connector</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimConnector.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimConnector.#ctor(ElFinder.Connector)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimConnector.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimConnector.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.ConstructorIDriver">
+            <summary>Sets the shim of Connector.Connector(IDriver driver)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.GetFileByHashString">
+            <summary>Sets the shim of Connector.GetFileByHash(String hash)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.GetTargetsArrayHttpRequestBase">
+            <summary>Sets the shim of Connector.GetTargetsArray(HttpRequestBase request)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.GetThumbnailHttpRequestBaseHttpResponseBaseString">
+            <summary>Sets the shim of Connector.GetThumbnail(HttpRequestBase request, HttpResponseBase response, String hash)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.ProcessHttpRequestBase">
+            <summary>Sets the shim of Connector.Process(HttpRequestBase request)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimConnector.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.AllInstances.GetFileByHashString">
+            <summary>Sets the shim of Connector.GetFileByHash(String hash)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.AllInstances.GetTargetsArrayHttpRequestBase">
+            <summary>Sets the shim of Connector.GetTargetsArray(HttpRequestBase request)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.AllInstances.GetThumbnailHttpRequestBaseHttpResponseBaseString">
+            <summary>Sets the shim of Connector.GetThumbnail(HttpRequestBase request, HttpResponseBase response, String hash)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimConnector.AllInstances.ProcessHttpRequestBase">
+            <summary>Sets the shim of Connector.Process(HttpRequestBase request)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimFileSystemDriver">
+            <summary>Shim type of ElFinder.FileSystemDriver</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFileSystemDriver.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFileSystemDriver.#ctor(ElFinder.FileSystemDriver)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFileSystemDriver.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFileSystemDriver.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFileSystemDriver.Bind(ElFinder.IDriver)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AddRootRoot">
+            <summary>Sets the shim of FileSystemDriver.AddRoot(Root item)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.Constructor">
+            <summary>Sets the shim of FileSystemDriver.FileSystemDriver()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.DirectoryCopyDirectoryInfoStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.DirectoryCopy(DirectoryInfo sourceDir, String destDirName, Boolean copySubDirs)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverCropStringInt32Int32Int32Int32">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Crop(String target, Int32 x, Int32 y, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverDimString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Dim(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverDuplicateIEnumerableOfString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Duplicate(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverFileStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.File(String target, Boolean download)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverGetString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Get(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverInitString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Init(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverListString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.List(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverMakeDirStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.MakeDir(String target, String name)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverMakeFileStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.MakeFile(String target, String name)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverOpenStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Open(String target, Boolean tree)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverParentsString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Parents(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverPasteStringStringIEnumerableOfStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Paste(String source, String dest, IEnumerable`1&lt;String&gt; targets, Boolean isCut)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverPutStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Put(String target, String content)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverRemoveIEnumerableOfString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Remove(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverRenameStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Rename(String target, String name)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverResizeStringInt32Int32">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Resize(String target, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverRotateStringInt32">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Rotate(String target, Int32 degree)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverThumbsIEnumerableOfString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Thumbs(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverTreeString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Tree(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ElFinderIDriverUploadStringHttpFileCollectionBase">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Upload(String target, HttpFileCollectionBase targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.JsonObject">
+            <summary>Sets the shim of FileSystemDriver.Json(Object data)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.ParsePathString">
+            <summary>Sets the shim of FileSystemDriver.ParsePath(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.RemoveThumbsFullPath">
+            <summary>Sets the shim of FileSystemDriver.RemoveThumbs(FullPath path)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.RootsGet">
+            <summary>Sets the shim of FileSystemDriver.get_Roots()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver._ElFinderIDriverInitb__4Root">
+            <summary>Sets the shim of FileSystemDriver.&lt;ElFinder.IDriver.Init&gt;b__4(Root r)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimFileSystemDriver.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.AddRootRoot">
+            <summary>Sets the shim of FileSystemDriver.AddRoot(Root item)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.DirectoryCopyDirectoryInfoStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.DirectoryCopy(DirectoryInfo sourceDir, String destDirName, Boolean copySubDirs)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverCropStringInt32Int32Int32Int32">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Crop(String target, Int32 x, Int32 y, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverDimString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Dim(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverDuplicateIEnumerableOfString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Duplicate(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverFileStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.File(String target, Boolean download)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverGetString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Get(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverInitString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Init(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverListString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.List(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverMakeDirStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.MakeDir(String target, String name)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverMakeFileStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.MakeFile(String target, String name)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverOpenStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Open(String target, Boolean tree)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverParentsString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Parents(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverPasteStringStringIEnumerableOfStringBoolean">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Paste(String source, String dest, IEnumerable`1&lt;String&gt; targets, Boolean isCut)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverPutStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Put(String target, String content)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverRemoveIEnumerableOfString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Remove(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverRenameStringString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Rename(String target, String name)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverResizeStringInt32Int32">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Resize(String target, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverRotateStringInt32">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Rotate(String target, Int32 degree)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverThumbsIEnumerableOfString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Thumbs(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverTreeString">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Tree(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ElFinderIDriverUploadStringHttpFileCollectionBase">
+            <summary>Sets the shim of FileSystemDriver.ElFinder.IDriver.Upload(String target, HttpFileCollectionBase targets)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.JsonObject">
+            <summary>Sets the shim of FileSystemDriver.Json(Object data)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.ParsePathString">
+            <summary>Sets the shim of FileSystemDriver.ParsePath(String target)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.RemoveThumbsFullPath">
+            <summary>Sets the shim of FileSystemDriver.RemoveThumbs(FullPath path)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFileSystemDriver.AllInstances.RootsGet">
+            <summary>Sets the shim of FileSystemDriver.get_Roots()</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimFullPath">
+            <summary>Shim type of ElFinder.FullPath</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFullPath.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFullPath.#ctor(ElFinder.FullPath)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFullPath.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimFullPath.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.ConstructorRootFileSystemInfo">
+            <summary>Sets the shim of FullPath.FullPath(Root root, FileSystemInfo fileSystemObject)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.DirectoryGet">
+            <summary>Sets the shim of FullPath.get_Directory()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.FileGet">
+            <summary>Sets the shim of FullPath.get_File()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.IsDirectotyGet">
+            <summary>Sets the shim of FullPath.get_IsDirectoty()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.RelativePathGet">
+            <summary>Sets the shim of FullPath.get_RelativePath()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.RootGet">
+            <summary>Sets the shim of FullPath.get_Root()</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimFullPath.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.AllInstances.DirectoryGet">
+            <summary>Sets the shim of FullPath.get_Directory()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.AllInstances.FileGet">
+            <summary>Sets the shim of FullPath.get_File()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.AllInstances.IsDirectotyGet">
+            <summary>Sets the shim of FullPath.get_IsDirectoty()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.AllInstances.RelativePathGet">
+            <summary>Sets the shim of FullPath.get_RelativePath()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimFullPath.AllInstances.RootGet">
+            <summary>Sets the shim of FullPath.get_Root()</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimImageWithMime">
+            <summary>Shim type of ElFinder.ImageWithMime</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimImageWithMime.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimImageWithMime.#ctor(ElFinder.ImageWithMime)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimImageWithMime.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimImageWithMime.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.ConstructorStringStream">
+            <summary>Sets the shim of ImageWithMime.ImageWithMime(String mime, Stream stream)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.ImageStreamGet">
+            <summary>Sets the shim of ImageWithMime.get_ImageStream()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.ImageStreamSetStream">
+            <summary>Sets the shim of ImageWithMime.set_ImageStream(Stream value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.MimeGet">
+            <summary>Sets the shim of ImageWithMime.get_Mime()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.MimeSetString">
+            <summary>Sets the shim of ImageWithMime.set_Mime(String value)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimImageWithMime.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.AllInstances.ImageStreamGet">
+            <summary>Sets the shim of ImageWithMime.get_ImageStream()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.AllInstances.ImageStreamSetStream">
+            <summary>Sets the shim of ImageWithMime.set_ImageStream(Stream value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.AllInstances.MimeGet">
+            <summary>Sets the shim of ImageWithMime.get_Mime()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimImageWithMime.AllInstances.MimeSetString">
+            <summary>Sets the shim of ImageWithMime.set_Mime(String value)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimRoot">
+            <summary>Shim type of ElFinder.Root</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimRoot.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimRoot.#ctor(ElFinder.Root)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimRoot.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.ShimRoot.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AliasGet">
+            <summary>Sets the shim of Root.get_Alias()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AliasSetString">
+            <summary>Sets the shim of Root.set_Alias(String value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.CanCreateThumbnailFileInfo">
+            <summary>Sets the shim of Root.CanCreateThumbnail(FileInfo input)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ConstructorDirectoryInfo">
+            <summary>Sets the shim of Root.Root(DirectoryInfo directory)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ConstructorDirectoryInfoString">
+            <summary>Sets the shim of Root.Root(DirectoryInfo directory, String url)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.DirectoryGet">
+            <summary>Sets the shim of Root.get_Directory()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.DirectorySetDirectoryInfo">
+            <summary>Sets the shim of Root.set_Directory(DirectoryInfo value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GenerateThumbHashFileInfo">
+            <summary>Sets the shim of Root.GenerateThumbHash(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GenerateThumbPathFileInfo">
+            <summary>Sets the shim of Root.GenerateThumbPath(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GenerateThumbnailFullPath">
+            <summary>Sets the shim of Root.GenerateThumbnail(FullPath originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GetExistingThumbHashFileInfo">
+            <summary>Sets the shim of Root.GetExistingThumbHash(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GetExistingThumbPathDirectoryInfo">
+            <summary>Sets the shim of Root.GetExistingThumbPath(DirectoryInfo originalDirectory)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GetExistingThumbPathFileInfo">
+            <summary>Sets the shim of Root.GetExistingThumbPath(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.GetImageDimensionFileInfo">
+            <summary>Sets the shim of Root.GetImageDimension(FileInfo input)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.IsLockedGet">
+            <summary>Sets the shim of Root.get_IsLocked()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.IsLockedSetBoolean">
+            <summary>Sets the shim of Root.set_IsLocked(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.IsReadOnlyGet">
+            <summary>Sets the shim of Root.get_IsReadOnly()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.IsReadOnlySetBoolean">
+            <summary>Sets the shim of Root.set_IsReadOnly(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.IsShowOnlyGet">
+            <summary>Sets the shim of Root.get_IsShowOnly()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.IsShowOnlySetBoolean">
+            <summary>Sets the shim of Root.set_IsShowOnly(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.LockedFoldersGet">
+            <summary>Sets the shim of Root.get_LockedFolders()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.LockedFoldersSetListOfString">
+            <summary>Sets the shim of Root.set_LockedFolders(List`1&lt;String&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.MaxUploadSizeGet">
+            <summary>Sets the shim of Root.get_MaxUploadSize()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.MaxUploadSizeInKbGet">
+            <summary>Sets the shim of Root.get_MaxUploadSizeInKb()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.MaxUploadSizeInKbSetNullableOfDouble">
+            <summary>Sets the shim of Root.set_MaxUploadSizeInKb(Nullable`1&lt;Double&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.MaxUploadSizeInMbGet">
+            <summary>Sets the shim of Root.get_MaxUploadSizeInMb()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.MaxUploadSizeInMbSetNullableOfDouble">
+            <summary>Sets the shim of Root.set_MaxUploadSizeInMb(Nullable`1&lt;Double&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.MaxUploadSizeSetNullableOfInt32">
+            <summary>Sets the shim of Root.set_MaxUploadSize(Nullable`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.PicturesEditorGet">
+            <summary>Sets the shim of Root.get_PicturesEditor()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.PicturesEditorSetIPicturesEditor">
+            <summary>Sets the shim of Root.set_PicturesEditor(IPicturesEditor value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.StartPathGet">
+            <summary>Sets the shim of Root.get_StartPath()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.StartPathSetDirectoryInfo">
+            <summary>Sets the shim of Root.set_StartPath(DirectoryInfo value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ThumbnailsSizeGet">
+            <summary>Sets the shim of Root.get_ThumbnailsSize()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ThumbnailsSizeSetInt32">
+            <summary>Sets the shim of Root.set_ThumbnailsSize(Int32 value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ThumbnailsStorageGet">
+            <summary>Sets the shim of Root.get_ThumbnailsStorage()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ThumbnailsStorageSetDirectoryInfo">
+            <summary>Sets the shim of Root.set_ThumbnailsStorage(DirectoryInfo value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ThumbnailsUrlGet">
+            <summary>Sets the shim of Root.get_ThumbnailsUrl()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.ThumbnailsUrlSetString">
+            <summary>Sets the shim of Root.set_ThumbnailsUrl(String value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.UploadOverwriteGet">
+            <summary>Sets the shim of Root.get_UploadOverwrite()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.UploadOverwriteSetBoolean">
+            <summary>Sets the shim of Root.set_UploadOverwrite(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.UrlGet">
+            <summary>Sets the shim of Root.get_Url()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.UrlSetString">
+            <summary>Sets the shim of Root.set_Url(String value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.VolumeIdGet">
+            <summary>Sets the shim of Root.get_VolumeId()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.VolumeIdSetString">
+            <summary>Sets the shim of Root.set_VolumeId(String value)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.ShimRoot.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.AliasGet">
+            <summary>Sets the shim of Root.get_Alias()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.AliasSetString">
+            <summary>Sets the shim of Root.set_Alias(String value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.CanCreateThumbnailFileInfo">
+            <summary>Sets the shim of Root.CanCreateThumbnail(FileInfo input)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.DirectoryGet">
+            <summary>Sets the shim of Root.get_Directory()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.DirectorySetDirectoryInfo">
+            <summary>Sets the shim of Root.set_Directory(DirectoryInfo value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GenerateThumbHashFileInfo">
+            <summary>Sets the shim of Root.GenerateThumbHash(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GenerateThumbPathFileInfo">
+            <summary>Sets the shim of Root.GenerateThumbPath(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GenerateThumbnailFullPath">
+            <summary>Sets the shim of Root.GenerateThumbnail(FullPath originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GetExistingThumbHashFileInfo">
+            <summary>Sets the shim of Root.GetExistingThumbHash(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GetExistingThumbPathDirectoryInfo">
+            <summary>Sets the shim of Root.GetExistingThumbPath(DirectoryInfo originalDirectory)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GetExistingThumbPathFileInfo">
+            <summary>Sets the shim of Root.GetExistingThumbPath(FileInfo originalImage)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.GetImageDimensionFileInfo">
+            <summary>Sets the shim of Root.GetImageDimension(FileInfo input)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.IsLockedGet">
+            <summary>Sets the shim of Root.get_IsLocked()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.IsLockedSetBoolean">
+            <summary>Sets the shim of Root.set_IsLocked(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.IsReadOnlyGet">
+            <summary>Sets the shim of Root.get_IsReadOnly()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.IsReadOnlySetBoolean">
+            <summary>Sets the shim of Root.set_IsReadOnly(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.IsShowOnlyGet">
+            <summary>Sets the shim of Root.get_IsShowOnly()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.IsShowOnlySetBoolean">
+            <summary>Sets the shim of Root.set_IsShowOnly(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.LockedFoldersGet">
+            <summary>Sets the shim of Root.get_LockedFolders()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.LockedFoldersSetListOfString">
+            <summary>Sets the shim of Root.set_LockedFolders(List`1&lt;String&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.MaxUploadSizeGet">
+            <summary>Sets the shim of Root.get_MaxUploadSize()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.MaxUploadSizeInKbGet">
+            <summary>Sets the shim of Root.get_MaxUploadSizeInKb()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.MaxUploadSizeInKbSetNullableOfDouble">
+            <summary>Sets the shim of Root.set_MaxUploadSizeInKb(Nullable`1&lt;Double&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.MaxUploadSizeInMbGet">
+            <summary>Sets the shim of Root.get_MaxUploadSizeInMb()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.MaxUploadSizeInMbSetNullableOfDouble">
+            <summary>Sets the shim of Root.set_MaxUploadSizeInMb(Nullable`1&lt;Double&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.MaxUploadSizeSetNullableOfInt32">
+            <summary>Sets the shim of Root.set_MaxUploadSize(Nullable`1&lt;Int32&gt; value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.PicturesEditorGet">
+            <summary>Sets the shim of Root.get_PicturesEditor()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.PicturesEditorSetIPicturesEditor">
+            <summary>Sets the shim of Root.set_PicturesEditor(IPicturesEditor value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.StartPathGet">
+            <summary>Sets the shim of Root.get_StartPath()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.StartPathSetDirectoryInfo">
+            <summary>Sets the shim of Root.set_StartPath(DirectoryInfo value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.ThumbnailsSizeGet">
+            <summary>Sets the shim of Root.get_ThumbnailsSize()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.ThumbnailsSizeSetInt32">
+            <summary>Sets the shim of Root.set_ThumbnailsSize(Int32 value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.ThumbnailsStorageGet">
+            <summary>Sets the shim of Root.get_ThumbnailsStorage()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.ThumbnailsStorageSetDirectoryInfo">
+            <summary>Sets the shim of Root.set_ThumbnailsStorage(DirectoryInfo value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.ThumbnailsUrlGet">
+            <summary>Sets the shim of Root.get_ThumbnailsUrl()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.ThumbnailsUrlSetString">
+            <summary>Sets the shim of Root.set_ThumbnailsUrl(String value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.UploadOverwriteGet">
+            <summary>Sets the shim of Root.get_UploadOverwrite()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.UploadOverwriteSetBoolean">
+            <summary>Sets the shim of Root.set_UploadOverwrite(Boolean value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.UrlGet">
+            <summary>Sets the shim of Root.get_Url()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.UrlSetString">
+            <summary>Sets the shim of Root.set_Url(String value)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.VolumeIdGet">
+            <summary>Sets the shim of Root.get_VolumeId()</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.ShimRoot.AllInstances.VolumeIdSetString">
+            <summary>Sets the shim of Root.set_VolumeId(String value)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubConnector">
+            <summary>Stub type of ElFinder.Connector</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubConnector.#ctor(ElFinder.IDriver)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubConnector.InitializeStub">
+            <summary>Initializes a new instance of type StubConnector</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubConnector.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubConnector.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubConnector.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubFileSystemDriver">
+            <summary>Stub type of ElFinder.FileSystemDriver</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubFileSystemDriver.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubFileSystemDriver.InitializeStub">
+            <summary>Initializes a new instance of type StubFileSystemDriver</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubFileSystemDriver.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubFileSystemDriver.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubFileSystemDriver.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubFullPath">
+            <summary>Stub type of ElFinder.FullPath</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubFullPath.#ctor(ElFinder.Root,System.IO.FileSystemInfo)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubFullPath.InitializeStub">
+            <summary>Initializes a new instance of type StubFullPath</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubFullPath.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubFullPath.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubFullPath.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubIDriver">
+            <summary>Stub type of ElFinder.IDriver</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.#ctor">
+            <summary>Initializes a new instance of type StubIDriver</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.CropStringInt32Int32Int32Int32">
+            <summary>Sets the stub of IDriver.Crop(String target, Int32 x, Int32 y, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.DimString">
+            <summary>Sets the stub of IDriver.Dim(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.DuplicateIEnumerableOfString">
+            <summary>Sets the stub of IDriver.Duplicate(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Crop(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Sets the stub of IDriver.Crop(String target, Int32 x, Int32 y, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Dim(System.String)">
+            <summary>Sets the stub of IDriver.Dim(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Duplicate(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Sets the stub of IDriver.Duplicate(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#File(System.String,System.Boolean)">
+            <summary>Sets the stub of IDriver.File(String target, Boolean download)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Get(System.String)">
+            <summary>Sets the stub of IDriver.Get(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Init(System.String)">
+            <summary>Sets the stub of IDriver.Init(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#List(System.String)">
+            <summary>Sets the stub of IDriver.List(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#MakeDir(System.String,System.String)">
+            <summary>Sets the stub of IDriver.MakeDir(String target, String name)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#MakeFile(System.String,System.String)">
+            <summary>Sets the stub of IDriver.MakeFile(String target, String name)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Open(System.String,System.Boolean)">
+            <summary>Sets the stub of IDriver.Open(String target, Boolean tree)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Parents(System.String)">
+            <summary>Sets the stub of IDriver.Parents(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#ParsePath(System.String)">
+            <summary>Sets the stub of IDriver.ParsePath(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Paste(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>Sets the stub of IDriver.Paste(String source, String dest, IEnumerable`1&lt;String&gt; targets, Boolean isCut)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Put(System.String,System.String)">
+            <summary>Sets the stub of IDriver.Put(String target, String content)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Remove(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Sets the stub of IDriver.Remove(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Rename(System.String,System.String)">
+            <summary>Sets the stub of IDriver.Rename(String target, String name)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Resize(System.String,System.Int32,System.Int32)">
+            <summary>Sets the stub of IDriver.Resize(String target, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Rotate(System.String,System.Int32)">
+            <summary>Sets the stub of IDriver.Rotate(String target, Int32 degree)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Thumbs(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Sets the stub of IDriver.Thumbs(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Tree(System.String)">
+            <summary>Sets the stub of IDriver.Tree(String target)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIDriver.efn::ElFinder#IDriver#Upload(System.String,System.Web.HttpFileCollectionBase)">
+            <summary>Sets the stub of IDriver.Upload(String target, HttpFileCollectionBase targets)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.FileStringBoolean">
+            <summary>Sets the stub of IDriver.File(String target, Boolean download)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.GetString">
+            <summary>Sets the stub of IDriver.Get(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.InitString">
+            <summary>Sets the stub of IDriver.Init(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.ListString">
+            <summary>Sets the stub of IDriver.List(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.MakeDirStringString">
+            <summary>Sets the stub of IDriver.MakeDir(String target, String name)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.MakeFileStringString">
+            <summary>Sets the stub of IDriver.MakeFile(String target, String name)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.OpenStringBoolean">
+            <summary>Sets the stub of IDriver.Open(String target, Boolean tree)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.ParentsString">
+            <summary>Sets the stub of IDriver.Parents(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.ParsePathString">
+            <summary>Sets the stub of IDriver.ParsePath(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.PasteStringStringIEnumerableOfStringBoolean">
+            <summary>Sets the stub of IDriver.Paste(String source, String dest, IEnumerable`1&lt;String&gt; targets, Boolean isCut)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.PutStringString">
+            <summary>Sets the stub of IDriver.Put(String target, String content)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.RemoveIEnumerableOfString">
+            <summary>Sets the stub of IDriver.Remove(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.RenameStringString">
+            <summary>Sets the stub of IDriver.Rename(String target, String name)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.ResizeStringInt32Int32">
+            <summary>Sets the stub of IDriver.Resize(String target, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.RotateStringInt32">
+            <summary>Sets the stub of IDriver.Rotate(String target, Int32 degree)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.ThumbsIEnumerableOfString">
+            <summary>Sets the stub of IDriver.Thumbs(IEnumerable`1&lt;String&gt; targets)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.TreeString">
+            <summary>Sets the stub of IDriver.Tree(String target)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIDriver.UploadStringHttpFileCollectionBase">
+            <summary>Sets the stub of IDriver.Upload(String target, HttpFileCollectionBase targets)</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubIPicturesEditor">
+            <summary>Stub type of ElFinder.IPicturesEditor</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.#ctor">
+            <summary>Initializes a new instance of type StubIPicturesEditor</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.AttachBackingFieldToBackgroundColor">
+            <summary>Attaches delegates to emulate StubIPicturesEditor.BackgroundColor as a property with a backing field.</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.BackgroundColorGet">
+            <summary>Sets the stub of IPicturesEditor.get_BackgroundColor()</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.BackgroundColorSetColor">
+            <summary>Sets the stub of IPicturesEditor.set_BackgroundColor(Color value)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.CanProcessFileString">
+            <summary>Sets the stub of IPicturesEditor.CanProcessFile(String fileExtension)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.ConvertThumbnailExtensionString">
+            <summary>Sets the stub of IPicturesEditor.ConvertThumbnailExtension(String originalImageExtension)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.CropStringInt32Int32Int32Int32">
+            <summary>Sets the stub of IPicturesEditor.Crop(String file, Int32 x, Int32 y, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#CanProcessFile(System.String)">
+            <summary>Sets the stub of IPicturesEditor.CanProcessFile(String fileExtension)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#ConvertThumbnailExtension(System.String)">
+            <summary>Sets the stub of IPicturesEditor.ConvertThumbnailExtension(String originalImageExtension)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#Crop(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Sets the stub of IPicturesEditor.Crop(String file, Int32 x, Int32 y, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#GenerateThumbnail(System.IO.Stream,System.Int32,System.Boolean)">
+            <summary>Sets the stub of IPicturesEditor.GenerateThumbnail(Stream input, Int32 size, Boolean saveAspectRatio)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#Resize(System.String,System.Int32,System.Int32)">
+            <summary>Sets the stub of IPicturesEditor.Resize(String file, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#Rotate(System.String,System.Int32)">
+            <summary>Sets the stub of IPicturesEditor.Rotate(String file, Int32 degree)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.GenerateThumbnailStreamInt32Boolean">
+            <summary>Sets the stub of IPicturesEditor.GenerateThumbnail(Stream input, Int32 size, Boolean saveAspectRatio)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.ResizeStringInt32Int32">
+            <summary>Sets the stub of IPicturesEditor.Resize(String file, Int32 width, Int32 height)</summary>
+        </member>
+        <member name="F:ElFinder.Fakes.StubIPicturesEditor.RotateStringInt32">
+            <summary>Sets the stub of IPicturesEditor.Rotate(String file, Int32 degree)</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubIPicturesEditor.efn::ElFinder#IPicturesEditor#BackgroundColor">
+            <summary>Sets the stub of IPicturesEditor.get_BackgroundColor()</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubImageWithMime">
+            <summary>Stub type of ElFinder.ImageWithMime</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubImageWithMime.#ctor(System.String,System.IO.Stream)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubImageWithMime.InitializeStub">
+            <summary>Initializes a new instance of type StubImageWithMime</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubImageWithMime.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubImageWithMime.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubImageWithMime.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:ElFinder.Fakes.StubRoot">
+            <summary>Stub type of ElFinder.Root</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubRoot.#ctor(System.IO.DirectoryInfo)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubRoot.#ctor(System.IO.DirectoryInfo,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ElFinder.Fakes.StubRoot.InitializeStub">
+            <summary>Initializes a new instance of type StubRoot</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubRoot.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubRoot.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:ElFinder.Fakes.StubRoot.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

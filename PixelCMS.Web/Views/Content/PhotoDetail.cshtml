@@ -1,0 +1,78 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+    <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+    <meta name="description" content ="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+    @Html.Raw(Model.Html_Head)
+    }
+}
+@section adminpanel{
+@if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+{
+
+        @Html.Action("AdminPanel", "Common", new { postid = Model.Id, posttype = Model.PostType.Name })
+    }
+}
+
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var imagelink = db.MediaFiles.Where(x => x.Post.Id == Model.Id).OrderBy(o=>o.Order).ToList();    
+}
+<link rel="stylesheet" href="~/Theme/Styles/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Theme/Styles/lightbox.css" type="text/css" />
+<div id="main">
+      <h1 class="heading_page">@Model.Title</h1>
+      <!--Slide Albumn Detail-->
+      <div class="box gallery_albumn">
+        <div id="slider1" class="flexslider">
+            <ul class="slides">
+                 @foreach (var image in imagelink)
+                                        {
+                                            if (!string.IsNullOrEmpty(@image.URL))
+                                            {
+                                                <li>
+                                                    <img src="@image.URL" alt="" />
+                                                </li>    
+                                            }
+                                        }
+            </ul>
+        </div>
+        <div id="carousel1" class="flexslider">
+            <ul class="slides">
+                 @foreach (var image in imagelink)
+                                        {
+                                            if (!string.IsNullOrEmpty(@image.URL))
+                                            {
+                                                <li>
+                                                    <img src="@image.URL.Replace("Upload/", "Upload/_Thumbs/")" alt="" />
+                                                </li>    
+                                            }
+                                        }
+            </ul>
+        </div>
+      </div>
+      <!--end Slide Albumn Detail-->
+    </div>
+
+

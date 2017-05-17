@@ -1,0 +1,142 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Email>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models
+
+@{
+    ViewBag.Title = "Email";
+    ViewBag.PTitle = "Email";
+    ViewBag.PDescription = "Quản lý email";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    Email @Resources.admin_status_deletedsuccessfully
+</div>
+
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Email</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                <aside id="control">
+                    @{
+                        var admin = db.webpages_Roles.FirstOrDefault(z => z.RoleName == "admin");
+                        var tkmadmin = db.webpages_Roles.FirstOrDefault(z => z.RoleName == "tkmadmin");
+                        if (admin != null || tkmadmin!=null)
+                        {
+                            var accsess = db.Roles_Access.FirstOrDefault(x => x.Role_Id == admin.RoleId);
+                            var accsess1 = db.Roles_Access.FirstOrDefault(x => x.Role_Id == tkmadmin.RoleId);
+                            //nếu admin có quyền truy cập vào attribute thì hiển thị..
+                            if (accsess != null && accsess.Attribute || accsess1!=null)
+                            {
+                        <div>
+                            <a class="btn" href="@Url.Action("Subscribe", "Email")"><i class="fa fa-pencil-square"></i>@Resources.admin_email_subscribe</a>
+                            <a class="btn" href="@Url.Action("Index", "emailcampaign")"><i class="fa fa-pencil-square"></i>Chiến dịch gửi mail</a>
+                        </div>
+                            }
+                        }   
+                    }
+
+                    @using (Html.BeginForm("Index", "Email", FormMethod.Get))
+                    {
+                        <div>
+                            <form>
+                                <div class="search-input-area">
+                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "search-query", @placeholder = @Resources.admin_email_searchwithtitle })
+                                </div>
+                            </form>
+                        </div>
+                    }
+                </aside>
+
+
+                <table class="grid">
+                    <tr>
+                        <th width="25%">@Html.ActionLink(Resources.admin_content_title, "Index", new { sortOrder = ViewBag.TitleSortParm }) <i class="icon-caret-down"></i></th>
+                        <th width="10%">@Resources.admin_email_sender</th>
+                        <th width="20%">@Resources.admin_email_senderemail</th>
+                        <th width="15%">@Resources.admin_email_phone</th>
+                        <th width="20%">@Html.ActionLink("Ngày", "Index", new { sortOrder = ViewBag.DateSortParm }) <i class="icon-caret-down"></i></th>
+                        <th width="10%">@Resources.admin_email_viewed</th>
+                        <th width="15%"></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a style="color: royalblue;font-weight: bold"  href="@Url.Action("Details", "Email", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Subject)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Username)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateSend)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Read)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Delete", "Email", new { id = item.Id })" class="btn btn-small delete-link">
+                                    <img src="~/Areas/Admin/Content/icon/delete.png" />
+                                    Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+                <div>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                    @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>@Resources.admin_ask_suredelete email</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>

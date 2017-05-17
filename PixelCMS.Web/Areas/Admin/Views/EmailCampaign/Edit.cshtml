@@ -1,0 +1,149 @@
+﻿@model PixelCMS.Core.Models.EmailCampaign
+
+@{
+    ViewBag.Title = "Sửa EmailCampaign ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+<script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+<script src="~/Areas/Admin/Content/js/script.js"></script>
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Sửa chiến dịch</h1>
+
+            @using (Html.BeginForm())
+            {
+                <span style="color: royalblue">@TempData["mess"]</span>
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.CreateDate)
+                <aside id="control">
+                    <div>
+                        <input title="Gửi mail cho tất cả các email đăng ký nhận bản tin với nội dung bên dươi" type="submit" name="sendmailall" value="Send Mail All" class="btn btn-blue" /> 
+                        <input title="Gửi mail cá nhân hoặc cho nhóm.Vui lòng chọn email cá nhân hoặc nhóm bên dưới." type="submit" name="sendmail" value="Send Mail" class="btn btn-blue" />
+                        <input type="submit" name="save" value="Lưu" class="btn btn-blue" />
+                        <a href="@Url.Action("Index")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Gửi mail cho cá nhân</td>
+                        <td>
+                            <input type="email" name="email" placeholder="Nhập 1 email" minlength="5" maxlength="142" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Gửi mail cho nhóm </td>
+                        <td>@Html.ListBox("Groups", ViewBag.MultiselectGroup as MultiSelectList, new
+                                                                                                     {
+                                                                                                         @class = "chzn-select span12",
+                                                                                                         data_placeholder = "Chọn nhóm..."
+                                                                                                     }
+                                 )</td>
+                    </tr>
+                    <tr>
+                        <td class="label"><a href="@Url.Action("Create", "SMTP")" class="btn btn-blue">Tạo</a>SMTP (*) <i title="Là 1 email trung gian dùng để gửi cho khách hàng.Nên tạo nhiều mail khác nhau để gửi,để tránh spam." class="fa fa-question-circle"></i></td>
+                        <td>
+                            @if (Model.SMTP!= null)
+                            {
+                                @Html.TextBox("SMTP_User",Model.SMTP.User, new { placeholder = "Chọn tên FromMail(Mail gửi đi)" })
+                            }else
+                            {
+                                @Html.TextBox("SMTP_User", "", new { placeholder = "Chọn tên FromMail(Mail gửi đi)" })
+                            }
+                            @Html.HiddenFor(m => m.SMTP_Id)
+                            @Html.ValidationMessageFor(m => m.SMTP_Id)
+                        </td>
+                    </tr>
+                    <hr style="border: solid 1px" />
+                    <tr>
+                        <td class="label">Tên</td>
+                        <td>@Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "142", required = true })</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Tiêu đề</td>
+                        <td>@Html.TextBoxFor(model => model.Title, new { minlength = "5", maxlength = "142", required = true })</td>
+                    </tr>
+                    <tr>
+                        <td class="label">@Resources.admin_content_content</td>
+                        <td>@Html.TextAreaFor(model => model.Content)</td>
+                    </tr>
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>
+
+
+@Scripts.Render("~/bundles/jqueryval");
+@*<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>*@
+<script>
+    CKEDITOR.replace('Content',
+        {
+            height: '400px',
+            filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+            filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+            filebrowserUploadUrl:
+                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+            filebrowserImageUploadUrl:
+                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+            filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+        });
+</script>
+
+<script src="~/Areas/Admin/Content/assets/chosen/chosen.jquery.js"></script>
+<link href="~/Areas/Admin/Content/assets/chosen/chosen.min.css" rel="stylesheet" />
+<script> $(".chzn-select").chosen(); </script>
+
+<script type="text/javascript">
+    //  var termTemplate = "<span class='ui-autocomplete-term'>%s</span>";
+    var url = '@Url.Action("getsmtp", "EmailCampaign")';
+    $('#SMTP_User').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                data: { query: request.term },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.Title,
+                            value: item.Id,
+                            //icon: item.Image.replace("Upload/", "Upload/_Thumbs/"),
+                            //desc: item.Author,
+                        };
+                    }));
+                }
+            });
+        },
+        select: function (event, ui) {
+            //window.location.href = "/Admin/Content/Edit/" + ui.item.value;
+            $('#SMTP_User').val(ui.item.label);
+            $('#SMTP_Id').val(ui.item.value);
+            return false;
+        },
+        minLength: 1
+    })
+    //.autocomplete("instance")._renderItem = function (ul, item) {
+    //    item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+    //    return $("<li>")
+    //      .append("<a href=\"/Admin/Content/Edit/" + item.label + "\">" + item.value + "</a>")
+    //      .appendTo(ul);
+    //};
+    ;
+</script>

@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pixelcmsModelStoreContainer" CdmEntityContainer="pixelcmsEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="pixelcmsModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address1" ColumnName="Address" />
+          <ScalarProperty Name="District_Id" ColumnName="District_Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttributeGroups">
+      <EntityTypeMapping TypeName="pixelcmsModel.AttributeGroup">
+        <MappingFragment StoreEntitySet="AttributeGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttributeValues">
+      <EntityTypeMapping TypeName="pixelcmsModel.AttributeValue">
+        <MappingFragment StoreEntitySet="AttributeValue">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="pixelcmsModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counters">
+      <EntityTypeMapping TypeName="pixelcmsModel.Counter">
+        <MappingFragment StoreEntitySet="Counter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="SoLuongTryCap" ColumnName="SoLuongTryCap" />
+          <ScalarProperty Name="LanTruyCapGanNhat" ColumnName="LanTruyCapGanNhat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSubscribes">
+      <EntityTypeMapping TypeName="pixelcmsModel.EmailSubscribe">
+        <MappingFragment StoreEntitySet="EmailSubscribe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="pixelcmsModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FullCode" ColumnName="FullCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Construction" ColumnName="Construction" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediaFiles">
+      <EntityTypeMapping TypeName="pixelcmsModel.MediaFile">
+        <MappingFragment StoreEntitySet="MediaFiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Post_Id" ColumnName="Post_Id" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="pixelcmsModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="Field_1_Enable" ColumnName="Field_1_Enable" />
+          <ScalarProperty Name="Field_1_Label" ColumnName="Field_1_Label" />
+          <ScalarProperty Name="Field_2_Enable" ColumnName="Field_2_Enable" />
+          <ScalarProperty Name="Field_2_Label" ColumnName="Field_2_Label" />
+          <ScalarProperty Name="Field_3_Enable" ColumnName="Field_3_Enable" />
+          <ScalarProperty Name="Field_3_Label" ColumnName="Field_3_Label" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuPositions">
+      <EntityTypeMapping TypeName="pixelcmsModel.MenuPosition">
+        <MappingFragment StoreEntitySet="MenuPosition">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OptionGroups">
+      <EntityTypeMapping TypeName="pixelcmsModel.OptionGroup">
+        <MappingFragment StoreEntitySet="OptionGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Item_Language">
+      <EntityTypeMapping TypeName="pixelcmsModel.Order_Item_Language">
+        <MappingFragment StoreEntitySet="Order_Item_Language">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Status">
+      <EntityTypeMapping TypeName="pixelcmsModel.Order_Status">
+        <MappingFragment StoreEntitySet="Order_Status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PixelOptions">
+      <EntityTypeMapping TypeName="pixelcmsModel.PixelOption">
+        <MappingFragment StoreEntitySet="PixelOption">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Desciption" ColumnName="Desciption" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostAttributes">
+      <EntityTypeMapping TypeName="pixelcmsModel.PostAttribute">
+        <MappingFragment StoreEntitySet="PostAttribute">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Edit_Type" ColumnName="Edit_Type" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostTags">
+      <EntityTypeMapping TypeName="pixelcmsModel.PostTag">
+        <MappingFragment StoreEntitySet="PostTag">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostType_Name">
+      <EntityTypeMapping TypeName="pixelcmsModel.PostType_Name">
+        <MappingFragment StoreEntitySet="PostType_Name">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Posttype_id" ColumnName="Posttype_id" />
+          <ScalarProperty Name="Attribute_id" ColumnName="Attribute_id" />
+          <ScalarProperty Name="Option_id" ColumnName="Option_id" />
+          <ScalarProperty Name="OptionGroup_id" ColumnName="OptionGroup_id" />
+          <ScalarProperty Name="AttributeGroup_id" ColumnName="AttributeGroup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_PostType">
+      <EntityTypeMapping TypeName="pixelcmsModel.Roles_PostType">
+        <MappingFragment StoreEntitySet="Roles_PostType">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="PostType_Id" ColumnName="PostType_Id" />
+          <ScalarProperty Name="View" ColumnName="View" />
+          <ScalarProperty Name="Create" ColumnName="Create" />
+          <ScalarProperty Name="Edit" ColumnName="Edit" />
+          <ScalarProperty Name="Delete" ColumnName="Delete" />
+          <ScalarProperty Name="CatView" ColumnName="CatView" />
+          <ScalarProperty Name="CatCreate" ColumnName="CatCreate" />
+          <ScalarProperty Name="CatEdit" ColumnName="CatEdit" />
+          <ScalarProperty Name="CatDelete" ColumnName="CatDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slugs">
+      <EntityTypeMapping TypeName="pixelcmsModel.Slug">
+        <MappingFragment StoreEntitySet="Slug">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="PostType" ColumnName="PostType" />
+          <ScalarProperty Name="Slug1" ColumnName="Slug" />
+          <ScalarProperty Name="Slug_Count" ColumnName="Slug_Count" />
+          <ScalarProperty Name="Slug_Full" ColumnName="Slug_Full" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpecialCats">
+      <EntityTypeMapping TypeName="pixelcmsModel.SpecialCat">
+        <MappingFragment StoreEntitySet="SpecialCat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_OAuthMembership">
+      <EntityTypeMapping TypeName="pixelcmsModel.webpages_OAuthMembership">
+        <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Roles">
+      <EntityTypeMapping TypeName="pixelcmsModel.webpages_Roles">
+        <MappingFragment StoreEntitySet="webpages_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_UsersInRoles">
+      <EntityTypeMapping TypeName="pixelcmsModel.webpages_UsersInRoles">
+        <MappingFragment StoreEntitySet="webpages_UsersInRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="pixelcmsModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_CMS_TKTruyCap" FunctionName="pixelcmsModel.Store.sp_CMS_TKTruyCap">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="pixelcmsModel.sp_CMS_TKTruyCap_Result">
+          <ScalarProperty Name="HomNay" ColumnName="HomNay" />
+          <ScalarProperty Name="HomQua" ColumnName="HomQua" />
+          <ScalarProperty Name="TuanNay" ColumnName="TuanNay" />
+          <ScalarProperty Name="TuanTruoc" ColumnName="TuanTruoc" />
+          <ScalarProperty Name="ThangNay" ColumnName="ThangNay" />
+          <ScalarProperty Name="ThangTruoc" ColumnName="ThangTruoc" />
+          <ScalarProperty Name="TatCa" ColumnName="TatCa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="pixelcmsModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="pixelcmsModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="pixelcmsModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="pixelcmsModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="pixelcmsModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="pixelcmsModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="pixelcmsModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="pixelcmsModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="pixelcmsModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shippings">
+      <EntityTypeMapping TypeName="pixelcmsModel.Shipping">
+        <MappingFragment StoreEntitySet="Shipping">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="FeeOfUnit" ColumnName="FeeOfUnit" />
+          <ScalarProperty Name="MaxWeight" ColumnName="MaxWeight" />
+          <ScalarProperty Name="MinWeight" ColumnName="MinWeight" />
+          <ScalarProperty Name="FixedFee" ColumnName="FixedFee" />
+          <ScalarProperty Name="District_Id" ColumnName="District_Id" />
+          <ScalarProperty Name="Agent_Id" ColumnName="Agent_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="pixelcmsModel.Agent">
+        <MappingFragment StoreEntitySet="Agent">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockImports">
+      <EntityTypeMapping TypeName="pixelcmsModel.StockImport">
+        <MappingFragment StoreEntitySet="StockImport">
+          <ScalarProperty Name="CurrentQuantity" ColumnName="CurrentQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="pixelcmsModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Agent_Id" ColumnName="Agent_Id" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMTPs">
+      <EntityTypeMapping TypeName="pixelcmsModel.SMTP">
+        <MappingFragment StoreEntitySet="SMTP">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailCampaigns">
+      <EntityTypeMapping TypeName="pixelcmsModel.EmailCampaign">
+        <MappingFragment StoreEntitySet="EmailCampaign">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="SMTP_Id" ColumnName="SMTP_Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Webpages_EmailSubscribe" TypeName="pixelcmsModel.Webpages_EmailSubscribe" StoreEntitySet="Webpages_EmailSubscribe">
+      <EndProperty Name="webpages_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="EmailSubscribe">
+        <ScalarProperty Name="Id" ColumnName="EmailSubscribe" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Discounts">
+      <EntityTypeMapping TypeName="pixelcmsModel.Discount">
+        <MappingFragment StoreEntitySet="Discount">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_ProductAttribute">
+      <EntityTypeMapping TypeName="pixelcmsModel.Product_ProductAttribute">
+        <MappingFragment StoreEntitySet="Product_ProductAttribute">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ProductAttribute_Id" ColumnName="ProductAttribute_Id" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductAttributes">
+      <EntityTypeMapping TypeName="pixelcmsModel.ProductAttribute">
+        <MappingFragment StoreEntitySet="ProductAttribute">
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductAttributeGroups">
+      <EntityTypeMapping TypeName="pixelcmsModel.ProductAttributeGroup">
+        <MappingFragment StoreEntitySet="ProductAttributeGroup">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Membership">
+      <EntityTypeMapping TypeName="pixelcmsModel.webpages_Membership">
+        <MappingFragment StoreEntitySet="webpages_Membership">
+          <ScalarProperty Name="Banned" ColumnName="Banned" />
+          <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+          <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+          <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtraUserInformations">
+      <EntityTypeMapping TypeName="pixelcmsModel.ExtraUserInformation">
+        <MappingFragment StoreEntitySet="ExtraUserInformation">
+          <ScalarProperty Name="Verified" ColumnName="Verified" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuItems">
+      <EntityTypeMapping TypeName="pixelcmsModel.MenuItem">
+        <MappingFragment StoreEntitySet="MenuItem">
+          <ScalarProperty Name="PostType" ColumnName="PostType" />
+          <ScalarProperty Name="Field_3" ColumnName="Field_3" />
+          <ScalarProperty Name="Field_2" ColumnName="Field_2" />
+          <ScalarProperty Name="Field_1" ColumnName="Field_1" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Owner_Id" ColumnName="Owner_Id" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Cat" ColumnName="Cat" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Menu" ColumnName="Menu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post_PostAttribute">
+      <EntityTypeMapping TypeName="pixelcmsModel.Post_PostAttribute">
+        <MappingFragment StoreEntitySet="Post_PostAttribute">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Id_Attribute" ColumnName="Id_Attribute" />
+          <ScalarProperty Name="Id_Post" ColumnName="Id_Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="pixelcmsModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Sale_End" ColumnName="Sale_End" />
+          <ScalarProperty Name="Sale_Start" ColumnName="Sale_Start" />
+          <ScalarProperty Name="Sale_Price" ColumnName="Sale_Price" />
+          <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+          <ScalarProperty Name="CrossSell" ColumnName="CrossSell" />
+          <ScalarProperty Name="UpSell" ColumnName="UpSell" />
+          <ScalarProperty Name="Inv_Backorder" ColumnName="Inv_Backorder" />
+          <ScalarProperty Name="Inv_OutStockNoti" ColumnName="Inv_OutStockNoti" />
+          <ScalarProperty Name="Inv_OutStock" ColumnName="Inv_OutStock" />
+          <ScalarProperty Name="Inv_min_Quantity" ColumnName="Inv_min_Quantity" />
+          <ScalarProperty Name="Inv_Active" ColumnName="Inv_Active" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="pixelcmsModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="IsDestroy" ColumnName="IsDestroy" />
+          <ScalarProperty Name="View" ColumnName="View" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="ShipFee" ColumnName="ShipFee" />
+          <ScalarProperty Name="Date_Modified" ColumnName="Date_Modified" />
+          <ScalarProperty Name="Date_Add" ColumnName="Date_Add" />
+          <ScalarProperty Name="Coupon_Id" ColumnName="Coupon_Id" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Shipping_Address" ColumnName="Shipping_Address" />
+          <ScalarProperty Name="Shipping_Phone" ColumnName="Shipping_Phone" />
+          <ScalarProperty Name="Shipping_Email" ColumnName="Shipping_Email" />
+          <ScalarProperty Name="Shipping_Name" ColumnName="Shipping_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Order_Code" ColumnName="Order_Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupVariants">
+      <EntityTypeMapping TypeName="pixelcmsModel.GroupVariant">
+        <MappingFragment StoreEntitySet="GroupVariant">
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Variants">
+      <EntityTypeMapping TypeName="pixelcmsModel.Variant">
+        <MappingFragment StoreEntitySet="Variant">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="VariantOption_Id" ColumnName="VariantOption_Id" />
+          <ScalarProperty Name="VariantAtt_Id" ColumnName="VariantAtt_Id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="PriceOld" ColumnName="PriceOld" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VariantAttributes">
+      <EntityTypeMapping TypeName="pixelcmsModel.VariantAttribute">
+        <MappingFragment StoreEntitySet="VariantAttribute">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="VariantGroup_Id" ColumnName="VariantGroup_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VariantAttributeCombinations">
+      <EntityTypeMapping TypeName="pixelcmsModel.VariantAttributeCombination">
+        <MappingFragment StoreEntitySet="VariantAttributeCombination">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Gtin" ColumnName="Gtin" />
+          <ScalarProperty Name="ManufacturerPartNumber" ColumnName="ManufacturerPartNumber" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="AllowOutOfStockOrders" ColumnName="AllowOutOfStockOrders" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Details">
+      <EntityTypeMapping TypeName="pixelcmsModel.Order_Details">
+        <MappingFragment StoreEntitySet="Order_Details">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginHistories">
+      <EntityTypeMapping TypeName="pixelcmsModel.LoginHistory">
+        <MappingFragment StoreEntitySet="LoginHistory">
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+          <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_Access">
+      <EntityTypeMapping TypeName="pixelcmsModel.Roles_Access">
+        <MappingFragment StoreEntitySet="Roles_Access">
+          <ScalarProperty Name="field3" ColumnName="field3" />
+          <ScalarProperty Name="field2" ColumnName="field2" />
+          <ScalarProperty Name="field1" ColumnName="field1" />
+          <ScalarProperty Name="History" ColumnName="History" />
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="Shipping" ColumnName="Shipping" />
+          <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+          <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+          <ScalarProperty Name="Stats_View" ColumnName="Stats_View" />
+          <ScalarProperty Name="Order_Control" ColumnName="Order_Control" />
+          <ScalarProperty Name="Order_View" ColumnName="Order_View" />
+          <ScalarProperty Name="Header_Html" ColumnName="Header_Html" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Menu" ColumnName="Menu" />
+          <ScalarProperty Name="Option" ColumnName="Option" />
+          <ScalarProperty Name="PixelAdmin" ColumnName="PixelAdmin" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OptionVariants">
+      <EntityTypeMapping TypeName="pixelcmsModel.OptionVariant">
+        <MappingFragment StoreEntitySet="OptionVariant">
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Variant_Id" ColumnName="Variant_Id" />
+          <ScalarProperty Name="GroupVariant_Id" ColumnName="GroupVariant_Id" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Options">
+      <EntityTypeMapping TypeName="pixelcmsModel.Option">
+        <MappingFragment StoreEntitySet="Option">
+          <ScalarProperty Name="Public" ColumnName="Public" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Edit_Type" ColumnName="Edit_Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturers">
+      <EntityTypeMapping TypeName="pixelcmsModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="pixelcmsModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="ActiveProduct" ColumnName="ActiveProduct" />
+          <ScalarProperty Name="newpost" ColumnName="newpost" />
+          <ScalarProperty Name="Callforprice" ColumnName="Callforprice" />
+          <ScalarProperty Name="onsale" ColumnName="onsale" />
+          <ScalarProperty Name="feature" ColumnName="feature" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Price_Old" ColumnName="Price_Old" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="MainLang_Id" ColumnName="MainLang_Id" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Date_Edit" ColumnName="Date_Edit" />
+          <ScalarProperty Name="Date_Create" ColumnName="Date_Create" />
+          <ScalarProperty Name="User_Edit" ColumnName="User_Edit" />
+          <ScalarProperty Name="User_Create" ColumnName="User_Create" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Owner_Id" ColumnName="Owner_Id" />
+          <ScalarProperty Name="Html_Head" ColumnName="Html_Head" />
+          <ScalarProperty Name="Meta_Description" ColumnName="Meta_Description" />
+          <ScalarProperty Name="Meta_key" ColumnName="Meta_key" />
+          <ScalarProperty Name="Meta_Title" ColumnName="Meta_Title" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Thumb" ColumnName="Thumb" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostTypes">
+      <EntityTypeMapping TypeName="pixelcmsModel.PostType">
+        <MappingFragment StoreEntitySet="PostType">
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Active_Position" ColumnName="Active_Position" />
+          <ScalarProperty Name="Active_Product" ColumnName="Active_Product" />
+          <ScalarProperty Name="Has_New" ColumnName="Has_New" />
+          <ScalarProperty Name="Has_CatBanner" ColumnName="Has_CatBanner" />
+          <ScalarProperty Name="Has_MediaDescription" ColumnName="Has_MediaDescription" />
+          <ScalarProperty Name="Has_Catfeature" ColumnName="Has_Catfeature" />
+          <ScalarProperty Name="Has_Callforprice" ColumnName="Has_Callforprice" />
+          <ScalarProperty Name="Has_CatDescription" ColumnName="Has_CatDescription" />
+          <ScalarProperty Name="Has_CatImage" ColumnName="Has_CatImage" />
+          <ScalarProperty Name="Has_oldprice" ColumnName="Has_oldprice" />
+          <ScalarProperty Name="Has_onsale" ColumnName="Has_onsale" />
+          <ScalarProperty Name="Has_feature" ColumnName="Has_feature" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Has_Active" ColumnName="Has_Active" />
+          <ScalarProperty Name="Show_Slug" ColumnName="Show_Slug" />
+          <ScalarProperty Name="Show_Cat" ColumnName="Show_Cat" />
+          <ScalarProperty Name="Show_Thumb" ColumnName="Show_Thumb" />
+          <ScalarProperty Name="Has_SpecialCat" ColumnName="Has_SpecialCat" />
+          <ScalarProperty Name="Has_Title" ColumnName="Has_Title" />
+          <ScalarProperty Name="Has_Parallel_Language" ColumnName="Has_Parallel_Language" />
+          <ScalarProperty Name="Has_Lang" ColumnName="Has_Lang" />
+          <ScalarProperty Name="Has_Order" ColumnName="Has_Order" />
+          <ScalarProperty Name="Has_Date_Edit" ColumnName="Has_Date_Edit" />
+          <ScalarProperty Name="Has_Date_Create" ColumnName="Has_Date_Create" />
+          <ScalarProperty Name="Has_User_Edit" ColumnName="Has_User_Edit" />
+          <ScalarProperty Name="Has_User_Create" ColumnName="Has_User_Create" />
+          <ScalarProperty Name="Has_Create" ColumnName="Has_Create" />
+          <ScalarProperty Name="Has_Media" ColumnName="Has_Media" />
+          <ScalarProperty Name="Has_Meta" ColumnName="Has_Meta" />
+          <ScalarProperty Name="Has_Owner" ColumnName="Has_Owner" />
+          <ScalarProperty Name="Has_Price" ColumnName="Has_Price" />
+          <ScalarProperty Name="Has_Content" ColumnName="Has_Content" />
+          <ScalarProperty Name="Has_Thumb" ColumnName="Has_Thumb" />
+          <ScalarProperty Name="Has_Description" ColumnName="Has_Description" />
+          <ScalarProperty Name="Has_Cat" ColumnName="Has_Cat" />
+          <ScalarProperty Name="DashboardStats" ColumnName="DashboardStats" />
+          <ScalarProperty Name="QuickCreate" ColumnName="QuickCreate" />
+          <ScalarProperty Name="ShowType" ColumnName="ShowType" />
+          <ScalarProperty Name="AsPost" ColumnName="AsPost" />
+          <ScalarProperty Name="Menu" ColumnName="Menu" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Post_SpecialCat" TypeName="pixelcmsModel.Post_SpecialCat" StoreEntitySet="Post_SpecialCat">
+      <EndProperty Name="SpecialCat">
+        <ScalarProperty Name="Id" ColumnName="Id_SpecialCat" />
+      </EndProperty>
+      <EndProperty Name="Post">
+        <ScalarProperty Name="Id" ColumnName="Id_Post" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Post_Tag" TypeName="pixelcmsModel.Post_Tag" StoreEntitySet="Post_Tag">
+      <EndProperty Name="PostTag">
+        <ScalarProperty Name="Id" ColumnName="Id_Tag" />
+      </EndProperty>
+      <EndProperty Name="Post">
+        <ScalarProperty Name="Id" ColumnName="Id_Post" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PostAttribute_PostType" TypeName="pixelcmsModel.PostAttribute_PostType" StoreEntitySet="PostAttribute_PostType">
+      <EndProperty Name="PostType">
+        <ScalarProperty Name="Id" ColumnName="Id_PostType" />
+      </EndProperty>
+      <EndProperty Name="PostAttribute">
+        <ScalarProperty Name="Id" ColumnName="Id_Attribute" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Cats">
+      <EntityTypeMapping TypeName="pixelcmsModel.Cat">
+        <MappingFragment StoreEntitySet="Cat">
+          <ScalarProperty Name="Parent_Path" ColumnName="Parent_Path" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Banner_Image" ColumnName="Banner_Image" />
+          <ScalarProperty Name="Feature" ColumnName="Feature" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MainLang_Id" ColumnName="MainLang_Id" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Html_Head" ColumnName="Html_Head" />
+          <ScalarProperty Name="Meta_Description" ColumnName="Meta_Description" />
+          <ScalarProperty Name="Meta_Key" ColumnName="Meta_Key" />
+          <ScalarProperty Name="Meta_Title" ColumnName="Meta_Title" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Owner_Id" ColumnName="Owner_Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Post_Cat" TypeName="pixelcmsModel.Post_Cat" StoreEntitySet="Post_Cat">
+      <EndProperty Name="Post">
+        <ScalarProperty Name="Id" ColumnName="Id_Post" />
+      </EndProperty>
+      <EndProperty Name="Cat">
+        <ScalarProperty Name="Id" ColumnName="Id_Cat" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="pixelcmsModel.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DateSend" ColumnName="DateSend" />
+          <ScalarProperty Name="Read" ColumnName="Read" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email1" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="pixelcmsModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="View" ColumnName="View" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Product_Rate" ColumnName="Product_Rate" />
+          <ScalarProperty Name="Quote_Id" ColumnName="Quote_Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Post_Id" ColumnName="Post_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

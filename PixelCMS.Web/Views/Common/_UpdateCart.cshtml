@@ -1,0 +1,51 @@
+﻿@model PixelCMS.Core.Models.ShoppingCartModels
+
+@if (Model != null && Model.Cart != null && Model.Cart.ListItem.Count>0)
+{
+    <div class="tbl">
+        <div class="tbl-head">
+            <ul class="cf">
+                <li class="photo-cart"></li>
+                <li class="name-cart">Tên sản phẩm</li>
+               @* <li class="name-cart-attribute">Thuộc tính</li>*@
+                <li class="quantity-cart">SL</li>
+                <li class="price-cart">Đơn giá</li>
+                <li class="total-cart">Tổng cộng</li>
+                <li class="delete-cart">Xóa</li>
+            </ul>
+        </div>
+        <!-- End tbl-head -->
+        <div class="tbl-body">
+            @foreach (var item in Model.Cart.ListItem)
+            {
+                <ul class="one-product cf">
+                    <li class="photo-cart">
+                        <img alt="@item.PostTitle" src="@item.PostImage"></li>
+                    <li class="name-cart"><a href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.PostId })">@item.PostTitle </a></li>
+                   @* <li class="name-cart-attribute" style="margin-top: 3%;">@if (!string.IsNullOrEmpty(item.VariantName))
+                                          {
+                        @Html.Raw(item.VariantName)
+                                          }</li>*@
+                    <li class="quantity-cart">
+                        <input value="@(item.Quantity)" id="quantity-post-@(item.PostId)_@(item.Attribute)" title="@Resources.cart_quantity" style="width: 35px;height: 35px;"  type="text"/>
+                        <i class="update_cart fa fa-refresh effect" onclick="return UpdateQuantity(@item.PostId,$(this).parent().find('input').val(),'@(item.Attribute)');"></i>
+                    </li>
+                    <li class="price-cart">@(item.Price.ToString("N0")) ₫</li>
+                    <li class="total-cart">@item.Total.ToString("N0") ₫</li>
+                    <li class="delete-cart"><i class="fa fa-times effect"onclick="return RemoveFromCart(@item.PostId,'@(item.Attribute)');"></i></li>
+                </ul>
+            }
+             <ul style="float: right">
+                <li class="cf">
+                    <div class="all-total"><span>Tổng tiền:&nbsp;</span><span class="float-right red">@(Model.Total > 0 ? Model.Total.ToString("N0") : Model.Cart.GetTotal().ToString("N0")) ₫</span></div>
+                </li>
+            </ul>
+        </div>
+        <!-- End tbl-body -->
+    </div>
+    <!-- End tbl -->
+}
+else
+{
+    <p>@Resources.cart_noitem</p>
+}

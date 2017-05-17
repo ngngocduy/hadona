@@ -1,0 +1,63 @@
+
+/*--------------------
+	CSS INFORMATION
+-------------------*/
+.aside-account { width: 25%;}
+.main-account { width: 74%;}
+
+
+.menu-account {
+	padding: 0px;
+	list-style: none;	
+}
+.menu-account li {
+	padding: 10px;
+	border-bottom: 1px dotted #d4d4d4;		
+}
+.menu-account li:last-child {
+	border-bottom: none;	
+}
+.menu-account li a i {
+	font-size:14px;
+}
+
+.form-account input[type=text], 
+.form-account input[type=password], 
+.form-account input[type=tel], 
+.form-account input[type=email], 
+.form-account input[type=number], 
+.form-account input[type=search] { width: 47%;}
+.form-account select { width: 47%;}
+.form-account textarea { width: 47%; min-height: 100px;}
+
+
+/*--------------------
+	CSS CARTS
+-------------------*/
+.list-carts .name { width: 30%;}
+.list-carts .date { width: 20%;}
+.list-carts .total { width: 20%;}
+.list-carts .status { width: 10%;}
+.list-carts .readmore { width: 10%;}
+
+.list-carts .readmore a { font-size: 14px;}
+
+.list-carts .tbl-body ul { border-bottom: 1px dotted #eee;}
+
+.list-carts .tbl-body ul:nth-child(2n+1) {  
+  background: #fafafa;
+}
+
+/*--------------------
+	CSS CART DETAIL
+-------------------*/
+.cart-detail .product { width: 70%;}
+.cart-detail .quantity { width: 10%;}
+.cart-detail .price { width: 12%;}
+.cart-detail .tbl-foot .total { width: 82%; text-align: right;}
+.cart-detail .tbl-foot .total-price { width: 12%;}
+.cart-detail .tbl-foot ul { background: #fafafa;}
+
+.cart-detail .tbl-body ul {  
+  border-bottom: 1px dotted #d4d4d4;
+}

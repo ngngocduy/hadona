@@ -1,0 +1,380 @@
+﻿@model PixelCMS.Core.Models.PostType
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_common_create + " " + Resources.admin_common_posttype;
+    ViewBag.PTitle = Resources.admin_common_posttype;
+    ViewBag.PDescription = "Quản lý loại nội dung";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var attibutesgroups = db.AttributeGroups.Select(x => new { x.Id, x.Name, x.PostType_Name }).ToList();
+    var attributes = db.PostAttributes.ToList();
+    var langs = db.Languages.OrderBy(x => x.Order).ToList();
+    var currentlang = langs.FirstOrDefault();
+    int langlist = langs.Count();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_common_create @Resources.admin_common_posttype</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_create" class="btn btn-blue" />
+                            <a href="@Url.Action("Index", "Type")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">@Resources.admin_content_info</th>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_common_code</td>
+                            <td>
+                                @Html.TextBoxFor(model => model.Code, new { minlength = "3", maxlength = "50", required = true })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                
+                                <ul class="tabs-nav">
+                                     @if(langs.Where(x=>x.Active).ToList().Count>1)
+                                     {
+                                         <li class="active"><a href="#tab-@currentlang.Code">
+                                                                <img src="@currentlang.Flag" />
+                                                                @currentlang.Name</a></li>
+                                     }
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <li><a href="#tab-@lang.Code">
+                                                <img src="@lang.Flag" />
+                                                @lang.Name</a></li>
+                                    }
+                                </ul>
+
+                                <div class="tabs-container">
+                                    <div class="tab-content" id="tab-@currentlang.Code">
+                                        <table class="grid form-input">
+                                            <tr>
+                                                <td class="label">@Resources.admin_content_title</td>
+                                                <td>
+                                                    <input type="text" name="name-@currentlang.Code" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">@Resources.admin_content_friendlyurl</td>
+                                                <td>
+                                                    <input type="text" name="code-@currentlang.Code" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <div class="tab-content" id="tab-@lang.Code">
+                                            <table class="grid form-input">
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_title</td>
+                                                    <td>
+                                                        <input type="text" name="name-@lang.Code" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_friendlyurl</td>
+                                                    <td>
+                                                        <input type="text" name="code-@lang.Code" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    }
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_group</td>
+                            <td>@Html.DropDownList("Group")</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_note</td>
+                            <td>@Html.TextAreaFor(model => model.Description)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_active</td>
+                            <td>@Html.EditorFor(model => model.Active)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label"><a class="btn btn-blue" href="@Url.Action("Index", "Attribute")" title="Danh sách tags" style="">@Resources.admin_attribute</a></td>
+                            <td>
+                                <select class="chzn-select" data-placeholder="@Resources.admin_attribute_chooseattribute" id="attributes" multiple="multiple" name="attributes">
+                                    @foreach (var item in attibutesgroups)
+                                    {
+                                        <optgroup label="@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name">
+                                            @foreach (var items in attributes.Where(g => g.Group == item.Id))
+                                            {
+                                                <option value="@items.Id">@items.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</option>
+                                            }
+                                        </optgroup>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_menushow</td>
+                            <td>@Html.EditorFor(model => model.Menu)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_quickcreate</td>
+                            <td>@Html.EditorFor(model => model.QuickCreate)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_statsatdashboard</td>
+                            <td>@Html.EditorFor(model => model.DashboardStats)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Kích hoạt sản phẩm</td>
+                            <td>@Html.EditorFor(model => model.Active_Product)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Bài viết</td>
+                            <td>@Html.EditorFor(model => model.AsPost)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label"><a class="btn btn-blue" href="@Url.Action("Index", "Tags")" title="Danh sách tags" style="">Tags</a></td>
+                            <td>@Html.EditorFor(model => model.Tags)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_showseolink</td>
+                            <td>@Html.EditorFor(model => model.ShowType)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="button-submit-zone" colspan="2">@Resources.admin_content_language</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_multilanguage</td>
+                            <td>@Html.EditorFor(model => model.Has_Lang)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_parallellanguage</td>
+                            <td>@Html.EditorFor(model => model.Has_Parallel_Language)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="button-submit-zone" colspan="2">@Resources.admin_posttype_basicfeatures</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_titlefeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Title)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_contentfeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Content)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_descriptionfeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Description)</td>
+                        </tr>
+
+                        <tr class="borderbottom">
+                            <td class="label">@Resources.admin_posttype_onofffeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Active)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_categoryfeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Cat)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_categoryimage</td>
+                            <td>@Html.EditorFor(model => model.Has_CatImage)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Cat Banner</td>
+                            <td>@Html.EditorFor(model => model.Has_CatBanner)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_categorydescription</td>
+                            <td>@Html.EditorFor(model => model.Has_CatDescription)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Kích hoạt vị trí</td>
+                            <td>@Html.EditorFor(model => model.Active_Position)</td>
+                        </tr>
+
+                        <tr class="borderbottom">
+                            <td class="label">@Resources.admin_cat_feature</td>
+                            <td>@Html.EditorFor(model => model.Has_Catfeature)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_pageownerfeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Owner)</td>
+                        </tr>
+
+                        @*<tr>
+                        <td class="label">Chuyên mục đặc biệt (feature)</td>
+                        <td>@Html.EditorFor(model => model.Has_SpecialCat)</td>
+                    </tr>*@
+
+                        <tr>
+                            <td class="button-submit-zone" colspan="2">@Resources.admin_posttype_morefeatures</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_createnewfeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Create)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_metafeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Meta)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_orderfeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Order)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_slugedit</td>
+                            <td>@Html.EditorFor(model => model.Show_Slug)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_feature</td>
+                            <td>@Html.EditorFor(model => model.Has_feature)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">New</td>
+                            <td>@Html.EditorFor(model => model.Has_New)</td>
+                        </tr>
+
+                        <tr class="borderbottom">
+                            <td class="label">OnSale</td>
+                            <td>@Html.EditorFor(model => model.Has_onsale)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_price</td>
+                            <td>@Html.EditorFor(model => model.Has_Price)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_oldprice</td>
+                            <td>@Html.EditorFor(model => model.Has_oldprice)</td>
+                        </tr>
+
+                        <tr class="borderbottom">
+                            <td class="label">@Resources.admin_content_callforprice</td>
+                            <td>@Html.EditorFor(model => model.Has_Callforprice)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_picturefeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Thumb)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_manageimagefeature</td>
+                            <td>@Html.EditorFor(model => model.Has_Media)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_mediadescription</td>
+                            <td>@Html.EditorFor(model => model.Has_MediaDescription)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="button-submit-zone" colspan="2">@Resources.admin_posttype_display</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_authordisplay</td>
+                            <td>@Html.EditorFor(model => model.Has_User_Create)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_editordisplay</td>
+                            <td>@Html.EditorFor(model => model.Has_User_Edit)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_datecreatedisplay</td>
+                            <td>@Html.EditorFor(model => model.Has_Date_Create)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_dateeditdisplay</td>
+                            <td>@Html.EditorFor(model => model.Has_Date_Edit)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_thumbnaildisplay</td>
+                            <td>@Html.EditorFor(model => model.Show_Thumb)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_posttype_categorydisplay</td>
+                            <td>@Html.EditorFor(model => model.Show_Cat)</td>
+                        </tr>
+
+                    </table>
+
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="~/Areas/Admin/Content/assets/chosen/chosen.jquery.js"></script>
+<link href="~/Areas/Admin/Content/assets/chosen/chosen.min.css" rel="stylesheet" />
+<script>    $(".chzn-select").chosen(); </script>
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

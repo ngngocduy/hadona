@@ -1,0 +1,114 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Post
+
+@{
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+        <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+        <meta name="description" content="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+        @Html.Raw(Model.Html_Head)
+    }
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+    {
+
+        @Html.Action("AdminPanel", "Common", new { postid = Model.Id, posttype = Model.PostType.Name })
+    }
+}
+
+
+<div class="banner-subpage" id="main_slide">
+    <!--Slide Banner-->
+    <div id="slide_banner">
+        @Html.Action("HomeSlideMobile", "Widget")
+    </div>
+    <!--end Slide Banner-->
+    <!--Breadcrumb-->
+    <div class="top-heading">
+        <h3 class="heading-page">
+            @if (Model.Slugs.FirstOrDefault(z => z.Slug_Full == "gioi-thieu") != null | Model.Slugs.FirstOrDefault(z => z.Slug_Full == "about-us") != null)
+            {
+                if (currentlang == "vi")
+                {
+                   @Html.Raw("Về chúng tôi")
+                }
+                else
+                {
+                    @Html.Raw("About us")
+                }
+            }
+        </h3>
+        @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+    </div>
+    <!--end Breadcrumb-->
+</div>
+<!--News Page-->
+<section id="page-news">
+    <div class="container">
+        <!--Detail News-->
+
+        @if (Model != null)
+            {
+                pixelcmsEntities db = new pixelcmsEntities();
+              
+
+                if (Model.Lang != currentlang)
+                {
+                    var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+                    if (Modellang != null)
+                    {
+                        Model.Id = Modellang.Id;
+                        Model.Title = Modellang.Title;
+                        // Model.Description = Modellang.Description;
+                        Model.Content = Modellang.Content;
+                    }
+                }
+                if (Model.Slugs.FirstOrDefault(z => z.Slug_Full == "gioi-thieu") != null | Model.Slugs.FirstOrDefault(z => z.Slug_Full == "about-us") != null)
+                {
+                <div class="sec-title">
+                    <h4 class="sec-txt">@Model.Title</h4>
+                    <h1 class="heading-txt">@Model.Description</h1>
+                </div>
+                @Html.Raw(Model.Content)
+            }
+            else
+            {
+                <div class="nine columns article-contents">
+                    <span class="date-post">@(Model.Date_Create ?? null)</span>
+                    <h1 class="heading-title">@Model.Title @Html.Action("AdminEdit", "Common", new { id = Model.Id })</h1>
+                    <div class="info-g">
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
+        <!--Related News-->
+                <div class="six columns list-news other-news">
+                    <h3 class="side-tab">@Resources.SanPhamLienQuan</h3>
+                    @Html.Action("RelatedPosts", "widget", new { currentpost = Model.Id })
+                </div>
+        <!--end Related News-->
+            }
+
+        }
+
+    </div>
+</section>

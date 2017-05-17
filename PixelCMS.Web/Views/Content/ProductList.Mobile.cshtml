@@ -1,0 +1,50 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    var count = Request.Url.Segments.Count();
+    var slug = Request.Url.Segments[count - 1];
+    var fullslug = db.Slugs.FirstOrDefault(x => x.Slug_Full == slug);
+
+    if (ViewBag.CatTitle != null)
+    {
+        ViewBag.Title = ViewBag.CatTitle;
+    }
+    else
+    {
+        //ViewBag.Title = ViewBag.CategoryCurrent;
+        ViewBag.Title = ViewBag.TypeName;
+    }
+
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+}
+
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content ="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<section class="main">
+	<div class="title-head"><i class="fa fa-arrow-circle-right"></i> @ViewBag.TypeName</div>
+	<div class="product-list">    	
+        <div class="row">
+                   <div id="update1">
+                        @Html.Action("ProductGridMobile", "Common")
+                    </div>
+        </div>
+	</div><!-- End product-list -->
+</section>
+ 

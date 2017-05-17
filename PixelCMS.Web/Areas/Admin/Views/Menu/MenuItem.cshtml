@@ -1,0 +1,268 @@
+﻿@model PixelCMS.Core.Models.MenuItem
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_menu_item;
+    ViewBag.PTitle = "Menu";
+    ViewBag.PDescription = "Quản lý Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    string menulang = ViewBag.MenuLangCode;
+    int menuid = (int)ViewBag.MenuId;
+    var menuinfo = db.Menus.Find(menuid);
+    var langlist = db.Languages.Where(x => x.Active == true).Count();
+    var posttype = db.PostTypes.Where(x => x.Active && x.Menu).ToList();
+    var postlist = db.Posts.Where(x => x.PostType.Menu == true && x.PostType.Active == true && x.PostType.Has_Cat == false && x.Lang == menulang).ToList();
+    var catlist = db.Cats.Where(x => x.PostType.Has_Cat == true && x.PostType.Active == true && x.PostType.Menu == true && x.Lang == menulang).ToList();
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_menu_item @Resources.admin_status_deletedsuccessfully
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_edit @Resources.admin_menu_item @Resources.admin_status_successfully
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_create @Resources.admin_menu_item @Resources.admin_status_successfully
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_menu_item</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                <aside id="control">
+                    <div>
+                        @if (langlist > 1)
+                        {
+                            <a class="btn" href="@Url.Action("Index", "Menu", new { culture = menulang })"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        }
+                        else
+                        {
+                            <a class="btn" href="@Url.Action("Index", "Menu")"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        }
+
+                    </div>
+                </aside>
+            </div>
+            <br />
+            <div class="nine columns">
+                @Html.Action("MenuItemList", "Menu", new { menuid = menuid })
+            </div>
+            <div class="seven columns omega">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">@Resources.admin_menu_itemlist (@ViewBag.MenuName)
+                    @if (langlist > 1)
+                    {
+                        <i>(@ViewBag.MenuLang)</i>
+                    }
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="button-submit-zone">@Resources.admin_common_create @Resources.admin_common_value</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">
+                                @Resources.admin_menu_itemtype
+                                <i title="Là cách gán Url(link),bài viết,chuyên mục,loại nội dung... vào menu." class="fa fa-question-circle"></i>
+                            </td>
+                            <td>@Html.DropDownList("Type")</td>
+                        </tr>
+
+                        <tbody id="type-1" class="menu-type">
+                            <tr>
+                                <td class="label">@Resources.admin_common_name</td>
+                                <td>@Html.TextBoxFor(model => model.Name, new { minlength = "2", maxlength = "141" })</td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">URL
+                     <i title="Gán link (liên kết) bất kỳ" class="fa fa-question-circle"></i>
+                                </td>
+                                <td>@Html.EditorFor(model => model.Url)</td>
+                            </tr>
+                        </tbody>
+
+                        <tr id="type-100" class="menu-type" style="display: none;">
+                            <td class="label">
+                                @Resources.admin_common_posttype
+                                <i title="Là danh sách tin tức,sản phẩm..." class="fa fa-question-circle"></i>
+                            </td>
+                            <td>
+                                <select id="PostType" name="PostType" title="">
+                                    <option value>-- @Resources.admin_menu_itemposttype --</option>
+                                    @*.Where(x=>x.ShowType == true)*@
+                                    @foreach (var item in posttype.Where(x => x.Code != "trang"))
+                                    {
+                                        <option id="Option@(item.Id)" value="@item.Id">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</option>
+                                    }
+                                </select></td>
+                        </tr>
+
+                        <tr id="type-2" class="menu-type" style="display: none;">
+                            <td class="label">
+                                @Resources.admin_common_page
+                                <i title="Là link tới 1 bài viết trực tiếp VD:Trang 'giới thiệu'." class="fa fa-question-circle"></i>
+                            </td>
+                            <td>
+                                <select id="Post" name="Post">
+                                    <option value>-- @Resources.admin_menu_itempage --</option>
+                                    @foreach (var item in posttype)
+                                    {
+                                        if (postlist.FirstOrDefault(x => x.PostType.Id == item.Id) != null)
+                                        {
+                                        <optgroup label="@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name">
+                                            @foreach (var items in postlist.Where(x => x.PostType.Id == item.Id))
+                                            {
+                                                <option value="@items.Id">@items.Title</option>
+                                            }
+                                        </optgroup>
+                                        }
+                                    }
+                                </select></td>
+                        </tr>
+
+                        <tr id="type-3" class="menu-type" style="display: none;">
+                            <td class="label">
+                                @Resources.admin_content_category
+                                <i title="Là danh sách Tin tức hoặc Sản phẩm,là chuyên mục con nằm trong Tin tức hoặc Sản phẩm." class="fa fa-question-circle"></i>
+                            </td>
+                            <td>
+                                @Html.DropDownList("Cat", "-- Chọn chuyên mục --")
+                                @*<select id="Cat" name="Cat">
+                                            <option value>-- @Resources.admin_menu_itemcat --</option>
+                                @foreach (var item in posttype)
+                                {
+                                    if (catlist.FirstOrDefault(x => x.PostType.Id == item.Id) != null)
+                                    {
+                                    <optgroup label="@item.PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name">
+                                        @foreach (var items in catlist.Where(x => x.PostType.Id == item.Id))
+                                        {
+                                            <option value="@items.Id">@items.Name</option>
+                                        }
+                                    </optgroup>
+                                    }
+                                }
+                            </select>*@
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_menu_itemowner</td>
+                            <td>@Html.DropDownList("Owner_Id", "-- " + Resources.admin_content_root + " --")</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_order</td>
+                            <td>@Html.EditorFor(model => model.Order)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_active</td>
+                            <td>@Html.EditorFor(model => model.Active)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label button-submit-zone"></td>
+                            <td class="button-submit-zone">
+                                <input type="submit" value="@Resources.admin_common_create" class="btn btn-blue" />
+                            </td>
+
+                        </tr>
+
+                        @if (menuinfo.Field_1_Enable == true)
+                        {
+                            <tr>
+                                <td class="label">
+                                    @menuinfo.Field_1_Label
+                                    <i title="Ảnh của menu(nếu có)." class="fa fa-question-circle"></i>
+                                </td>
+                                <td>@Html.EditorFor(model => model.Field_1, new { maxlength = "141" })
+                                    <input type="button" id="BrowseURL-Thumb" value="@Resources.admin_content_browsepicture" class="btn btn-file" />
+                                </td>
+                            </tr>
+                        }
+
+                        @if (menuinfo.Field_2_Enable == true)
+                        {
+                            <tr>
+                                <td class="label">@menuinfo.Field_2_Label</td>
+                                <td>@Html.TextAreaFor(model => model.Field_2, new { maxlength = "3000" })</td>
+                            </tr>
+                        }
+
+                        @if (menuinfo.Field_3_Enable == true)
+                        {
+                            <tr>
+                                <td class="label">@menuinfo.Field_3_Label</td>
+                                <td>@Html.EditorFor(model => model.Field_3, new { maxlength = "141" })</td>
+                            </tr>
+                        }
+
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(function () {
+        $('#Type').change(function () {
+            $('.menu-type').hide();
+            $('#type-' + $(this).val()).show();
+        });
+    });
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL-Thumb").click(function () {
+            var ckfinder = new CKFinder({ resourceType: 'Images' });
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#Field_1").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+    <script>
+        $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+else if (ViewBag.Status == "edit-done")
+{ 
+    <script>
+        $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+else if (ViewBag.Status == "delete-done")
+{ 
+    <script>
+        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+
+

@@ -1,0 +1,390 @@
+﻿@model PixelCMS.Core.Models.Order
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = Resources.admin_cart_order_details;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+    var currentlang = db.Languages.Where(x => x.Active == true).OrderBy(x => x.Order).FirstOrDefault().Code;
+}
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_cart_order_details</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.Date_Add)
+                    @Html.HiddenFor(x => x.PaymentStatus)
+                    @Html.HiddenFor(x => x.ShipFee)
+                    @Html.HiddenFor(x => x.Total)
+                    @Html.HiddenFor(x => x.View)
+                    @Html.HiddenFor(x => x.IsDestroy)
+@* @Html.HiddenFor(x => x.Shipping_Phone)
+                @Html.HiddenFor(x => x.Shipping_Name)
+                @Html.HiddenFor(x => x.Shipping_Email)
+                @Html.HiddenFor(x => x.Shipping_Address)*@
+
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_edit" class="btn btn-blue" name="@PixelCMS.Areas.Admin.Controllers.CartController.ButtonType.Submit" />
+                            <input class="btn" type="submit" value="@Resources.admin_cart_order_saveandedit" name="@PixelCMS.Areas.Admin.Controllers.CartController.ButtonType.SubmitandEdit" />
+                            <input class="btn" type="submit" value="@Resources.admin_cart_order_saveandupdate" name="@PixelCMS.Areas.Admin.Controllers.CartController.ButtonType.SubmitandUpdate" />
+                            <a class="btn btn-blue" style="cursor: pointer" id="hoadon" onclick="hoadon()">Xem Hóa đơn</a>
+                            <a class="btn btn-blue" style="cursor: pointer; display: none" id="print" onclick="inclick()">In hóa đơn</a>
+                            <a href="@Url.Action("Index", "Cart")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">@Resources.admin_cart_order_details</th>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_cart_order_code</td>
+                            <td>@Html.DisplayFor(model => model.Id)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_cart_orderstatus</td>
+                            <td>@Html.DropDownList("Status_Id")</td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_cart_customer_name</td>
+                            <td>@Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "140" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email</td>
+                            <td>@Html.TextBoxFor(model => model.Email, new { minlength = "5", maxlength = "140" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.contact_phone</td>
+                            <td>@Html.TextBoxFor(model => model.Phone, new { minlength = "5", maxlength = "140" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.contact_address</td>
+                            <td>@Html.TextBoxFor(model => model.Address)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_cart_order_note</td>
+                            <td>@Html.TextAreaFor(model => model.Note, new { minlength = "5", maxlength = "1020" })</td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ giao hàng:
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Tên người nhận</td>
+                            <td>@Html.TextBoxFor(model => model.Shipping_Name, new { minlength = "5", maxlength = "1020" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">SĐT người nhận</td>
+                            <td>@Html.TextBoxFor(model => model.Shipping_Phone, new { minlength = "5", maxlength = "1020" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email người nhận</td>
+                            <td>@Html.TextBoxFor(model => model.Shipping_Email, new { minlength = "5", maxlength = "1020" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Địa chỉ người nhận</td>
+                            <td>@Html.TextBoxFor(model => model.Shipping_Address, new { minlength = "5", maxlength = "1020" })</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <table class="grid form-input">
+                                    <tr>
+                                        <th>@Resources.cart_productname</th>
+                                        <th>Thuộc tính</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Mã SKU</th>
+                                        <th>@Resources.cart_quantity</th>
+                                        <th>@Resources.cart_unitprice</th>
+                                    </tr>
+                                    @{decimal total = 0;}
+                                    @foreach (var item in Model.Order_Details)
+                                    {
+                                        <tr>
+                                            <td><a style="color: royalblue" href="@Html.Action("LoadURL", "Common", new { area = "", type = "post", id = item.Product_Id, culture = currentlang })" target="_blank">@item.Product_Name</a></td>
+                                            <td>@Html.Raw(item.Attribute)</td>
+                                            <td>
+                                                <img src="@item.Image" width="60" height="60"/></td>
+                                            <td>@item.SKU</td>
+                                            <td>@item.Quantity</td>
+                                            <td>@(((decimal)item.Unit_Price).ToString("N0")) &#8363;</td>
+                                        </tr>
+                                        total += ((decimal)item.Quantity * (decimal)item.Unit_Price);
+                                    }
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><strong>@Resources.cart_total</strong></td>
+                                        <td><strong>@total.ToString("N0") &#8363;</strong></td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                    </table>  
+                }
+                <!--In đơn hàng-->
+                <style>
+                    .print {
+                        display: none;
+                    }
+                </style>
+                <div class="print" style="  width: 98%;">
+                    <style>
+                        .header1 {
+                            width: 100%;
+                            border: 1px solid #e3e3e3;
+                        }
+
+                        .rows {
+                            width: 100%;
+                            margin-top: 2px;
+                            float: left;
+                        }
+
+                        .infomation {
+                            width: 99.1%;
+                            /* margin-top: 2px; */
+                            border-top: 1px solid #e3e3e3;
+                            clear: both;
+                            border-left: 1px solid #e3e3e3;
+                            border-right: 1px solid #e3e3e3;
+                            float: left;
+                            padding: 5px;
+                        }
+
+                        .rows .left {
+                            width: 55%;
+                            float: left;
+                        }
+
+                        .rows .right {
+                            width: 35%;
+                            float: right;
+                        }
+
+                        .printer {
+                            margin: 0 auto;
+                            width: 800px;
+                        }
+
+                        .print .tdGridHeader {
+                            height: 30px;
+                        }
+
+                        .print .tdGridTable {
+                            border-spacing: 1px;
+                            border-collapse: separate !important;
+                        }
+
+                        .colortable, .tdGridTable {
+                            /*background-color: #e3e3e3;*/
+                        }
+
+                       .print td tr td a {
+                            color: #0000ff;
+                            padding-left: 10px;
+                            font-size: 12px;
+                        }
+
+                        .print table tr td table tr {
+                            background: #FFF;
+                        }
+
+                        .colortable, .tdGridTable {
+                            /*background-color: #e3e3e3;*/
+                        }
+
+                       .print table td {
+                            text-align: center;
+                            padding: 3px;
+                            border-right: 1px solid #e3e3e3;
+                        }
+
+                        .tdGridHeader {
+                            background-position: 50% 50%;
+                            -moz-border-radius-topleft: 10px;
+                        }
+
+                        .tdGridTable tr {
+                            background: #fff !important;
+                        }
+
+                       .print td, .tdGridRow {
+                            padding-left: 5px;
+                            padding-right: 5px;
+                        }
+
+                        .tdGridRow {
+                            height: 40px;
+                        }
+
+                       .print td, .tdGridRow {
+                            padding-left: 5px;
+                            padding-right: 5px;
+                        }
+
+                       .print table tr td table tr:hover td {
+                            /*background: #ffd;*/
+                        }
+
+                       .print td a {
+                            color: #000;
+                            text-decoration: none;
+                        }
+                    </style>                 
+                    <div class="infomation">
+                        <div class="rows">
+                            <div class="left">Địa chỉ :  316 Lê Văn Sỹ, P. 1, Quận Tân Bình, HCM</div>
+                            <div class="right">Ngày : @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year</div>
+                        </div>
+                        <div class="rows">
+                            <div class="left">Hotline:  0945.211.011 – 0907.969.534 </div>
+                            <div class="right">Mã Đơn Hàng : @Html.DisplayFor(model => model.Id)</div>
+                        </div>
+                        <div class="rows">
+                            <div class="left">Email:    info@thekymoi.com</div>
+                            <div class="right">Trọng lượng : </div>
+                        </div>                       
+                    </div>
+                    <div class="infomation">
+                        <div class="rows" style="text-align: center; font-size: 30px; font-weight: bold">PHIẾU XUẤT HÀNG</div>
+                    </div>
+                    <div class="infomation" style="border-bottom: 1px solid #e3e3e3;">
+                        <div class="rows">Tên khách:<span style="">@Model.Name</span></div>
+                        <div class="rows">Địa chỉ: @Model.Address</div>
+                        <div class="rows">Điện thoại : @Model.Phone</div>
+                        <div class="rows">Ghi chú đơn hàng : @Model.Note</div>
+                        <div class="rows" style="margin-bottom:10px">
+                            <table border="1" id="dtloadsp" style="width: 100%; border: 1px solid #e3e3e3;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #e3e3e3;">
+                                        <td class="name">MaSP
+                                        </td>
+                                        <td class="name">Sản Phẩm
+                                        </td>
+                                        <td class="quantity">SL
+                                        </td>
+                                        <td class="price">Đơn Giá
+                                        </td>
+                                        <td class="total">Thành tiền
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{decimal tong = 0;
+                                      decimal soluong = 0;}
+                                    @foreach (var item in Model.Order_Details)
+                                    {
+                                        <tr style="border-bottom: 1px solid #e3e3e3;">
+                                            <td>@item.Id</td>
+                                            <td>@item.Product_Name
+                                                <br />@Html.Raw(item.Attribute)</td>
+                                            <td style="text-align: center">@item.Quantity</td>
+                                            <td style="text-align: center">@(((decimal)item.Unit_Price).ToString("N0")) đ</td>
+                                            <td>@decimal.Parse(item.Quantity.ToString()) * @decimal.Parse(item.Unit_Price.ToString())</td>
+                                        </tr>
+                                        tong += ((decimal)item.Quantity * (decimal)item.Unit_Price);
+                                        soluong += ((decimal)item.Quantity);
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="rows">
+                            <div class="right" style="width: 300px; text-align: left; font-size: 12px; font-weight: bold; border-bottom: 1px solid #e3e3e3; padding-bottom: 5px;">
+                                Tổng Số Lượng  :
+                                   <span style="text-align: right; float: right">@soluong   ( Cái )</span>
+
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <div class="right" style="width: 300px; text-align: left; font-size: 12px; font-weight: bold; border-bottom: 1px solid #e3e3e3; padding-bottom: 5px;">
+                                Giảm giá  :
+                                   
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <div class="right" style="width: 300px; text-align: left; font-size: 12px; font-weight: bold; border-bottom: 1px solid #e3e3e3; padding-bottom: 5px;">
+                                Thành tiền :<span style="text-align: right; float: right"> @tong.ToString("N0") vnđ </span>
+                                <input type="hidden" id="txttongtien" value="@tong.ToString("N0") vnd" />
+                            </div>
+                        </div>
+                        <div class="rows" style="margin-top: 15px">
+                            <div class="left" style="width: 25%; font-size: 12px; text-align: center">
+                                <p style="font-weight: bold">Người Lập </p>
+                                <p>(Ghi rõ họ tên)</p>
+
+                            </div>
+                            <div class="left" style="width: 25%; font-size: 12px; text-align: center">
+                                <p style="font-weight: bold">Thủ kho xuất</p>
+                                <p>(Ghi rõ họ tên)</p>
+
+                            </div>
+                            <div class="left" style="width: 25%; font-size: 12px; text-align: center">
+                                <p style="font-weight: bold">Người giao hàng</p>
+                                <p>(Ghi rõ họ tên)</p>
+
+                            </div>
+                            <div class="left" style="width: 25%; font-size: 12px; text-align: center">
+                                <p style="font-weight: bold">Người nhận hàng</p>
+                                <p>(Ghi rõ họ tên)</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .grid-print th {
+                            text-align: left;
+                            font-weight: bold;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--In đơn hàng-->
+<script src="~/Theme/custom/js/printThis.js"></script>
+<script>
+    function hoadon() {
+        $(".print").toggle();
+        $("#print").toggle();
+    }
+    function inclick() {
+       
+        $(".print").printThis();       
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL").click(function () {
+            var ckfinder = new CKFinder({ resourceType: 'Images' });
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#Flag").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

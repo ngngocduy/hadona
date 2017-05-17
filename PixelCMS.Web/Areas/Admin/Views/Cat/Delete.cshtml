@@ -1,0 +1,38 @@
+﻿@model PixelCMS.Core.Models.Cat
+@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Where(x => x.Id == t).FirstOrDefault();
+
+    var currentculture = @PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = db.PostType_Name.FirstOrDefault(x => x.Posttype_id == t && x.Lang == currentculture).Name;
+    
+    ViewBag.Title = Resources.admin_content_delete + " " + Resources.admin_content_category + " " + posttypename;
+    ViewBag.PTitle = Resources.admin_content_category + " " + posttypename;
+    ViewBag.PDescription = Resources.admin_content_managecategory + posttypename;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+<div class="container">
+    <div class="sixteen columns">
+        <h1><i class="fa fa-folder-open"></i> @Resources.admin_content_category @posttypename</h1>
+
+        <table class="grid">
+            <tr>
+                <th>@Resources.admin_ask_suredelete @Resources.admin_content_category @posttypename <b>"@Html.DisplayFor(model => model.Name)"</b>?</th>
+            </tr>
+            <tr>
+                <td>
+                    @using (Html.BeginForm()) {
+                            <input type="submit" value="@Resources.admin_content_delete"  class="btn btn-red"/> <a href="@Url.Action("Index", "Cat", new { type = t })"class="btn btn-back"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                    }
+                </td>
+            </tr>
+        </table>
+
+       
+        </div>
+    </div>
+    </section>

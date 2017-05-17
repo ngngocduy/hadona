@@ -1,0 +1,149 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@{
+    Layout = "";
+}
+
+<!-- Grid-->
+@if (Model != null)
+{
+    int count = 0;
+    int stt = 1;
+
+    foreach (var item in Model)
+    {
+        count++;
+    <div class="col-2">
+        @Html.Partial("~/Views/Widget/_ProductBoxMobile.cshtml", item)
+    </div>
+    }
+    
+    
+    <div class="foot-frame clearfix">
+        <ul class="pagination pull-left">
+            @* Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+            @if (Model.HasPreviousPage)
+            {
+                <li>@Ajax.ActionLink("«", "ProductGridMobile", new
+                                                             {
+                                                                 page = 1,
+                                                                 slug = ViewBag.slug,
+                                                                 minprice = ViewBag.min,
+                                                                 maxprice = ViewBag.max,
+                                                                 manuft = ViewBag.manuft,
+                                                                 attributies = ViewBag.att,
+                                                                 percent = ViewBag.percent
+                                                             },
+                                     new AjaxOptions
+                                         {
+                                             UpdateTargetId = "update1",
+                                             LoadingElementId = "ajaxloading",
+                                             HttpMethod = "post"
+                                         })
+                </li>
+                <li>
+                    @Html.Raw(" ")
+                    @Ajax.ActionLink("Prev", "ProductGridMobile", new
+                                                                {
+                                                                    page = Model.PageNumber - 1,
+                                                                    slug = ViewBag.slug,
+                                                                    minprice = ViewBag.min,
+                                                                    maxprice = ViewBag.max,
+                                                                    manuft = ViewBag.manuft,
+                                                                    attributies = ViewBag.att,
+                                                                    percent = ViewBag.percent
+                                                                }, new AjaxOptions
+                                                                       {
+                                                                           UpdateTargetId = "update1",
+                                                                           LoadingElementId = "ajaxloading",
+                                                                           HttpMethod = "post"
+                                                                       })
+                </li>
+            }
+            else
+            {
+                @:<li><a>«</a></li>
+                @Html.Raw(" ")
+                @:<li><a>Prev</a></li>
+            }
+            @for (int i = 1; i < Model.PageCount + 1; i++)
+            {
+                if (i == Model.PageNumber)
+                {
+                <li class="active"><a>@i</a>@Html.Raw("")</li>
+                }
+                else
+                {
+                <li class="">@Ajax.ActionLink(i.ToString(), "ProductGridMobile",
+                                                  new
+                                                      {
+                                                          page = i,
+                                                          slug = ViewBag.slug,
+                                                          minprice = ViewBag.min,
+                                                          maxprice = ViewBag.max,
+                                                          manuft = ViewBag.manuft,
+                                                          attributies = ViewBag.att,
+                                                          percent = ViewBag.percent
+                                                      },
+                                                  new AjaxOptions
+                                                      {
+                                                          UpdateTargetId = "update1",
+                                                          LoadingElementId = "ajaxloading",
+                                                          HttpMethod = "post"
+                                                      }
+                                      )
+                    @Html.Raw(" ")</li>
+                }
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li>@Ajax.ActionLink("Next", "ProductGridMobile", new
+                                                                {
+                                                                    page = Model.PageNumber + 1,
+                                                                    slug = ViewBag.slug,
+                                                                    minprice = ViewBag.min,
+                                                                    maxprice = ViewBag.max,
+                                                                    manuft = ViewBag.manuft,
+                                                                    attributies = ViewBag.att,
+                                                                    percent = ViewBag.percent
+                                                                },
+                                     new AjaxOptions
+                                         {
+                                             UpdateTargetId = "update1",
+                                             LoadingElementId = "ajaxloading",
+                                             HttpMethod = "post"
+                                         })
+                    @Html.Raw(" ")
+                </li>
+                <li>
+                    @Ajax.ActionLink("»", "ProductGridMobile", new
+                                                             {
+                                                                 page = Model.PageCount,
+                                                                 slug = ViewBag.slug,
+                                                                 minprice = ViewBag.min,
+                                                                 maxprice = ViewBag.max,
+                                                                 manuft = ViewBag.manuft,
+                                                                 attributies = ViewBag.att,
+                                                                 percent = ViewBag.percent
+                                                             },
+                                     new AjaxOptions
+                                         {
+                                             UpdateTargetId = "update1",
+                                             LoadingElementId = "ajaxloading",
+                                             HttpMethod = "post"
+                                         })
+                </li>
+            }
+            else
+            {
+                @:<li><a>Next</a></li>
+                @Html.Raw(" ")
+                @:<li><a>»</a></li>
+            }
+        </ul>
+    </div>
+}
+
+
+

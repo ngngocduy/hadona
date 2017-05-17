@@ -1,0 +1,107 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.AttributeGroup>
+
+@{
+    ViewBag.Title = "Nhóm thuộc tính";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+     <i class="fa fa-exclamation-circle"></i> Nhóm thuộc tính đã xóa thành công !
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> Sửa nhóm thuộc tính thành công !
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> Tạo nhóm thuộc tính thành công !
+</div>
+
+<section id="main">
+
+<div class="container">
+    <div class="sixteen columns">
+        <h1><i class="fa fa-flask"></i> Nhóm thuộc tính</h1>
+
+        <aside id="control">
+            <div>
+                <a href="@Url.Action("CreateGroup", "Attribute")" class="btn btn-blue"><i class="fa fa-plus"></i> Thêm nhóm thuộc tính</a>
+                <a href="@Url.Action("Index", "Attribute")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+            </div>
+        </aside>
+
+<table class="grid">
+    <tr>
+        <th>
+            Tên
+        <th>
+            Ghi chú
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            <a href="@Url.Action("EditGroup", "Attribute", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i> Sửa</a>
+            <a href="@Url.Action("DeleteGroup", "Attribute", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i> Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>
+
+        </div></div>
+    </section>
+
+<div id="delete-dialog" title="Confirmation">
+    <p>Bạn có chắc muốn xóa nhóm thuộc tính này</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if(ViewBag.Status == "create-done"){
+<script>
+    $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}
+else if (ViewBag.Status == "edit-done") { 
+<script>
+    $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}

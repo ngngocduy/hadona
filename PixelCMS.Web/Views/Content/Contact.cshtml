@@ -1,0 +1,132 @@
+﻿@model PixelCMS.Core.Models.Email
+
+@{
+    ViewBag.Title = Resources.contact;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+    {
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+@{ 
+    string ct = "";
+    string ct1 = "";
+    string ct2 = "";
+}
+  @if (currentlang == "vi")
+  {
+      ct = "Liên hệ với";
+      ct1 = "TRANG TRẠI HỮU CƠ";
+      ct2 = "Hãy liên lạc với chúng tôi";
+  }
+  else
+  {
+      ct = "Get in touch";
+      ct1 = "HEALTHY ORGANIC FARM";
+      ct2 = "Let's keep in touch";
+  }
+<div class="banner-subpage" id="main_slide">
+    <!--Slide Banner-->
+    <div id="slide_banner">
+        @Html.Action("HomeSlideMobile", "Widget")
+    </div>
+    <!--end Slide Banner-->
+    <!--Breadcrumb-->
+    <div class="top-heading">
+        <h3 class="heading-page">@Resources.contact</h3>
+        @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+    </div>
+    <!--end Breadcrumb-->
+</div>
+<!--Contact Page-->
+<div class="lBg-page lBg-contact-page"><img src="/theme/Images/contactpageBg1.png" alt="Get in touch" title="Get in touch" /></div>
+<div class="rBg-page rBg-contact-page"><img src="/theme/Images/productpageBg2.png" alt="Get in touch" title="Get in touch" /></div>
+<section id="page-contact">
+    <div class="container">
+        <div class="sec-title">
+            <h4 class="sec-txt">@ct</h4>
+            <h1 class="heading-txt">@ct1</h1>
+        </div>
+        <!--Contact-->
+        <img src="/theme/Images/contact-banner.jpg" class="img_fullwidth" />
+        <h3 class="box-Tab" style="text-align: center; margin-top: 20px">@ct2</h3>
+
+        <!--Form Contact-->
+        <div class="form-web" id="contactus">
+
+            <div id="status"></div>
+            @using (Ajax.BeginForm("ContactForm", "Common", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.Replace,
+                OnBegin = "onLoginBegin",
+                UpdateTargetId = "target",
+                // OnFailure = "ShowError",
+                OnSuccess = "ShowSuccessContact"
+            }))
+            {
+
+                <input class="Subject" type="hidden" name="Subject" value="Liên hệ" />
+                <div class="row-account">
+                    <div class="col_form fl">
+                        <label class="item_title">@Resources.admin_common_name*</label>
+                        @Html.TextBoxFor(model => model.Username, new { @class = "inputbox", minlength = "2", maxlength = "142", required = true })
+                    </div>
+                    <div class="col_form fr">
+                        <label class="item_title">Email*</label>
+                        @Html.TextBoxFor(model => model.Email1, new { @class = "inputbox", minlength = "2", maxlength = "142", type = "email", required = true })
+                    </div>
+                </div>
+                                <div class="row-account">
+                                    <label class="item_title">@Resources.admin_email_phone</label>
+                                    @Html.TextBoxFor(model => model.Phone, new { @class = "inputbox", minlength = "2", maxlength = "142", required = true })
+                                </div>
+                                <div class="row-account">
+                                    <label class="item_title">@Resources.admin_common_content</label>
+                                    @Html.TextAreaFor(model => model.Text, new { @class = "inputbox", cols = "45", rows = "10", minlength = "2", required = true })
+                                    <i class="fa fa-message"></i>
+                                </div>
+                                <div class="load-more cf "><input style="cursor:pointer" type="submit" class="btn-web send-cmt" value="@Resources.common_send"></div>
+
+
+            }
+        </div>
+
+        <!--End Form Contact-->
+        <!--End Contact-->
+    </div>
+</section>
+
+<script>
+
+    function onLoginBegin() {
+        $('#btn-web').hide();
+        $("#loading").fadeIn();
+    }
+
+    function ShowSuccessContact(data) {
+        if (data.succsess == true) {
+            alert("Gửi thành công")
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-success").css("color", "blue").show();
+            $("#status").html("@Resources.contact_form_success").fadeOut(5000);
+            $("#loading").fadeOut();
+            $("#form0 input[type!=submit],textarea").val('');
+            $("#btn-web").fadeIn();
+        } else {
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-danger").css("color", "red");;
+            $("#status").html("@Resources.contact_form_fail");
+            $("#loading").fadeOut();
+            $("#btn-web").fadeIn();
+        }
+
+    }
+</script>

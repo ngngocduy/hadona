@@ -1,0 +1,136 @@
+﻿@model PixelCMS.Core.Models.Email
+
+@{
+    ViewBag.Title = Resources.contact + "mo";
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+}
+
+<section class="main">
+    <div class="title-head"><i class="fa fa-arrow-circle-right"></i>Thông tin liên hệ</div>
+    <div class="frm-contact wrap-page">
+        <div class="form-group">
+            <div id="status" class="status alert alert-success" style="display: none"></div>
+            @using (Ajax.BeginForm("ContactForm", "Common"
+                                       , new AjaxOptions
+                                       {
+                                           HttpMethod = "POST",
+                                           InsertionMode = InsertionMode.Replace,
+                                           OnBegin = "onLoginBegin",
+                                           UpdateTargetId = "target",
+                                           //OnFailure = "ShowError()",
+                                           OnSuccess = "ShowSuccessContact"
+                                       }
+                    ))
+            {
+                <div class="frow">
+                    @Html.TextBoxFor(model => model.Username, new { placeholder = "Name", @class = "form-control", minlength = "2", maxlength = "142", required = true })
+                    @* <input type="text" placeholder="Họ tên">*@
+                </div>
+                <div class="frow">
+                    @Html.TextBoxFor(model => model.Email1, new { placeholder = "Email", @class = "form-control", minlength = "2", maxlength = "142", required = true, type = "email" })
+                </div>  
+                <div class="frow">
+                    @Html.TextBoxFor(model => model.Subject, new { placeholder = "Subject", @class = "form-control", minlength = "2", maxlength = "142", required = true })
+                </div> 
+                <div class="frow">
+                    @Html.TextBoxFor(model => model.Phone, new { placeholder = "Phone", @class = "form-control", minlength = "2", maxlength = "142", required = true })
+                </div>   	
+                <div class="frow">
+                    @Html.TextAreaFor(model => model.Text, new { rows = "8", @class = "form-control", placeholder = "Content", minlength = "5", required = true })
+                </div> 
+           	<div class="frow fcenter"><button type="submit">Gửi</button></div>
+            
+            }
+
+        </div>
+    </div>
+</section>
+
+
+<div id="loading">
+    <img src="~/Content/loading.gif" />
+</div>
+<!-- Contact / End
+================================================== -->
+<style>
+    .style-button
+    {
+        background-color: #428bca;
+        color: white;
+    }
+
+    .contactform input, textarea
+    {
+        float: left;
+        clear: both;
+        margin-top: 12px;
+        width: 100%;
+    }
+</style>
+
+<style>
+    .alert
+    {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success
+    {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
+    }
+
+    .alert-danger
+    {
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        color: #a94442;
+    }
+
+    #loading
+    {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100px;
+        background: #FFF;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+</style>
+
+<script>
+
+    function onLoginBegin() {
+        $('#contact-submit-button').hide();
+        $("#loading").fadeIn();
+    }
+
+    function ShowSuccessContact(data) {
+        //chat..........................
+        var chatHub = $.connection.chatHub;
+        // Start Hub
+        $.connection.hub.start().done(function () {
+            chatHub.server.message("contact");
+        });
+        if (data.succsess == true) {
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-success").css("color", "blue").show();
+            $("#status").html("@Resources.contact_form_success").fadeOut(5000);
+            $("#loading").fadeOut();
+            $("#form0 input[type!=submit],textarea").val('');
+            /*$("#contact-submit-button").fadeIn();*/
+        } else {
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-danger").css("color", "red");;
+            $("#status").html("@Resources.contact_form_fail");
+            $("#loading").fadeOut();
+        }
+
+    }
+</script>

@@ -1,0 +1,76 @@
+﻿@*@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Cat>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+@foreach (var item in Model)
+{
+    <div class="title-bar">@item.Name</div>
+    <div class="module-content">
+        <div class="BCslider">
+            <ul class="bc-slider">
+                @foreach (var post in item.Posts.Where(x => x.Active).OrderByDescending(x => x.Order).Take(5))
+                {
+                    /* Parallel Lang */
+                    if (post.Lang != currentlang)
+                    {
+                        var postlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == post.Id);
+                        if (postlang != null)
+                        {
+                            post.Id = postlang.Id;
+                            post.Title = postlang.Title;
+                            post.Description = postlang.Description;
+                            post.Content = postlang.Content;
+                        }
+                    }
+                    /* End Parallel Lang */
+                    
+                    var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = post.Id }); 
+                    <li>
+                        <div class="item cf">
+                            <div class="img-item">
+                                @if (post.Thumb != null)
+                                {
+                                    <a href="@Modelurl" rel="@post.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")" class="preview">
+
+                                        <img src="@post.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")" alt=""/>
+                                    </a>
+                                }
+                            </div>
+                            <div class="btn btn-gray"><a href="@Modelurl">@Resources.admin_menu_details</a></div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}*@
+
+
+@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Cat>
+@foreach (var item in Model.Take(1))
+{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    if (item.Lang != currentlang)
+    {
+        var Modellang = db.Cats.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+        if (Modellang != null) { item.Name = Modellang.Name; }
+    }
+    int count = 0;
+    foreach (var post in item.Posts.Where(x => x.Active).OrderByDescending(x => x.Order))
+    {
+        count++;
+        var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = post.Id });
+            <li class="columns">
+                <div class="pro-item">
+                    <h2 class="pro-name"><a href="@Modelurl" title="">@post.Title @Html.Action("AdminEdit", "Common", new { id = post.Id })</a></h2>
+                    <figure class="pro-img"><a href="@Modelurl" title=""><img src="@post.Thumb" alt="" title="" /></a></figure>
+                    <a href="@Modelurl"  class="btn-web">@Resources.admin_menu_details</a>
+                </div>
+            </li>
+        }
+}
+

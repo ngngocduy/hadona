@@ -1,0 +1,203 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+}
+
+
+<input name="Attribute" type="hidden" id="Attribute" />
+<div id="GroupATT">
+    @{
+        foreach (var item in Model.VariantAttributes.Where(x => x.Active))
+        {
+            <div class="frow" attname="@item.GroupVariant.Name">
+                
+                <div class="form-left">@item.GroupVariant.Name : </div>
+                <div class="form-right Group">
+                    <ul class="choose-size rad">
+                        @foreach (var child in item.Variants)
+                        {
+                            if (item.Type == 1)//loại ô màu sắc
+                            {
+                            
+                                <li class="checkbox-ex " style="z-index: 2">
+                                    <input  class="float-left"onclick="variant(@child.ImageId)" type="radio" name="@item.GroupVariant.Name" value="@child.Id" id="@child.Id"/>
+                                    <label style="z-index: 9;width: 100%;height: 100%"  class="float-left lblrad" for="@child.Id">
+                                        <div onclick="variant(@child.ImageId)" style="float: left;border: solid 1px black; width: 24px;height: 20px;background-color: #@child.OptionVariant.Color;margin: 4px"></div>
+                                    </label>
+                                </li>
+                            }
+                            else
+                                if (item.Type == 2)//2 là loại checkbox
+                                {
+                                    <li class="checkbox-ex" style="z-index: 2">
+                                        <input  class="float-left"onclick="variant(@child.ImageId)" type="checkbox" name="@item.GroupVariant.Name" value="@child.Id" id="@child.Id"/>
+                                        <label  style="z-index: 9;width: 100%"  class="float-left" for="@child.Id">@child.OptionVariant.Name @(child.Price>0?"(+"+string.Format("{0:0,0}", child.Price)+")":"")</label>
+                                    </li>
+                                }
+                                else
+                                    if (item.Type == 3)//loại radio ko css
+                                    {
+                          
+                                        <input class="float-left"  onclick="variant(@child.ImageId)" type="radio" id="@child.Id" name="@item.GroupVariant.Name" value="@child.Id"/>
+                                        <label class="float-left" style="margin-right: 10px" for="@child.Id">@child.OptionVariant.Name @(child.Price>0?"(+"+string.Format("{0:0,0}", child.Price)+")":"")
+                                            @if (child.ImageId != null)
+                                            {
+                                                var img = db.MediaFiles.Find(child.ImageId);
+                                                if (img != null)
+                                                {
+                                                    <div  class="pimg" onclick="variant(@child.ImageId)" >
+                                                        @* <img class="product-image-zoom img-responsive" width="32" height="32" src="@img.URL.Replace("Upload/", "Upload/_Thumbs/")">*@
+                                                    </div>
+                                                }
+                                            }</label>
+                                    }
+
+                                    else
+                                        if (item.Type == 5)//loại radio css
+                                        {
+                                            <li class="checkbox-ex " style="z-index: 2">
+                                                <input  class="float-left"onclick="variant(@child.ImageId)" type="radio" name="@item.GroupVariant.Name" value="@child.Id" id="@child.Id"/>
+                                                <label style="z-index: 9;width: 100%;height: 100%"  class="float-left lblrad1" for="@child.Id">
+                                                    @child.OptionVariant.Name
+                                                </label>
+                                            </li>
+                                        }
+
+                        }
+                        @if (item.Type == 4)
+                        {
+                            @Html.DropDownList(item.GroupVariant.Name, item.Variants.Select(i => new SelectListItem()
+                                                                                                     {
+                                                                                                         Value = i.Id.ToString(),
+                                                                                                         Text = i.OptionVariant.Name + (i.Price>0?"(+"+string.Format("{0:0,0}", i.Price)+")":"")
+                                                                                                     }), "chọn")                      
+                        }
+                    </ul>
+                </div>
+           
+                 </div>
+        }
+    }
+</div>
+
+
+<script>
+    $(function () {
+        
+        // Choose Size checkbox
+        $(".choose-size li label").click(function () {
+            $(this).toggleClass("un-checkbox-ex checkbox-ex");
+        });
+    
+        // Choose ô màu sắc radio
+        $(".choose-size li .lblrad").click(function () {
+            $(".choose-size").each(function () {
+                $(".choose-size li .lblrad").removeClass("un-checkbox-ex");
+            });
+            $(this).toggleClass("un-checkbox-ex checkbox-ex");
+
+        });
+        // Choose radio có css
+        $(".choose-size li .lblrad1").click(function () {
+            $(".choose-size").each(function () {
+                $(".choose-size li .lblrad1").removeClass("un-checkbox-ex");
+            });
+            $(this).toggleClass("un-checkbox-ex checkbox-ex");
+
+        });
+        
+
+        //remove các radio khác chỉ lấy 1 radio đc chọn
+        $('#GroupATT input,select').on('change', function () {
+            var selectedIds = [];
+
+            //cho dropdow
+
+            $("#GroupATT select").each(function (parameters) {
+                var val = $(this).val();
+                if (val != "") {
+                    var isExist = jQuery.inArray(val, selectedIds);
+                    //=-1 là ko có trong m?ng .thêm vào mảng
+                    if (isExist == -1) {
+                        selectedIds.push(val);
+                        //add id to selectedIds.
+                    }
+                }
+            });
+
+            //cho checkbox và radio
+            $('#GroupATT input').each(function (parameters) {
+                var $check = $(this);
+                var checked = jQuery.inArray($check.val(), selectedIds);
+                if ($check.is(":checked") == true) {
+                    //tìm trong m?ng
+                    //=-1 là ko có trong m?ng .thêm vào m?ng
+                    if (checked == -1) {
+                        selectedIds.push($check.val());
+                        //add id to selectedIds.
+                    }
+                }
+            });
+            $("#Attribute").val(selectedIds.sort());
+        });
+
+
+    })
+</script>
+<style>
+    .float-left
+    {
+        float: left;
+        /*margin-left: 7px;*/
+    }
+
+    
+.choose-size
+{
+    list-style: none;
+    padding: 0px;
+    margin-top: -6px;
+}
+
+    .choose-size li
+    {
+        font-size: 14px;
+        cursor: pointer;
+        border: 1px solid #d2d2d2;
+        float: left;
+        margin-right: 5px;
+        width: 34px;
+        height: 30px;
+        text-align: center;
+        color: #777;
+    }
+
+        .choose-size li label
+        {
+            cursor: pointer;
+           /* padding: 4px;*/
+        }
+
+        .choose-size li input
+        {
+            display: none;
+        }
+
+    .choose-size .checkbox-ex
+    {
+    }
+
+    .choose-size .un-checkbox-ex
+    {
+        background: #d2d2d2;
+        color: #fff;
+    }
+
+.choose-quantity
+{
+    width: 40px;
+    margin-top: -6px;
+}
+
+</style>

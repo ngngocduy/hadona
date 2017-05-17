@@ -1,0 +1,702 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Where(x => x.Id == t).FirstOrDefault();
+
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = db.PostType_Name.FirstOrDefault(x => x.Posttype_id == t && x.Lang == currentculture).Name;
+
+    ViewBag.Title = Resources.admin_common_create + " " + posttypename;
+    ViewBag.PTitle = posttypename;
+    ViewBag.PDescription = ViewBag.Description;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script type="text/javascript" src="~/Content/ckeditor/ckeditor.js" charset="utf-8"></script>
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/Admin/Content/js/script.js"></script>
+    
+    //tags
+    <script src="~/Scripts/Tags/js/tag-it.js"></script>
+    <link href="~/Scripts/Tags/css/jquery.tagit.css" rel="stylesheet" />
+    <link href="~/Scripts/Tags/css/tagit.ui-zendesk.css" rel="stylesheet" />
+    var tags = db.PostTags;
+  
+    <script>
+        $(function () {
+            var sampleTags = [
+                @foreach (var item in tags)
+                {
+                @Html.Raw("'") @Html.Raw(item.Name) @Html.Raw("',")
+                }
+            ];
+
+            //-------------------------------
+            // Minimal
+            //-------------------------------
+            $('#myTags').tagit();
+
+            //-------------------------------
+            // Single field
+            //-------------------------------
+            $('#singleFieldTags').tagit({
+                availableTags: sampleTags,
+                // This will make Tag-it submit a single form value, as a comma-delimited field.
+                singleField: true,
+                singleFieldNode: $('#mySingleField')
+            });
+
+            // singleFieldTags2 is an INPUT element, rather than a UL as in the other 
+            // examples, so it automatically defaults to singleField.
+            $('#singleFieldTags2').tagit({
+                availableTags: sampleTags
+            });
+
+            //-------------------------------
+            // Preloading data in markup
+            //-------------------------------
+            $('#myULTags').tagit({
+                availableTags: sampleTags, // this param is of course optional. it's for autocomplete.
+                // configure the name of the input field (will be submitted with form), default: item[tags]
+                itemName: 'item',
+                fieldName: 'tags'
+            });
+
+            //-------------------------------
+            // Tag events
+            //-------------------------------
+            var eventTags = $('#eventTags');
+
+            var addEvent = function (text) {
+                $('#events_container').append(text + '<br>');
+            };
+
+            eventTags.tagit({
+                availableTags: sampleTags,
+                beforeTagAdded: function (evt, ui) {
+                    if (!ui.duringInitialization) {
+                        addEvent('beforeTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
+                    }
+                },
+                afterTagAdded: function (evt, ui) {
+                    if (!ui.duringInitialization) {
+                        addEvent('afterTagAdded: ' + eventTags.tagit('tagLabel', ui.tag));
+                    }
+                },
+                beforeTagRemoved: function (evt, ui) {
+                    addEvent('beforeTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
+                },
+                afterTagRemoved: function (evt, ui) {
+                    addEvent('afterTagRemoved: ' + eventTags.tagit('tagLabel', ui.tag));
+                },
+                onTagClicked: function (evt, ui) {
+                    addEvent('onTagClicked: ' + eventTags.tagit('tagLabel', ui.tag));
+                },
+                onTagExists: function (evt, ui) {
+                    addEvent('onTagExists: ' + eventTags.tagit('tagLabel', ui.existingTag));
+                }
+            });
+
+            //-------------------------------
+            // Read-only
+            //-------------------------------
+            $('#readOnlyTags').tagit({
+                readOnly: true
+            });
+
+            //-------------------------------
+            // Tag-it methods
+            //-------------------------------
+            $('#methodTags').tagit({
+                availableTags: sampleTags
+            });
+
+            //-------------------------------
+            // Allow spaces without quotes.
+            //-------------------------------
+            $('#allowSpacesTags').tagit({
+                availableTags: sampleTags,
+                allowSpaces: true
+            });
+
+            //-------------------------------
+            // Remove confirmation
+            //-------------------------------
+            $('#removeConfirmationTags').tagit({
+                availableTags: sampleTags,
+                removeConfirmation: true
+            });
+
+        });
+    </script>
+    
+}
+
+@{ 
+    var langs = db.Languages.Where(x => x.Active == true).ToList();
+    int langlist = langs.Count();
+}
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_create @posttypename @Resources.admin_status_successfully
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="sixteen columns">
+            <div class="head">
+                <div class="isw-cloud"></div>
+                <h1>@posttypename</h1>
+
+                <div class="clear"></div>
+            </div>
+            <div class="block-fluid table-sorting">
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+
+                    <aside id="control">
+                        <div>
+                            <input class="btn btn-blue" type="submit" value="@Resources.admin_common_create" name="@PixelCMS.Areas.Admin.Controllers.ContentController.ButtonType.Submit" />
+                            @if (posttype.Has_Media == true)
+                            {
+                                <input class="btn btn-green" type="submit" value="@Resources.admin_content_saveandpicture" name="@PixelCMS.Areas.Admin.Controllers.ContentController.ButtonType.SubmitandMedia" />
+                            }
+                            <input class="btn" type="submit" value="@Resources.admin_content_saveandedit" name="@PixelCMS.Areas.Admin.Controllers.ContentController.ButtonType.SubmitandEdit" />
+                            <input class="btn" type="submit" value="@Resources.admin_content_saveandcreate @posttypename" name="@PixelCMS.Areas.Admin.Controllers.ContentController.ButtonType.SubmitandCreate" />
+                            <a href="@Url.Action("Index", "Content", new { type = t })" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                      @*  <tr>
+                            <th colspan="2">@Resources.admin_common_create @posttypename @if (langlist > 1 && posttype.Has_Parallel_Language == false)
+                                                                                         {<span>(@Resources.admin_content_language: @ViewBag.CurrentLangName
+                                                                                         <img src="@ViewBag.CurrentLangFlag" />)</span>}</th>
+                        </tr>*@
+
+
+                        @if (langlist > 1 && posttype.Has_Parallel_Language == true)
+                        {
+                
+                            <tr>
+                                <td colspan="2">
+                                    <ul class="tabs-nav">
+                                        <li class="active"><a href="#tab-@ViewBag.CurrentLangCode">
+                                            <img src="@ViewBag.CurrentLangFlag" />
+                                            @ViewBag.CurrentLangName</a></li>
+                                        @foreach (var lang in langs.Where(x => x.Code != ViewBag.CurrentLangCode))
+                                        {
+                                            <li><a href="#tab-@lang.Code">
+                                                <img src="@lang.Flag" />
+                                                @lang.Name</a></li>
+                                        }
+                                    </ul>
+
+                                    <div class="tabs-container">
+                                        <div class="tab-content" id="tab-@ViewBag.CurrentLangCode">
+                                            <table class="grid form-input">
+                                                @if (posttype.Has_Title == true)
+                                                {
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_title</td>
+                                                        <td>@Html.TextBoxFor(model => model.Title, new { minlength = "5", maxlength = "141", required = true })</td>
+                                                    </tr>
+                                                }
+
+                                                @if (posttype.Has_Description == true)
+                                                {
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_description</td>
+                                                        <td>@Html.TextAreaFor(model => model.Description, new { rows = "5", minlength = "5", maxlength = "1024" })</td>
+                                                    </tr>
+                                                }
+
+                                                @if (posttype.Has_Content == true)
+                                                {
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_content</td>
+                                                        <td>@Html.TextAreaFor(model => model.Content)</td>
+                                                    </tr> 
+                                                }
+
+
+                                                @if (posttype.Has_Title == true)
+                                                {
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_friendlyurl</td>
+                                                        <td>
+                                                            <input type="text" name="Slug" id="Slug" readonly="readonly" required="required" /></td>
+                                                    </tr> 
+                                                }
+                                            </table>
+                                        </div>
+                                        @foreach (var lang in langs.Where(x => x.Code != ViewBag.CurrentLangCode))
+                                        {
+                                            <div class="tab-content" id="tab-@lang.Code">
+                                                <table class="grid form-input">
+                                                    @if (posttype.Has_Title == true)
+                                                    {
+                                                        <tr>
+                                                            <td class="label">@Resources.admin_content_title</td>
+                                                            <td>
+                                                                <input id="Title-@lang.Code" maxlength="141" minlength="5" name="Title-@lang.Code" type="text" value="" /></td>
+                                                        </tr>
+                                                    }
+
+                                                    @if (posttype.Has_Description == true)
+                                                    {
+                                                        <tr>
+                                                            <td class="label">@Resources.admin_content_description</td>
+                                                            <td>
+                                                                <textarea cols="20" id="Description-@lang.Code" maxlength="1024" minlength="5" name="Description-@lang.Code" rows="5"></textarea></td>
+                                                        </tr>
+                                                    }
+
+                                                    @if (posttype.Has_Content == true)
+                                                    {
+                                                        <tr>
+                                                            <td class="label">@Resources.admin_content_content</td>
+                                                            <td>
+                                                                <textarea cols="20" id="Content-@lang.Code" name="Content-@lang.Code" rows="2"></textarea></td>
+                                                        </tr> 
+                                                    }
+
+
+                                                    @if (posttype.Has_Title == true)
+                                                    {
+                                                        <tr>
+                                                            <td class="label">@Resources.admin_content_friendlyurl</td>
+                                                            <td>
+                                                                <input type="text" name="Slug-@lang.Code" id="Slug-@lang.Code" readonly="readonly"/></td>
+                                                        </tr> 
+                                                    }
+                                                </table>
+                                            </div>
+                                        }
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+
+                            if (posttype.Has_Title == true)
+                            {
+                            <tr>
+                                <td class="label">@Resources.admin_content_title</td>
+                                <td>@Html.TextBoxFor(model => model.Title, new { minlength = "5", maxlength = "141", required = true })</td>
+                            </tr>
+                            }
+
+
+                            if (posttype.Has_Description == true)
+                            {
+                            <tr>
+                                <td class="label">@Resources.admin_content_description</td>
+                                <td>@Html.TextAreaFor(model => model.Description, new { rows = "5", minlength = "5", maxlength = "1024" })</td>
+                            </tr>
+                            }
+
+                            if (posttype.Has_Content == true)
+                            {
+                            <tr>
+                                <td class="label">@Resources.admin_content_content</td>
+                                <td>@Html.TextAreaFor(model => model.Content)</td>
+                            </tr> 
+                            }
+
+
+                            if (posttype.Has_Title == true)
+                            {
+                            <tr>
+                                <td class="label">@Resources.admin_content_friendlyurl</td>
+                                <td>
+                                    <input type="text" name="Slug" id="Slug" readonly="readonly" required="required" /></td>
+                            </tr> 
+                            }
+                        }
+
+                        <tr>
+                            <td class="button-submit-zone" colspan="2">
+                                @Resources.admin_content_info
+                            </td>
+                        </tr>
+
+                        @if (posttype.Has_Cat == true)
+                        {
+                            <tr>
+                                <td class="label">
+                                    @Resources.admin_content_category
+                                    <i title="Chứa nhiều Tin/SP ,bạn nên cho tin/sp vào chuyên mục" class="fa fa-question-circle"></i>
+                                </td>
+                                <td>@Html.ListBox("cats", ViewBag.catss as MultiSelectList, new
+                           {
+                               @class = "chzn-select span12",
+                               data_placeholder = Resources.admin_content_chooseyourcategory
+                           }
+                                     )</td>
+                            </tr> 
+                     
+                        }
+                        @if (posttype.Tags == true)
+                        {
+                            <tr>
+                                <td class="label"><a class="btn btn-blue" href="@Url.Action("Index", "Tags")" title="Danh sách tags" style="">Tags</a></td>
+                                <td>
+                                    <input type="hidden" name="tags" id="mySingleField" value="">
+                                    <ul id="singleFieldTags"></ul>
+                                </td>
+                            </tr>
+                        }
+                        @if (posttype.Has_Thumb == true)
+                        {
+                            <tr>
+                                <td class="label">@Resources.admin_content_picture</td>
+                                <td>@Html.EditorFor(model => model.Thumb)
+                                    <input type="button" id="BrowseURL-Thumb" value="@Resources.admin_content_browsepicture" class="btn btn-file" />
+                                </td>
+                            </tr> 
+                        }
+
+                        @if (posttype.Has_Order == true)
+                        {                        
+                            <tr>
+                                <td class="label">@Resources.admin_content_order</td>
+                                <td>@Html.EditorFor(model => model.Order)</td>
+                            </tr> 
+                        }
+
+                        @if (posttype.Has_Active == true)
+                        {                        
+                            <tr>
+                                <td class="label">@Resources.admin_content_active</td>
+                                <td>
+                                    <input checked="checked" class="check-box" data-val="true" data-val-required="The Active field is required." id="Active" name="Active" type="checkbox" value="true" /><input name="Active" type="hidden" value="false" /></td>
+                            </tr> 
+                        }
+
+                        @if (posttype.Has_feature == true)
+                        {
+                            <tr>
+                                <td class="label">Đặc biệt</td>
+                                <td>@Html.EditorFor(model => model.feature)</td>
+                            </tr>
+                        }
+
+                        @if (posttype.Has_onsale == true)
+                        {
+                            <tr>
+                                <td class="label">OnSale</td>
+                                <td>@Html.EditorFor(model => model.onsale)</td>
+                            </tr>
+                        }
+
+                        @if (posttype.Has_New == true)
+                        {
+                            <tr>
+                                <td class="label">New</td>
+                                <td>@Html.EditorFor(model => model.newpost)</td>
+                            </tr>
+                        }
+
+                        @if (posttype.Has_Owner == true)
+                        {
+                            <tr>
+                                <td class="label">@posttypename @Resources.admin_content_owner</td>
+                                <td>@Html.DropDownList("Owner_Id", "-- " + Resources.admin_content_root + "--")</td>
+                            </tr> 
+                        }
+
+                        @if (posttype.Has_Price == true || posttype.Has_oldprice == true)
+                        {
+                            <tr>
+                                <td class="button-submit-zone" colspan="2">@Resources.admin_content_price</td>
+                            </tr>
+                        }
+
+                        @if (posttype.Has_Callforprice == true)
+                        {
+                            <tr>
+                                <td class="label">@Resources.admin_content_callforprice</td>
+                                <td>@Html.EditorFor(model => model.Callforprice)</td>
+                            </tr> 
+                        }
+
+                        @if (posttype.Has_Price == true)
+                        {
+                            <tr>
+                                <td class="label">@Resources.admin_content_price</td>
+                                <td>
+                                    <input type="number" id="Price" name="Price">
+                                </td>
+                            </tr> 
+                        }
+
+                        @if (posttype.Has_oldprice == true)
+                        {
+                            <tr>
+                                <td class="label">@Resources.admin_content_oldprice</td>
+                                <td>
+                                    <input type="number" id="Price_Old" name="Price_Old"></td>
+                            </tr> 
+                        }
+
+                        @Html.Action("AttributeBox", "Content", new { type = t })
+
+                    </table>
+                   
+
+                        if (posttype.Active_Product == true)
+                        {
+                      
+                    <div class="button-submit-zone tab" onclick="click_activeproduct()">
+                        @* @Html.CheckBoxFor(m => m.ActiveProduct, new { @checked = false, onclick = "click_activeproduct()", style = "float: left" })
+                    <label style="cursor: pointer" for="ActiveProduct">Thuộc tính sản phẩm</label>*@
+                        <i class="fa fa-plus-square"></i>Thuộc tính sản phẩm
+                    </div>
+                        }
+                    <table class="grid form-input" id="tb_activeproduct" style="display: none">
+
+                        <tr>
+                            <td class="label">Mã SKU</td>
+                            <td>@Html.EditorFor(model => model.Product.SKU)</td>
+                        </tr>
+                        @*<tr>
+                        <td class="label">Kích hoạt kho</td>
+                        <td>@Html.EditorFor(model => model.Product.Inv_Active)
+                        </td>
+                    </tr>*@
+                        <tr>
+                            <td class="label">Số lượng</td>
+                            <td>@Html.EditorFor(model => model.Quantity)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Thông báo khi tồn kho thấp
+                             <i title="VD:nhập vào 2.Thì khi bán còn 2 sp cuối cùng sẽ không bán nữa,sẽ giữ lại 2 sp và thông báo hàng tồn kho thấp " class="fa fa-question-circle"></i>
+                            </td>
+                            <td>@Html.EditorFor(model => model.Product.Inv_min_Quantity)
+                            </td>
+                        </tr>
+                        @* <tr>
+                        <td class="label">Inv_OutStock</td>
+                        <td>@Html.EditorFor(model => model.Product.Inv_OutStock)
+                        </td>
+                    </tr>*@
+                        @*<tr>
+                        <td class="label">Inv_OutStockNoti</td>
+                        <td>@Html.EditorFor(model => model.Product.Inv_OutStockNoti)
+                        </td>
+                    </tr>*@
+                        @* <tr>
+                        <td class="label">Cho phép đặt hàng trước</td>
+                        <td>@Html.EditorFor(model => model.Product.Inv_Backorder)
+                        </td>
+                    </tr>*@
+                        @* <tr>
+                        <td class="label">UpSell</td>
+                        <td>@Html.EditorFor(model => model.Product.UpSell)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">CrossSell</td>
+                        <td>@Html.EditorFor(model => model.Product.CrossSell)
+                        </td>
+                    </tr>*@
+                        <tr>
+                            <td class="label"><a class="btn btn-blue" href="@Url.Action("Index", "Manufacturer")" title="Danh sách hãng" style="">Hãng sản xuất</a></td>
+                            <td>
+                                @Html.DropDownList("manu", "Chọn")
+                                @Html.HiddenFor(model => model.Product.Supplier_Id)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Giảm giá
+                             <i title="Điền giá và chọn thời gian bắt đầu và kết thúc,thì sản phẩm này sẽ áp dụng giá này trong khoảng thời gian đã định." class="fa fa-question-circle"></i>
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.Product.Sale_Price, new { @type = "number" })
+                                @Html.ValidationMessageFor(model => model.Product.Sale_Price)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Ngày bắt đầu áp dụng giảm giá</td>
+                            <td>@Html.EditorFor(model => model.Product.Sale_Start)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Ngày kết thúc giảm giá</td>
+                            <td>@Html.EditorFor(model => model.Product.Sale_End)
+                            </td>
+                        </tr>
+                        @*<tr>
+                        <td class="label">Weight</td>
+                        <td>@Html.TextBoxFor(model => model.Product.Weight,new {@type="number"})
+                        </td>
+                    </tr>*@
+                        <tr>
+                            <td class="label">Chiến dịch giảm giá,Biến thể sản phẩm</td>
+                            <td>Bạn cần phải lưu các sản phẩm trước sau đó mới có thể tạo chiến dịch và biến thể.</td>
+                        </tr>
+                    </table>
+                
+                        if (posttype.Has_Meta == true)
+                        {
+                    <div class="button-submit-zone tab" onclick="click_activeseo()"><i class="fa fa-plus-square"></i>SEO</div>
+                    <table class="grid form-input" id="tb_activeseo" style="display: none">
+                        <tr>
+                            <td class="label">@Resources.admin_content_keyword</td>
+                            <td>@Html.EditorFor(model => model.Meta_key)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_metadescription</td>
+                            <td>@Html.EditorFor(model => model.Meta_Description)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_advancetitle</td>
+                            <td>@Html.EditorFor(model => model.Meta_Title)
+                            </td>
+                        </tr>
+
+                        @if (ViewBag.HeaderHtml_Per != "false")
+                        {
+                            <tr>
+                                <td class="label">@Resources.admin_content_headerhtml</td>
+                                <td>@Html.EditorFor(model => model.Html_Head)</td>
+                            </tr>
+                        }
+                    </table>
+                        }
+
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $("#manu").change(function () {
+            $("#Product_Supplier_Id").val($(this).val());
+        });
+    });
+
+    $(function () {
+        $("#Product_Sale_Start").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            dateFormat: 'dd-mm-yy'
+        });
+    });
+    $(function () {
+        $("#Product_Sale_End").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //  changeMonth: true,
+            // changeYear: true,
+            dateFormat: 'dd-mm-yy'
+        });
+    });
+</script>
+
+
+@if (posttype.Has_Content == true)
+{
+    <script>
+        CKEDITOR.replace('Content',
+            {
+                height: '400px',
+                filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                filebrowserUploadUrl:
+                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                filebrowserImageUploadUrl:
+                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+            });
+    </script>
+}
+
+@if (posttype.Has_Cat == true)
+{
+    <script src="~/Areas/Admin/Content/assets/chosen/chosen.jquery.js"></script>
+    <link href="~/Areas/Admin/Content/assets/chosen/chosen.min.css" rel="stylesheet" />
+    <script>    $(".chzn-select").chosen(); </script>
+}
+
+<script>
+    SeoUrl("#Title", "#Slug");
+</script>
+
+@if (langlist > 1 && posttype.Has_Parallel_Language == true)
+{
+    foreach (var lang in langs.Where(x => x.Code != ViewBag.CurrentLangCode))
+    {
+    <script>
+        SeoUrl("#Title-@lang.Code", "#Slug-@lang.Code")
+    </script>
+    
+        if (posttype.Has_Content == true)
+        {
+    <script>
+        CKEDITOR.replace('Content-@lang.Code',
+            {
+                height: '400px',
+                filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                filebrowserUploadUrl:
+                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                filebrowserImageUploadUrl:
+                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+            });
+    </script>
+        }
+
+    }
+}
+
+
+@*@Scripts.Render("~/bundles/jqueryval");
+    <script src="~/Scripts/messages_vi.js "></script>*@
+<script>
+    $("form").validate();
+
+    function click_activeproduct() {
+
+        $("#tb_activeproduct").toggle(500);
+    }
+
+    function click_activeseo() {
+        $("#tb_activeseo").toggle(500);
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL-Thumb").click(function () {
+            var ckfinder = new CKFinder({ resourceType: 'Images' });
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#Thumb").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+    <script>
+        $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}

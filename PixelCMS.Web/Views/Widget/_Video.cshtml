@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post> 
+@if (Model.FirstOrDefault() != null)
+{
+    <div class="title-bar">Video</div>
+    <div class="module-content">
+        <div class="NEWSslider" style="padding: 17px 0px;">
+            <ul class="news-slider">
+                @foreach (var post in Model.OrderByDescending(x => x.Order).Take(5))
+                {
+                    var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = post.Id });
+                    <li>
+                        <div class="item cf" style="width: 220px;height: 270px">
+                            @*<div class="img-item">
+                                @if (post.Thumb != null)
+                                {
+                                    <a href="@Modelurl" class="">
+
+                                        <img src="@post.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")" alt=""/>
+                                    </a>
+                                }
+                            </div>*@
+                            <iframe width="220" height="220" src="https://www.youtube.com/embed/@Html.Action("LoadAttribute", "Common", new { code = "code-youtube", id = post.Id })" frameborder="0" allowfullscreen></iframe>
+                            <div class="description">@post.Title</div>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <!-- End news-slider -->
+        </div>
+    </div>
+}

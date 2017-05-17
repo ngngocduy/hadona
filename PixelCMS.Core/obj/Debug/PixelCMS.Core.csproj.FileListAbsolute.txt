@@ -1,0 +1,158 @@
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\PixelCMS.Core.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\PixelCMS.Core.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\Antlr3.Runtime.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\CsvHelper.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\EntityFramework.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\Microsoft.CSharp.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\Newtonsoft.Json.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Configuration.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Data.Entity.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Runtime.Serialization.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Security.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Web.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Web.Mvc.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Web.Optimization.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Xml.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Xml.Linq.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\WebGrease.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\WebMatrix.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\WebMatrix.WebData.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\CsvHelper.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\CsvHelper.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\EntityFramework.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\Newtonsoft.Json.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Web.Mvc.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\System.Web.Optimization.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\WebMatrix.Data.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\bin\WebMatrix.WebData.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\update_tkm_shop\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16006\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16007\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.dll
+D:\project\Project Mẫu\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+D:\project\Project Mẫu\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\project\Project Mẫu\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.pdb
+E:\Project Mẫu\PixelCMS.Core\obj\Debug\PixelCMS.Core.csprojResolveAssemblyReference.cache
+E:\Project Mẫu\PixelCMS.Core\obj\Debug\PixelCMS.Core.dll
+E:\Project Mẫu\PixelCMS.Core\obj\Debug\PixelCMS.Core.pdb

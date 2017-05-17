@@ -1,0 +1,113 @@
+﻿@using PixelCMS.Core.Models
+@model Product_ProductAttribute
+
+@{
+    ViewBag.Title = "Tạo thuộc tính kỹ thuật";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Tạo thuộc tính sản phẩm</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.HiddenFor(x => x.Product_Id)
+                    @Html.ValidationSummary(true)
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="Tạo" class="btn btn-blue" />
+                            <a href="@Url.Action("P_PAttList", new { productid = Model.Product_Id })" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">Thông tin cơ bản</th>
+                        </tr>
+                        <tr>
+                            <td class="label">Thuộc tính linh hoạt
+                              <i title="Thuộc tính này được tạo sẵn ở menu'Sản phẩm-->Thuộc tính kỹ thuật'" class="fa fa-question-circle"></i>
+                            </td>
+                            <td>
+                                @Html.HiddenFor(model => model.ProductAttribute_Id)
+                                @Html.ValidationMessageFor(model => model.ProductAttribute_Id)
+                                <input required="" type="text" id="search" placeholder="Nhập tên Thuộc tính kỹ thuật" class="form-control" style="display: inline-block; width: 20%;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Giá trị</td>
+                            <td>
+                                @Html.TextBoxFor(model => model.Value, new { required = true })
+                                @Html.ValidationMessageFor(model => model.Value)
+                            </td>
+                        </tr>
+                    </table>
+
+                }
+
+            </div>
+        </div>
+    </div>
+    <a style="font-weight: bold"></a>
+</section>
+
+<script>
+    $.widget("custom.catcomplete", $.ui.autocomplete, {
+        _create: function () {
+            this._super();
+            this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+        },
+        _renderMenu: function (ul, items) {
+            var that = this,
+                currentCategory = "";
+            $.each(items, function (index, item) {
+                var li;
+                if (item.category != currentCategory) {
+                    ul.append("<li style='font-weight: bold' class='ui-autocomplete-category'>" + item.category + "</li>");
+                    currentCategory = item.category;
+                }
+                li = that._renderItemData(ul, item);
+                if (item.category) {
+                    li.attr("aria-label", item.category + " : " + item.label);
+                }
+            });
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    var url = '@Url.Action("getAtt")';
+    $('#search').catcomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                data: { query: request.term },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.Name,
+                            value: item.Id,
+                            category: item.Category
+                        };
+                    }));
+                }
+            });
+        },
+        select: function (event, ui) {
+            $('#search').val(ui.item.label);
+            $('#ProductAttribute_Id').val(ui.item.value);
+            return false;
+        },
+        //minLength: 0
+    });
+</script>

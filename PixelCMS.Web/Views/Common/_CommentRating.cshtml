@@ -1,0 +1,264 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Comment
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    int postid = ViewBag.postid;
+    var comments = db.Comments.Where(x => x.Active & x.Post_Id == postid).OrderByDescending(z => z.CreateDate);
+
+    var countcm=comments.Count();
+    var sumrate = comments.Sum(x => x.Product_Rate);
+    var rate =sumrate/countcm;
+}
+<input id="rate" type="hidden" value="@(string.Format("{0:0.00}",rate))"/>
+<style>
+    @@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+    fieldset, label
+    {
+        margin: 0;
+        padding: 0;
+    }
+    /****** Style Star Rating Widget *****/
+
+    .rating
+    {
+        border: none;
+        float: right;
+    }
+
+        .rating > input
+        {
+            display: none;
+        }
+
+        .rating > label:before
+        {
+            margin: 5px;
+            font-size: 1.25em;
+            font-family: FontAwesome;
+            display: inline-block;
+            content: "\f005";
+        }
+
+        .rating > .half:before
+        {
+            content: "\f089";
+            position: absolute;
+        }
+
+        .rating > label
+        {
+            color: #999;
+            float: right;
+        }
+
+        /***** CSS Magic to Highlight Stars on Hover *****/
+
+        .rating > input:checked ~ label, /* show gold star when clicked */
+        .rating:not(:checked) > label:hover, /* hover current star */
+        .rating:not(:checked) > label:hover ~ label
+        {
+            color: red;
+        }
+            /* hover previous stars in list */
+
+            .rating > input:checked + label:hover, /* hover current star when changing rating */
+            .rating > input:checked ~ label:hover,
+            .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+            .rating > input:checked ~ label:hover ~ label
+            {
+                color: red;
+            }
+</style>
+
+<div class="row">
+    <div id="status" class="status alert alert-success" style="display: none"></div>
+    @using (Ajax.BeginForm("CommentForm", "Common"
+                                                   , new AjaxOptions
+                                                   {
+                                                       HttpMethod = "POST",
+                                                       InsertionMode = InsertionMode.Replace,
+                                                       OnBegin = "onLoginBegin",
+                                                       UpdateTargetId = "target",
+                                                       //OnFailure = "ShowError()",
+                                                       OnSuccess = "ShowSuccess"
+                                                   }
+                                ))
+    {
+        <input type="hidden" name="Post_Id" value="@ViewBag.postid"/>
+        <input id="Product_Rate" name="Product_Rate" value="0" type="hidden" />
+
+        <div class="form-group col-md-12">
+            @Html.TextBoxFor(model => model.Name, new { placeholder = Resources.admin_common_name, @class = "form-control", minlength = "2", maxlength = "142", required = true })
+        </div>
+        <div class="form-group col-md-12">
+            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control", minlength = "2", maxlength = "142", required = true, type = "email" })
+        </div>
+        <div class="form-group col-md-12">
+            <label style="float: left; height: 20px; margin-top: 7px;">
+                Đánh giá:</label>
+        </div>
+        <fieldset class="rating" style="float: left">
+            <input type="radio" id="star5" name="rating" value="5,0" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half" name="rating" value="4,5" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4,0" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half" name="rating" value="3,5" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3,0" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half" name="rating" value="2,5" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2,0" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half" name="rating" value="1,5" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1,0" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf" name="rating" value="0,5" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+        
+        <div class="form-group col-md-12">
+            @Html.TextAreaFor(model => model.Content, new { rows = "8", @class = "form-control", placeholder = Resources.contact_form_text, minlength = "5", required = true })
+        </div>
+        <div class="form-group col-md-12">
+            <input id="SendComment" type="submit" name="submit" class="btn btn-primary pull-right form-control" value="@Resources.common_send">
+        </div>
+    }
+    <style>
+        .form-group input[type='text'], input[type='email']
+        {
+            width: 50%;
+            margin-bottom: 12px;
+            height: 25px;
+        }
+
+        .form-group textarea
+        {
+            width: 100%;
+        }
+
+        .alert
+        {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .alert-success
+        {
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+            color: #3c763d;
+        }
+
+        .alert-danger
+        {
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            color: #a94442;
+        }
+
+        #loading
+        {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100px;
+            background: #FFF;
+            padding: 10px;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+    </style>
+    <script>
+        $('.rating input[name=rating]').click(function () {
+            $('#Product_Rate').val($(this).val());
+        })
+
+        function onLoginBegin() {
+            //$('#SendComment').hide();
+            $("#loading").fadeIn();
+        }
+
+        function ShowSuccess(data) {
+            //chat..........................
+            /*       var chatHub = $.connection.chatHub;
+                   // Start Hub
+                   $.connection.hub.start().done(function () {
+                       chatHub.server.message("contact");
+                   });*/
+
+            if (data.succsess == true) {
+                $("#status").removeClass();
+                $("#status").addClass("alert alert-success").css("color", "blue").show();
+                $("#status").html("@Resources.contact_form_success Admin sẽ duyệt sau").hide(70000);
+                $("#loading").fadeOut();
+                $("#form0 input[type!=submit],textarea").val('');
+                /*$("#contact-submit-button").fadeIn();*/
+            }else if (data.succsess == "errorRate") {
+                  alert('Vui lòng đánh giá sản phẩm!');
+              } else {
+                $("#status").removeClass();
+                $("#status").addClass("alert alert-danger").css("color", "red").show();
+                $("#status").html("@Resources.contact_form_fail").hide(70000);
+                $("#loading").fadeOut();
+                $('#SendComment').show();
+            }
+        }
+    </script>
+</div>
+
+<div class="listcomment">
+    @foreach (var item in comments)
+    {
+        <div class="commentname">@item.Name <span class="commentdate">- @item.CreateDate.Value.ToShortDateString()</span>
+        </div>
+        <fieldset class="rating">
+            <input type="radio" id="star5_@item.Id" name="@item.Id" value="5,0" /><label class="full" for="" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half_@item.Id" name="@item.Id" value="4,5" /><label class="half" for="" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4_@item.Id" name="@item.Id" value="4,0" /><label class="full" for="" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half_@item.Id" name="@item.Id" value="3,5" /><label class="half" for="" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3_@item.Id" name="@item.Id" value="3,0" /><label class="full" for="" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half_@item.Id" name="@item.Id" value="2,5" /><label class="half" for="" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2_@item.Id" name="@item.Id" value="2,0" /><label class="full" for="" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half_@item.Id" name="@item.Id" value="1,5" /><label class="half" for="" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1_@item.Id" name="@item.Id" value="1,0" /><label class="full" for="" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf_@item.Id" name="@item.Id" value="0,5" /><label class="half" for="" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+        <script>
+            $(function () {
+                // $('.rating input[name=@item.Id][value=@item.Product_Rate]').click();
+                $('.rating input[name=@item.Id]').each(function () {
+                    var $this = $(this).val();
+                    if ($this == '@item.Product_Rate') {
+                            this.click();
+                        }
+                    })
+            })
+        </script>
+        <div class="commentcontent">@item.Content</div>  
+    }
+
+</div>
+<style>
+    .listcomment
+    {
+        margin-top: 50px;
+        border-top: solid 1px gray;
+    }
+
+    .commentname
+    {
+        color: cornflowerblue;
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .commentcontent
+    {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    .commentdate
+    {
+        font-size: 14px;
+        font-weight: normal;
+    }
+</style>

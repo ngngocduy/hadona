@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+<style type="text/css">
+    #slideads
+    {
+	  z-index: -1;
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #slideads1
+    {
+        float: left;
+        margin-left: 20px;
+        width: 127px;
+    }
+
+    #slideads2
+    {
+        float: right;
+        margin-right: 20px;
+        width: 127px;
+    }
+</style>
+<script src="/Scripts/quangcaotruot.js" type="text/javascript"></script>
+
+<div id="slideads">
+    @if (Model.FirstOrDefault() != null)
+    {
+        int count = 0;
+        foreach (var item in Model.OrderByDescending(x => x.Order))
+        {
+            count++;
+            if (count == 1)
+            {
+        <div class="slideads1" id="slideads1">
+            <a target="_blank" href="@Html.Action("LoadAttribute", "Common", new { code = "banner-link", id = item.Id })">
+                <img src="@item.Thumb" /></a>
+        </div>
+            }
+            else if (count == 2)
+            {
+        <div class="slideads2" id="slideads2">
+            <a target="_blank" href="@Html.Action("LoadAttribute", "Common", new { code = "banner-link", id = item.Id })">
+                <img src="@item.Thumb" /></a>
+        </div>  
+            }
+         
+        }
+    }
+
+
+
+</div>

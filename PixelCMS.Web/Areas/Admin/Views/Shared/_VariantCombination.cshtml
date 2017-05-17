@@ -1,0 +1,134 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+}
+<input name="Attribute" type="hidden" id="Attribute" />
+<div id="GroupATT">
+    @{
+        foreach (var item in Model.VariantAttributes.Where(x => x.Active))
+        {
+        <h6 style="font-weight: bold" class="float-left">@item.GroupVariant.Name :</h6> 
+        <div class="Group" attname="@item.GroupVariant.Name">
+            @foreach (var child in item.Variants)
+            {
+                if (item.Type == 1)//loại ô màu sắc
+                {
+        <input class="float-left" onclick="variant(@child.ImageId)"  type="radio" id="@child.Id" name="@item.GroupVariant.Name" value="@child.Id"/>
+            <label class="float-left" for="@child.Id">
+                <div onclick="variant(@child.ImageId)" style="float: left;border: solid 1px black; width: 15px;height: 15px;background-color: #@child.OptionVariant.Color"></div>
+                <p style="float: left; margin-right: 7px">
+                    @if (child.Price > 0)
+                    {
+                        @Html.Raw("+" + string.Format("{0:0,000}", child.Price))
+                    }
+                    else
+                    {@Html.Raw("+0")}
+                </p>
+            </label>
+                }
+                else
+                    if (item.Type == 2)//2 là loại checkbox
+                    {
+        <input  class="float-left"onclick="variant(@child.ImageId)" type="checkbox" name="@item.GroupVariant.Name" value="@child.Id" id="@child.Id"/>
+            <label class="float-left" for="@child.Id">@child.OptionVariant.Name</label>
+                    }
+                    else
+                        if (item.Type == 3)//loại radio
+                        {
+                          
+        <input class="float-left"  onclick="variant(@child.ImageId)" type="radio" id="@child.Id" name="@item.GroupVariant.Name" value="@child.Id"/>
+            <label class="float-left" style="margin-right: 10px" for="@child.Id">@child.OptionVariant.Name (+@string.Format("{0:0,000}", child.Price))
+                                                                        @if (child.ImageId != null)
+                                                                        {
+                                                                            var img = db.MediaFiles.Find(child.ImageId);
+                                                                            if (img != null)
+                                                                            {
+                                                                            <div  class="pimg" onclick="variant(@child.ImageId)" >
+                                                                                <img class="product-image-zoom img-responsive" width="32" height="32" src="@img.URL.Replace("Upload/", "Upload/_Thumbs/")">
+                                                                            </div>
+                                                                            }
+                                                                        }</label>
+                        }
+                        else
+                            if (item.Type == 5)//loại radio
+                            {
+                          
+        <input class="float-left"  onclick="variant(@child.ImageId)" type="radio" id="@child.Id" name="@item.GroupVariant.Name" value="@child.Id"/>
+            <label class="float-left" style="margin-right: 10px" for="@child.Id">@child.OptionVariant.Name (+@string.Format("{0:0,000}", child.Price))
+                                                                        @if (child.ImageId != null)
+                                                                        {
+                                                                            var img = db.MediaFiles.Find(child.ImageId);
+                                                                            if (img != null)
+                                                                            {
+                                                                            <div  class="pimg" onclick="variant(@child.ImageId)" >
+                                                                                <img class="product-image-zoom img-responsive" width="32" height="32" src="@img.URL.Replace("Upload/", "Upload/_Thumbs/")">
+                                                                            </div>
+                                                                            }
+                                                                        }</label>
+                            }
+            }
+        </div>
+            if (item.Type == 4)
+            {
+        @Html.DropDownList(item.GroupVariant.Name, item.Variants.Select(i => new SelectListItem()
+   {
+       Value = i.Id.ToString(),
+       Text = i.OptionVariant.Name + "(+" + string.Format("{0:0,000}", i.Price) + "đ)",
+   }), "chọn")                      
+            }
+                                                                        
+        <div style="clear: both"></div>
+        <br />
+        }
+                                                
+    }
+</div>
+<script>
+    $(function () {
+
+        //remove các radio khác chỉ lấy 1 radio đc chọn
+        $('#GroupATT input,select').on('change', function () {
+            var selectedIds = [];
+            
+            //cho dropdow
+           
+            $("#GroupATT select").each(function(parameters) {
+                var val = $(this).val();
+                if (val!="") {
+                    var isExist = jQuery.inArray(val, selectedIds);
+                    //=-1 là ko có trong m?ng .thêm vào mảng
+                    if (isExist == -1) {
+                        selectedIds.push(val);
+                        //add id to selectedIds.
+                    }
+                }
+            });
+            
+            
+            //cho checkbox và radio
+            $('#GroupATT input').each(function (parameters) {
+                var $check = $(this);
+                var checked = jQuery.inArray($check.val(), selectedIds);
+                if ($check.is(":checked") == true) {
+                    //tìm trong m?ng
+                    //=-1 là ko có trong m?ng .thêm vào m?ng
+                    if (checked == -1) {
+                        selectedIds.push($check.val());
+                        //add id to selectedIds.
+                    }
+                }
+            });
+            $("#Attribute").val(selectedIds.sort());
+        });
+
+       
+    })
+</script>
+<style>
+    .float-left
+    {
+        float: left;
+        /*margin-left: 7px;*/
+    }
+</style>

@@ -1,0 +1,34 @@
+﻿<div id="targetEmail"></div>
+
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <section id="email-newsletter" class="clearfix footer">
+        <h3 style="text-align: left">Nhận tin tức mới nhất</h3>
+        <input id="txtEmailsubscribe" type="email" name="Email" required="required" type="text" placeholder="@Resources.NhapMailCuaBan" style="width: inherit !important">
+        <input id="btnEmailSubscribe" type="submit" class="trans-hover" value="Gửi"  >
+    </section>
+</div>
+
+<script>
+
+    $("#btnEmailSubscribe").click(function () {
+        var namemail1 = $("#txtEmailsubscribe").val();
+        if (IsEmail(namemail1)) {
+            $.ajax({
+                url: '@Url.Action("EmailSubscribePost", "Common")?Email=' + namemail1,
+                type: "POST",
+                data: {},
+                success: function (data) {
+                    if (data.result == false) {
+                        $("#txtEmailsubscribe").val("");
+                        $("#targetEmail").addClass("alert alert-danger").show().html("Email này đã đăng ký vui lòng chon Email khác").fadeOut(3000);
+                    } else {
+                        $("#txtEmailsubscribe").val("");
+                        $("#targetEmail").removeClass().addClass("alert alert-success").show().html("Email của bạn đã đăng ký thành công").fadeOut(3000);
+                    }
+                }
+            });
+        } else {
+            $("#targetEmail").addClass("alert alert-danger").show().html("Cú pháp Email không hợp lệ").fadeOut(3000);
+        }
+    })
+</script>

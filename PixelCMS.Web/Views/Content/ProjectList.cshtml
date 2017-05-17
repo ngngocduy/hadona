@@ -1,0 +1,169 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    if (ViewBag.CatTitle != null)
+    {
+        ViewBag.Title = ViewBag.CatTitle;
+    }
+    else
+    {
+        //ViewBag.Title = ViewBag.CategoryCurrent;
+        ViewBag.Title = ViewBag.TypeName;
+    }
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var cat1 = db.Cats.Where(x => x.Active & x.PostType.Code == "project").OrderByDescending(x => x.Order).ToList();
+    int count = 0;
+}
+@{
+    var count1 = Request.Url.Segments.Count();
+    var slug = Request.Url.Segments[count1 - 1];
+    var fullslug = db.Slugs.FirstOrDefault(x => x.Slug_Full == slug);
+}
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+
+@if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+{
+    @section adminpanel{
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+    @*<link href="~/Content/PagedList.css" rel="stylesheet" />*@
+    <script>
+        //active breadrumb và danh mục con
+        $(function () {
+            if ('@(slug)' == '/') {
+                $(".link-project a[href='/@currentlang']").addClass('active');
+            }
+            else if ('@(slug)' != '@currentlang') {
+                $(".link-project  a[href='/@currentlang/@slug']").addClass('active');
+            } else {
+                $(".link-project  a[href='/@currentlang']").addClass('active');
+            }
+            //active product
+            // $("#cssmenu > ul > li a[href='/@currentlang/san-pham']").closest("#cssmenu > ul > li").addClass('active');
+            // $("#cssmenu > ul > li a[href='/@currentlang/product']").closest("#cssmenu > ul > li").addClass('active');
+        }
+            )
+
+    </script>
+
+    <div class="banner">
+        <img src="/theme/images/uploads/main-banner.jpg" alt="Banner contact us" />
+        <div class="content-banner">
+            <div class="container">
+                <div class="inner">
+                    <h3 class="title">@ViewBag.TypeName</h3>
+                    @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="main">
+        <div class="container">
+            <div class="product-block investor">
+                <div class="inner">
+                    <div class="row">
+                        @*<div class="col-sm-4">
+                            @Html.Action("Menu", "common", new { positioncode = "menu-invertor" })
+                        </div>*@
+                        <div class="col-sm-12">
+                            <div class="awards-list">
+                                <h3 class="title-main-1">
+                                    @ViewBag.TypeName
+                                    <a href="@Html.Action("LoadOption", "Common", new { code = "filedownload" })" style="float:right" class="btn-3"> Download</a>
+                                </h3>
+                                <div class="row">
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        /* Parallel Lang */
+                                        if (item.Lang != currentlang)
+                                        {
+                                            /* Parallel Lang */
+
+                                            var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                                            if (itemlang != null)
+                                            {
+                                                item.Id = itemlang.Id;
+                                                item.Title = itemlang.Title;
+                                                item.Description = itemlang.Description;
+                                                item.Content = itemlang.Content;
+                                            }
+
+                                        }
+                                        /* End Parallel Lang */
+                                        var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+                                        <div class="col-sm-6 awards-item">
+                                            <figure>
+                                                <img width="500" height="300" src="@item.Thumb">
+                                            </figure>
+                                            <h4 class="title-awards">
+                                                @item.Title @Html.Action("AdminEdit", "Common", new { id = item.Id })
+
+                                            </h4>
+
+                                        </div>
+                                        if (count % 2 == 0)
+                                        {
+                                            <div class="clearfix"></div>
+                                        }
+                                        @*<div class="col-sm-6">
+                        <div class="thumbnail">
+                            <div class="img_product">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-5">
+                                        <a href="#" class="image-wrapper">
+                                            <img src="/theme/images/uploads/investor.png" alt="Annual Report 2015">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <div class="caption">
+                                            <h3 class="title">
+                                                <a href="javascript:void(0)">@item.Title @Html.Action("AdminEdit", "Common", new { id = item.Id })</a>
+                                            </h3>
+                                            <p>@item.Description</p>
+                                            <a href="@Html.Action("LoadAttribute", "Common", new { code = "download", id = item.Id })" class="btn-3"> Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="Page navigation" class="wrapper-pagination">
+                    @Html.PagedListPager(Model, page => Url.Action("Slug", new { page }))
+                </nav>
+            </div>
+        </div>
+    </section>
+
+<style>
+    .awards-list .title-awards {
+        margin-bottom: 25px;
+    }
+</style>

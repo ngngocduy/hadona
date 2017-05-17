@@ -1,0 +1,318 @@
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\Resources.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\Resources.pdb
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\en\Resources.resources.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\Microsoft.CSharp.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\System.Data.DataSetExtensions.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\System.Data.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\System.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\System.Xml.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\bin\Debug\System.Xml.Linq.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\Resources.Resources.resources
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\Resources.Resources.en.resources
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\en\Resources.resources.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\Resources.dll
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\Resources.pdb
+D:\WORK\SAIGONPIXEL\062014\Crepitee_4\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\Resources.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\Resources.pdb
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\en\Resources.resources.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\Microsoft.CSharp.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\System.Data.DataSetExtensions.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\System.Data.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\System.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\System.Xml.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\bin\Debug\System.Xml.Linq.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\obj\Debug\Resources.Resources.resources
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\obj\Debug\Resources.Resources.en.resources
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\obj\Debug\en\Resources.resources.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\obj\Debug\Resources.dll
+D:\WORK\SAIGONPIXEL\062014\Areon\Code\Resources\obj\Debug\Resources.pdb
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\Resources.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\Resources.pdb
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\en\Resources.resources.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\Microsoft.CSharp.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\System.Data.DataSetExtensions.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\System.Data.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\System.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\System.Xml.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\bin\Debug\System.Xml.Linq.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\Resources.Resources.resources
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\Resources.Resources.en.resources
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\en\Resources.resources.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\Resources.dll
+D:\WORK\SAIGONPIXEL\062014\PixelCMS_Store\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\Resources.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\Resources.pdb
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\en\Resources.resources.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\Microsoft.CSharp.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\System.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\System.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\System.Xml.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\bin\Debug\System.Xml.Linq.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\Saigonpixel version1.1\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\System.Data.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\System.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\bin\Debug\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Shop\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\Resources.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\Resources.pdb
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\en\Resources.resources.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\Microsoft.CSharp.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\System.Data.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\System.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\System.Xml.dll
+D:\Data\Projects\update_tkm_shop\Resources\bin\Debug\System.Xml.Linq.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\update_tkm_shop\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\News\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16004\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\100Project\GT16006\Resources\obj\Debug\Resources.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.Resources.resources
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.Resources.en.resources
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.dll
+D:\Data\Projects\100Project\GT16007\Resources\obj\Debug\Resources.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Resources.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.Resources.resources
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.Resources.en.resources
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\zh\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\en\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Resources.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\Resources.Resources.resources
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\Resources.Resources.en.resources
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\zh\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\en\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\Resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\Resources\obj\Debug\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.Resources.resources
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.Resources.en.resources
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\en\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\Resources\obj\Debug\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.Resources.resources
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.Resources.en.resources
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\en\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\project\Project Mẫu\PixelCMS.Web\bin\Resources.dll
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.Resources.resources
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.Resources.zh.resources
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.Resources.en.resources
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\project\Project Mẫu\Resources\obj\Debug\zh\Resources.resources.dll
+D:\project\Project Mẫu\Resources\obj\Debug\en\Resources.resources.dll
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.dll
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\Resources.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\project\Project Mẫu\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+E:\Project Mẫu\PixelCMS.Web\bin\Resources.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Resources.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\zh\Resources.resources.dll
+E:\Project Mẫu\PixelCMS.Web\bin\en\Resources.resources.dll
+E:\Project Mẫu\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+E:\Project Mẫu\Resources\obj\Debug\Resources.Resources.resources
+E:\Project Mẫu\Resources\obj\Debug\Resources.Resources.zh.resources
+E:\Project Mẫu\Resources\obj\Debug\Resources.Resources.en.resources
+E:\Project Mẫu\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+E:\Project Mẫu\Resources\obj\Debug\zh\Resources.resources.dll
+E:\Project Mẫu\Resources\obj\Debug\en\Resources.resources.dll
+E:\Project Mẫu\Resources\obj\Debug\Resources.dll
+E:\Project Mẫu\Resources\obj\Debug\Resources.pdb

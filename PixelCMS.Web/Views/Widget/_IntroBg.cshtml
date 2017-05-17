@@ -1,0 +1,16 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+@if (Model.FirstOrDefault() != null)
+{
+    <div id="maximage">
+        @foreach (var item in Model)
+        {
+            <img src="@item.Thumb" alt="" width="1400" height="1050" />
+        }
+    </div>
+}
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        // Trigger maximage
+        jQuery('#maximage').maximage();
+    });
+</script>

@@ -1,0 +1,177 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Option>
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_common_config;
+    ViewBag.PTitle = Resources.admin_common_config;
+    ViewBag.PDescription = Resources.admin_common_config;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var optiongroups = db.OptionGroups.ToList();
+    var langlist = db.Languages.Where(x => x.Active == true).ToList();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+
+<div class="alert alert-info" id="update-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_config @Resources.admin_common_updated!
+</div>
+
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_common_config</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+
+    
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_save" class="btn btn-blue" />
+                        </div>
+                    </aside>
+    
+    
+                    <div class="lang-list">
+                        <a class="active" href="@Url.Action("Index", "Option")"><i class="fa fa-cog"></i>@Resources.admin_common_config</a>
+                        <a href="@Url.Action("Language", "Option")"><i class="fa fa-exclamation"></i>@Resources.admin_lang_construction</a>
+                    </div>
+
+    
+    
+                    <table class="grid form-input">
+                        <input class="btn btn-blue" id="collpanall" type="button" value="Thu gọn" />
+                        <script>
+                            $(function () {
+                                $("#collpanall").click(function () {
+                                    $(".tab-pane").hide();
+                                });
+                                $(".button-submit-zone").click(function () {
+                                    $(".tab-pane").hide("500");
+                                    var att = $(this).attr("att");
+                                    $("." + att).show("500");
+                                });
+                            })
+                        </script>
+
+                        @{int optionid = 0;}
+                        @foreach (var group in optiongroups.OrderBy(x => x.Order))
+                        {
+                            if (Model.FirstOrDefault(x => x.Group == group.Id) != null)
+                            {
+                            <tr class="button-submit-zone" att="@group.Id" style="cursor: pointer">
+                                <th colspan="2">@group.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</th>
+                            </tr> 
+                                foreach (var item in Model.Where(x => x.Group == group.Id))
+                                {
+                                    optionid++;
+                            <tr class="tab-pane @group.Id">
+                                <td class="label" style="width: 25%">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</td>
+                                <td>
+                                    @switch (item.Edit_Type)
+                                    {
+                                        case 1:
+                                        <input type="text" name="option-@optionid" value ="@item.Value"/>
+                                        <input type="hidden" name="optionId-@optionid" value="@item.Id"/>
+                                            break;
+                                        case 2:
+                                        <textarea rows="3" name="option-@optionid">@item.Value</textarea>
+                                        <input type="hidden" name="optionId-@optionid" value="@item.Id"/>
+                                            break;
+                                        case 3:
+                                        <textarea class="input-xxlarge" id="option-@optionid" name="option-@optionid">@item.Value</textarea>
+                                        <input type="hidden" name="optionId-@optionid" value="@item.Id"/>
+                                        <script>
+                                            CKEDITOR.replace('option-@optionid', {
+                                                height: '300px',
+                                                toolbarGroups: /*[{ name: 'basicstyles', groups: ['basicstyles'] }, { name: 'colors' },
+                                            { name: 'document', items: ['Source'] }]*/
+                                                    [
+       ['Styles', 'Format', 'Font', 'FontSize'],
+       ['Image', 'Table', '-', 'Link', 'Flash', 'Smiley', 'TextColor', 'BGColor', 'Source'],
+       ['Bold', 'Italic', 'Underline', 'StrikeThrough', '-', 'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Outdent', 'Indent', '-', 'Print'],
+       ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                                                    ]
+                                                    ,
+                                                filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                                                filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                                                filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                                                filebrowserUploadUrl:
+                                                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                                                filebrowserImageUploadUrl:
+                                                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                                                filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+
+                                            });
+                                        </script>
+                                            break;
+                                        case 4:
+                                        <input type="text" name="option-@optionid" id="option-@optionid" value ="@item.Value"/>
+                                        <input type="button" id="BrowseURL-@optionid" value="@Resources.admin_content_browsepicture" class="btn btn-file" /> 
+                                        <input type="hidden" name="optionId-@optionid" value="@item.Id"/>
+                                        <script language="javascript" type="text/javascript">
+                                            $(function () {
+                                                $("#BrowseURL-@optionid").click(function () {
+                                                var ckfinder = new CKFinder({ resourceType: 'Images' });
+                                                ckfinder.selectActionFunction = function (fileUrl) {
+                                                    $("#option-@optionid").val(fileUrl)
+                                                };
+                                                ckfinder.popup();
+                                            });
+                                        });
+                                        </script>
+                                            break;
+                                        case 5:
+                                        <input type="password" name="option-@optionid" value ="@item.Value"/>
+                                        <input type="hidden" name="optionId-@optionid" value="@item.Id"/>
+                                            break;
+                                        case 6:
+                                        <input type="text" name="option-@optionid" id="option-@optionid" value ="@item.Value"/>
+                                        <input type="button" id="BrowseURL-@optionid" value="@Resources.admin_content_browsefile" class="btn btn-file" /> 
+                                        <input type="hidden" name="optionId-@optionid" value="@item.Id"/>
+                                        <script language="javascript" type="text/javascript">
+                                            $(function () {
+                                                $("#BrowseURL-@optionid").click(function () {
+                                                var ckfinder = new CKFinder();
+                                                ckfinder.selectActionFunction = function (fileUrl) {
+                                                    $("#option-@optionid").val(fileUrl)
+                                                };
+                                                ckfinder.popup();
+                                            });
+                                        });
+                                        </script>
+                                            break;
+                                    }
+                                </td>
+                            </tr>
+                                }
+                            }
+                        }
+
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+@if (ViewBag.Status == "update-done")
+{
+    <script>
+        $("#update-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}

@@ -1,0 +1,44 @@
+﻿@model PixelCMS.Core.Models.Post
+
+@{
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+}
+
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+    <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+    <meta name="description" content ="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+    @Html.Raw(Model.Html_Head)
+    }
+}
+<section class="main">
+	<div class="news-detail cf">
+        <div class="title">@Model.Title</div>
+        <div class="info-post"><span class="date-post">@Model.Date_Create</span> </div>
+        <div class="html-content">    
+            <!-- Nội dung động -->
+            @Html.Raw(Model.Content)
+            <!-- /Nội dung động -->
+        </div><!-- End html-content -->       
+	</div><!-- End news-detail -->
+    <div class="related-post">
+        <div class="title-head">Các bài viết khác</div>
+         @Html.Action("RelatedPostsMobile","Widget",new {currentpost=@Model.Id })
+    </div><!-- End related-post -->  
+</section>
+

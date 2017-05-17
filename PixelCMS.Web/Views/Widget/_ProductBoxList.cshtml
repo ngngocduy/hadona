@@ -1,0 +1,88 @@
+﻿@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Post>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    string username = User.Identity.Name;
+    int count = 0;
+}
+@foreach (var item in Model)
+{
+    count++;
+    /* Parallel Lang */
+    if (item.Lang != currentlang)
+    {
+        var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+        if (itemlang!=null)
+        {
+            item.Id = itemlang.Id;
+            item.Title = itemlang.Title;
+            item.Description = itemlang.Description;
+            item.Content = itemlang.Content;
+        }
+    }
+    /* End Parallel Lang */
+    var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = item.Id });
+    <div class="slide col-md-3 col-sm-6">
+        <div class="item">
+            <div class="img-item">
+                @if (item.Thumb != null)
+                {
+                    <a href="@Modelurl">
+                         <img width="330" height="363" src="@item.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")">
+                        @*<img width="600" height="400" src="@item.Thumb">*@
+                    </a>
+                }
+                @if (item.newpost)
+                {
+                    <div class="new"></div> 
+                }
+
+                @{
+                //%=giá mới*100/giá củ
+                if (item.Price != null && item.Price_Old != null)
+                {
+                    decimal percent = 0;
+                    percent = ((item.Price_Old ?? 0) - (item.Price ?? 0)) / (item.Price_Old ?? 0) * 100;
+                    if (percent > 0)
+                    {
+                    <div class="sale">-@string.Format("{0:0,0}", percent)%</div>
+                    }
+                }
+                }
+            </div>
+            <div class="caption">
+
+                @if (!string.IsNullOrEmpty(username) && item.Product != null)
+                {
+                    var discounts = item.Product.Discounts;
+                    var role = Roles.GetRolesForUser(username).FirstOrDefault();
+                    //nếu có cài đặt chiến dịch
+                    var discount = discounts.OrderByDescending(x => x.CreateDate).FirstOrDefault(x => x.webpages_Roles.RoleName == role);
+                    if (discount != null && discount.StartDate <= DateTime.Now.Date && DateTime.Now.Date <= discount.EndDate)
+                    {
+                        item.Price = discount.DiscountAmount;
+                    }
+                    //giảm giá của sản phẩm
+                    else if (item.Product.Sale_Start <= DateTime.Now.Date && DateTime.Now.Date <= item.Product.Sale_End)
+                    {
+                        item.Price = item.Product.Sale_Price;
+                    }
+                }
+                <!-- End img-item -->
+                <div class="title"><a href="@Modelurl">@item.Title @Html.Action("AdminEdit","Common",new {id=item.Id})</a></div>
+              @if(item.Price != null){
+			  <div class="price clearfix">
+                    @if (item.Price_Old != null)
+                    {
+                        <div class="ori-price pull-left">@string.Format("{0:0,0}", item.Price_Old)₫</div>
+                    }
+                    <div class="pro-price pull-right">@string.Format("{0:0,0}", item.Price)₫</div>
+                </div>
+               }
+            </div>
+        </div>
+        <!-- End item -->
+    </div>
+}

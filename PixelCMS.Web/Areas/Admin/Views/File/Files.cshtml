@@ -1,0 +1,59 @@
+﻿@using PixelCMS.Core.Models
+@model PixelCMS.Core.Models.FileViewModel
+@{
+    ViewBag.Title = "Files";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/elfinder/js/elFinder.full.js"></script>
+
+@section css{
+    <link href="/Scripts/elfinder/css/elfinder.full.css" rel="stylesheet">
+    <link href="/Scripts/elfinder/css/theme.css" rel="stylesheet">
+}
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Quản lý file</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns" style="width:96%">
+                @Html.Partial("~/Areas/Admin/Views/Shared/FilesForm.cshtml", Model)
+            </div>
+            <div class="sixteen columns" style="margin-top: 20px">
+                @Html.Action("Index", "Common")
+            </div>
+        </div>
+    </div>
+</section>
+@*<script>
+//thử đưa image vào con panda
+    $(function () {
+        $(".elfinder-navbar-wrapper").click(function () {
+            $(".elfinder-cwd .elfinder-cwd-file .elfinder-cwd-filename").each(function () {
+                var name = $(this).attr("title");
+                $(this).parent().find(".elfinder-cwd-icon").css("background", "url(/Upload/images/" + name + ") 50% 50% no-repeat");
+            });
+        })
+    })
+</script>*@
+<style>
+    .elfinder-resize-row {
+        width: 110px;
+        height: 70px;
+    }
+
+        .elfinder-resize-row input[type=text] {
+            min-width: 100px;
+            width: 100px;
+        }
+
+    .elfinder-resize-control {
+        width: 150px;
+        float: left;
+    }
+</style>
+

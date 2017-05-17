@@ -1,0 +1,129 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    
+    if(ViewBag.CatTitle != null){
+        ViewBag.Title = ViewBag.CatTitle;
+    }else{
+        //ViewBag.Title = ViewBag.CategoryCurrent;
+        ViewBag.Title = ViewBag.TypeName;
+    }
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content ="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+
+@if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin")){
+    @section adminpanel{
+     @Html.Action("AdminPanel","Common")
+    }
+}
+
+        <!-- Page title -->
+        <div id="page-title">
+            <div class="container">
+                <div class="sixteen columns alpha omega">
+                    <h1>@ViewBag.TypeName</h1>
+                </div>
+            </div>
+        </div>
+        <!-- /Page title -->
+        
+        <div id="breadcrumbs">
+            <div class="container">
+                <div class="sixteen columns alpha omega">
+		@Html.Action("Breadcrumb","Common",new{breadcrumb = ViewBag.BreadCrumb})
+                </div>
+            </div>
+        </div>
+
+
+
+<section id="content">
+    <div class="container">
+        <div class="sixteen columns">
+		
+			<!-- Isotope Filter -->
+			@Html.Action("CustomerCatList","Widget")
+			<!-- Isotope Filter / End -->
+			
+		</div>
+
+
+        <div class="sixteen columns">
+            <div id="projects4">
+            <ul class="portfolio group"> 
+
+                @foreach (var item in Model)
+                {
+                    /* Parallel Lang */
+                    if (item.Lang != currentlang)
+                    {
+                        var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                        item.Id = itemlang.Id;
+                        item.Title = itemlang.Title;
+                        item.Description = itemlang.Description;
+                        item.Content = itemlang.Content;
+                    }
+                    /* End Parallel Lang */
+                    var imagelink = "";
+                    var catslug = "";
+                    if (db.MediaFiles.FirstOrDefault(x => x.Post.Id == item.Id) != null)
+                    {
+                        imagelink = db.MediaFiles.Where(x => x.Post.Id == item.Id).OrderBy(o => o.Order).FirstOrDefault().URL;
+                    }
+                    if (item.Cats.FirstOrDefault() != null)
+                    {
+                        catslug = item.Cats.FirstOrDefault().Slugs.FirstOrDefault().Slug_Full;
+                    }
+                    
+                <li class="item" data-id="id-@item.Id" data-type="@catslug">
+                    
+                    <div class="view overlay">
+                        <img src="@item.Thumb" alt="title here" />
+                        
+                        <a href="@Html.Action("LoadURL","Common",new{type="post",id=item.Id})" >
+                            <div class="mask">
+                                <h3>@item.Title</h3>                          
+                            </div>
+                        </a>
+                        
+                        <a href="@imagelink" rel="prettyPhoto[portfolio]"><div class="info"><img src="~/Theme/images/zoom.png" /></div></a>
+                        
+                    </div>
+                      
+                </li>
+        }
+
+            </ul>
+                </div>
+        </div>
+
+
+    </div>
+</section>
+
+@section css{
+    <link rel="stylesheet" type="text/css" href="~/Theme/css/prettyPhoto.css"/>
+    }
+
+@section scripts{
+    @Scripts.Render("~/Theme/js/prettyPhoto")
+    }

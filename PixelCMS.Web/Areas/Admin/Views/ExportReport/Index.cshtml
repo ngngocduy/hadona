@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<!--autocomplete-->
+@section scripts
+{
+    <script src="~/Scripts/ExportReport.js"></script>
+}
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Xuất Báo Cáo</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="box-content" style="padding: 10px">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <span style="color: #bd4247">@TempData["mess"] </span>
+                        <div class="control-group">
+                            <label class="control-label" for="selectError3">Loại báo cáo</label>
+                            <div class="controls">
+                                <select id="selectexporttype">
+                                    <option id="type_total" value="totalrevenue">Tổng Thu Nhập</option>
+                                    <option id="type_cuahang" value="cuahang">Doanh thu cửa hàng(Nhóm)</option>
+                                    <option id="type_saler" value="doanhthusaler">Doanh thu Saler</option>
+                                    <option id="type_remain" value="baocaohangton">Báo Cáo Hàng Tồn</option>
+                                    <option id="type_revenue" value="mathang">Doanh Thu Mặt Hàng</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div id="salername_block" class="control-group" style="display: none;">
+                            <label class="control-label" for="typeahead">Nhập tên tài khoản(user) </label>
+                            <div class="controls">
+                                <input required="" type="text" id="NVKD" placeholder="Nhập tên tài khoản của nhân viên kinh doanh" class="form-control" />
+                                <span class="help-inline1" style="color: #bd4247; display: none">Xin nhập tên NVKD</span>
+                                @*@Html.HiddenFor(m => m.UserName)*@
+                                <p class="help-block">
+                                    Nhập chữ cái đầu tiên của tên NVKD ,vd : "A"
+                                </p>
+                            </div>
+                        </div>
+                        <div id="producttype_block" class="control-group" style="display: none;">
+                            <label class="control-label" for="selectError43">Loại Mặt Hàng</label>
+                            <div class="controls">
+                                @Html.DropDownList("Cat", ViewBag.cat as SelectList)
+                            </div>
+                        </div>
+
+                        <div id="cuahang_block" class="control-group" style="display: none;">
+                            <label class="control-label" for="selectError43">Cửa Hàng(Nhóm)</label>
+                            <div class="controls">
+                                @Html.DropDownList("RolesList", ViewBag.RolesList as SelectList)
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="selectError5">Thời Gian</label>
+                            <div class="controls">
+                                <select id="selectdatetype">
+                                    <option value="chidinh">Chỉ Định</option>
+                                    <option value="hangngay">Hàng Ngày</option>
+                                    <option value="hangtuan">Hàng Tuần</option>
+                                    <option value="hangthang">Hàng Tháng</option>
+                                    <option value="hangnam">Hàng Năm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group tungay">
+                            <label class="control-label" for="selectError3">Từ ngày</label>
+                            <div class="controls">
+                                <input type="text" id="tungay" />
+                                <span class="inline" style="width: 100%; color: #bd4247; display: none">Xin nhập ngày chỉ định</span>
+                            </div>
+                        </div>
+                        <div class="control-group denngay">
+                            <label class="control-label" for="selectError3">Đến ngày</label>
+                            <div class="controls">
+                                <input type="text" id="denngay" />
+                                <span class="inline" style="width: 100%; color: #bd4247; display: none">Xin nhập ngày chỉ định</span>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+                <div class="form-actions">
+                    <form id="btn_export" action = "@Url.Action("Export")" method="post">
+                        <input style="margin-left: 158px" type="submit" class="btn btn-primary" value="Xuất" />
+                        <input id="getproducttype" name="getproducttype" type="hidden" />
+                        <input id="getexporttype" name="getexporttype" type="hidden" />
+                        <input id="getexporttype1" name="getexporttype1" type="hidden" />
+                        <input id="getdatetype" name="getdatetype" type="hidden" />
+                        <input id="gettungay" name="gettungay" type="hidden" />
+                        <input id="getdenngay" name="getdenngay" type="hidden" />
+                        <input id="getsalername" name="getsalername" type="hidden" />
+                        <input id="getcuahang" name="getcuahang" type="hidden" />
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/span-->
+<hr>
+
+<script type="text/javascript">
+    var url = '@Url.Action("getUserName")';
+    $('#NVKD').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                data: { query: request.term },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.id,
+                            value: item.UserName
+                        };
+                    }));
+                }
+            });
+        },
+        /* select: function (event, ui) {
+             $('#NVKD').val(ui.item.label);
+             $('#UserName').val(ui.item.value);
+             return false;
+         },*/
+        minLength: 1
+    });
+
+    $(function () {
+        $("#tungay").datepicker({
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+    $(function () {
+        $("#denngay").datepicker({
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+</script>
+<style>
+    .control-label {
+        width: 100%;
+    }
+</style>

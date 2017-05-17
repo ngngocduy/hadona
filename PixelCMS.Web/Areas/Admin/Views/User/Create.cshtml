@@ -1,0 +1,78 @@
+﻿@model PixelCMS.Core.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Thêm tài khoản";
+    ViewBag.PTitle = "Tài khoản";
+    ViewBag.PDescription = "Quản lý tài khoản";
+    ViewBag.LastCR = "<a href=\"" + @Url.Action("Index", "User") + "\">Tài khoản</a><span class=\"divider\">&nbsp;</span></li><li><a href=\"\">Thêm tài khoản</a><span class=\"divider-last\">&nbsp;</span></li>";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Tài khoản</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="Tạo" class="btn btn-blue" />
+                            <a href="@Url.Action("Index", "User")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">Thêm tài khoản mới</th>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Username</td>
+                            <td>@Html.TextBoxFor(m => m.UserName)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email</td>
+                            <td>@Html.TextBoxFor(m => m.Email)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Xác nhận Email</td>
+                            <td>@Html.TextBoxFor(m => m.ConfirmEmail)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Mật khẩu</td>
+                            <td>@Html.PasswordFor(m => m.Password)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Xác nhận mật khẩu</td>
+                            <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Nhóm thành viên</td>
+                            <td>@Html.DropDownList("RolesList")</td>
+                        </tr>
+
+
+                    </table>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

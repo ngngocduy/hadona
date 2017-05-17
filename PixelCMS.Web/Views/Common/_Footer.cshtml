@@ -1,0 +1,52 @@
+﻿<footer>
+    <div class="container">
+
+        <span class="btn_toTop"><img src="/theme/Images/click-footer.png" alt="Về đầu trang"></span>
+        <div class="five columns info-footer">
+            <img src="/theme/Images/logo.png" style="max-height: 55px;margin-bottom:10px" alt="Logo" title="Logo" />
+            @Html.Action("baiviet", "widget", new { box = "about-footer" })
+        </div>
+        <div class="eleven columns info-contact-foo">
+            @Html.Action("baiviet", "widget", new { box = "contact-footer" })
+        </div>
+        <div class="cf"></div>
+        <p class="copyright">&copy; 2017 <a href="http://www.thekymoi.com/" target="_blank"><img src="http://www.thekymoi.com/data/configs/11/logo.png" alt="Thế Kỷ Mới" /></a>. All rights reserved.</p>
+
+    </div>
+</footer>
+
+@*<footer class="footer">
+    <div class="logo-partner" style="margin-bottom:50px">
+        <div class="container">
+         
+        </div>
+    </div>
+    <div class="wp_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    @using (Html.BeginForm("Search", "Content", FormMethod.Get, new { @class = "form_search" }))
+                    {
+                        <button type="submit" id="bnt_search" class="btn-2"><i class="fa fa-search"></i></button>
+                        <input type="text" id="keywords" name="keywords" placeholder="Search" class="input-2">
+                    }
+                    <nav class="link-list">
+                        <ul>
+                            <li><a href="/vi/lien-he" title="Contact Us">@Resources.contact</a></li>
+                            <li><a href="/vi/project" title="Recruitment">@Resources.duan</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-list">
+                        <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-facebook" })" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-google" })" title="Google+"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-instagram" })" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-youtube" })" title="Youtube"><i class="fa fa-youtube-square"></i></a></li>
+                    </ul>
+                    <p class="copyright">© Copyright 2016 Unimech VietNam. Designed by <a href="#" title="thekymoi.com">thekymoi.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>*@

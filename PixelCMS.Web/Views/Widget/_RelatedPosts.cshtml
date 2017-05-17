@@ -1,0 +1,29 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.Post>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+@foreach (var item in Model.Take(3))
+{
+    /* Parallel Lang */
+    if (item.Lang != currentlang)
+    {
+        /* Parallel Lang */
+
+        var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+        if (itemlang != null)
+        {
+            item.Id = itemlang.Id;
+            item.Title = itemlang.Title;
+        }
+    }
+    var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+    <article class="news-item cf">
+        <figure class="img-news fl"><a href="@modelurl" title=""><img src="@item.Thumb" alt="@item.Title" title="@item.Title" /></a> </figure>
+        <h2 class="title-news"><a href="@modelurl" title="@item.Title">@item.Title</a></h2>
+        <span class="date-post">@(item.Date_Create.Value.ToShortDateString() ?? null)</span>
+    </article>
+
+}
+

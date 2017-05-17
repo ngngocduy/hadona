@@ -1,0 +1,573 @@
+﻿@using PixelCMS.Core.Models
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentroles = Roles.GetRolesForUser().ToList();
+    var access = db.Roles_Access.ToList();
+    bool a_menu = false;
+    bool a_option = false;
+    bool a_user = false;
+    bool a_pixeladmin = false;
+    bool a_email = false;
+    bool a_order = false;
+    bool a_files = false;
+    bool a_hisotry = false;
+    bool a_shipping = false;
+    bool a_admin = false;
+    foreach (var role in currentroles)
+    {
+        var ac = access.FirstOrDefault(x => x.Role_Id == db.webpages_Roles.FirstOrDefault(r => r.RoleName == role).RoleId);
+        a_menu = ac.Menu;
+        a_option = ac.Option;
+        a_user = ac.User;
+        a_pixeladmin = ac.PixelAdmin;
+        a_email = ac.Email;
+        a_order = ac.Order_View;
+        a_files = ac.Files;
+        a_hisotry = ac.History;
+        a_shipping = ac.Shipping;
+        a_admin = ac.Admin;
+
+    }
+    var langlist = db.Languages.Where(x => x.Admin == true).ToList();
+}
+<!DOCTYPE html>
+<html lang="@PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture()">
+<head>
+    <!--***********************************************************************************-->
+    <!-- Thế kỷ Mới - http://www.thekymoi.com                                 -->
+    <!-- Copyright (c) 2016 by TheKyMoi                                 -->
+    <!-- http://www.thekymoi.com                                                         -->
+    <!--***********************************************************************************-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="shortcut icon" href="~/Areas/Admin/Content/images/favicon.png">
+    <title>@ViewBag.Title - TKM CMS</title>
+    <link href="~/Areas/Admin/ThemeAdminNews/css/stylesheets.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Areas/Admin/Content/css/css")
+    @Styles.Render("~/Content/jqueryui/css")
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryui")
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @RenderSection("scripts", required: false)
+    @RenderSection("css", required: false)
+
+    <script type='text/javascript' src="~/Areas/Admin/Content/js/tab.js"></script>
+    <script type='text/javascript' src="~/Areas/Admin/Content/js/jquery.dropdown.min.js"></script>
+    <script src="~/Areas/Admin/ThemeAdminNews/js/jsAdmin/jquery.min.js"></script>
+    <script src="~/Areas/Admin/ThemeAdminNews/js/jsAdmin/jquery-ui.min.js"></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/jquery/jquery.mousewheel.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/cookie/jquery.cookies.2.2.0.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/bootstrap.min.js'></script>
+
+
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/sparklines/jquery.sparkline.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/fullcalendar/fullcalendar.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/select2/select2.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/uniform/uniform.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/maskedinput/jquery.maskedinput-1.3.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/validation/languages/jquery.validationEngine-vi.js' charset='utf-8'></script>
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/validation/jquery.validationEngine.js' charset='utf-8'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/animatedprogressbar/animated_progressbar.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/qtip/jquery.qtip-1.0.0-rc3.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/cleditor/jquery.cleditor.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/dataTables/jquery.dataTables.min.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins/fancybox/jquery.fancybox.pack.js'></script>
+
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/cookies.js'></script>
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/actions.js'></script>
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/charts.js'></script>
+    <script type='text/javascript' src='~/Areas/Admin/ThemeAdminNews/js/jsAdmin/plugins.js'></script>
+
+
+
+    @if (!string.IsNullOrEmpty(User.Identity.Name))
+    {
+       
+        <script>
+            $(function () {
+                setInterval(function () {
+                    $.ajax({
+                        url: '@Url.Action("UpdateTime", "Common", new { area = "" })',
+                        type: 'POST',
+                        data: {},
+                        success: function (result) {
+                        }
+                    });
+                }, 60000);
+
+            });
+        </script>
+    }
+
+    @Scripts.Render("~/bundles/SignalR")
+    @*<script src="/LCSK/assets/js/jquery.signalR-2.1.1.min.js" type="text/javascript"></script>*@
+    <script src="/signalr/hubs" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            // Declare a proxy to reference the hub. 
+            var chatHub = $.connection.chatHub;
+
+            registerClientMethods(chatHub);
+
+            // Start Hub
+            $.connection.hub.start().done(function () {
+                registerEvents(chatHub);
+            });
+
+            //đóng message
+            $(".x").click(function () {
+                $(this).parent('.alert').fadeOut();
+            });
+        });
+
+        function registerClientMethods(chatHub) {
+            //thông báo khi có liên hệ mới
+            chatHub.client.MessReceived = function (mess) {
+                $(".alert-contact").fadeIn("slow");
+            };
+            //thông báo khi có đơn hàng mới
+            chatHub.client.MessReceivedOrder = function (mess) {
+                $(".alert-order").fadeIn("slow");
+            };
+        }
+
+        function registerEvents(chatHub) {
+
+        }
+    </script>
+    <style>
+        #main .container
+        {
+            width: 100%;
+            border: none;
+            background: none;
+        }
+
+        img
+        {
+            width: auto;
+            /* height: auto; */
+            /* max-width: 100%; */
+            vertical-align: middle;
+            border: 0;
+            -ms-interpolation-mode: bicubic;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="header">
+        <a class="logo" href="/quantriweb">
+            <img src="http://image.thekymoi.com/imagetkm/logo.png" alt="Thế kỷ mới" title="Onlinesolution" style="width: 150px;" /></a>
+        <div class="bannerad" style="width: 65%; float: left">
+            <img src="http://image.thekymoi.com/imagetkm/banner.png" alt="Thế kỷ mới" title="Onlinesolution" style="width: 100%; height: 60px; padding-left: 20px;" />
+        </div>
+        <div class="admin" style="display: block; float: right; padding-top: 10px;">
+            @* <div class="image">
+                <img src="/Areas/Admin/Content/images/admin_icon.png" class="img-polaroid" style="width: 50px;">
+            </div>*@
+            <ul class="control" style="margin-left: 10px; width: 100px;">
+                <li style="margin-bottom: 0px"><span class="icon-cog"></span><a href="/vi/account/Manage">Đổi mật khẩu </a></li>
+                <li style="margin-bottom: 0px">
+                    @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <span class="icon-share-alt"></span>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.admin_common_logout</a>
+                    }
+                </li>
+            </ul>
+        </div>
+        <div class="left-panel" style="padding-top: 10px;">
+            @Html.Action("EmailBox", "Common")
+        </div>
+        <ul class="header_menu">
+            <li class="list_icon"><a href="#">&nbsp;</a></li>
+        </ul>
+    </div>
+    <div class="alert alert-info alert-contact" id="copy-success" style="display: none;">
+        <i class="fa fa-exclamation-circle"></i><a href="@Url.Action("Index", "Email")">Có liên hệ mới</a> <span class="x" style="float: right; cursor: pointer; font-weight: bold; margin-right: 10px">X</span>
+    </div>
+    <div class="alert alert-info alert-order" id="copy-success" style="display: none; bottom: 0px;">
+        <i class="fa fa-exclamation-circle"></i><a href="@Url.Action("Index", "Cart")">Có Đơn hàng mới</a> <span class="x" style="float: right; cursor: pointer; font-weight: bold; margin-right: 10px">X</span>
+    </div>
+    @*
+    <header>
+        <div class="container">
+            <div class="sixteen columns omega alpha">
+                <div class="main-navigation">
+                    <ul class="right-menu">
+                        <li><a href="~/" target="_blank"><i class="fa fa-home"></i></a></li>
+                        <li class="user-zone" data-dropdown="#dropdown-user-zone">
+                            <div class="username">@Resources.admin_common_hello <strong>@User.Identity.Name</strong></div>
+                        </li>
+
+                        @if (langlist.Count() > 1)
+                        {
+                            foreach (var item in langlist)
+                            { 
+                            <a href="@Url.Action("SetCulture", "Dashboard", new { culture = item.Code, Url = Request.Url.AbsoluteUri })">
+                                <img src="@item.Flag" /></a>
+                            }
+                        }
+
+                    </ul>
+
+                    <div id="logo">
+                        <a class="brand" href="@Url.Action("Index", "Dashboard")">
+                            <img src="~/Areas/Admin/Content/images/logotkm.png" alt="thekymoi" width="80" />
+                        </a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Index", "Dashboard")">
+                                <span class="icon-box"><i class="fa fa-home"></i></span>
+                                @Resources.admin_common_dashboard
+                            </a>
+                        </li>
+
+                        @Html.Action("MainMenu", "Common")
+
+
+                        @if (a_order)
+                        {
+                            <li>
+                                <a href="#">
+                                    <span class="icon-box"><i class="fa fa-bar-chart-o"></i></span>
+                                    @Resources.admin_cart_sales
+                                </a>
+                                <ul>
+                                    <li><a href="@Url.Action("Index", "Cart")">@Resources.admin_cart_order</a></li>
+
+                                    @if (a_shipping)
+                                    {
+                                        <li><a href="@Url.Action("Index", "ExportReport")">Xuất báo cáo doanh thu</a></li>
+                                        <li><a href="@Url.Action("Index", "Shipping")">Bảng phí vận chuyển</a></li>
+                                         
+                                    }
+                                    @if (a_pixeladmin)
+                                    {
+                                        <li><a href="@Url.Action("Status", "Cart")">@Resources.admin_cart_orderstatus</a></li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+
+                        <li>
+                            <a href="@Url.Action("Index", "Dashboard")">
+                                <span class="icon-box"><i class="fa fa-cog"></i></span>
+                                @Resources.admin_common_config
+                            </a>
+                            <ul>
+                                @if (a_option)
+                                {
+                                    <li><a href="@Url.Action("Index", "Option")">@Resources.admin_common_config</a></li>
+                                }
+
+                                @if (a_menu)
+                                {
+                                    <li><a href="@Url.Action("Index", "Menu")">Menu</a></li>
+                                }
+
+
+                                @if (a_email)
+                                {
+                                    <li><a href="@Url.Action("Index", "Email")">Email</a></li>
+                                }
+                                @if (a_user)
+                                {
+                                    <li><a href="@Url.Action("Index", "User")">@Resources.admin_common_accounts</a></li>
+                                   
+                                }
+                                @if (a_files)
+                                {
+                                    <li><a href="@Url.Action("Files", "File")">Quản lý files</a></li>
+                                }
+                                @if (a_hisotry)
+                                {
+                                    <li><a href="@Url.Action("Index", "LoginHistory")">Lịch sử đăng nhập</a></li>
+                                }
+                                @if (a_admin)
+                                {
+                                    <li><a href="/LCSK/tkminstall.html">Cài đặt Chat</a></li>
+                                }
+                            </ul>
+                        </li>
+
+                        @if (a_pixeladmin)
+                        {
+                            <li>
+                                <a href="#">
+                                    <span class="icon-box"><i class="fa fa-asterisk"></i></span>
+                                    Hệ thống
+                                </a>
+                                <ul>
+                                    <li><a href="@Url.Action("Index", "Type")">@Resources.admin_common_posttype</a></li>
+                                    <li><a href="@Url.Action("Index", "Attribute")">@Resources.admin_common_attribute</a></li>
+                                    <li><a href="@Url.Action("Index", "Language")">@Resources.admin_content_language</a></li>
+                                    <li><a href="@Url.Action("Index", "PixelOption")">Quản lý tùy chỉnh</a></li>
+
+                                </ul>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>*@
+
+    <div class="menu">
+
+        <div class="breadLine">
+            <div class="arrow"></div>
+            <div class="adminControl active">
+                @Resources.admin_common_hello <strong>@User.Identity.Name</strong>
+            </div>
+        </div>
+
+        <ul class="navigation">
+            @if (a_menu)
+            {
+                <li class="openable active">
+                    <a href="/quantriweb/Menu">
+                        <span class="isw-grid"></span><span class="text">Menu
+                        </span>
+                    </a>
+                    <ul>
+                        <li><a href="/quantriweb/Menu"><span class="icon-th-large"></span><span class="text">Menu hiển thị <i title="Hiển thị ra giao diện trang web" class="fa fa-question-circle"></i></span></a></li>
+                        <li><a href="/quantriweb/Cat?type=12"><span class="icon-th-large"></span><span class="text">Chuyển mục Sản phẩm <i title="Dùng để gán giá trị cho menu hiển thị,kiểu menu:loại nội dung" class="fa fa-question-circle"></i></span></a></li>
+                        <li><a href="/quantriweb/Cat?type=16"><span class="icon-th-large"></span><span class="text">Chuyển mục Tin tức <i title="Dùng để gán giá trị cho menu hiển thị,kiểu menu:loại nội dung" class="fa fa-question-circle"></i></span></a></li>
+                        <li><a href="/quantriweb/Content?type=10"><span class="icon-th-large"></span><span class="text">Trang đơn <i title="Dùng để gán giá trị cho menu hiển thị,kiểu menu:Trang VD:giới thiệu,nội quy,hướng dẫn...." class="fa fa-question-circle"></i></span></a></li>
+                    </ul>
+                </li> 
+            }
+            @Html.Action("MainMenu", "Common")
+            @if (a_order)
+            {
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-text_document"></span><span class="text">QL @Resources.admin_cart_sales</span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Cart")"><span class="icon-th-large"></span><span class="text">@Resources.admin_cart_order</span></a></li>
+
+                        @if (a_shipping)
+                        {
+                            <li><a href="@Url.Action("Index", "ExportReport")"><span class="icon-question-sign"></span><span class="text">Xuất báo cáo doanh thu</span></a></li>
+                            <li><a href="@Url.Action("Index", "Shipping")"><span class="icon-signal"></span><span class="text">Bảng phí vận chuyển</span></a></li>
+                                         
+                        }
+                        @if (a_pixeladmin)
+                        {
+                            <li><a href="@Url.Action("Status", "Cart")"><span class="icon-th-large"></span><span class="text">@Resources.admin_cart_orderstatus</span></a></li>
+                        }
+@* <li><a href="/quantriweb/Static/"><span class="icon-th-large"></span><span class="text">Thống kê theo tháng</span></a></li>
+                        <li><a href="/quantriweb/Static/StaticYear"><span class="icon-th-large"></span><span class="text">Thống kê theo năm</span></a></li>
+                        <li><a href="/quantriweb/Static/StaticCustomer"><span class="icon-th-large"></span><span class="text">Thống kê theo khách hàng</span></a></li>*@
+                    </ul>
+                </li>
+            }
+
+            <li class="openable">
+                <a href="@Url.Action("Index", "Dashboard")">
+                    <span class="isw-settings"></span>
+                    <span class="text">Cấu hình </span>
+                </a>
+                <ul>
+                    @if (a_option)
+                    {
+                        <li><a href="@Url.Action("Index", "Option")"><span class="icon-wrench"></span><span class="text">@Resources.admin_common_config</span></a></li>
+                    }
+
+@*    @if (a_menu)
+                    {
+                        <li><a href="@Url.Action("Index", "Menu")"><span class="icon-wrench"></span><span class="text">Menu</span></a></li>
+                    }
+*@
+
+                    @if (a_email)
+                    {
+                        <li><a href="@Url.Action("Index", "Email")"><span class="icon-wrench"></span><span class="text">Email</span></a></li>
+                    }
+                    @if (a_user)
+                    {
+                        <li><a href="@Url.Action("Index", "User")"><span class="icon-wrench"></span><span class="text">@Resources.admin_common_accounts</span></a></li>
+                                   
+                    }
+                    @if (a_files)
+                    {
+                        <li><a href="@Url.Action("Files", "File")"><span class="icon-wrench"></span><span class="text">Quản lý files</span></a></li>
+                    }
+                    @if (a_hisotry)
+                    {
+                        <li><a href="@Url.Action("Index", "LoginHistory")"><span class="icon-wrench"></span><span class="text">Lịch sử đăng nhập</span></a></li>
+                    }
+                    @*@if (a_admin)
+                    {
+                        <li><a href="/LCSK/tkminstall.html"><span class="icon-wrench"></span><span class="text">Cài đặt Chat</span></a></li>
+                    }*@
+                </ul>
+            </li>
+            @if (a_pixeladmin)
+            {
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-settings"></span>
+                        <span class="text">Hệ thống
+                        </span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Type")"><span class="icon-th-large"></span><span class="text">@Resources.admin_common_posttype</span></a></li>
+                        <li><a href="@Url.Action("Index", "Attribute")"><span class="icon-th-large"></span><span class="text">@Resources.admin_common_attribute</span></a></li>
+                        <li><a href="@Url.Action("Index", "Language")"><span class="icon-th-large"></span><span class="text">@Resources.admin_content_language</span></a></li>
+                        <li><a href="@Url.Action("Index", "PixelOption")"><span class="icon-th-large"></span><span class="text">Quản lý tùy chỉnh</span></a></li>
+
+                    </ul>
+                </li>
+            }
+        </ul>
+        <div class="dr"><span></span></div>
+
+
+        <div class="widget-fluid">
+            <div class="wBlock">
+                <a href="http://www.thekymoi.com/" target="_blank">
+                    <img src="http://image.thekymoi.com/imagetkm/httt.png" style="width: 100%;" />
+                </a>
+            </div>
+        </div>
+          <div class="widget-fluid">
+            <div class="wBlock">
+                <a href="http://www.thekymoi.com/tai-lieu-hdsd-web.html" target="_blank">
+                   <h5 style="text-align: center;color:white;">>> Hướng dẫn quản trị</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="breadLine">
+            <ul class="breadcrumb">
+                <li><a href="/quantriweb">Quản trị website</a> <span class="divider">></span></li>
+                <li class="active">Bảng quản trị</li>
+            </ul>
+        </div>
+        <div class="workplace">
+            <div class="row-fluid">
+                <div class="span12" style="position: relative">
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                TKMCMS VERSION 2.0 Copyright © @DateTime.Now.Year by <a href="http://thekymoi.com/">Thế Kỷ Mới.</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- Back to top -->
+    <p id="back-top" style="display: none;">
+        <a href="#top"><span></span></a>
+    </p>
+    <!-- /Back to top -->
+
+    @if (Request.IsAuthenticated)
+    {
+        <div id="dropdown-user-zone" class="dropdown dropdown-tip">
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink(Resources.admin_common_changepassword, "Manage", new { area = "", controller = "Account" })</li>
+                <li class="dropdown-divider"></li>
+                <li class="logout-button">
+                    @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.admin_common_logout</a>
+                    }
+                </li>
+            </ul>
+        </div>
+    }
+
+
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#control').addClass("control-fix");
+                } else {
+                    $('#control').removeClass("control-fix");
+                }
+            });
+        });
+    </script>
+
+    <!-- Back to top -->
+    <script>
+        $(document).ready(function () {
+
+            // hide #back-top first
+            $("#back-top").hide();
+
+            // fade in #back-top
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('#back-top').fadeIn();
+                    } else {
+                        $('#back-top').fadeOut();
+                    }
+                });
+
+                // scroll body to 0px on click
+                $('#back-top a').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+                });
+            });
+
+        });
+
+        //tooltip
+        $(function () {
+            $(document).tooltip();
+        });
+
+    </script>
+    <!-- /Back to top -->
+    @RenderSection("scriptsfooter", required: false)
+</body>
+
+</html>
+

@@ -1,0 +1,71 @@
+﻿@using System.Collections
+@using (Html.BeginForm("Index", "Common", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="files" multiple /> <input type="submit" value="Upload" /> <h4>Upload hình ảnh resize.</h4>
+    <h6>Note:Up nhiều hình ảnh cùng 1 lúc không hổ trợ trên IE9 và các phiên bản trước đó.</h6>
+}
+@{
+    var with1 = Html.Action("LoadOption", "Common", new { code = "with-1" });
+    var height1 = Html.Action("LoadOption", "Common", new { code = "height-1" });
+
+    var with2 = Html.Action("LoadOption", "Common", new { code = "with-2" });
+    var height2 = Html.Action("LoadOption", "Common", new { code = "height-2" });
+
+    var with3 = Html.Action("LoadOption", "Common", new { code = "with-3" });
+    var height3 = Html.Action("LoadOption", "Common", new { code = "height-3" });
+}
+@if (TempData["filename"] != null)
+{
+    foreach (var item in TempData["filename"] as string[])
+    {
+        <div class="row-fluid">
+            <h2>@with1 * @height1</h2>
+            <img src="~/Images/@item?w=@with1&h=@height1" alt="image"/>
+        </div>
+    
+    //nếu with 2 có giá trị
+        if (!string.IsNullOrEmpty(with2.ToString()))
+        {
+    <div class="row-fluid">
+        <h2>@with2 * @height2</h2>
+        <img src="~/Images/@item?w=@with2&h=@height2" alt="image"/>
+    </div>  
+        }
+        if (!string.IsNullOrEmpty(with3.ToString()))
+        {
+    <div class="row-fluid">
+        <h2>@with3 * @height3</h2>
+        <img src="~/Images/@item?w=@with3&h=@height3" alt="image"/>
+    </div>  
+        }
+    }
+}
+else
+{
+    <div class="row-fluid">
+        <h2>@with1 * @height1</h2>
+        <img src="~/Images/noimage.png?w=@with1&h=@height1" alt="image"/>
+    </div>  
+    if (!string.IsNullOrEmpty(with2.ToString()))
+    {
+    <div class="row-fluid">
+        <h2>@with2 * @height2</h2>
+        <img src="~/Images/noimage.png?w=@with2&h=@height2" alt="image"/>
+    </div>  
+    }
+    if (!string.IsNullOrEmpty(with3.ToString()))
+    {
+    <div class="row-fluid">
+        <h2>@with3 * @height3</h2>
+        <img src="~/Images/noimage.png?w=@with3&h=@height3" alt="image"/>
+    </div>  
+    }
+}
+
+<style>
+    .row-fluid
+    {
+        float: left;
+        margin-left: 30px;
+    }
+</style>

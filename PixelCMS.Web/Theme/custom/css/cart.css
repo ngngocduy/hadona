@@ -1,0 +1,139 @@
+
+/*--------------------
+	CSS CART
+-------------------*/
+.main-cart {
+     width: 97%;
+    margin: 15px;
+}
+
+.aside-cart { width: 25%;}
+
+.photo-cart { width: 12%;}
+.name-cart { width: 18%;}
+.name-cart-attribute { width: 12%;}
+.quantity-cart { width: 12%;}
+.price-cart { width: 15%;}
+.total-cart { width: 15%;}
+.delete-cart { width: 4%;}
+
+.photo-cart img { border: 1px solid #d4d4d4; border-radius: 5px;}
+.name-cart a { font-size: 12px;}
+.quantity-cart input { width: 24px; height: 24px; padding: 5px; border: 1px solid #d4d4d4; border-radius: 3px; text-align: center;}
+
+.one-product { border-bottom: 1px solid #eee;}
+.one-product .name-cart { margin: 2.9% 0%;}
+.one-product .quantity-cart { margin: 1.6% 0%;}
+.one-product .price-cart, .one-product .total-cart { margin: 2.9% 0%;}
+.one-product .delete-cart { margin: 2.9% 0%;}
+
+
+.member-panel { margin: 30px 0px;}
+.title-panel { 
+	padding: 10px; 
+	border-left: 5px solid #777; 
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 18px; 
+	color: #777;
+	text-transform: uppercase; 
+	font-weight: bold; 
+	cursor: pointer;
+	background: #f5f5f5;
+	margin-bottom: 1px;
+}
+
+.form-login { 
+	width: 40%;
+	padding: 3%;
+	height: 188px;
+}
+
+.line-lock { width: 48px; height: 188px; background:url(line-lock.png) center center no-repeat; padding: 3% 1%;}
+
+.note-login {
+	width: 39%;
+	padding: 3%;
+	font-size: 14px;	
+}
+
+.form-login input { width: 97%; margin: 10px 0px;}
+.forgetpass { margin-top: 10px;}
+
+.form-info-member {
+	/*padding: 20px 0px;	*/
+}
+.form-info-member .form-left { width: 15%;}
+.form-info-member .form-right { width: 83%;}
+.form-info-member input[type=text], 
+.form-info-member input[type=password], 
+.form-info-member input[type=tel], 
+.form-info-member input[type=email], 
+.form-info-member input[type=number], 
+.form-info-member input[type=search] { width: 57%}
+.form-info-member select { width: 60%;}
+.form-info-member textarea { width: 59%; min-height: 100px;}
+
+
+/* aside BLOCK */
+.total-block ul { list-style: none; padding: 0px;}
+.total-block ul li {
+	padding: 10px;
+	border-bottom: 1px dotted #d4d4d4;	
+}
+.total-block ul li:last-child { border-bottom: none;}
+.all-total { font-weight: bold;}
+
+
+.method-payment ul { list-style: none; padding: 0px;}
+.method-payment ul li { padding: 5px 10px;}
+.method-payment ul li label { cursor: pointer;}
+
+
+@media only screen and (max-width: 1024px){
+
+.name-cart { width: 30%;}
+.tbl-cart ul li {
+	float: left;
+	padding: 0.8%;
+}
+
+}
+
+
+@media only screen and (max-width: 800px){
+
+.name-cart { width: 28%;}
+.one-product .quantity-cart { margin: 1.4% 0%;}
+.quantity-cart { width: 12%;}
+.quantity-cart input { width: 16px; height: 18px;}
+
+.note-login {
+	width: 45%;
+	padding: 3%;
+	font-size: 14px;	
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,166 @@
+﻿@using PixelCMS.Core.Models;
+@{
+    string breadcrumb = ViewBag.BreadCrumb;
+    pixelcmsEntities db = new pixelcmsEntities();
+
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    string postid = null;
+    string catid = null;
+    string typeid = null;
+
+    var slug = db.Slugs.Where(x => x.Slug_Full == breadcrumb).FirstOrDefault();
+    if (slug != null)
+    {
+        if (slug.Post != null)
+        {
+            postid = Convert.ToString(slug.Post);
+            var postfull = db.Posts.Find(slug.Post);
+
+            if (postfull.Cats.FirstOrDefault() != null)
+            {
+                var have = postfull.Cats.FirstOrDefault(x => x.Position == 0);
+                if (have != null)
+                {
+                    catid = Convert.ToString(have.Id);
+                }
+                else
+                {
+                    catid = Convert.ToString(postfull.Cats.FirstOrDefault(x => x.Position != 0).Id);
+                }
+            }
+
+            if (postfull.PostType.ShowType == true)
+            {
+                typeid = Convert.ToString(postfull.PostType.Id);
+            }
+        }
+        else if (slug.Cat != null)
+        {
+            catid = Convert.ToString(slug.Cat);
+            var catfull = db.Cats.Find(slug.Cat);
+
+            if (catfull.PostType.ShowType == true)
+            {
+                typeid = Convert.ToString(catfull.PostType.Id);
+            }
+        }
+        else if (slug.PostType != null)
+        {
+            typeid = Convert.ToString(slug.PostType);
+        }
+    }
+    
+}
+
+<ol class="breadcrumb">
+    @* <span class="br_before">Bạn đang truy cập: </span>*@
+    <li><a href="/@currentculture/"><i class="fa fa-home"></i></a></li>
+    @*<a href="@Html.Action("LoadOption", "Common", new { code = "common-home" })">@Html.Action("LoadOption", "Common", new { code = "common-sitename" })</a>*@
+
+    @if (typeid != null)
+    {
+        var typeint = Convert.ToInt32(typeid);
+        var typename = db.PostTypes.Find(Convert.ToInt32(typeid)).PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name;
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "posttype", id = typeint })">
+                @typename
+            </a>
+        </li>
+    }
+
+    @if (catid != null)
+    {
+        var catint = Convert.ToInt32(catid);
+        var cat = db.Cats.Find(catint);
+        if (cat.Level == 3)
+        {
+            var cat2 = db.Cats.Find(cat.Owner_Id);
+            if (cat.PostType.Has_Parallel_Language == true && cat.MainLang_Id != null)
+            {
+                var cat2id = db.Cats.Find(cat.MainLang_Id).Owner_Id;
+                cat2 = db.Cats.FirstOrDefault(x => x.MainLang_Id == cat2id);
+            }
+            var cat1 = db.Cats.Find(cat2.Owner_Id);
+            if (cat.PostType.Has_Parallel_Language == true && cat.MainLang_Id != null)
+            {
+                var cat1id = db.Cats.Find(cat2.MainLang_Id).Owner_Id;
+                cat1 = db.Cats.FirstOrDefault(x => x.MainLang_Id == cat1id);
+            }
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat1.Id })">@cat1.Name</a>
+        </li>
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat2.Id })">@cat2.Name</a>
+        </li>
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat.Id })">@cat.Name</a>
+        </li>
+        }
+        else if (cat.Level == 2)
+        {
+            var cat1 = db.Cats.Find(cat.Owner_Id);
+            if (cat.PostType.Has_Parallel_Language == true && cat.MainLang_Id != null)
+            {
+                var cat1id = db.Cats.Find(cat.MainLang_Id).Owner_Id;
+                cat1 = db.Cats.FirstOrDefault(x => x.MainLang_Id == cat1id);
+            }
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat1.Id })">@cat1.Name</a>
+        </li>
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat.Id })">@cat.Name</a>
+        </li>
+        }
+        else if (cat.Level == 1)
+        { 
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat.Id })">@cat.Name</a>
+        </li>
+        }
+    }
+
+    @if (postid != null)
+    {
+        var postint = Convert.ToInt32(postid);
+        var post = db.Posts.Find(postint);
+
+        if (post.Level == 3)
+        {
+            var post2 = db.Posts.Find(post.Owner_Id);
+            var post1 = db.Posts.Find(post2.Owner_Id);
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "post", id = post1.Id })">@post1.Title</a>
+        </li>
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "post", id = post2.Id })">@post2.Title</a>
+        </li>
+        
+        }
+        else if (post.Level == 2)
+        {
+            var post2 = db.Posts.Find(post.Owner_Id);
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "post", id = post2.Id })">@post2.Title</a>
+        </li>
+        }
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "post", id = post.Id })">@post.Title</a>
+        </li>    
+        
+    }
+
+
+    @if (breadcrumb == "search")
+    {
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "search" })" itemprop="url"><span itemprop="title">@Resources.common_search</span></a>
+        </li>
+    }
+    else if (breadcrumb == "contact")
+    {
+        <li>
+            <a href="@Html.Action("LoadURL", "Common", new { type = "contact" })" itemprop="url"><span itemprop="title">@Resources.contact</span></a>
+        </li>   
+    }
+</ol>

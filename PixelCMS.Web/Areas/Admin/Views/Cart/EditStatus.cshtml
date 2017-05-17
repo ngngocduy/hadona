@@ -1,0 +1,102 @@
+﻿@model PixelCMS.Core.Models.Order_Status
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_common_edit + Resources.admin_cart_orderstatus;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var langs = db.Languages.OrderBy(x => x.Order).ToList();
+    var currentlang = langs.FirstOrDefault();
+    int langlist = langs.Count();
+}
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_common_edit + @Resources.admin_cart_orderstatus</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_save" class="btn btn-blue" />
+                            <a href="@Url.Action("Status", "Cart")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                       @* <tr>
+                            <th colspan="2">@Resources.admin_content_info</th>
+                        </tr>*@
+                        <tr>
+                            <td colspan="2">
+                                <ul class="tabs-nav">
+                                    <li class="active"><a href="#tab-@currentlang.Code">
+                                        <img src="@currentlang.Flag" />
+                                        @currentlang.Name</a></li>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <li><a href="#tab-@lang.Code">
+                                            <img src="@lang.Flag" />
+                                            @lang.Name</a></li>
+                                    }
+                                </ul>
+
+                                <div class="tabs-container">
+                                    <div class="tab-content" id="tab-@currentlang.Code">
+                                        <table class="grid form-input">
+                                            <tr>
+                                                <td class="label">@Resources.admin_content_title</td>
+                                                <td>
+                                                    <input type="text" name="name-@currentlang.Code" value="@Model.Order_Item_Language.FirstOrDefault(x => x.Lang == currentlang.Code).Name"/></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <div class="tab-content" id="tab-@lang.Code">
+                                            <table class="grid form-input">
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_title</td>
+                                                    <td>
+                                                        <input type="text" name="name-@lang.Code" value="@Model.Order_Item_Language.FirstOrDefault(x => x.Lang == lang.Code).Name" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    }
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_content_order</td>
+                            <td>@Html.EditorFor(model => model.Order)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_content_active</td>
+                            <td>@Html.EditorFor(model => model.Active)</td>
+                        </tr>
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

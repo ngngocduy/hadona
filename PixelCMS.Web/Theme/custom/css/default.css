@@ -1,0 +1,82 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic&subset=latin,vietnamese);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic&subset=latin,vietnamese);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,700italic,400,400italic&subset=latin,vietnamese);
+
+/* ============== PHẦN RESET CSS NÀY XÓA ĐI KHI NHÚNG VÀO CÁC WEB KHÁC NẾU BỊ TRÙNG ============== */
+* { margin: 0px;}
+
+ul { padding-left: 2%;}
+a { color: #034d9d; text-decoration: none;}
+a:hover { color: #00afe7;}
+/* ============== // PHẦN RESET CSS NÀY XÓA ĐI KHI NHÚNG VÀO CÁC WEB KHÁC NẾU BỊ TRÙNG ============== */
+
+
+
+/* ---- CLASS ---- */
+.float-left { float: left !important;}
+.float-right { float: right !important;}
+a img { border: 0;}
+img { max-width: 100%;}
+/* ---------- CLEARFIX ---------- */
+/* For modern browsers */
+.cf:before, .cf:after { content: ""; display: table; }
+.cf:after { clear:both; }
+/* For IE 6/7 (trigger hasLayout) */
+.cf { zoom: 1; }
+
+.red { color: #ff0000;}
+
+i.effect {
+	vertical-align: middle;
+	transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	cursor: pointer;	 
+}
+i.effect:hover {
+	-webkit-transform: rotate(-360deg);
+	-moz-transform: rotate(-360deg);
+	-ms-transform: rotate(-360deg);
+	-o-transform: rotate(-360deg);
+	transform: rotate(-360deg);
+}
+
+.wrap-page {
+      background-color: white;
+	width: 100%; 
+	margin: 30px 0px;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+	font-size: 12px; 
+	line-height: 1.6;
+}
+
+.aside-block { 
+	border: 1px solid #d4d4d4;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+/*
+
+.btn { background: #eee; border-radius: 5px;}
+.btn i {
+	padding: 8px;
+	background: #444;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px 0px 0px 5px;	
+}
+.btn a { font-size: 13px; padding: 8px;}
+*/
+
+
+@media only screen and (max-width: 639px){
+
+/*.wrap-page {width: 640px;}*/
+	
+}

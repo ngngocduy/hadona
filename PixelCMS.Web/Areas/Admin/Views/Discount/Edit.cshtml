@@ -1,0 +1,86 @@
+﻿@model PixelCMS.Core.Models.Discount
+
+@{
+    ViewBag.Title = "Tạo discount ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Tạo chiến dịch giảm giá</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.Product_Id)
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Sửa" class="btn btn-blue" />
+                       <a href="@Url.Action("Index",new {productid=Model.Product_Id})" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Tên chiến dịch</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "142", required = true })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nhóm</td>
+                        <td>@Html.DropDownList("Role_Id", "chọn nhóm")
+                            @Html.ValidationMessageFor(model => model.Role_Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Giá</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.DiscountAmount, new { required = true })
+                            @Html.ValidationMessageFor(model => model.DiscountAmount)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Ngày bắt đầu</td>
+                        <td>@Html.EditorFor(model => model.StartDate)</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Ngày kết thúc</td>
+                        <td>@Html.EditorFor(model => model.EndDate)</td>
+                    </tr>
+                   
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>
+<script>
+    $(function () {
+        $("#StartDate").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //dateFormat: 'mm/dd/yy 00:00:00'
+        });
+    });
+    $(function () {
+        $("#EndDate").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //  changeMonth: true,
+            // changeYear: true,
+            //dateFormat: 'mm/dd/yy 00:00:00'
+        });
+    });
+</script>

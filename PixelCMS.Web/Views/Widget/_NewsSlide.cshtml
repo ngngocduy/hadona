@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+@{ var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();}
+<div class="col-1">
+    <div class="hotnews cf">
+        <div class="head">@Resources.TinTuc: </div>
+        <div class="hotnewsSlide">
+            <ul class="hotnews-slider">
+                @if (Model.FirstOrDefault() != null)
+                {
+                    foreach (var item in Model.Where(x => x.Lang == currentlang).OrderByDescending(x => x.Order).Take(10))
+                    {
+                        var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = item.Id }); 
+                    <li>
+                        <div class="title"><a href="@Modelurl">@item.Title</a></div>
+                    </li>
+                    }
+                }
+            </ul>
+            <!-- End whatnews-slider -->
+        </div>
+        <!-- End whatnewsSlide -->
+    </div>
+    <!-- End whatnews -->
+</div>
+<!-- End col-1 -->

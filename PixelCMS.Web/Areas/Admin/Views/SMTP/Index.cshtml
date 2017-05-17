@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.SMTP>
+@{
+    ViewBag.Title = "SMTP";
+    ViewBag.PTitle = "SMTP";
+    ViewBag.PDescription = "Quản lý SMTP";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+
+<div class="container">
+    <div class="sixteen columns">
+        <aside id="control">
+                <div>
+                    <a class="btn btn-blue" href="@Url.Action("Create")"><i class="fa fa-plus"></i>@Resources.admin_common_create </a>
+                </div>
+            </aside>
+<table class="grid">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Port)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Server)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Port)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Server)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+ </div>
+</div>
+</section>

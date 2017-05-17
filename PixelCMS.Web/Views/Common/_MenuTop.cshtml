@@ -1,0 +1,41 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.MenuItem>
+
+<ul class="cf">
+        @{ int countchild = 0;}
+        @foreach (var item in Model.Where(x => x.Owner_Id == null))
+        {
+            countchild++;
+            var checkchild = Model.Any(x => x.Owner_Id == item.Id);
+            string liClass = "";
+            string aClass = "";
+            <li>
+                    @switch (item.Type)
+                    {
+                        case 1:
+                        <a @aClass href="@item.Url">@item.Name </a>
+                            break;
+                        case 100:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "posttype", id = item.PostType })">@item.Name </a>
+                            break;
+                        case 2:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Post })">@item.Name </a>
+                            break;
+                        case 3:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "cat", id = item.Cat })">@item.Name </a>
+                            break;
+                        case 4:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "home" })">@Resources.common_home </a>
+                            break;
+                        case 5:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "contact" })">@Resources.contact </a>
+                            break;
+                        case 6:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "search" })">@Resources.common_search </a>
+                            break;
+                    }
+                   
+            </li>
+        }
+                            
+    </ul>

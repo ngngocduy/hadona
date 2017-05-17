@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="ie8"></html><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"></html><![endif]-->
+<!--[if !IE]><!-->
+<html lang="vi">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>@ViewBag.Title - PixelCMS</title>
+
+    @Styles.Render("~/Areas/Admin/Content/css/css")
+    @Styles.Render("~/Content/jqueryui/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+
+    @RenderSection("scripts", required: false)
+
+    <script type='text/javascript' src="~/Areas/Admin/Content/js/jquery.dropdown.min.js"></script>
+
+    <script>
+        $(document).ready(function () { $("body").hide().fadeIn(500); });
+    </script>
+
+</head>
+<body>
+
+    <section id="login-form">
+            <div class="login-brand"><img src="~/Areas/Admin/Content/images/logo.png" alt="" /></div>
+
+            @RenderBody()
+
+            <div class="copyright">
+			Powered by THẾ KỶ MỚI<br>
+			Copyright © 2014 - @DateTime.Now.Year &copy; by <a href="http://thekymoi.com/">THẾ KỶ MỚI.</a>
+		    </div>
+    </section>
+
+    <div align="center">
+        <a class="back-to-home" href="~/">Quay lại trang chủ</a>
+    </div>
+		
+
+	   
+</body>
+</html>
+

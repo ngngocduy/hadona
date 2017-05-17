@@ -1,0 +1,39 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Where(x => x.Id == t).FirstOrDefault();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = db.PostType_Name.FirstOrDefault(x => x.Posttype_id == t && x.Lang == currentculture).Name;
+    
+    ViewBag.Title = Resources.admin_content_delete + " " + posttypename;
+    ViewBag.PTitle = posttypename;
+    ViewBag.PDescription = ViewBag.Description;
+    ViewBag.LastCR = "<a href=\"" + (Url.Action("Index", "Content", new { type = t })) + "\">" + @posttypename + "</a><span class=\"divider\">&nbsp;</span></li><li><a href=\"\">Xóa " + @posttypename + "</a><span class=\"divider-last\">&nbsp;</span></li>";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-body">
+
+<h4>@Resources.admin_ask_suredelete @posttypename <b>"@Html.DisplayFor(model => model.Title)"</b>?</h4>
+<div class="alert alert-warning">
+    <h4 class="alert-heading">@Resources.admin_common_warning</h4>
+    <p>@posttypename @Resources.admin_common_deletedwarning</p>
+</div>
+
+@using (Html.BeginForm()) {
+    <p>
+        <a class="btn" href="@Url.Action("Index", "Content", new { type = t })"><i class="icon-chevron-left"></i>@Resources.admin_common_back</a> <input type="submit" value="@Resources.admin_content_delete"  class="btn btn-danger"/>
+    </p>
+}
+
+            </div>
+        </div>
+    </div>
+</div>
+

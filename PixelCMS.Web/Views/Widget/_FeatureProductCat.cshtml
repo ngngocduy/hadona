@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Cat>
+@if(Model.FirstOrDefault() != null){
+<div class="floatted-box">
+<div class="offers-box container_12">     
+    <span class="blur-cover-left"></span>
+    <span class="blur-cover-right"></span>
+    <div class="flexslider">
+        <ul class="slides">
+            @foreach (var item in Model)
+            {
+                var itemurl = Html.Action("LoadUrl", "Common", new { type = "cat", id = item.Id });
+                <li><div class="tooltip-cover"><div class="tooltip"><span class="title">@item.Name</span></div></div><span class="cover"></span><a class="icomoon eye" aria-hidden="true" data-icon="&#x25c7;" href="@itemurl"></a><a href="@itemurl" class="icomoon plus" aria-hidden="true" data-icon="&#xe01a;"></a><img src="@item.Image" alt="product-thumb"/></li>
+            }
+        </ul>
+    </div>        
+</div>      
+</div><!-- end .floatted-box -->
+}

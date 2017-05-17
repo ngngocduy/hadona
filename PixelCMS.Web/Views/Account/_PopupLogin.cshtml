@@ -1,0 +1,91 @@
+﻿@model PixelCMS.Core.Models.LoginModel
+@*<div class="cont box blue">
+    <form id="formlogin" name="formlg1">
+        <div class="box-heading">
+            <span>ĐĂNG NHẬP</span>
+            <em class="shapes right"></em>
+            <em class="line"></em>
+        </div>
+        <div class="clearfix">
+            <span>Tên đăng nhập</span>
+            $1$<input type="text" name="login_user" size="50">#1#
+            @Html.TextBoxFor(m => m.UserName, new { size = "50", required = "" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+
+        <div class="clearfix">
+            <span>Mật khẩu</span>
+            $1$ <input type="password" name="login_password" size="50">#1#
+            @Html.PasswordFor(m => m.Password, new { size = "50", required = "" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+        <div class="clearfix">
+            <span>@Resources.account_rememberme</span>
+            @Html.CheckBoxFor(m => m.RememberMe)
+        </div>
+    </form>
+    <div class="clearfix">
+        <input id="btnlogin" type="button" value="@Resources.account_login" class="button pull-right" />
+        <a class="button pull-left" id="changeRegister">Đăng ký</a>
+        @Html.Action("ExternalLoginsList", "Account", new { ReturnUrl = ViewBag.ReturnUrl })
+    </div>
+</div>*@
+<div class="dropdown-menu">
+    <form class="form-horizontal" role="form" action="user-info.html">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-3 control-label">Tài khoản</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Tài khoản" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-3 control-label">Mật khẩu</label>
+            <div class="col-sm-9">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Mật khẩu" })
+                @*@Html.ValidationMessageFor(m => m.Password)*@
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(m => m.RememberMe) Ghi nhớ
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-9">
+                <button id="btnlogin" type="button" class="btn btn-primary">Đăng nhập</button>
+            </div>
+           
+        </div>
+    </form>
+    @*<div class="col-sm-offset-1 col-sm-3">
+             @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+            </div>*@
+</div>
+<script>
+    $(function () {
+        $("#btnlogin").click(function () {
+            var url = '@Url.Action("PopupLoginPost", "Account")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(".form-horizontal").serializeArray(),
+                success: function (data) {
+                    if (data.mess == false) {
+                        $("#alert-cart").css('background', '#EB4578').html("<p style='color:white'>Tên đăng nhập hoặc mật khẩu không đúng</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                    }
+                    else {
+                        $("#alert-cart").css('background', '#d9edf7').html("<p>Đăng nhập thành công</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                        window.location.reload();
+                    }
+                },
+                //dataType: dataType
+            });
+        });
+    })
+</script>
+

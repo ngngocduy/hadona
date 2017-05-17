@@ -1,0 +1,120 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.webpages_Roles>
+@{
+    ViewBag.Title = "Nhóm thành viên";
+    ViewBag.PTitle = "Nhóm thành viên";
+    ViewBag.PDescription = "Quản lý tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>Nhóm thành viên đã xóa thành công !
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>Chỉnh sửa thành công !
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>Tạo nhóm thành viên mới thành công !
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-users"></i>Nhóm thành viên</h1>
+
+            <aside id="control">
+                <div>
+                    <a href="@Url.Action("CreateUserRoles", "User")" class="btn btn-blue"><i class="fa fa-plus"></i>Thêm nhóm thành viên</a> <a href="@Url.Action("Index", "User")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                </div>
+            </aside>
+
+            <div class="sixteen columns alpha omega">
+                <table class="grid">
+                    <tr>
+                        <th>Tên nhóm</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        if (User.IsInRole("tkmadmin"))
+                        {
+                        <tr>
+                            <td>@item.RoleName</td>
+                            <td>
+                                <a href="@Url.Action("RolesAccess", "User", new { id = item.RoleId })" class="btn btn-small btn-green"><i class="fa fa-hand-o-right"></i>Quyền truy cập</a>
+                                <a href="@Url.Action("EditUserRoles", "User", new { id = item.RoleId })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>Sửa</a>
+                                <a href="@Url.Action("DeleteUserRoles", "User", new { id = item.RoleId })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>Xóa</a>
+                            </td>
+                        </tr>
+                        }
+                        else
+                        {
+                            if ((item.RoleName != "admin") && (item.RoleName != "tkmadmin"))
+                            {
+                        <tr>
+                            <td>@item.RoleName</td>
+                            <td>
+                                <a href="@Url.Action("RolesAccess", "User", new { id = item.RoleId })" class="btn btn-small btn-green"><i class="fa fa-hand-o-right"></i>Quyền truy cập</a>
+                                <a href="@Url.Action("EditUserRoles", "User", new { id = item.RoleId })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>Sửa</a>
+                                <a href="@Url.Action("DeleteUserRoles", "User", new { id = item.RoleId })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>Xóa</a>
+                            </td>
+                        </tr>
+                            }
+                        }
+                    }
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>Bạn có chắc muốn xóa nhóm thành viên này?</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+    <script>
+        $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+else if (ViewBag.Status == "edit-done")
+{ 
+    <script>
+        $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}

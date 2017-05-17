@@ -1,0 +1,53 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Post
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    string username = User.Identity.Name;
+}
+@*/* Parallel Lang */*@
+@if (Model.Lang != currentlang)
+{
+    var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+    if (Modellang != null)
+    {
+        Model.Id = Modellang.Id;
+        Model.Title = Modellang.Title;
+        Model.Description = Modellang.Description;
+        Model.Content = Modellang.Content;
+    }
+}
+@*/* End Parallel Lang */*@
+@{
+    var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = Model.Id }); 
+}
+<div class="product">
+    <div class="img-product">
+        <a href="@Modelurl">
+            @if (Model.Thumb != null)
+            {
+                <img src="@Model.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")"/>
+            }
+        </a>
+    </div>
+    <div class="title"><a href="@Modelurl">@Model.Title</a></div>
+    @if (!string.IsNullOrEmpty(username) && Model.Product != null)
+        {
+            var discounts = Model.Product.Discounts;
+            var role = Roles.GetRolesForUser(username).FirstOrDefault();
+            //nếu có cài đặt chiến dịch
+            var discount = discounts.OrderByDescending(x => x.CreateDate).FirstOrDefault(x => x.webpages_Roles.RoleName == role);
+            if (discount != null && discount.StartDate <= DateTime.Now.Date && DateTime.Now.Date <= discount.EndDate)
+            {
+                Model.Price = discount.DiscountAmount;
+            }
+            //giảm giá của sản phẩm
+            else if (Model.Product.Sale_Start <= DateTime.Now.Date && DateTime.Now.Date <= Model.Product.Sale_End)
+            {
+                Model.Price = Model.Product.Sale_Price;
+            }
+        }
+    <div class="price">@string.Format("{0:0,0}", Model.Price) VNĐ</div>
+    <div class="btn-addcart"><a href="@Modelurl">Thêm vào giỏ</a></div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Cat>    
+@foreach (var item in Model)
+            {
+    <section class="main">
+        <div class="title-head"><i class="fa fa-arrow-circle-right"></i>@item.Name</div>
+        <div class="feature">
+            <div class="feature-slider">
+
+                @foreach (var post in item.Posts.Where(x => x.Active).OrderByDescending(x => x.Order))
+            {
+                    <div class="slide">
+                        @Html.Partial("~/Views/Widget/_ProductBoxMobile.cshtml", post)
+                    </div>
+            }
+            </div>
+        </div>
+    </section>
+            }

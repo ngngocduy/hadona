@@ -1,0 +1,25 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Post
+
+@if (Model != null)
+{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    if (Model.Lang != currentlang)
+    {
+        var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+        if (Modellang != null)
+        {
+            Model.Id = Modellang.Id;
+           // Model.Title = Modellang.Title;
+            // Model.Description = Modellang.Description;
+            Model.Content = Modellang.Content;
+        }
+    }
+
+    var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = Model.Id });
+    
+    @Html.Raw(Model.Content)
+}
+

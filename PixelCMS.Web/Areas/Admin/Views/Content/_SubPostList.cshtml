@@ -1,0 +1,152 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = Model.FirstOrDefault().PostType;
+    var langlist = db.Languages.Where(x => x.Active == true).Select(x => new { x.Code, x.Flag, x.Order, x.Name }).OrderBy(x => x.Order).ToList();  
+}
+
+
+<table class="sublist">
+
+                @foreach (var item in Model.ToList())
+                {
+                    <tr>
+                        @if (posttype.Has_Title == true)
+                        {
+                        <td width="50%">
+                            @if (item.Level == 2) { <span>--</span>}
+                                            else if (item.Level == 3) { <span> ------ </span>} <strong>@Html.DisplayFor(modelItem => item.Title)</strong>
+                        </td>
+                        }
+                        @if (posttype.Has_Cat == true)
+                        {
+                            <td>
+                                @foreach (var cat in item.Cats)
+                                {
+                                    @Html.DisplayFor(c => cat.Name)<br />
+                                }
+                            </td>
+                        }
+                        @if (posttype.Has_Thumb == true && posttype.Show_Thumb == true)
+                        {
+                            <td>
+                                @if (item.Thumb != null)
+                                {
+                                <img src="@Html.Raw(item.Thumb.Replace("Upload/", "Upload/_Thumbs/"))" alt="" height="70" />
+                                }
+                            </td>
+                        }
+
+                        @if (posttype.Has_Order == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Order)
+                            </td>
+                        }
+                        @if (posttype.Has_Price == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price_Old)
+                            </td>
+                        }
+
+                        @if (posttype.Has_User_Create == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User_Create)
+                            </td>
+                        }
+                        @if (posttype.Has_Date_Create == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date_Create)
+                            </td>
+                        }
+                        @if (posttype.Has_Date_Edit == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date_Edit)
+                                @if (posttype.Has_User_Edit == true)
+                                {
+
+                                    if (item.User_Edit != null)
+                                    {
+                                    <span>bởi</span> @Html.DisplayFor(modelItem => item.User_Edit)
+                                    }
+                                }
+                            </td>
+                        }
+
+                        <td>
+                                @if(ViewBag.EditPermission != "false"){
+                                <a href="@Url.Action("Edit", "Content", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i> @Resources.admin_common_edit</a>
+                                }
+
+                                @if(ViewBag.DeletePermission != "false"){
+                                    <a href="@Url.Action("Delete", "Content", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i> @Resources.admin_content_delete</a>
+                                }
+                                
+                                
+                                @if (langlist.Count == 1 && posttype.Has_Lang == false && posttype.Has_Parallel_Language == false && ViewBag.CreatePermission != "false")
+                                {
+                                    <a href="@Url.Action("Copy", "Content", new { id = item.Id })" class="btn btn-small"><i class="fa fa-files-o"></i> Copy</a>
+                                }
+                                else if (langlist.Count > 1 && posttype.Has_Lang == true && posttype.Has_Parallel_Language == false && ViewBag.CreatePermission != "false")
+                                {
+                                    <div class="btn btn-small copy-link dropdown-copylink">
+                                    <a>
+                                        <i class="fa fa-files-o"></i> Copy</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach (var lang in langlist)
+                                            {
+                                            <li><a href="@Url.Action("Copy", "Content", new { id = item.Id, lang = lang.Code })">
+                                                <img src="@lang.Flag" title="@lang.Name" />
+                                                @lang.Name</a></li>
+                                            }
+                                        </ul>
+                                    </div>
+                                
+                                }
+
+                        </td>
+
+                        
+                        @if (posttype.Has_Active == true)
+                        {
+                            <td width="50px">
+                                @Html.DisplayFor(modelItem => item.Active)
+                            </td>
+                        }
+
+                        @if (posttype.Has_feature == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.feature)
+                            </td>
+                        }
+
+                        @if (posttype.Has_onsale == true)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.onsale)
+                            </td>
+                        }
+
+
+                    </tr>
+                    
+                    if(db.Posts.FirstOrDefault(x=>x.Owner_Id == item.Id) != null){
+                        <tr>
+                            <td colspan="100%" class="sublist-td">
+                                @Html.Action("SubPostList", "Content", new { id = item.Id, deletepermission = ViewBag.DeletePermission })
+                            </td>
+                        </tr>
+                    }
+                    
+                }
+
+            </table>

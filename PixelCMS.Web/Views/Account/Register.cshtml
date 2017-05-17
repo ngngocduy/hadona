@@ -1,0 +1,68 @@
+﻿@model PixelCMS.Core.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    @* <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/account.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/form.css" rel="stylesheet" type="text/css">
+}
+<div class="main">
+    <div class="module main-content bg-white">
+        @*<div class="title-bar">@Resources.account_registertitle</div>*@
+        <!-- .page-top-leader -->
+        <div class=" module-content" style="margin-top: 15px; margin-bottom: 15px;">
+            <div class="main-cart register">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <span style="color: red">@Html.ValidationSummary()</span>  
+                    <label>Tên đăng nhập</label>
+                    <br>
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "full-width" })
+                    <br>
+                    <label>Email</label>
+                    <br>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "full-width" })
+                    <br>
+                    <label>Mật khẩu</label>
+                    <br>
+                    @Html.PasswordFor(m => m.Password, new { @class = "full-width" })
+                    <br>
+                    <label>Xác nhận mật khẩu</label>
+                    <br>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "full-width" })
+                    <br>
+                          @Html.HiddenFor(m => m.ConfirmEmail, new { @class = "full-width" })     
+@*     <label>Xác nhận Email</label>
+                                <br>
+                              @Html.TextBoxFor(m => m.ConfirmEmail, new { @class = "full-width" })
+                                <br>*@
+
+                    <input style="color: #e470a3;background-color: #F4F3F3;cursor: pointer; " type="submit" class="btn" value="@Resources.account_register" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .register input [type="text"]
+    {
+        width: 50%;
+    }
+
+    .register
+    {
+        text-align: center;
+    }
+</style>
+
+<script>
+    $(function () {
+        $("#Email").change(function () {
+            $("#ConfirmEmail").val($("#Email").val());
+        })
+    })
+</script>

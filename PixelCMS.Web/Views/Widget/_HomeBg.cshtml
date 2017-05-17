@@ -1,0 +1,59 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Post
+
+@if (Model != null)
+{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    if (Model.Lang != currentlang)
+    {
+        var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+        if (Modellang != null)
+        {
+            Model.Id = Modellang.Id;
+            Model.Title = Modellang.Title;
+           // Model.Description = Modellang.Description;
+            Model.Content = Modellang.Content;
+        }
+    }
+
+    var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = Model.Id });
+    
+    <div class="col-2">
+    <div class="module home-about">
+        <div class="title-bar">@Model.Title @Html.Action("AdminEdit", "Common", new { id = Model.Id })</div>
+        <div class="module-content">
+            <div class="html-content" style="padding: 20px">
+               @Html.Raw(Model.Content)
+                <a href="@modelurl" class="readmore">@Resources.common_readmore</a>
+            </div>
+            <!-- End html-content -->
+        </div>
+    </div>
+</div>
+}
+
+
+@*
+@if (Model.FirstOrDefault() != null) {
+    var link = "";
+    foreach (var item in Model)
+    {
+        link += "\"" + @item.Thumb + "\",";
+    }
+    <script>
+        if ($('#bg-slideshow')[0]) {
+            $('#bg-slideshow').kenburns({
+                images: [
+                    @Html.Raw(link)
+                ],
+                frames_per_second: 30,
+                display_time: 7000,
+                fade_time: 1000,
+                zoom: 1.2,
+                background_color: '#000000'
+            });
+        }
+    </script>
+}*@

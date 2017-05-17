@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>KPA</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/theme/Styles/template.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/Styles/layout.css" type="text/css" />
+</head>
+<body>
+    <div id="intro-page">
+        <!-- Basic HTML -->
+        <div id="maximage"> <img src="/theme/Images/banner1.jpg" alt="Banner 1" /> <img src="/theme/Images/banner2.jpg" alt="Banner 2" /> </div>
+        <h1><span>Welcome to</span> <a href="@Url.Action("Index", "Home")" title="KPA"><img src="/theme/Images/logo.gif" alt="KPA" /></a></h1>
+        <!-- Begin of footer-->
+        <footer>
+            <div class="container">
+                <span class="button-click-footer"><img src="/theme/Images/click-footer.png" alt="Thông tin website" /></span>
+                <div class="info-footer">
+                    @Html.Action("baiviet", "widget", new { box="contact-intro"})
+                </div>
+                <p class="copyright">&copy; 2017 <a href="http://www.thekymoi.com/" target="_blank"><img src="http://www.thekymoi.com/data/configs/11/logo.png" alt="Thế Kỷ Mới" /></a>. All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- End of footer-->
+    </div>
+    <script type='text/javascript' src='/theme/Scripts/jquery-2.1.4.min.js'></script>
+    <script src="/theme/Scripts/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/theme/Scripts/jquery.maximage.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+			$(function(){
+				// Trigger maximage
+				jQuery('#maximage').maximage();
+			});
+    </script>
+    <script type='text/javascript' src="/theme/Scripts/all_scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+    @*<div class="welcome">
+        <!-- Nội dng động -->
+        @Html.Action("ContentIntro","Widget")
+          <!-- Nội dng động -->
+    </div>
+
+    @Html.Action("IntroBG","Widget")*@
+
+

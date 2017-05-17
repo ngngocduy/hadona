@@ -1,0 +1,85 @@
+﻿@using PixelCMS.Helpers
+@{
+    var currentlang = CultureHelper.GetCurrentNeutralCulture();
+}
+@using (Html.BeginForm("Search", "Content", FormMethod.Get, new { @class = "form_search-1" }))
+{
+        <input  id="keywords" type="text" name="keywords" class="inp-1" placeholder="Tìm kiếm" />
+        <button type="submit" id="btn-search" class="btn-1"><i class="fa fa-search"></i></button>
+
+    @*<div class="search clearfix">
+        <input type="text" id="keywords" name="keywords" class="search_query" placeholder="Tìm kiếm...">
+        <button  class="button" type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+    </div>*@
+}
+@section scripts{
+    <script type="text/javascript">
+    $(function () {
+        var url = '@Url.Action("getsp", "Common")';
+        $('#keywords').autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url,
+                    data: { query: request.term },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.Title,
+                                value: item.Title,
+                                icon: item.Thumb,
+                                //desc: item.Description,
+                                id: item.Id,
+                                slug: item.slug,
+                                price: item.Price,
+                                // sku: item.SKU
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                window.location = "http://" + window.location.host + '/@currentlang/' + ui.item.slug;
+            },
+            minLength: 2
+        })
+            .autocomplete("instance")._renderItem = function (ul, item) {
+                item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+                //xet điều kiện để lấy ảnh thumb
+                if (item.icon != null && item.icon != "" && item.icon != undefined) {
+                    item.icon = item.icon.replace("Upload/", "Upload/_Thumbs/");
+                } else {
+                    item.icon = "/Content/noimage.png";
+                }
+                //xét đk để cắt chuỗi mô tả ngắn bớt thêm dấu '...'
+                if (item.desc != null && item.desc.length >= 50) {
+                    item.desc = item.desc.substring(0, 50) + "...";
+                } else {
+                    if (item.desc == null) {
+                        item.desc = "";
+                    }
+                }
+                if (item.sku == null) {
+                    item.sku = "";
+                }
+                if (item.price == null) {
+                    item.price = 0;
+                }
+                return $("<li class=\"search-result cl\">")
+                    .append("<img with='50' height='60' src=\"" + item.icon + "\" /> <a>" + item.label + "<span></span> " + "</a>")
+                    .appendTo(ul);
+            };
+    });
+
+</script>
+}
+
+<style>
+    #ui-id-1.ui-widget-content
+    {
+        z-index: 9999;
+    }
+</style>

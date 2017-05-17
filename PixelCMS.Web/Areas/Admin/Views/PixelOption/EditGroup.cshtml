@@ -1,0 +1,101 @@
+﻿@model PixelCMS.Core.Models.OptionGroup
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_common_edit + " " + Resources.admin_px_configgroup;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    
+    var langs = db.Languages.OrderBy(x=>x.Order).ToList();
+    var currentlang = langs.FirstOrDefault();
+    int langlist = langs.Count();
+}
+
+<section id="main">
+        <div class="container">
+            <div class="sixteen columns">
+                <h1><i class="fa fa-key"></i> @Resources.admin_common_edit @Resources.admin_px_configgroup</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="@Resources.admin_common_edit" class="btn btn-blue" /> <a href="@Url.Action("OptionGroup", "PixelOption")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">@Resources.admin_content_info</th>
+                    </tr>
+
+@*                    <tr>
+                        <td class="label">@Resources.admin_common_name</td>
+                        <td>@Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "140", required = true })</td>
+                    </tr>*@
+
+                    <tr>
+                        <td colspan="2">
+                            <ul class="tabs-nav">
+                                    <li class="active"><a href="#tab-@currentlang.Code">
+                                        <img src="@currentlang.Flag" />
+                                        @currentlang.Name</a></li>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <li><a href="#tab-@lang.Code">
+                                            <img src="@lang.Flag" />
+                                            @lang.Name</a></li>
+                                    }
+                            </ul>
+
+                            <div class="tabs-container">
+                                    <div class="tab-content" id="tab-@currentlang.Code">
+                                        <table class="grid form-input">
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_title</td>
+                                                    <td><input type="text" name="name-@currentlang.Code" value="@Model.PostType_Name.FirstOrDefault(x=>x.Lang == currentlang.Code).Name"/></td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <div class="tab-content" id="tab-@lang.Code">
+                                            <table class="grid form-input">
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_title</td>
+                                                        <td>
+                                                            <input type="text" name="name-@lang.Code" value="@Model.PostType_Name.FirstOrDefault(x=>x.Lang == lang.Code).Name" />
+                                                        </td>
+                                                    </tr>
+                                            </table>
+                                        </div>
+                                    }
+                                </div>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">@Resources.admin_content_order</td>
+                        <td>@Html.TextBoxFor(model => model.Order)</td>
+                    </tr>
+
+                </table>
+    
+}
+
+        
+    </div></div>
+    </section>
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

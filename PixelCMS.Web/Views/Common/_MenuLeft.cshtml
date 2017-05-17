@@ -1,0 +1,111 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.MenuItem>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+@helper renderlevel(MenuItem menuItem)
+{
+pixelcmsEntities db = new pixelcmsEntities();
+int countchild = 0;
+var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+foreach (var item in Model.Where(x => x.Owner_Id == menuItem.Id))
+{
+    countchild++;
+    var checkchild = Model.Any(x => x.Owner_Id == item.Id);
+    string liClass = "";
+    string aClass = "";
+    var i = Html.Raw("");
+        <li>
+            @switch (item.Type)
+            {
+                case 1:
+                    <a @aClass href="@item.Url">@i@item.Name </a>@Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })
+                    break;
+                case 100:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "posttype",id = item.PostType })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 2:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "post",id = item.Post })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 3:
+                    var catid = item.Cat.ToString();
+                    var post = db.Posts.Where(x => x.Cats.FirstOrDefault((c => c.Id == item.Cat | c.Parent_Path.Contains(catid))) != null && x.Active == true).ToList();
+                    if (currentlang == "en")
+                    {
+                        var cat = db.Cats.FirstOrDefault(z => z.Id == item.Cat);
+                        catid = cat.MainLang_Id.ToString();
+                        post = db.Posts.Where(x => x.Cats.FirstOrDefault((c => c.Id == cat.MainLang_Id | c.Parent_Path.Contains(catid))) != null && x.Active == true).ToList();
+                    }
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "cat",id = item.Cat })">@i@item.Name (@post.Count()) @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 4:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "home" })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 5:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "contact" })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 6:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "search" })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+            }
+        </li>
+        @* @if (checkchild)
+            {
+             @renderlevel(item)
+            }*@
+  }
+}
+
+<ul class="category-block">
+    @{ int countchild = 0;}
+    @foreach (var item in Model.Where(x => x.Owner_Id == null))
+    {
+        countchild++;
+        var checkchild = Model.Any(x => x.Owner_Id == item.Id);
+        string liClass = "";
+        string aClass = "class=level1";
+        var i = Html.Raw("");
+        <li>
+            @switch (item.Type)
+            {
+                case 1:
+                    <a @aClass href="@item.Url">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 100:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "posttype", id = item.PostType })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 2:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Post })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 3:
+                    var catid = item.Cat.ToString();
+                    var post = db.Posts.Where(x => x.Cats.FirstOrDefault((c => c.Id == item.Cat | c.Parent_Path.Contains(catid))) != null && x.Active == true).ToList();
+                    if (currentlang == "en")
+                    {
+                        var cat = db.Cats.FirstOrDefault(z => z.Id == item.Cat);
+                        catid = cat.MainLang_Id.ToString();
+                        post = db.Posts.Where(x => x.Cats.FirstOrDefault((c => c.Id == cat.MainLang_Id | c.Parent_Path.Contains(catid))) != null && x.Active == true).ToList();
+                    }
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "cat", id = item.Cat })">@i@item.Name (@post.Count()) @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 4:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "home" })">@i@item.Name@Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id }) </a>
+                    break;
+                case 5:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "contact" })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+                case 6:
+                    <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "search" })">@i@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                    break;
+            }
+            @if (checkchild)
+            {
+                 <ul>
+                    @renderlevel(item)
+                </ul>
+            }
+        </li>
+    }
+</ul>
+

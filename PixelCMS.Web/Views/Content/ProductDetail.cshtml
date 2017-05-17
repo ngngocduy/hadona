@@ -1,0 +1,145 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var url = Request.Url;
+
+    //var variants = db.Variants.Where(x => x.PostId == Model.Id);
+
+    string username = User.Identity.Name;
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+        <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+        <meta name="description" content="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+        @Html.Raw(Model.Html_Head)
+    }
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("admin"))
+    {
+        @Html.Action("AdminPanel", "Common", new { postid = Model.Id, posttype = Model.PostType.Name })
+    }
+}
+
+@{
+
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    if (Model.Lang != currentlang)
+    {
+        var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+        if (Modellang != null)
+        {
+            Model.Id = Modellang.Id;
+            Model.Title = Modellang.Title;
+            // Model.Description = Modellang.Description;
+            Model.Content = Modellang.Content;
+        }
+    }
+    var imagelink = db.MediaFiles.Where(x => x.Post.Id == Model.Id).OrderBy(o => o.Order).ToList();
+}
+@{
+    var why = "";
+    if (currentlang == "vi")
+    {
+        why = "Tại sao bạn chọn sản phẩm của chúng tôi?";
+    }
+    else
+    {
+        why = "Why did you choose our products?";
+    }
+}
+<div id="sub-page">
+    <div class="banner-subpage" id="main_slide">
+        <!--Slide Banner-->
+        <div id="slide_banner">
+            @Html.Action("HomeSlideMobile", "Widget")
+        </div>
+        <!--end Slide Banner-->
+        <!--Breadcrumb-->
+        <div class="top-heading">
+            <h3 class="heading-page">@ViewBag.TypeName</h3>
+            @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+        </div>
+        <!--end Breadcrumb-->
+    </div>
+    <!--Products Detail Page-->
+    <div class="lBg-page lBg-pro-page"><img src="/theme/Images/productpageBg1.png" /></div>
+    <div class="rBg-page rBg-pro-page"><img src="/theme/Images/productpageBg2.png" /></div>
+    <section id="page-pros-detail">
+        <div class="container">
+            <!--Detail Products-->
+            <div class="pro_left six columns">
+                <!--Image Product-->
+                <div class="main_img"> <a class="fancybox-pro" href="@Model.Thumb" title="Pomegranate"><img itemprop="image" src="@Model.Thumb" alt="" title="" class="img-responsive" /></a></div>
+                <!--end Image Product-->
+            </div>
+            <!--end: #dp-thumb-->
+            <div id="dtp_info" class="ten columns">
+                <h1 class="heading-title">@Model.Title</h1>
+                @Html.Raw(Model.Content)
+            </div>
+            <!--end Info Detail Product-->
+            <div class="cf"></div>
+            <!--end Detail Product-->
+            <div class="related-pro">
+                <h3 class="box-Tab">@Resources.SanPhamLienQuan</h3>
+                <!--List Products-->
+                <div class="list-items">
+                    <ul>
+                        @Html.Action("RelatedProduct", "widget", new { id = Model.Id })
+                    </ul>
+                </div>
+                <!--end List Products-->
+            </div>
+        </div>
+    </section>
+    <!--end Products Detail Page-->
+    <!--Why Choose-->
+    <section id="why-choose">
+        <div class="container">
+            <div class="sec-title">
+                <h3 class="sec-txt">@why</h3>
+            </div>
+            <figure class="why-choose-img why-img-sub six columns"><img src="/theme/Images/food5.png" alt="" title="" /></figure>
+            <div class="why-choose-items why-items-sub ten columns">
+                @Html.Action("GetPostInCat", "Widget", new { vitri = 3 })
+            </div>
+        </div>
+    </section>
+</div>
+<!--End Why Choose-->
+@*@foreach (var image in imagelink)
+    {
+        if (!string.IsNullOrEmpty(@image.URL))
+        {
+            <div class="item"><img src="@image.URL" alt="list-image" /></div>
+        }
+    }*@
+
+<style>
+    #home-page #why-choose .why-choose-img {
+        position: relative !important;
+        top: 0px !important;
+        left: 0px !important;
+        margin: 0px !important;
+    }
+</style>

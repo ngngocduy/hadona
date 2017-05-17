@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = Resources.admin_accessdenied;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+<div class="container">
+    <div class="sixteen columns">
+        <h1>@Resources.admin_accessdenied</h1>
+        <p>@Resources.admin_accessdenied_des</p>
+
+        <a href="@Url.Action("Index", "Dashboard")" class="btn btn-blue">@Resources.admin_common_dashboard</a>
+        <a class="btn" href="javascript: window.history.go(-1)"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+        
+    </div>
+</div>
+</section>

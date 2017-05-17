@@ -1,0 +1,79 @@
+﻿@using PixelCMS.Core.Models
+@model PixelCMS.Core.Models.VariantAttributeCombination
+
+@{
+    ViewBag.Title = "edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Chỉnh sửa biến thể</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.PostId)
+                @Html.HiddenFor(x => x.Attribute)
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Sửa" class="btn btn-blue" />
+                       <a href="@Url.Action("Index", new { postid = Model.PostId })" class="btn"><i class="fa fa-chevron-left"></i>Danh sách</a>
+                    </div>
+                </aside>
+    
+               <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Tồn kho</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Quantity, new { type = "number" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Mã SKU</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.SKU)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Thiết lập lại giá bán</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Price)
+                            @Html.ValidationMessageFor(model => model.Price)
+                        </td>
+                    </tr>
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>
+<script>
+    $(function () {
+        $("#StartDate").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //dateFormat: 'mm/dd/yy 00:00:00'
+        });
+    });
+    $(function () {
+        $("#EndDate").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //  changeMonth: true,
+            // changeYear: true,
+            //dateFormat: 'mm/dd/yy 00:00:00'
+        });
+    });
+</script>

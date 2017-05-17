@@ -1,0 +1,100 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.PostTag>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = "Tags";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var statuslist = db.Order_Status.Where(x => x.Active).OrderBy(x => x.Order).ToList();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_cart_order @Resources.admin_status_deletedsuccessfully
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_edit @Resources.admin_cart_order @Resources.admin_status_successfully
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_create @Resources.admin_cart_order @Resources.admin_status_successfully
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-bar-chart-o"></i>Quản lý Tags</h1>
+            <aside id="control">
+                <div>
+                    <a class="btn btn-blue" href="@Url.Action("Create")"><i class="fa fa-plus"></i>@Resources.admin_common_create</a>
+                </div>
+            </aside>
+            <table class="grid">
+                <tr>
+                    <th>Tên
+                    </th>
+                    <th>Đếm
+                    </th>
+                    <th width="20%"></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @item.Posts.Count
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit",new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>@Resources.admin_common_edit</a>
+                            <a href="@Url.Action("Delete",new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>@Resources.admin_content_delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="delete-dialog" title="@Resources.admin_common_confirm">
+    <p>@Resources.admin_ask_suredelete @Resources.admin_cart_order</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "@Resources.admin_content_delete": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "@Resources.admin_common_back": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>

@@ -1,0 +1,338 @@
+﻿@model PixelCMS.Core.Models.Cat
+@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Find(t);
+
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = db.PostType_Name.FirstOrDefault(x => x.Posttype_id == t && x.Lang == currentculture).Name;
+    var langs = db.Languages.Where(x => x.Active == true).ToList();
+    int langlist = langs.Count();
+    var cat2 = db.Cats.Where(x => x.MainLang_Id == Model.Id).Select(s => new { s.Name, s.Slugs, s.Lang, s.Description }).ToList();
+
+    ViewBag.Title = Resources.admin_common_edit + " " + Resources.admin_content_category + " " + posttypename;
+    ViewBag.PTitle = @Resources.admin_content_category + " " + posttypename;
+    ViewBag.PDescription = Resources.admin_content_managecategory + " " + posttypename;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+
+
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_common_create @Resources.admin_content_category @posttypename @if (langlist > 1 && posttype.Has_Parallel_Language == false)
+                                                                                               {<span>(@Resources.admin_content_language: @Model.Lang)</span>}</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.Type)
+                    @Html.HiddenFor(model => model.Lang)
+
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_edit" class="btn btn-blue" />
+                            <a href="@Url.Action("Index", "Cat", new { type = t })" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+        
+    
+                    <table class="grid form-input">
+                        @* <tr>
+                            <th colspan="2"></th>
+                        </tr>*@
+
+
+                        @if (langlist > 1 && posttype.Has_Parallel_Language == true)
+                        {
+                
+                            <tr>
+                                <td colspan="2">
+                                    <ul class="tabs-nav">
+                                        <li class="active"><a href="#tab-@Model.Lang">
+                                            <img src="@langs.Where(x => x.Code == Model.Lang).FirstOrDefault().Flag" />
+                                            @langs.Where(x => x.Code == Model.Lang).FirstOrDefault().Name</a></li>
+                                        @foreach (var lang in langs.Where(x => x.Code != Model.Lang))
+                                        {
+                                            <li><a href="#tab-@lang.Code">
+                                                <img src="@lang.Flag" />
+                                                @lang.Name</a></li>
+                                        }
+                                    </ul>
+
+                                    <div class="tabs-container">
+                                        <div class="tab-content" id="tab-@Model.Lang">
+                                            <table class="grid form-input">
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_title</td>
+                                                    <td>@Html.TextBoxFor(model => model.Name, new { minlength = "2", maxlength = "140", required = true })</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_friendlyurl</td>
+                                                    <td>
+                                                        <input type="text" name="Slug" value="@Model.Slugs.FirstOrDefault().Slug_Full" id="Slug" required="required" /></td>
+                                                </tr>
+                                                @if (posttype.Has_CatDescription == true)
+                                                { 
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_description</td>
+                                                        <td>@Html.TextAreaFor(model => model.Description, new { rows = "5", minlength = "2", maxlength = "1024" })</td>
+                                                    </tr>
+                                                }
+                                                else
+                                                {
+                                                    @Html.HiddenFor(model => model.Description)
+                                                }
+                                            </table>
+                                        </div>
+                                        @foreach (var lang in langs.Where(x => x.Code != Model.Lang))
+                                        {
+                                            <div class="tab-content" id="tab-@lang.Code">
+                                                <table class="grid form-input">
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_title</td>
+                                                        <td>
+                                                            <input id="Name-@lang.Code" maxlength="140" minlength="5" name="Name-@lang.Code" required="True" type="text" value="@(cat2.Where(x => x.Lang == lang.Code).FirstOrDefault() != null ? cat2.Where(x => x.Lang == lang.Code).FirstOrDefault().Name : "")" /></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="label">@Resources.admin_content_friendlyurl</td>
+                                                        <td>
+                                                            <input type="text" name="Slug-@lang.Code" id="Slug-@lang.Code" required="required" value="@(cat2.Where(x => x.Lang == lang.Code).FirstOrDefault() != null ? cat2.Where(x => x.Lang == lang.Code).FirstOrDefault().Slugs.FirstOrDefault().Slug_Full : "")" /></td>
+                                                    </tr>
+                                                    @if (posttype.Has_CatDescription == true)
+                                                    { 
+                                                        <tr>
+                                                            <td class="label">@Resources.admin_content_description</td>
+                                                            <td>
+                                                                <textarea cols="20" id="Description-@lang.Code" maxlength="1024" minlength="2" name="Description-@lang.Code" rows="5">@(cat2.Where(x => x.Lang == lang.Code).FirstOrDefault() != null ? cat2.Where(x => x.Lang == lang.Code).FirstOrDefault().Description : "")</textarea></td>
+                                                        </tr>
+                                                    }
+                                                </table>
+                                            </div>
+                                        }
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+
+                            <tr>
+                                <td class="label">@Resources.admin_content_title</td>
+                                <td>@Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "140", required = true })</td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">@Resources.admin_content_friendlyurl</td>
+                                <td>
+                                    <input type="text" name="Slug" value="@Model.Slugs.FirstOrDefault().Slug_Full" id="Slug" required="required" /></td>
+                            </tr>
+                
+                            if (posttype.Has_CatDescription == true)
+                            { 
+                            <tr>
+                                <td class="label">@Resources.admin_content_description</td>
+                                <td>@Html.TextAreaFor(model => model.Description, new { rows = "5", minlength = "2", maxlength = "1024" })</td>
+                            </tr>
+                            }
+                            else
+                            {
+                            @Html.HiddenFor(model => model.Description)
+                            }
+
+                        }
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_category @Resources.admin_content_order</td>
+                            <td>@Html.EditorFor(model => model.Order)</td>
+                        </tr>
+
+                        @if (posttype.Active_Position == true)
+                        {
+                            <tr>
+                                <td class="label">@Resources.admin_menu_position</td>
+                                <style>
+                                    .radio
+                                    {
+                                        float: left;
+                                    }
+                                </style>
+                                <td>
+                                    @Html.RadioButtonFor(model => model.Position, "0", new { id = 0, @checked = "checked", @class = "radio" })
+                                    <label class="radio" for="0">Không</label>
+                                    @Html.RadioButtonFor(model => model.Position, "1", new { id = 1, @class = "radio" })
+                                    <label class="radio" for="1">4 box trang chủ(1)</label>
+                                    @Html.RadioButtonFor(model => model.Position, "2", new { id = 2, @class = "radio" })
+                                    <label class="radio" for="2">Tin(2)</label>
+                                    @Html.RadioButtonFor(model => model.Position, "3", new { id = 3, @class = "radio" })
+                                    <label class="radio" for="3">6 box tại sao (3)</label>
+                                    @Html.RadioButtonFor(model => model.Position, "4", new { id = 4, @class = "radio" })
+                                    <label class="radio" for="4">Tin tức trang chủ (4)</label>
+                                    @Html.RadioButtonFor(model => model.Position, "6", new { id = 6, @class = "radio" })
+                                    <label class="radio" for="6">Sản phẩm trang chủ(6)</label>
+                                </td>
+                            </tr>
+                        }
+
+                        @if (posttype.Has_Active == true)
+                        { 
+                            <tr>
+                                <td class="label">@Resources.admin_content_active</td>
+                                <td>@Html.EditorFor(model => model.Active)</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @Html.HiddenFor(model => model.Active)
+                        }
+
+                        <tr>
+                            <td class="button-submit-zone" colspan="2">@Resources.admin_content_info</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_category @Resources.admin_content_owner</td>
+                            <td>@Html.DropDownList("Owner_Id", "--- Chuyên mục gốc ---")</td>
+                        </tr>
+
+                        @if (posttype.Has_CatImage == true)
+                        { 
+                            <tr>
+                                <td class="label">@Resources.admin_content_category @Resources.admin_posttype_categoryimage</td>
+                                <td>@Html.EditorFor(model => model.Image)
+                                    <input type="button" id="BrowseURL-Thumb" value="@Resources.admin_content_browsepicture" class="btn btn-file" />
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @Html.HiddenFor(model => model.Image)
+                        }
+
+                        @if (posttype.Has_CatBanner == true)
+                        { 
+                            <tr>
+                                <td class="label">@Resources.admin_content_category Banner</td>
+                                <td>@Html.EditorFor(model => model.Banner_Image)
+                                    <input type="button" id="BrowseURL-Banner" value="@Resources.admin_content_browsepicture" class="btn btn-file" />
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @Html.HiddenFor(model => model.Banner_Image)
+                        }
+
+                        @if (posttype.Has_Catfeature == true)
+                        { 
+                            <tr>
+                                <td class="label">@Resources.admin_cat_feature</td>
+                                <td>@Html.EditorFor(model => model.Feature)</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @Html.HiddenFor(model => model.Feature)
+                        }
+
+                        @if (posttype.Has_Meta == true)
+                        {
+                            <tr>
+                                <td class="button-submit-zone" colspan="2">SEO</td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">@Resources.admin_content_keyword</td>
+                                <td>@Html.TextAreaFor(model => model.Meta_Key, new { rows = "2" })</td>
+                            </tr>
+
+                            <tr>
+                                <td class="label">@Resources.admin_content_metadescription</td>
+                                <td>@Html.TextAreaFor(model => model.Meta_Description, new { rows = "2" })</td>
+                            </tr>
+
+
+                            if (ViewBag.HeaderHtml_Per != "false")
+                            {
+                            <tr>
+                                <td class="label">@Resources.admin_content_advancetitle</td>
+                                <td>@Html.TextAreaFor(model => model.Html_Head, new { rows = "2" })</td>
+                            </tr>
+                            }
+                            else
+                            {
+                            @Html.HiddenFor(model => model.Html_Head)
+                            }
+                        }
+                        else
+                        {
+                            @Html.HiddenFor(model => model.Meta_Key)
+                            @Html.HiddenFor(model => model.Meta_Title)
+                            @Html.HiddenFor(model => model.Meta_Description)
+                            @Html.HiddenFor(model => model.Html_Head)
+                        }
+
+                    </table>
+    
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>
+
+@if (posttype.Has_CatImage == true)
+{ 
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            $("#BrowseURL-Thumb").click(function () {
+                var ckfinder = new CKFinder({ resourceType: 'Images' });
+                ckfinder.selectActionFunction = function (fileUrl) {
+                    $("#Image").val(fileUrl)
+                };
+                ckfinder.popup();
+            });
+        });
+    </script>
+}
+
+@if (posttype.Has_CatBanner == true)
+{ 
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            $("#BrowseURL-Banner").click(function () {
+                var ckfinder = new CKFinder({ resourceType: 'Images' });
+                ckfinder.selectActionFunction = function (fileUrl) {
+                    $("#Banner_Image").val(fileUrl)
+                };
+                ckfinder.popup();
+            });
+        });
+    </script>
+}

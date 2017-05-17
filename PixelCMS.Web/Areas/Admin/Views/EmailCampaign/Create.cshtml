@@ -1,0 +1,72 @@
+﻿@model PixelCMS.Core.Models.EmailCampaign
+
+@{
+    ViewBag.Title = "Tạo EmailCampaign ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+ <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/Admin/Content/js/script.js"></script>
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Tạo chiến dịch</h1>
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Tạo" class="btn btn-blue" />
+                        <a href="@Url.Action("Index")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Tên</td>
+                        <td>@Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "142", required = true })</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Tiêu đề</td>
+                        <td>@Html.TextBoxFor(model => model.Title, new { minlength = "5", maxlength = "142", required = true })</td>
+                    </tr>
+                    <tr>
+                        <td class="label">@Resources.admin_content_content</td>
+                        <td>@Html.TextAreaFor(model => model.Content)</td>
+                    </tr>
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>
+
+
+@*@Scripts.Render("~/bundles/jqueryval");*@
+@*<script src="~/Scripts/messages_vi.js"></script>*@
+<script>
+    $("form").validate();
+</script>
+<script>
+    CKEDITOR.replace('Content',
+{
+    height: '400px',
+    filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+    filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+    filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+    filebrowserUploadUrl:
+       '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+    filebrowserImageUploadUrl:
+       '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+    filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+});
+    </script>

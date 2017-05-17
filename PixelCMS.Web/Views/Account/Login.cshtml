@@ -1,0 +1,82 @@
+﻿@model PixelCMS.Core.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    @* <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/account.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/form.css" rel="stylesheet" type="text/css">
+}
+<div class="main">
+    <div class="module main-content bg-white">
+        @*<div class="title-bar">@Resources.account_loginaccount</div>*@
+        <!-- .page-top-leader -->
+          <div class="module-content">
+            <div class="row">
+                <section class="col-md-12 ">
+                    <div class="content product-detail">
+                        <div class="main-cart login">
+                            <div class="content">
+                                <h3 style="margin-top: 15px">@Resources.account_login</h3>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true)
+
+                                    <label>@Resources.admin_common_accounts</label>
+                                    <br />
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "full-width" })
+                                    @Html.ValidationMessageFor(m => m.UserName)
+                                    <br />
+                                    <label>@Resources.account_password</label>
+                                    <br />
+                                    @Html.PasswordFor(m => m.Password, new { @class = "full-width" })
+                                    @Html.ValidationMessageFor(m => m.UserName)
+                                    <br /> 
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    <label>@Html.Raw(" ") @Resources.account_rememberme</label>
+                
+                                    <br />
+                                    <a><input style="color: #e470a3;  background-color: #F4F3F3;cursor: pointer;  margin-left: -6px;
+  font-size: 14px;" type="submit" value="@Resources.account_login" class="style-button" /></a>
+
+                                }
+                                @*   @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })*@
+                                <br />
+                            </div>
+                                 <div class="content" style="margin-bottom: 15px">
+                                @*<h3>@Resources.account_registertitle</h3>*@
+                                <p> Bạn chưa có tài khoản, nhấn <a style="color: #e470a3" class="style-button" href="/@PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture()/account/register/">@Resources.account_register</a> @*@Resources.account_registernote @Html.Action("LoadOption", "Common", new { code = "common-sitename" }).*@</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval")
+@*<script src="~/Scripts/messages_vi.js "></script>*@
+<script>
+    $("form").validate();
+</script>
+<style>
+    .login .full-width
+    {
+        margin-bottom: 5px;
+        width: 50%;
+    }
+
+    .login
+    {
+        margin-left: 35%;
+    }
+</style>

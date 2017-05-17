@@ -1,0 +1,39 @@
+﻿@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Where(x => x.Id == t).FirstOrDefault();
+
+    var currentculture = @PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = db.PostType_Name.FirstOrDefault(x => x.Posttype_id == t && x.Lang == currentculture).Name;
+    ViewBag.Title = Resources.admin_content_error;
+    ViewBag.PTitle = Resources.admin_content_category + " " + posttypename;
+    ViewBag.PDescription = Resources.admin_content_managecategory + posttypename;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-folder-open"></i>@Resources.admin_content_category @posttypename</h1>
+
+            <aside id="control">
+                <div>
+                    <a class="btn btn-back" onclick="history.go(-1);return true;"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                </div>
+            </aside>
+
+            <table class="grid">
+                <tr>
+                    <th><i class="fa fa-minus-circle"></i> @Resources.admin_content_error!</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>@Html.Raw(ViewBag.Error)</p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</section>

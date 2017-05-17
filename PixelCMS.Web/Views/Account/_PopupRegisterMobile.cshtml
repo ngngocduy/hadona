@@ -1,0 +1,126 @@
+﻿@model PixelCMS.Core.Models.RegisterModel
+
+<head>
+    <meta charset="utf-8">
+    @*<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>*@
+
+    <title>Template Mobile TKM</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="/Theme/mobile/css/form.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/mobile/css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="/Theme/mobile/js/jquery-1.9.1.min.js"></script>
+    @*
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+<!-- BX Slider -->
+<script src="/Theme/mobile/libs/bxslider/jquery.bxslider.min.js"></script>
+<link href="/Theme/mobile/libs/bxslider/jquery.bxslider.css" rel="stylesheet" type="text/css">
+
+<!-- Fancy box -->
+<link href="/Theme/mobile/libs/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css">
+<script src="/Theme/mobile/libs/fancybox/jquery.fancybox.js"></script>*@
+
+    @*<script src="js/script.js"></script>*@
+</head>
+
+<body>
+
+    <section class="main">
+        <div class="title-head"><i class="fa fa-arrow-circle-right"></i>Đăng ký</div>
+        <form id="formrgt" name="formrgt1">
+            <div class="frm-payment wrap-page">
+                <div class="form-group">
+                    <div class="frow">
+                        <label>Tên đăng nhập</label>
+                        <br>
+                        @Html.TextBoxFor(m => m.UserName, new { placeholder = "Tên đăng nhập" })
+                    </div>
+                    <div class="frow">
+                        <label>Mật khẩu *</label>
+                        <br>
+                        @Html.PasswordFor(m => m.Password, new { placeholder = "Nhập mật khẩu" })
+                    </div>
+                    <div class="frow">
+                        <label>Nhập lại mật khẩu *</label>
+                        <br>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Nhập lại mật khẩu" })
+                    </div>
+                    <div class="frow">
+                        <label>Họ và tên *</label>
+                        <br>
+                        @Html.TextBoxFor(m => m.FullName, new { placeholder = "Họ và tên" })
+                    </div>
+                    <div class="frow">
+                        <label>Email</label>
+                        <br>
+                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email" })
+                    </div>
+                    <div class="frow">
+                        <label>Xác nhận Email</label>
+                        <br>
+                        @Html.TextBoxFor(m => m.ConfirmEmail, new { placeholder = "Xác nhận Email" })
+                    </div>
+                    <div class="frow">
+                        <label>Phone</label>
+                        <br>
+                        @Html.TextBoxFor(m => m.Phone, new { placeholder = "Phone" })
+                    </div>
+                </div>
+                <div class="btn-primary"><a id="btnrgt" href="#">Đăng ký</a></div>
+
+                @* <p style="text-align: center; font-size: 16px; margin-top: 10px;">Or</p>
+        
+        <div style="text-align:center;"><a href="#"><img src="/Theme/mobile/images/login-button-facebook.png"></a></div>    *@
+            </div>
+            <!-- End frm-payment -->
+        </form>
+    </section>
+
+     <div class="alert alert-success" id="alert-cart" style="background-color: #d9edf7; display: none; position: fixed; top: 0px; left: 0px; width: 100%; text-align: center; z-index: 8999">
+    </div>
+    <div style="position: fixed; top: 50%; left: 50%; display: none;"
+        id="loading">
+        <img src="~/Content/adminpanel/loading-image.gif" />
+    </div>
+</body>
+
+<script>
+    //jquery-1.8.2.js level up
+    $("#loading").ajaxStart(function () {
+        $(this).show();
+    });
+    $("#loading").ajaxComplete(function () {
+        $(this).hide();
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#btnrgt").click(function () {
+            var url = '@Url.Action("PopupRegisterPost", "Account")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#formrgt").serializeArray(),
+                success: function (data) {
+                    if (data.mess == false) {
+                        if (data.Error != "") {
+                            $("#alert-cart").css('background', '#EB4578').html("<p style='color:white'>" + data.Error + "</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                            //alert(data.Error);
+                        } else {
+                            alert('Vui lòng điền đầy đủ thông tin bắt buộc');
+                        }
+                    }
+                    else if (data.mess == true) {
+                        $("#alert-cart").css('background', '#d9edf7').html("<p>Đăng ký thành công.Bạn có thể đăng nhập</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                        alert("Đăng ký thành công");
+                        window.open("/", "_parent");
+                    }
+                },
+                //dataType: dataType
+            });
+        });
+    })
+</script>
+

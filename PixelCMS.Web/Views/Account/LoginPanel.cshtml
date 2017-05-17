@@ -1,0 +1,94 @@
+﻿@model PixelCMS.Core.Models.LoginModel
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN CONTROL PANEL</title>
+    <link href="~/Areas/Admin/Content/loginpage/css/loginpage.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/Content/loginpage/js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".tips").hide();
+            $(".triangle-top").hide();
+            $(".show").click(function () {
+                $(".triangle-top").fadeToggle();
+                $(".tips").fadeToggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="loginpage wrap">
+        <div class="page">
+            <div class="title-page">
+                <h1>QUẢN TRỊ WEBSITE</h1>
+            </div>
+            <!-- End Title page -->
+            <div class="form-login">
+                <div class="wrap-form">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="frow">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "username", placeholder = Resources.login_username })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+                        <div class="frow">
+                            @Html.PasswordFor(m => m.Password, new { @class = "password", placeholder = Resources.login_password })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                        <div class="frow">
+                            <div class="forget-pass">
+                               <span class="show"><a href="@Url.Action("LostPassword","Account")">Quên mật khẩu?</a></span>
+                                <span class="triangle-top"></span>
+                                <div class="tips">
+                                    <p>
+                                        Để lấy lại mật khẩu, xin vui lòng gửi mail đến <a style="color: #399bca;" href="#">support@thekymoi.com</a>
+                                        <br>
+                                        Hoặc gọi điện đến số <span style="color: #F60; font-weight: bold;">08.730.55.666</span> để được hướng dẫn cụ thể.
+                                    </p>
+                                </div>
+                            </div>
+                          @*  <input type="submit" value="@Resources.login_login" class="btn-login" />*@
+                            <button style="cursor: pointer" class="btn-login" type="submit">Đăng nhập</button>
+                        </div>
+                    
+                    }
+
+
+
+                </div>
+            </div>
+            <!-- End Form Login -->
+            <div class="support">
+                <p>HỖ TRỢ KỸ THUẬT</p>
+                <iframe frameborder="0" height="50px" scrolling="no" width="100%" src="http://iframe.thekymoi.vn/support.html"></iframe>
+            </div>
+            <!-- End Support -->
+        </div>
+        
+        <div class="page">
+           
+            <nav>
+                <ul class="cf">
+                    <li><a href="http://thekymoi.com/">TRANG CHỦ</a></li>
+                    <li><a href="#">DỊCH VỤ</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+            <div class="brand">
+                <h1>CÔNG TY TNHH CÔNG NGHỆ THẾ KỶ MỚI</h1>
+                <img src="http://iframe.thekymoi.vn/images/logo.png">
+            </div>
+            <div class="contact">
+                <iframe frameborder="0" height="110px" scrolling="no" width="100%"  src="http://iframe.thekymoi.vn/page.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

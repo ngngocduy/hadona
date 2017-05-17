@@ -1,0 +1,49 @@
+﻿@model PixelCMS.Core.Models.AttributeValue
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+            <table class="grid form-input">
+                <tr>
+                    <td width="250">
+                        @Html.TextBoxFor(model => model.Value, new { required=true })
+                    </td>
+                    <td>
+                        <a class="btn btn-blue" id="AddValue"><i class="fa fa-plus"></i> Thêm</a>
+                    </td>
+                </tr>
+            </table>
+        
+}
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    Thêm giá trị thành công !
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("click", "a", function () {
+            var id = $(this).attr('id');
+            if (id == "AddValue") {
+                var Value = $("#Value").val();
+                if (Value) {
+                    $.ajax({
+                        url: '@Url.Action("Value_Upload", "Attribute")',
+                        data: {
+                            Value: Value,
+                            Id: @ViewBag.Id
+                            },
+                        success: function (data) {
+                            $("#value-list").empty().append(data);
+                            $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        },
+                        type: "POST"
+                    });
+                }
+                else {
+                    
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,110 @@
+﻿@model PixelCMS.Core.Models.Language
+
+@{
+    ViewBag.Title = Resources.admin_common_create + " " + Resources.admin_content_language;
+    ViewBag.PTitle = Resources.admin_content_language;
+    ViewBag.PDescription = "Quản lý ngôn ngữ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_common_create @Resources.admin_content_language</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="@Resources.admin_common_create" class="btn btn-blue" />
+                            <a href="@Url.Action("Index", "Language")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">@Resources.admin_content_info</th>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_lang_name</td>
+                            <td>@Html.TextBoxFor(model => model.Name, new { minlength = "5", maxlength = "140", required = true })</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_lang_code<br />
+                                (vi-VN, en-US...)</td>
+                            <td>@Html.TextBoxFor(model => model.FullCode, new { minlength = "5", maxlength = "5", required = true })</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_lang_shortcode<br />
+                                (vi, en...)</td>
+                            <td>@Html.TextBoxFor(model => model.Code, new { minlength = "2", maxlength = "2", required = true })</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_lang_flag</td>
+                            <td>@Html.EditorFor(model => model.Flag)
+                                <input type="button" id="BrowseURL" value="@Resources.admin_content_browsepicture" class="btn btn-file" /></td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_active</td>
+                            <td>@Html.EditorFor(model => model.Active)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_lang_construction</td>
+                            <td>@Html.EditorFor(model => model.Construction)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Admin</td>
+                            <td>@Html.EditorFor(model => model.Admin)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_order</td>
+                            <td>@Html.EditorFor(model => model.Order)</td>
+                        </tr>
+
+                    </table>  
+    
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL").click(function () {
+            var ckfinder = new CKFinder();
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#Flag").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

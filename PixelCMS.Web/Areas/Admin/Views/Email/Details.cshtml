@@ -1,0 +1,60 @@
+﻿@model PixelCMS.Core.Models.Email
+
+@{
+    ViewBag.Title = "Xem email";
+    ViewBag.PTitle = "Email";
+    ViewBag.PDescription = "Quản lý email";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+
+<div class="container">
+    <div class="sixteen columns">
+        <h1><i class="fa fa-envelope-o"></i> Chi tiết Email</h1>
+
+        <aside id="control">
+            <div>
+                <a href="@Url.Action("Index", "Email")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+            </div>
+        </aside>
+
+        <table class="grid form-input">
+            <tr>
+                <th colspan="2">Chi tiết</th>
+            </tr>
+
+            <tr>
+                <td class="label">Tiêu đề</td>
+                <td>@Html.Raw(Model.Subject)</td>
+            </tr>
+
+            <tr>
+                <td class="label">Người gửi</td>
+                <td>@Html.Raw(Model.Username)</td>
+            </tr>
+
+            <tr>
+                <td class="label">Email người gửi</td>
+                <td><a href="mailto:@Html.Raw(Model.Email1)">@Html.Raw(Model.Email1)</a></td>
+            </tr>
+
+            <tr>
+                <td class="label">Số điện thoại</td>
+                <td>@Html.Raw(Model.Phone)</td>
+            </tr>
+
+            <tr>
+                <td class="label">Địa chỉ</td>
+                <td>@Html.Raw(Model.Address)</td>
+            </tr>
+
+            <tr>
+                <td class="label">Ngày gửi</td>
+                <td>@Html.Raw(Model.DateSend)</td>
+            </tr>
+    
+            </table>
+    </div>
+</div>
+    </section>

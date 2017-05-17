@@ -1,0 +1,174 @@
+﻿@model PixelCMS.Core.Models.Email
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<div id="target"></div>
+<!--module width > 3.5-->
+@using (Ajax.BeginForm("ContactForm", "Common"
+                           , new AjaxOptions
+                                 {
+                                     HttpMethod = "POST",
+                                     InsertionMode = InsertionMode.Replace,
+                                     OnBegin = "onLoginBegin",
+                                     UpdateTargetId = "target",
+                                     // OnFailure = "ShowError",
+                                     OnSuccess = "ShowSuccessContact"
+                                 }, new { @class = "custom_form" }
+        ))
+{
+
+    <input class="Subject" type="hidden" name="Subject" value="Liên hệ đặt tour" />
+
+    <section class="box-category">
+        <div class="heading">
+            <span>Đặt tour nhanh</span>
+        </div>
+        <section class="reservation">
+        <div class="reservation-inner">
+            <div class="row">
+                <div class="col-lg-12">
+                        <div class="error_form_custom"></div>
+                    </div>
+                <div class="col-lg-12">
+                    <label class="label_text label_text_ho-va-ten">Họ và tên</label>
+                    @Html.TextBoxFor(model => model.Username, new { placeholder = "Họ và tên", @class = "form_1_input_ho-va-ten", minlength = "2", maxlength = "142", required = true })
+                </div>
+                <div class="col-lg-12">
+                    <label class="label_text label_text_ho-va-ten">Email</label>
+                    @Html.TextBoxFor(model => model.Email1, new { placeholder = "Email", @class = "form_1_input_ho-va-ten", minlength = "2", maxlength = "142", required = true })
+                </div>
+                <div class="col-lg-12">
+                    <label class="label_text label_text_ho-va-ten">SĐT</label>
+                    @Html.TextBoxFor(model => model.Phone, new { placeholder = "SĐT", @class = "form_1_input_ho-va-ten", minlength = "2", maxlength = "142" })
+                </div>
+                <div class="col-lg-12">
+                    <label class="label_select label_select_so-luong">Số lượng</label>
+                    <select class="form_1_input_so-luong" name="Field1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-lg-12">
+                    <label class="label_select label_select_loai-hinh-du-lich">Loại phòng</label>
+                    <select class="form_1_input_loai-hinh-du-lich" name="Field2">
+                        @Html.Raw(Html.Action("LoadOption", "Common", new { code = "loai-hinh-du-lich" }))
+                    </select>
+                </div>
+                <div class="col-lg-12">
+                    <label class="label_datepicker label_datepicker_ngay-khoi-hanh">Ngày nhận</label>
+
+                    <input class="form_1_input_ngay-khoi-hanh" name="Field3" type="text" placeholder="" feild_required="1" feild_format="" feild_name="Ngày nhận">
+                    <script type="text/javascript">
+                        $(function () {
+                            $('.form_1_input_ngay-khoi-hanh').datetimepicker({
+                                format: "DD-MM-YYYY"
+                            });
+                        });
+                    </script>
+                </div>
+                     <div class="col-lg-12">
+                    <label class="label_datepicker label_datepicker_ngay-khoi-hanh">Ngày trả</label>
+
+                    <input class="form_1_input_ngay-khoi-hanh" name="Field4" type="text" placeholder="" feild_required="1" feild_format="" feild_name="Ngày trả">
+                    <script type="text/javascript">
+                        $(function () {
+                            $('.form_1_input_ngay-khoi-hanh').datetimepicker({
+                                format: "DD-MM-YYYY"
+                            });
+                        });
+                    </script>
+                </div>
+                <div class="col-lg-12">
+                    <label></label>
+                    <input type="submit" name="submit" class="btn fa-input" value="ĐẶT NGAY" style="padding: 9px;">
+                </div>
+            </div>
+        </div>
+</section>
+    </section>
+}
+
+
+<style>
+    #fancybox-content
+    {
+        border-width: 20px !important;
+    }
+
+    .style-button
+    {
+        background-color: #428bca;
+        color: white;
+    }
+
+    .form-group
+    {
+        float: left;
+        clear: both;
+        margin-top: 12px;
+        width: 100%;
+    }
+</style>
+
+<style>
+    .alert
+    {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success
+    {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
+    }
+
+    .alert-danger
+    {
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        color: #a94442;
+    }
+</style>
+
+<script>
+
+    function onLoginBegin() {
+        $('.btn').hide();
+        $("#loading").show();
+    }
+
+    function ShowSuccessContact(data) {
+        //chat..........................
+        var chatHub = $.connection.chatHub;
+        // Start Hub
+        $.connection.hub.start().done(function () {
+            chatHub.server.message("contact");
+        });
+        if (data.succsess == true) {
+            $("#target").removeClass();
+            $("#target").addClass("alert alert-success").css("color", "blue");
+            $("#target").html("@Resources.contact_form_success").fadeOut(5000);
+            $("#loading").fadeOut();
+            $("#form0 input[type!=submit],textarea").val('');
+            $('.btn').show();
+        } else {
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-danger").css("color", "red");;
+            $("#status").html("@Resources.contact_form_fail");
+            $("#loading").fadeOut();
+            $('.btn').show();
+        }
+    }
+</script>
+

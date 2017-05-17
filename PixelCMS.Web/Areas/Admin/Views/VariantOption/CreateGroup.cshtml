@@ -1,0 +1,56 @@
+﻿@model PixelCMS.Core.Models.GroupVariant
+
+@{
+    ViewBag.Title = "Tạo thuộc tính sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Tạo thuộc tính sản phẩm</h1>
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="Tạo" class="btn btn-blue" />
+                            <a href="@Url.Action("Group")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">Thông tin cơ bản</th>
+                        </tr>
+                        <tr>
+                            <td class="label">Tên</td>
+                            <td>
+                                @Html.TextBoxFor(model => model.Name, new { minlength = "1", maxlength = "142", required = true })
+                                @Html.ValidationMessageFor(model => model.Name)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Mô tả</td>
+                            <td>@Html.TextAreaFor(model => model.Description)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Ô màu sắc</td>
+                            <td>
+                                <input name="Type" type="radio" checked="checked" value="0" />Không
+                              <input name="Type" type="radio" value="1" />Có
+                            </td>
+                        </tr>
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</section>

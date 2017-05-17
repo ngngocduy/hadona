@@ -1,0 +1,166 @@
+﻿@model PixelCMS.Core.Models.Email
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<div id="target"></div>
+<!--module width > 3.5-->
+@using (Ajax.BeginForm("ContactForm", "Common"
+                           , new AjaxOptions
+                                 {
+                                     HttpMethod = "POST",
+                                     InsertionMode = InsertionMode.Replace,
+                                     OnBegin = "onLoginBegin",
+                                     UpdateTargetId = "target",
+                                     // OnFailure = "ShowError",
+                                     OnSuccess = "ShowSuccessContact"
+                                 }, new { @class = "custom_form" }
+        ))
+{
+
+    <input class="Subject" type="hidden" name="Subject" value="@ViewBag.productname" />
+
+    <div class='fproduct-title'>Form book chi tiết tour </div>
+
+    <p class='fproduct-description'>Vui lòng quý khách nhập đầy đủ thông tin để chúng tôi phục vụ tốt nhất. Hotline liên hệ: @Html.Action("LoadOption", "Common", new { code = "phone" })</p>
+
+    <div class="error_form_custom"></div>
+
+    <ul class="row">
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+                <label class="label_fproduct_text label_fproduct_text_ho-va-ten">Họ và tên <small>*</small> </label>
+            </figure>
+
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                @Html.TextBoxFor(model => model.Username, new { placeholder = "Họ và tên", @class = "form_feild form_2_input_ho-va-ten", minlength = "2", maxlength = "142", required = true })
+            </figure>
+        </li>
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+                <label class="label_fproduct_text label_fproduct_text_email">Email <small>*</small> </label>
+            </figure>
+
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                @Html.TextBoxFor(model => model.Email1, new { placeholder = "Email", @class = "form_feild form_2_input_email", minlength = "2", maxlength = "142", required = true })
+            </figure>
+        </li>
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+                <label class="label_fproduct_text label_fproduct_text_dia-chi">Số lượng <small>*</small> </label>
+            </figure>
+
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                <select class="form_1_input_so-luong form_feild form_2_input_dia-chi" name="Field1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </figure>
+        </li>
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+                <label class="label_fproduct_text label_fproduct_text_dien-thoai">Điện thoại <small>*</small> </label>
+            </figure>
+
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                @Html.TextBoxFor(model => model.Phone, new { placeholder = "SĐT", @class = "form_feild form_2_input_dien-thoai", minlength = "2", maxlength = "142" })
+            </figure>
+        </li>
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+                <label class="label_fproduct_datepicker label_fproduct_datepicker_ngay-khoi-hanh">Ngày khởi hành  </label>
+            </figure>
+
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                <input class="form_feild form_2_input_ngay-khoi-hanh" name="Field3" type="text" placeholder="" feild_required="0" feild_format="phone" feild_name="Ngày khởi hành">
+                <script type="text/javascript">
+                    $(function () {
+                        $('.form_2_input_ngay-khoi-hanh').datetimepicker({
+                            format: "DD-MM-YYYY"
+                        });
+                    });
+                </script>
+            </figure>
+        </li>
+
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+                <label class="label_fproduct_textarea label_fproduct_textarea_thong-tin-them">Thông tin thêm  </label>
+            </figure>
+
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                <textarea class="form_feild form_2_input_thong-tin-them" name="Text" placeholder="" feild_required="" feild_format="" feild_name="Thông tin thêm"></textarea>
+
+            </figure>
+        </li>
+        <li>
+            <figure class="col-lg-3 col-md-3 col-sm-3">
+            </figure>
+            <figure class="col-lg-9 col-md-9 col-sm-9">
+                <input type="submit" name="submit" value="Đặt tour" class="btn fa-input">
+            </figure>
+        </li>
+    </ul>
+}
+
+<style>
+    .alert
+    {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success
+    {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
+    }
+
+    .alert-danger
+    {
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        color: #a94442;
+    }
+</style>
+
+<script>
+
+    function onLoginBegin() {
+        $('.btn').hide();
+        $("#loading").show();
+    }
+
+    function ShowSuccessContact(data) {
+        //chat..........................
+        var chatHub = $.connection.chatHub;
+        // Start Hub
+        $.connection.hub.start().done(function () {
+            chatHub.server.message("contact");
+        });
+        if (data.succsess == true) {
+            $("#target").removeClass();
+            $("#target").addClass("alert alert-success").css("color", "blue");
+            $("#target").html("@Resources.contact_form_success").fadeOut(5000);
+            $("#loading").fadeOut();
+            $("#form0 input[type!=submit],textarea").val('');
+            $('.btn').show();
+        } else {
+            $("#status").removeClass();
+            $("#status").addClass("alert alert-danger").css("color", "red");;
+            $("#status").html("@Resources.contact_form_fail");
+            $("#loading").fadeOut();
+            $('.btn').show();
+        }
+    }
+</script>
+

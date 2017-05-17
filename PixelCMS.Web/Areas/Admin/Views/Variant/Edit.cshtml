@@ -1,0 +1,105 @@
+﻿@using PixelCMS.Core.Models
+@model PixelCMS.Core.Models.Variant
+
+@{
+    ViewBag.Title = "edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+    var VariantAtt = db.VariantAttributes.FirstOrDefault(x => x.Id == Model.VariantAtt_Id);
+    
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Chỉnh sửa biến thể</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.VariantAtt_Id)
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Sửa" class="btn btn-blue" />
+                        <a href="@Url.Action("Index", new { VariantAtt_Id = Model.VariantAtt_Id, VariantGroup_Id = ViewBag.VariantGroup_Id, PostId = VariantAtt.PostId })" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Tên thuộc tính</td>
+                        <td>
+                            @Html.DropDownList("VariantOption_Id")
+                            @Html.ValidationMessageFor(model => model.VariantOption_Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Giá cộng thêm</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Price,new {type="number"})
+                            @Html.ValidationMessageFor(model => model.Price)
+                        </td>
+                    </tr>
+
+                    @* <tr>
+                        <td class="label">Số lượng</td>
+                        <td>@Html.EditorFor(model => model.Quantity)</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Mã SKU</td>
+                        <td>@Html.EditorFor(model => model.SKU)</td>
+                    </tr>*@
+                    <tr>
+                        <td class="label">Hình ảnh</td>
+                        <td>
+                            @if (VariantAtt != null)
+                            {
+                                <input style="float: left" type="radio" name="ImageId" checked="checked" value="0" id="0" />
+                                <label style="float: left" for="0">Không</label>
+                                foreach (var item in db.MediaFiles.Where(x => x.Post_Id == VariantAtt.PostId).ToList())
+                                {
+                                <input style="float: left" type="radio" @(item.Id == Model.ImageId ? "checked='checked'" : "") name="ImageId" value="@item.Id" id="@item.Id" />
+                                <label style="float: left" for="@item.Id">
+                                    <img width="60" height="60" src="@(item.URL!=null?item.URL.Replace("/Upload","/Upload/_thumbs"):"")"/></label>
+                                }
+                            }
+
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <td class="label">Dung tích/Trọng lượng</td>
+                        <td>@Html.EditorFor(model => model.Weight)</td>
+                    </tr>*@
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>
+<script>
+    $(function () {
+        $("#StartDate").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //dateFormat: 'mm/dd/yy 00:00:00'
+        });
+    });
+    $(function () {
+        $("#EndDate").datepicker({
+            showOn: "button",
+            buttonImage: "/Theme/images/icons/calendar.gif",
+            buttonImageOnly: true,
+            //  changeMonth: true,
+            // changeYear: true,
+            //dateFormat: 'mm/dd/yy 00:00:00'
+        });
+    });
+</script>

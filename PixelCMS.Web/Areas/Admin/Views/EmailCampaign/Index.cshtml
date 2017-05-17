@@ -1,0 +1,107 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.EmailCampaign>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "EmailCampaign";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    Email @Resources.admin_status_deletedsuccessfully
+</div>
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-envelope-o"></i>Chiến dịch Email</h1>
+
+            <aside id="control">
+                <div>
+                    <a class="btn btn-blue" href="@Url.Action("Create")"><i class="fa fa-plus"></i>@Resources.admin_common_create</a>
+                </div>
+            </aside>
+
+
+            <table class="grid">
+                <tr>
+                    <th>Tên</th>
+                    <th>Ngày tạo</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateDate)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "EmailCampaign", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>
+                                @Resources.admin_common_edit / Gửi mail 
+                                 <i title="Chỉnh sửa và gửi Email hàng loạt" class="fa fa-question-circle"></i>
+                            </a>
+                            <a href="@Url.Action("Delete", "EmailCampaign", new { id = item.Id })" class="btn btn-small delete-link">
+                                <img src="~/Areas/Admin/Content/icon/delete.png" />
+                                Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+            </div>
+            @using (Html.BeginForm("Index", "Email", FormMethod.Get))
+            {
+                <div>
+                    <form>
+                        <div class="search-input-area">
+                            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "search-query", @placeholder = @Resources.admin_email_searchwithtitle })
+                        </div>
+                    </form>
+                </div>
+            }
+
+        </div>
+    </div>
+
+
+</section>
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>@Resources.admin_ask_suredelete email</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>

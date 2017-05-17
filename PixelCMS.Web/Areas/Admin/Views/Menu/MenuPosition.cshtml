@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.MenuPosition>
+@{
+    ViewBag.Title = Resources.admin_menu_position + " (Menu)";
+    ViewBag.PTitle = "Menu";
+    ViewBag.PDescription = "Quản lý Menu";
+    ViewBag.LastCR = "<a href=\"" + @Url.Action("Index", "Menu") + "\">Menu</a><span class=\"divider\">&nbsp;</span></li><li><a href=\"\">Vị trí Menu</a><span class=\"divider-last\">&nbsp;</span></li>";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+     <i class="fa fa-exclamation-circle"></i> @Resources.admin_menu_position @Resources.admin_status_deletedsuccessfully
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> @Resources.admin_common_edit @Resources.admin_menu_position @Resources.admin_status_successfully
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> @Resources.admin_common_create @Resources.admin_menu_position @Resources.admin_status_successfully
+</div>
+
+<section id="main">
+<div class="container">
+    <div class="sixteen columns">
+        <h1><i class="fa fa-th-list"></i> @Resources.admin_menu_position (Menu)</h1>
+        
+        <aside id="control">
+            <div>
+                <a class="btn btn-blue" href="@Url.Action("CreateMenuPosition", "Menu")"><i class="fa fa-plus"></i> @Resources.admin_common_create @Resources.admin_menu_position</a>    
+                <a href="@Url.Action("Index", "Menu")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+            </div>
+        </aside>
+
+        <table class="grid">
+            <tr>
+                <th>@Resources.admin_common_name</th>
+                <th>@Resources.admin_common_code</th>
+                <th>@Resources.admin_content_note</th>
+                <th>@Resources.admin_content_active</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            { 
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Code)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Active)</td>
+                    <td>
+                        <a href="@Url.Action("EditMenuPosition", "Menu", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i> @Resources.admin_common_edit</a>
+                        <a href="@Url.Action("DeleteMenuPosition", "Menu", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i> @Resources.admin_content_delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+    </section>
+
+
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>@Resources.admin_ask_suredelete @Resources.admin_menu_position</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if(ViewBag.Status == "create-done"){
+<script>
+    $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}
+else if (ViewBag.Status == "edit-done") { 
+<script>
+    $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}

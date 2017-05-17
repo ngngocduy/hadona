@@ -1,0 +1,173 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var url = Request.Url;
+
+    //var variants = db.Variants.Where(x => x.PostId == Model.Id);
+
+    string username = User.Identity.Name;
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+}
+
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+        <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+        <meta name="description" content ="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+        @Html.Raw(Model.Html_Head)
+    }
+}
+
+@{
+    var imagelink = db.MediaFiles.Where(x => x.Post.Id == Model.Id).OrderBy(o => o.Order).ToList();    
+}
+
+
+<section class="main">
+    <div class="albumSlide">
+        <ul class="album-slider">
+            @if (!string.IsNullOrEmpty(Model.Thumb))
+            {
+                <li><a href="#">
+                    <img src="@Model.Thumb.Replace("Upload/", "Upload/_Thumbs/")" title="" /></a></li>
+            }
+            @if (imagelink.Count > 0)
+            {
+                foreach (var image in imagelink)
+                {
+                    if (!string.IsNullOrEmpty(@image.URL))
+                    {
+                <li><a href="#">
+                    <img src="@image.URL.Replace("Upload/", "Upload/_Thumbs/")" title="" /></a></li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+    <!-- End albumSlide -->
+
+    <div class="product-detail">
+        <div class="title-head">@Model.Title</div>
+        <div class="properties wrap-page">
+            <div class="form-group">
+                <div class="frow">
+                    <div class="form-left">Giá bán : </div>
+                    <div class="form-right"><span class="red bold">@string.Format("{0:0,0}", Model.Price)VNĐ</span></div>
+                </div>
+                <div class="frow">
+                    <div class="form-left">Giá : </div>
+                    <div class="form-right"><span style="text-decoration: line-through; font-style: italic;">@string.Format("{0:0,0}", Model.Price_Old) VNĐ</span></div>
+                </div>
+                <div class="frow">
+                    <div class="form-left">Mã hàng(SKU) : </div>
+                    <div class="form-right">@Model.Product.SKU</div>
+                </div>
+                @Html.Partial("~/Views/Widget/_VariantCombinationMobile.cshtml")
+                <div class="frow">
+                    <div class="form-left">Tình trạng : </div>
+                    <div class="form-right">
+                        @if (Model.Product.Inventories.FirstOrDefault(z => z.Agent_Id == 1).Quantity <= Model.Product.Inv_min_Quantity)
+                        {
+                            <span class="red">Hết hàng</span>
+                        }
+                        else
+                        {
+                            <span class="green">Còn hàng</span>
+                        }
+
+                    </div>
+                </div>
+                <div class="frow">
+                    <div class="form-left">Thương hiệu : </div>
+                    <div class="form-right">@(Model.Product.Manufacturer != null ? Model.Product.Manufacturer.Name : "")</div>
+                </div>
+
+            </div>
+            <!-- End form-group -->
+        </div>
+        <div class="html-content">
+            <!-- START detail-tab -->
+            <div class="detail-tab cf">
+                <!-- Start .tabs -->
+                <ul class="tabs tabrow cf">
+                    <li class="active"><a href="#tab-1">Chi tiết</a></li>
+                    <li><a href="#tab-2">Thanh toán-Vận chuyển</a></li>
+                </ul>
+                <!-- End .tabs -->
+                <!-- Start .tab_container -->
+                <div class="tab_container">
+                    <!-- Start #tab-1 -->
+                    <div id="tab-1" class="tab_content cf">
+                        @Html.Raw(Model.Content)
+                    </div>
+                    <!-- End #tab-1 -->
+                    <!-- Start #tab-2 -->
+                    <div id="tab-2" class="tab_content">
+                        @Html.Action("LoadAttribute", "Common", new { code = "tknh-pvc", id = Model.Id })
+                    </div>
+                    <!-- End #tab-2 -->
+                </div>
+                <!-- End .tab_container -->
+            </div>
+            <!-- END detail-tab -->
+        </div>
+        <!-- End html-content -->
+    </div>
+    <!-- End product-detail -->
+</section>
+
+<div class="btn-fixed cf">
+    @if (Model.Product != null)
+    {
+        if (Model.Product.Inventories.FirstOrDefault(z => z.Agent_Id == 1).Quantity <= Model.Product.Inv_min_Quantity)
+        {
+        <div class="btn-danger"><a href="#">Hết hàng</a></div>
+        }
+        else
+        {
+            if (Model.VariantAttributes.Where(x => x.Active).Count() > 0)
+            {
+        <div class="btn-success"><a onclick="AddToCart(@Model.Id,$('#Attribute').val())" href="#">Mua ngay</a></div>
+            }
+            else
+            {
+        <div class="btn-success"><a onclick="AddToCart(@Model.Id)" href="#">Mua ngay</a></div>
+            }
+        }
+    }
+</div>
+
+<style>
+    /* .img-item img
+    {
+        width: 315px !important;
+        height: 315px !important;
+    }*/
+    #tab-1 table, img
+    {
+        width: 100% !important;
+        height: 100% !important;
+    }
+</style>
+
+<script>
+    function variant(id) {
+        $(".thum_" + id).click();
+    }
+
+</script>

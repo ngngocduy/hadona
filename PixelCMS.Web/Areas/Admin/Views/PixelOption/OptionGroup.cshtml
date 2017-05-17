@@ -1,0 +1,108 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.OptionGroup>
+
+@{
+    ViewBag.Title = Resources.admin_px_configgroup;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+     <i class="fa fa-exclamation-circle"></i> @Resources.admin_px_configgroup @Resources.admin_status_deletedsuccessfully
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> @Resources.admin_common_edit @Resources.admin_px_configgroup @Resources.admin_status_successfully
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> @Resources.admin_common_create @Resources.admin_px_configgroup @Resources.admin_status_successfully
+</div>
+
+<section id="main">
+
+<div class="container">
+    <div class="sixteen columns">
+        <h1><i class="fa fa-key"></i> @Resources.admin_px_configgroup</h1>
+        <aside id="control">
+            <div>
+                <a href="@Url.Action("CreateGroup", "PixelOption")" class="btn btn-blue"><i class="fa fa-plus"></i> @Resources.admin_common_create @Resources.admin_px_configgroup</a>
+                <a href="@Url.Action("Index", "PixelOption")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+            </div>
+        </aside>
+        <table class="grid">
+    <tr>
+        <th width="60%">
+            @Resources.admin_common_name
+        </th>
+        <th width="20%">
+            @Resources.admin_content_order
+        </th>
+        <th>
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name
+        </td>
+        <td>
+            @item.Order
+        </td>
+        <td>
+            <a href="@Url.Action("EditGroup", "PixelOption", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i> @Resources.admin_common_edit</a>
+            <a href="@Url.Action("DeleteGroup", "PixelOption", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i> @Resources.admin_content_delete</a>
+        </td>
+    </tr>
+}
+        </table>
+                </div>
+</div>
+</section>
+
+
+<div id="delete-dialog" title="@Resources.admin_common_confirm">
+    <p>@Resources.admin_ask_suredelete @Resources.admin_px_configgroup</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "@Resources.admin_content_delete": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "@Resources.admin_common_back": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if(ViewBag.Status == "create-done"){
+<script>
+    $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}
+else if (ViewBag.Status == "edit-done") { 
+<script>
+    $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}
+

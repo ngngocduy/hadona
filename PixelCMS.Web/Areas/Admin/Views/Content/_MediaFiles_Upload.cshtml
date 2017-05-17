@@ -1,0 +1,44 @@
+﻿@model PixelCMS.Core.Models.MediaFile
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.Posts.Find((int)ViewBag.Id).PostType;
+}
+
+@using (Html.BeginForm("MediaFiles_Upload", "Content", FormMethod.Post))
+{ 
+    @Html.ValidationSummary(true)
+    <table class="grid form-input">
+                    <tr>
+                        <td class="label">URL</td>
+                        <td>@Html.TextBoxFor(model => model.URL) <input type="button" id="BrowseURL" value="@Resources.admin_content_browsepicture" class="btn" style="margin-bottom: 10px" /></td>
+                    </tr>
+
+                    @if (posttype.Has_MediaDescription == true)
+                    {
+                    <tr>
+                        <td class="label">@Resources.admin_content_description</td>
+                        <td>@Html.TextBoxFor(model => model.Description, new { minlength = "2", maxlength = "142" })</td>
+                    </tr>
+                    }
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="hidden" id="Id" value="@ViewBag.Id"/>
+                        <input type="submit" class="btn btn-blue" value="Thêm hình" />
+                    </td>
+                </tr>
+            </table>
+}
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL").click(function () {
+            var ckfinder = new CKFinder();
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#URL").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>

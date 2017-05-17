@@ -1,0 +1,5 @@
+2016/02/23-13:33:07.907 1d9c Recovering log #900
+2016/02/23-13:33:07.907 1d9c Level-0 table #902: started
+2016/02/23-13:33:08.007 1d9c Level-0 table #902: 4200 bytes OK
+2016/02/23-13:33:08.254 1d9c Delete type=0 #900
+2016/02/23-13:33:08.272 1d9c Delete type=3 #898

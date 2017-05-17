@@ -1,0 +1,68 @@
+﻿@model PixelCMS.Core.Models.EmailSubscribe
+@{
+    ViewBag.Title = "Sửa Email Subscribe";
+    ViewBag.PTitle = "Email";
+    ViewBag.PDescription = "Quản lý email";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Sửa email subscribe</h1>
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.Date)
+
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Lưu" class="btn btn-blue" />
+                        <a href="@Url.Action("Subscribe", "Email")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Chọn nhóm</td>
+                        <td>@Html.ListBox("Groups", ViewBag.MultiselectGroup as MultiSelectList, new
+                           {
+                               @class = "chzn-select span12",
+                               data_placeholder = "Chọn nhóm..."
+                           }
+                        )</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Email</td>
+                        <td>@Html.TextBoxFor(model => model.Email, new { minlength = "5", maxlength = "142", required = true })</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Kích hoạt</td>
+                        <td>@Html.EditorFor(model => model.Active)</td>
+                    </tr>
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>
+
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>
+<script src="~/Areas/Admin/Content/assets/chosen/chosen.jquery.js"></script>
+<link href="~/Areas/Admin/Content/assets/chosen/chosen.min.css" rel="stylesheet" />
+<script> $(".chzn-select").chosen(); </script>

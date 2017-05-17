@@ -1,0 +1,95 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.MenuItem>
+
+@helper renderlevel(MenuItem menuItem)
+{
+        int countchild = 0;
+        foreach (var item in Model.Where(x => x.Owner_Id == menuItem.Id))
+        {
+            countchild++;
+            var checkchild = Model.Any(x => x.Owner_Id == item.Id);
+            string liClass = "";
+            var aClass = Html.Raw("class='list-group-item-stmenu sub'");
+                  switch (item.Type)
+                    {
+                        case 1:
+                        <a @aClass href="@item.Url"> <i class="fa fa-angle-right"></i>@item.Name </a>
+                            break;
+                        case 100:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "posttype", id = item.PostType })">@item.Name </a>
+                            break;
+                        case 2:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Post })"> <i class="fa fa-angle-right"></i>@item.Name </a>
+                            break;
+                        case 3:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "cat", id = item.Cat })"> <i class="fa fa-angle-right"></i>@item.Name </a>
+                            break;
+                        case 4:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "home" })">@Resources.common_home </a>
+                            break;
+                        case 5:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "contact" })">@Resources.contact </a>
+                            break;
+                        case 6:
+                        <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "search" })">@Resources.common_search </a>
+                            break;
+                    }
+                    @* @if (checkchild)
+                    {
+                        <span class="collapse">
+                            <img src="~/Theme/mobile/images/arrow-down.png" /></span>
+                        <span class="collapse expand">
+                            <img src="~/Theme/mobile/images/arrow-up.png" /></span>  
+                    }*@
+                @* @renderlevel(item)*@
+        }
+}
+
+<nav class="st-menu st-effect-3" id="cssmenu-st">
+    <div class="list-group panel">
+        @{ int countchild = 0;}
+        @foreach (var item in Model.Where(x => x.Owner_Id == null))
+        {
+            countchild++;
+            var checkchild = Model.Any(x => x.Owner_Id == item.Id);
+            string liClass = "";
+            string aClass = "class=list-group-item-stmenu";
+            switch (item.Type)
+            {
+                case 1:
+            <a @aClass href="@item.Url">@item.Name </a>
+                    break;
+                case 100:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "posttype", id = item.PostType })">@item.Name </a>
+                    break;
+                case 2:
+            <a @aClass href="@Html.Action("LoadURL", "Common", new { type = "post", id = item.Post })">@item.Name </a>
+                    break;
+                case 3:
+            <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "cat", id = item.Cat })">@item.Name </a>
+                    break;
+                case 4:
+            <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "home" })">@item.Name </a>
+                    break;
+                case 5:
+            <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "contact" })">@item.Name </a>
+                    break;
+                case 6:
+            <a @aClass  href="@Html.Action("LoadURL", "Common", new { type = "search" })">@item.Name</a>
+                    break;
+            }
+            if (checkchild)
+            {
+            <!--nếu có sub-->
+            <a href="#menu_@item.Id" data-toggle="collapse" class="arrow-sub">
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <div class="collapse" id="menu_@item.Id">
+                @renderlevel(item)
+            </div>                
+            }
+
+        }
+    </div>
+</nav>
+

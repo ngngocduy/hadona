@@ -1,0 +1,87 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    ViewBag.Title = ViewBag.TypeName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content ="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+   @section adminpanel{
+@if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+{
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+<link rel="stylesheet" href="~/Theme/Styles/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="~/Theme/Styles/lightbox.css" type="text/css" />
+<div id="main">
+      <h1 class="heading_page">Bộ sưu tập</h1>
+      <!--Slide List Albumn-->
+      <div class="box list_albumns gallery_albumn">
+        <div id="slider1" class="flexslider">
+            <ul class="slides">
+                 @foreach(var item in Model)
+                 {
+                     var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = item.Id });
+                     if (item.Lang != currentlang)
+                     {
+                         var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                         if (itemlang!=null)
+                         {
+                         item.Id = itemlang.Id;
+                         item.Title = itemlang.Title;
+                         }
+                     }
+                      <li><a href="@Modelurl"><img src="@item.Thumb" alt="" />
+                        <h2 class="title_albumn"><span>@item.Title</span></h2>
+                    </a></li> 
+                    
+                 }
+            </ul>
+        </div>
+        <div id="carousel1" class="flexslider">
+            <ul class="slides">
+                 @foreach(var item in Model)
+                 {
+                     var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = item.Id });
+                     if (item.Lang != currentlang)
+                     {
+                         var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                         if (itemlang!=null)
+                         {
+                         item.Id = itemlang.Id;
+                         item.Title = itemlang.Title;
+                         }
+                     }
+                  <li><a href="@Modelurl">
+                          <div class="albumn_img">
+                               @if (!string.IsNullOrEmpty(item.Thumb))
+                               {
+                              <img src="@item.Thumb.Replace("Upload/", "Upload/_Thumbs/")" alt="" />       
+                               }
+                            
+                          </div>
+                        <h2 class="title_albumn"><span>@item.Title</span></h2>
+                    </a></li>
+                 }
+            </ul>
+        </div>
+      </div>
+      <!--end Slide List Albumn-->
+    </div>

@@ -1,0 +1,53 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Where(x => x.Id == t).FirstOrDefault();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = db.PostType_Name.FirstOrDefault(x => x.Posttype_id == t && x.Lang == currentculture).Name;
+    
+    ViewBag.Title = "Copy " + posttypename;
+    ViewBag.PTitle = posttypename;
+    ViewBag.PDescription = ViewBag.Description;
+    ViewBag.LastCR = "<a href=\"" + (Url.Action("Index", "Content", new { type = Model.PostType.Id })) + "\">" + @posttypename + "</a><span class=\"divider\">&nbsp;</span></li><li><a href=\"\">Thêm " + @posttypename + "</a><span class=\"divider-last\">&nbsp;</span></li>";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+<div class="container">
+    <div class="sixteen columns">
+        <h1>@posttypename</h1>
+        <div id="breadcrum">
+			<ul class="crumbs">
+				<li class="first" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="@Url.Action("Index", "Dashboard")" itemprop="url"  style="z-index: 9;"><span itemprop="title">Trang chính</span></a>
+				</li>
+				<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="#" itemprop="url" style="z-index: 8;"><span itemprop="title"></span>@posttypename</a>
+				</li>
+			</ul>
+	    </div>
+    </div>
+
+    <div class="sixteen columns">
+        <table class="grid form-input">
+            <tr>
+                <th colspan="2">@Resources.admin_ask_surecopy @posttypename <b>"@Model.Title"</b> @if(ViewBag.Lang!=null){ <span> @Resources.admin_content_withlang</span> @ViewBag.Lang} ?</th>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td class="button-submit-zone">
+                    @using (Html.BeginForm()) {
+        <input type="submit" value="Copy"  class="btn btn-create"/><a class="btn" href="@Url.Action("Index", "Content", new { type = ViewBag.Type})"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a> 
+}
+                    
+
+                </td>
+            </tr>
+</table>
+        </div>
+    </div>
+</section>

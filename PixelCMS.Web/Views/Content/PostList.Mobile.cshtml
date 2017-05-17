@@ -1,0 +1,77 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    ViewBag.Title = ViewBag.TypeName;
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content ="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+
+<section class="main">
+    <div class="title-head"><i class="fa fa-arrow-circle-right"></i>@ViewBag.TypeName</div>
+    <div class="product-list">
+        <div class="row">
+
+            @if (Model.FirstOrDefault() != null)
+            {
+                foreach (var item in Model)
+                {
+                    /* Parallel Lang */
+                    if (item.Lang != currentlang)
+                    {
+                        var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                        item.Id = itemlang.Id;
+                        item.Title = itemlang.Title;
+                        item.Description = itemlang.Description;
+                        item.Content = itemlang.Content;
+                    }
+                    /* End Parallel Lang */
+                    var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+                <div class="col-1">
+                    <a href="@modelurl">
+                        <div class="news cf">
+                            <div class="title">@item.Title</div>
+                            @if (item.Thumb != null)
+                            {
+                                <div class="img-news">
+                                    <img src="@item.Thumb.Replace("Upload/", "Upload/_Thumbs/")"></div>  
+                            }
+                            <div class="caption">
+                                <div class="info-post"><span class="date-post">@item.Date_Create</span></div>
+                                <div class="description">@item.Description</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                }
+                          
+                
+                           
+            }
+            else
+            {
+                <div>@Resources.common_nopost</div>
+            }
+
+        </div>
+    </div>
+    <!-- End product-list -->
+     @Html.PagedListPager(Model, page => Url.Action("Slug", new { slug1 = ViewBag.slugpage }))
+</section>

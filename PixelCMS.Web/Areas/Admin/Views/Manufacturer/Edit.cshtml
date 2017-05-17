@@ -1,0 +1,69 @@
+﻿@model PixelCMS.Core.Models.Manufacturer
+
+@{
+    ViewBag.Title = "Sửa nhà cung cấp ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Tạo nhà cung cấp</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="Sửa" class="btn btn-blue" />
+                            <a href="@Url.Action("Index")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">Thông tin cơ bản</th>
+                        </tr>
+                        <tr>
+                            <td class="label">Tên </td>
+                            <td>@Html.TextBoxFor(model => model.Name, new { minlength = "1", maxlength = "142", required = true })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email </td>
+                            <td>@Html.TextBoxFor(model => model.Email, new { type = "email" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Phone </td>
+                            <td>@Html.TextBoxFor(model => model.Phone, new { type = "number" })</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Logo</td>
+                            <td>@Html.EditorFor(model => model.Logo)
+                                <input type="button" id="BrowseURL-Thumb" value="@Resources.admin_content_browsepicture" class="btn btn-file" />
+                            </td>
+                        </tr>
+                    </table>
+
+                }
+            </div>
+        </div>
+    </div>
+
+</section>
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL-Thumb").click(function () {
+            var ckfinder = new CKFinder({ resourceType: 'Images' });
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#Logo").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>

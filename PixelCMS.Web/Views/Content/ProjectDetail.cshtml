@@ -1,0 +1,73 @@
+﻿@model PixelCMS.Core.Models.Post
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    if (Model.Meta_Title != null)
+    {
+        ViewBag.Title = Model.Meta_Title;
+    }
+    else
+    {
+        ViewBag.Title = Model.Title;
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Metas {
+    @if (Model.Meta_key != null)
+    {
+    <meta name="keywords" content="@Model.Meta_key" />
+    }
+    @if (Model.Meta_Description != null)
+    {
+    <meta name="description" content ="@Model.Meta_Description" />
+    }
+    @if (Model.Html_Head != null)
+    {
+    @Html.Raw(Model.Html_Head)
+    }
+}
+
+@if (User.IsInRole("tkmadmin") || User.IsInRole("admin")){
+    @section adminpanel{
+     @Html.Action("AdminPanel","Common",new{postid=Model.Id,posttype=Model.PostType.Name})
+    }
+}
+
+@{
+    var imagelink = db.MediaFiles.Where(x => x.Post.Id == Model.Id).OrderBy(o=>o.Order).ToList();    
+}
+
+<div class="breadcumb">
+    <div class="container">
+        @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+    </div>
+</div>
+
+<div class="common project">
+    <div class="container">
+        <div class="view-more left bold no-link">
+            <a>@ViewBag.TypeName</a>
+        </div>
+  
+        <div class="clearfix">
+            <div class="left-project">
+                <div class="day2">@Model.Date_Create.Value.ToShortDateString()</div>
+                <h3><span>@Model.Title</span></h3>
+               @Html.Raw(Model.Content)
+            </div>
+            <div class="sidebar2">
+                <h3>@Resources.common_category</h3>
+                @Html.Action("left", "common")
+
+                @*<div class="other-club">
+                    <a href="#" class="trans">
+                        <img src="img/image35.jpg" alt="">
+                        <div class="tt">Beerclub1</div>
+                    </a>
+                </div>*@
+               
+            </div>
+        </div>
+
+    </div>
+</div>

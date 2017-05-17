@@ -1,0 +1,16 @@
+﻿<ul class="social-links">
+
+@if (Html.Action("LoadOption", "Common", new { code = "social-twitter" }) != null) { 
+                    <li class="twitter"><a href="@Html.Action("LoadOption", "Common", new { code = "social-facebook" })">Twitter</a></li>
+}
+@if (Html.Action("LoadOption", "Common", new { code = "social-facebook" }) != null) { 
+                    <li class="facebook"><a href="@Html.Action("LoadOption", "Common", new { code = "social-facebook" })">Facebook</a></li>
+}
+@if (Html.Action("LoadOption", "Common", new { code = "social-linkedin" }) != null) { 
+                    <li class="linkedin"><a href="@Html.Action("LoadOption", "Common", new { code = "social-linkedin" })">LinkedIn</a></li>
+}
+@if (Html.Action("LoadOption", "Common", new { code = "social-google-plus" }) != null) { 
+                    <li class="google"><a href="@Html.Action("LoadOption", "Common", new { code = "social-google-plus" })">Google plus</a></li>
+}
+
+    </ul>

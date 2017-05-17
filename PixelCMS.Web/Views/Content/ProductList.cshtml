@@ -1,0 +1,201 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    var count = Request.Url.Segments.Count();
+    var slug = Request.Url.Segments[count - 1];
+    var fullslug = db.Slugs.FirstOrDefault(x => x.Slug_Full == slug);
+
+    if (ViewBag.CatTitle != null)
+    {
+        ViewBag.Title = ViewBag.CatTitle;
+    }
+    else
+    {
+        //ViewBag.Title = ViewBag.CategoryCurrent;
+        ViewBag.Title = ViewBag.TypeName;
+    }
+    int count1 = 0;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<link href="~/Content/PagedList.css" rel="stylesheet" />*@
+
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+    {
+
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+@{
+    var why = "";
+    if (currentlang == "vi")
+    {
+        why = "Tại sao bạn chọn sản phẩm của chúng tôi?";
+    }
+    else
+    {
+        why = "Why did you choose our products?";
+    }
+}
+@*@Html.PagedListPager(Model, page => Url.Action("Slug", new { page }))*@
+<div id="sub-page">
+    <div class="banner-subpage" id="main_slide">
+        <!--Slide Banner-->
+        <div id="slide_banner">
+            @Html.Action("HomeSlideMobile", "Widget")
+        </div>
+        <!--end Slide Banner-->
+        <!--Breadcrumb-->
+        <div class="top-heading">
+            <h1 class="heading-page">@ViewBag.TypeName</h1>
+            @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+        </div>
+        <!--end Breadcrumb-->
+    </div>
+    <!--Products Page-->
+    <div class="lBg-page lBg-pro-page"><img src="/theme/Images/productpageBg1.png" alt="OUR PRODUCTS" title="OUR PRODUCTS" /></div>
+    <div class="rBg-page rBg-pro-page"><img src="/theme/Images/productpageBg2.png" alt="OUR PRODUCTS" title="OUR PRODUCTS" /></div>
+    <section id="page-products">
+        <div class="container">
+            <div class="sec-title">
+               
+                <h1 class="heading-txt">@ViewBag.TypeName</h1>
+            </div>
+            <!--List Products-->
+            <div class="list-items">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        count1++;
+                        /* Parallel Lang */
+                        if (item.Lang != currentlang)
+                        {
+                            /* Parallel Lang */
+
+                            var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                            if (itemlang != null)
+                            {
+                                item.Id = itemlang.Id;
+                                item.Title = itemlang.Title;
+                                item.Description = itemlang.Description;
+                                item.Content = itemlang.Content;
+                            }
+                        }
+                        /* End Parallel Lang */
+                        var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+                        <li class="columns">
+                            <div class="pro-item">
+                                <h2 class="pro-name">
+                                    <a href="@modelurl" title="@item.Title">@item.Title @Html.Action("AdminEdit", "Common", new { id = item.Id })</a>
+                                </h2>
+                                <figure class="pro-img">
+                                    <a href="@modelurl">
+                                        @if (item.Thumb != null)
+                                        {
+                                            <img src="@item.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")" />
+                                        }
+                                    </a>
+                                </figure>
+                                <a href="@modelurl" title="Details" class="btn-web">@Resources.admin_menu_details</a>
+                                @if (!string.IsNullOrEmpty(item.Price.ToString()))
+                                {
+                                    <h3 class="price">@Resources.admin_content_price: @string.Format("{0:0,0}", item.Price)đ</h3>
+                                }
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <div class="cf"></div>
+                <div onclick="loadmore()" class="load-more"><a href="javascript:void(0)" class="btn-web">@Resources.common_readmore</a> </div>
+            </div>
+            <!--end List Products-->
+        </div>
+    </section>
+    <!--End Products Page-->
+    <!--Why Choose-->
+    <section id="why-choose">
+        <div class="container">
+            <div class="sec-title">
+                <h3 class="sec-txt">@why</h3>
+            </div>
+            <figure class="why-choose-img why-img-sub six columns"><img src="/theme/Images/food5.png" alt="Why you choose our products?" title="Why you choose our products?" /></figure>
+            <div class="why-choose-items why-items-sub ten columns">
+                @Html.Action("GetPostInCat", "Widget", new { vitri = 3 })
+            </div>
+        </div>
+    </section>
+    <!--End Why Choose-->
+    <!-- Begin of footer-->
+</div>
+<style>
+    #home-page #why-choose .why-choose-img {
+        position: relative !important;
+        top: 0px !important;
+        left: 0px !important;
+        margin: 0px !important;
+    }
+</style>
+
+<script>
+    var countTweet = 1;
+    function loadmore() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("LoadmoreProduct", "Common")',
+            // contentType: "application/json; charset=utf-8",
+            data: { tweetcount: countTweet, lang: '@currentlang',slug:'@slug' },
+            //dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    countTweet = countTweet + 1; // This will exclude the previous 6 records
+                    //Appending Data in Table
+                    $.each(data, function (key, item) {
+                        // var post = db.Posts.Find(id);
+                        // var postslug = db.Slugs.FirstOrDefault(x => x.Post == post.Id).Slug_Full;
+                        var strPrice="";
+                        if(item.Price!=null){
+                            strPrice = "<h3 class='price'>@Resources.admin_content_price:" + item.Price + " đ</h3>";
+                        }
+                        $(".list-items>ul")
+                           .append("<li class='columns'>"
+                           + "<div class='pro-item'>"
+                           + "<h2 class='pro-name'><a href='/Common/LoadURL2?type=post&id=" + item.Id + "'>" + item.Title + "</a></h2>"
+                           + "<figure class='pro-img'> <a href='/Common/LoadURL2?type=post&id=" + item.Id + "'><img src='" + item.Thumb + "' /></a> </figure>"
+                           + "<a href='/Common/LoadURL2?type=post&id=" + item.Id + "' title='Details' class='btn-web'>@Resources.admin_menu_details</a>" + strPrice + " </div></li>")
+
+
+                    });
+                }
+                else {
+                    alert('Đã hết sản phẩm!!!')
+                }
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    }
+</script>
+
+<style>
+    .price {color:red}
+</style>

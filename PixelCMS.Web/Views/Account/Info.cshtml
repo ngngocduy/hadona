@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PixelCMS.Core.Models.InfoModel
+
+@section css
+{
+    @* <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/account.css" rel="stylesheet" type="text/css">
+    @*<link href="/Theme/custom/css/form.css" rel="stylesheet" type="text/css">*@
+}
+<script type="text/javascript">
+    function changecity() {
+
+        var selectedItem = $("#CityList").val();
+        var ddlStates = $("#@Html.IdFor(model => model.DistrictList)");
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+            data: { "CityId": selectedItem },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                //change quan huyenn
+                $("#DistrictId").val($("#DistrictList").val());
+                //
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to retrieve states.');
+            }
+        });
+
+    }
+</script>
+<div class="container">
+    <div class="product-detail">
+        <div class="wrap-page cf">
+            @Html.Partial("_MenuLeft")
+
+            <div class="main-account float-right">
+                <div class="form-account">
+                    @using (Html.BeginForm("Info", "Account", FormMethod.Post, new { @name = "formif" }))
+                    {
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.AntiForgeryToken()
+                        <span style="color: royalblue; font-weight: bold">@Html.ValidationSummary(true) @TempData["mess"]</span>
+                        <div class="form-title"><i class="fa fa-play-circle"></i>Thông tin tài khoản</div>
+                 
+                        <div class="frow">
+                            <div class="form-left">@Resources.login_username : </div>
+                            <div class="form-right">
+                                <input type="text" value="@User.Identity.Name" disabled="disabled">
+                            </div>
+                        </div>
+                 
+                        <div class="frow">
+                            <div class="form-left">@Resources.contact_email <span class="red">(*)</span> : </div>
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Email, new { required = "required", type = "email" })
+                            </div>
+                        </div>
+                        <div class="form-title"><i class="fa fa-play-circle"></i>Thông tin chủ tài khoản</div>
+                        <div class="frow">
+                            <div class="form-left">Họ và Tên <span class="red">(*)</span> : </div>
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Name, new { required = "required" })
+                            </div>
+                        </div>
+                
+                        <div class="frow">
+                            <div class="form-left">@Resources.contact_form_phone <span class="red">(*)</span> : </div>
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Phone, new { required = "required" })
+                            </div>
+                        </div>
+                
+                        <div class="frow">
+                            <div class="form-left">@Resources.contact_address <span class="red">(*)</span> : </div>
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Address, new { required = "required" })
+                            </div>
+                        </div>
+                
+                        <div class="frow">
+                            <div class="form-left">Tỉnh/TP <span class="red"></span> : </div>
+                            <div class="form-right">
+                                @Html.DropDownList("CityList",null, new { onchange = "changecity()" })
+                                @Html.HiddenFor(model => model.CityId)
+                                <script>
+                                    $(function () {
+                                        $("#CityId").val($("#CityList").val());
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                
+                        <div class="frow">
+                            <div class="form-left">Quận/Huyện <span class="red"></span> : </div>
+                            <div class="form-right">
+                                @Html.DropDownList("DistrictList", null, new { onchange = "changedt()" })
+                                @Html.HiddenFor(model => model.DistrictId)
+                                <script>
+                                    $(function () {
+                                        $("#DistrictId").val($("#DistrictList").val());
+                                    });
+                                    function changedt() {
+                                        $("#DistrictId").val($("#DistrictList").val());
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <div class="form-left">
+                                <button type="reset">Hủy</button>
+                            </div>
+                            <div class="form-right">
+                                <button type="submit">@Resources.admin_common_save</button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <!-- End form-account -->
+            </div>
+            <!-- End main-account -->
+        </div>
+        <!-- End wrap-page -->
+    </div>
+    </div>
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>*@
+<script src="/Theme/custom/js/TemScript.js"></script>
+@Scripts.Render("~/bundles/jqueryval")

@@ -1,0 +1,77 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models
+
+@{
+    ViewBag.Title = @Resources.common_search;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+    {
+   
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+
+<div class="breadcumb">
+    <div class="container">
+        @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+    </div>
+</div>
+<div class="common news">
+    <div class="container">
+        <div class="view-more left bold no-link">
+            <a>@Resources.common_searchresultwithkeywords "@ViewBag.Keywords"</a>
+        </div>
+        <div class="list-news">
+            @foreach (var item in Model)
+            {
+
+                /* Parallel Lang */
+                if (item.Lang != currentlang)
+                {
+                    /* Parallel Lang */
+
+                    var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                    if (itemlang != null)
+                    {
+                        item.Id = itemlang.Id;
+                        item.Title = itemlang.Title;
+                        item.Description = itemlang.Description;
+                        item.Content = itemlang.Content;
+                    }
+
+                }
+                /* End Parallel Lang */
+                var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+                <div class="news01 clearfix">
+                    <div class="image">
+                        @if (item.Thumb != null)
+                        {
+                            <a href="@modelurl" class="trans">
+                                <img width="108" height="108" src="@item.Thumb.Replace("Upload/", "Upload/_Thumbs/")" />
+                            </a>
+                        }
+                    </div>
+                    <div class="text">
+                        <h3><a href="@modelurl" class="trans">@item.Title @Html.Action("AdminEdit", "Common", new { id = item.Id })</a></h3>
+                        <div class="time">@(item.Date_Create ?? null)</div>
+                        <p>
+                            @item.Description
+                        </p>
+                    </div>
+                </div>
+            }
+            @Html.PagedListPager(Model, page => Url.Action("Search", new { page, Keywords = ViewBag.Keywords }))
+            @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+        </div>
+
+    </div>
+</div>
+
+
+

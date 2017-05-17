@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">  
+    <head>
+        <title>Cloud Zoom Example: Responsive website</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="sites/starplugins/js/jquery.js"></script>
+      
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <!-- Include Cloud Zoom JavaScript -->
+        <script type="text/javascript" src="sites/starplugins/js/cloudzoom/cloudzoom.js"></script>
+        
+        <!-- Include Thumbelina JavaScript -->
+        <script type="text/javascript" src="sites/starplugins/js/thumbelina/thumbelina.js"></script>
+
+        
+        <!-- Include Cloud Zoom CSS -->
+        <link href="sites/starplugins/js/cloudzoom/cloudzoom.css" type="text/css" rel="stylesheet" />
+        
+        <!-- Include Thumbelina CSS -->
+        <link href="sites/starplugins/js/thumbelina/thumbelina.css" type="text/css" rel="stylesheet" />
+
+        
+        <script type = "text/javascript">
+            CloudZoom.quickStart();
+            
+            // Initialize the slider.
+            $(function(){
+                $('#slider1').Thumbelina({
+                    $bwdBut:$('#slider1 .left'), 
+                    $fwdBut:$('#slider1 .right')
+                });
+            });
+
+            
+        </script>
+        
+        <style>
+            
+            /* div that surrounds Cloud Zoom image and content slider. */
+            #surround {
+                width:50%;
+                min-width: 256px;
+                max-width: 480px;
+            }
+            
+            /* Image expands to width of surround */
+            img.cloudzoom {
+                width:100%;
+            }
+            
+            /* CSS for slider - will expand to width of surround */
+            #slider1 {
+                margin-left:20px;
+                margin-right:20px;
+                height:119px;
+                border-top:1px solid #aaa;
+                border-bottom:1px solid #aaa;
+                position:relative;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Cloud Zoom (V3.1) Example: Use with Thumbelina content slider</h1>
+<p>This page demonstrates how to use the free Thumbelina content slider with Cloud Zoom.</p>
+
+
+
+<div id="surround">
+    
+    <img class="cloudzoom" alt ="Cloud Zoom small image" id ="zoom1" src="sites/starplugins/images/jetzoom/large/image1.jpg"
+       data-cloudzoom='
+           zoomSizeMode:"image",
+           autoInside: 550
+       '>
+ 
+ 
+    <div id="slider1">
+        <div class="thumbelina-but horiz left">&#706;</div>
+        <ul>
+            <li><img class='cloudzoom-gallery' src="sites/starplugins/images/jetzoom/size81/image1.jpg" 
+                     data-cloudzoom ="useZoom:'.cloudzoom', image:'sites/starplugins/images/jetzoom/large/image1.jpg' "></li>
+            <li><img class='cloudzoom-gallery' src="sites/starplugins/images/jetzoom/size81/image3.jpg" 
+                     data-cloudzoom ="useZoom:'.cloudzoom', image:'sites/starplugins/images/jetzoom/large/image3.jpg' "></li>
+
+        </ul>
+        <div class="thumbelina-but horiz right">&#707;</div>
+    </div>
+    
+</div>
+ 
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="http://www.starplugins.com">Star Plugins</a></p>
+        </div>
+        
+    </body>
+</html>
+
+

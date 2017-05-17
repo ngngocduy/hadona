@@ -1,0 +1,373 @@
+﻿@using PixelCMS.Controllers
+@using PixelCMS.Core.Models
+@model PixelCMS.Web.Models.Order.OrderModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ShoppingCart objCart = (ShoppingCart)Session["Cart"];
+    pixelcmsEntities db = new pixelcmsEntities();
+    var ship = db.Addresses.FirstOrDefault(z => z.Username == User.Identity.Name && z.Type == 2);
+    var config = new CommonController();
+}
+
+<script src="~/Theme/custom/js/TemScript.js"></script>
+<script type="text/javascript">
+    function changecity() {
+        //set value for CityId
+        $("#CityId").val($("#CityList").val());
+
+        var selectedItem = $("#CityList").val();
+        var ddlStates = $("#@Html.IdFor(model => model.DistrictList)");
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+            data: { CityId: selectedItem },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                //change quan huyenn
+                $("#DistrictId").val($("#DistrictList").val());
+                //
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Vui long chọn tỉnh/tp.');
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    function changecityship() {
+        //set value for CityIdShip
+        $("#Shipping_CityId").val($("#Shipping_CityList").val());
+
+        var selectedItem = $("#Shipping_CityList").val();
+        var ddlStates = $("#Shipping_DistrictList");
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+            data: { "CityId": selectedItem },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                //change quan huyenn
+                $("#Shipping_DistrictId").val($("#Shipping_CityList").val());
+                //
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Vui long chọn tỉnh/tp.');
+            }
+        });
+
+    }
+</script>
+
+<script>
+    $(function () {
+        if ("@Model.dcgh" == "False") {
+            //$("#dcgh").click();
+            $("#content_dcgh").show(500);
+        }
+    });
+    //change
+    function changename() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#Shipping_Name").val($("#Name").val());
+        }
+    }
+    function changeaddress() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#Shipping_Address").val($("#Address").val());
+        }
+    }
+    function changephone() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#Shipping_Phone").val($("#Phone").val());
+        }
+    }
+
+    function clickdcgh() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#content_dcgh").hide(500);
+            $("#Shipping_Name").val($("#Name").val());
+            $("#Shipping_Address").val($("#Address").val());
+            $("#Shipping_Phone").val($("#Phone").val());
+            $("#Shipping_CityId").val($("#CityId").val());
+            $("#Shipping_DistrictId").val($("#DistrictId").val());
+        }
+        if ($("#dcgh").prop("checked") == false) {
+            $("#content_dcgh").show(500);
+            $("#Shipping_Name").val("@(ship != null ? ship.Name : "")");
+            $("#Shipping_Address").val("@(ship != null ? ship.Address1 : "")");
+            $("#Shipping_Phone").val("@(ship != null ? ship.Phone : "")");
+            $("#Shipping_CityId").val("");
+            $("#Shipping_DistrictId").val("");
+            $("#Shipping_CityList").val("");
+            $("#Shipping_DistrictList").val("");
+        }
+    }
+</script>
+
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/cart.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/form.css" rel="stylesheet" type="text/css">
+
+@*<div id="breadcrumb">
+    <ol class="breadcrumb container">
+    <a href="/">Trang chủ</a>
+        <a href="#">Giỏ hàng</a>
+</ol>
+</div>*@
+<div class="main">
+    <div class="container">
+        <div class="product-detail">
+            <div class="wrap-page cf" style="background-color: white">
+                <div class="main-cart float-left cf">
+
+                    <div class="shopping-cart-zone1">
+                        @Html.Action("UpdateCart", "Common")
+                    </div>
+                    <div class="accor member-panel">
+
+                        @if (objCart != null && objCart.GetCount() > 0)
+                        {
+
+
+                            using (Html.BeginForm())
+                            {
+                            @Html.AntiForgeryToken()
+                            <div class="accor-bar title-panel">
+                                Thanh toán 
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    @Html.Raw("không cần đăng nhập") 
+                                }
+                            </div>
+                            <div class="panel cf">
+                                <div class="form-info-member">
+                                    <div class="form-title"><i class="fa fa-play-circle"></i>@Resources.cart_customer_infomation</div>
+                                    <span style="color: red">@Html.ValidationSummary(true) @TempData["mess"]</span>
+                                    <div class="frow">
+                                        <div class="form-left">Tên<span class="red">(*)</span></div>
+                                        <div class="form-right">
+                                            @Html.TextBoxFor(model => model.Name, new { onchange = "changename()", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Name)
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="frow">
+                                        <div class="form-left">@Resources.contact_phone<span class="red">(*)</span> : </div>
+                                        <div class="form-right">
+                                            @Html.TextBoxFor(model => model.Phone, new { onchange = "changephone()", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Phone)
+                                        </div>
+                                    </div>
+
+                                    <div class="frow">
+                                        <div class="form-left">Tỉnh/TP<span class="red">(*)</span> : </div>
+                                        <div class="form-right">
+                                            @Html.DropDownList("CityList", null, "Chọn Tỉnh/TP", new { onchange = "changecity()" })
+                                            @Html.HiddenFor(model => model.CityId)
+                                            @Html.ValidationMessageFor(model => model.CityId)
+                                            <script>
+                                                $(function () {
+                                                    $("#CityId").val($("#CityList").val());
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="frow">
+                                        <div class="form-left">Quận/Huyện<span class="red">(*)</span> </div>
+                                        <div class="form-right">
+                                            @Html.DropDownList("DistrictList", null, "Chọn Quận/Huyện", new { onchange = "changedt()" })
+                                            @Html.HiddenFor(model => model.DistrictId)
+                                            @Html.ValidationMessageFor(model => model.DistrictId)
+                                            <script>
+                                                $(function () {
+                                                    $("#DistrictId").val($("#DistrictList").val());
+                                                });
+                                                function changedt() {
+                                                    $("#DistrictId").val($("#DistrictList").val());
+                                                    if ($("#dcgh").prop("checked") == true) {
+                                                        $("#Shipping_CityId").val($("#CityId").val());
+                                                        $("#Shipping_DistrictId").val($("#DistrictId").val());
+
+                                                        var url = "/Common/UpdateTotal?DistrictId=" + $("#DistrictId").val();
+                                                        $("#update-total").load(url);
+                                                    }
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="frow">
+                                        <div class="form-left">@Resources.cart_customer_address<span class="red">(*)</span> : </div>
+                                        <div class="form-right">
+                                            @Html.TextBoxFor(model => model.Address, new { onchange = "changeaddress()", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.Address)
+                                        </div>
+                                    </div>
+
+                                    <div class="frow">
+                                        <div class="form-left">@Resources.cart_order_note :</div>
+                                        <div class="form-right">
+                                            @Html.TextAreaFor(model => model.Note)
+                                        </div>
+                                    </div>
+
+                                    <div class="frow">
+                                        <div class="form-left">@Resources.contact_email<span class="red">(*)</span> : </div>
+                                        <div class="form-right">
+                                            @Html.TextBoxFor(model => model.Email, new { })
+                                            @Html.ValidationMessageFor(model => model.Email)
+                                        </div>
+                                    </div>
+
+                                    <div class="frow">
+                                        <div class="form-left">@Html.CheckBox("dcgh", new { onclick = "clickdcgh()" })</div>
+                                        <div class="form-right">
+                                            <label for="dcgh" style="color: royalblue">Địa chỉ thanh toán và địa chỉ giao hàng giống nhau</label><br />
+                                        </div>
+                                    </div>
+
+                                    <div id="content_dcgh" style="display: none">
+                                        <div class="form-title"><i class="fa fa-play-circle"></i>Địa chỉ giao hàng</div>
+
+                                        <div class="frow">
+                                            <div class="form-left">Tên khách hàng<span class="red">(*)</span> </div>
+                                            <div class="form-right">
+                                                @Html.TextBoxFor(model => model.Shipping_Name, new { required = "required" })
+                                                @Html.ValidationMessageFor(model => model.Shipping_Name)
+                                            </div>
+                                        </div>
+
+                                        <div class="frow">
+                                            <div class="form-left">@Resources.cart_customer_phone<span class="red">(*)</span> : </div>
+                                            <div class="form-right">
+                                                @Html.TextBoxFor(model => model.Shipping_Phone, new { required = "required" })
+                                                @Html.ValidationMessageFor(model => model.Shipping_Phone)
+                                            </div>
+                                        </div>
+
+                                        <div class="frow">
+                                            <div class="form-left">Tỉnh/TP<span class="red">(*)</span> : </div>
+                                            <div class="form-right">
+                                                @Html.DropDownList("Shipping_CityList", null, "Chọn Tỉnh/TP", new { onchange = "changecityship()" })
+                                                @Html.HiddenFor(model => model.Shipping_CityId)
+                                                @Html.ValidationMessageFor(model => model.Shipping_CityId)
+                                                <script>
+                                                    $(function () {
+                                                        $("#Shipping_CityId").val($("#Shipping_CityList").val());
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+
+                                        <div class="frow">
+                                            <div class="form-left">Quận/Huyện<span class="red">(*)</span> : </div>
+                                            <div class="form-right">
+                                                @Html.DropDownList("Shipping_DistrictList", null, "Chọn Quận/Huyện", new { onchange = "changedtship()" })
+                                                @Html.HiddenFor(model => model.Shipping_DistrictId)
+                                                @Html.ValidationMessageFor(model => model.Shipping_DistrictId)
+                                                <script>
+                                                    $(function () {
+                                                        $("#Shipping_DistrictId").val($("#Shipping_DistrictList").val());
+                                                    });
+                                                    function changedtship() {
+                                                        $("#Shipping_DistrictId").val($("#Shipping_DistrictList").val());
+
+                                                        var url = "/Common/UpdateTotal?DistrictId=" + $("#Shipping_DistrictId").val();
+                                                        $("#update-total").load(url);
+                                                    }
+                                                </script>
+                                            </div>
+                                        </div>
+
+                                        <div class="frow">
+                                            <div class="form-left">@Resources.cart_customer_address<span class="red">(*)</span> : </div>
+                                            <div class="form-right">
+                                                @Html.TextBoxFor(model => model.Shipping_Address, new { required = "required" })
+                                                @Html.ValidationMessageFor(model => model.Shipping_Address)
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="frow">
+                                        <div class="form-left">Thanh toán:</div>
+                                        <div class="form-right">
+                                            <button id="gui" type="submit">@Resources.cart_sendorder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            }
+
+                           @* if (!User.Identity.IsAuthenticated)
+                            {
+                            <div class="accor-bar title-panel">ĐĂNG NHẬP</div>
+                            @Html.Action("login", "ShoppingCart")
+            
+                            }*@
+                        }
+                    </div>
+                    <!-- End member-panel -->
+
+
+                </div>
+                @*<div class="aside-cart float-right" cf>
+
+                    <div class="method-payment aside-block" style="display: none">
+                        <div class="form-title"><i class="fa fa-play-circle"></i>Chọn hình thức @Resources.cart_checkout</div>
+                        <ul>
+                            <li>
+                                <input type="radio" id="tienmat" name="ptthanhtoan" value="tienmat" checked="checked">
+                                <label for="tienmat">Thanh toán tiền mặt</label>
+                            </li>
+                            @if (config.LoadOption("NL_secure_pass") != null)
+                            {
+                                <li>
+                                    <input type="radio" id="nganluong" name="ptthanhtoan" value="nganluong" />
+                                    <label for="nganluong">Ngân lượng</label>
+                                </li>
+                            }
+                            @if (config.LoadOption("AccessCode1") != null)
+                            {
+                                <li>
+                                    <input type="radio" id="onepay_noidia" name="ptthanhtoan" value="onepay_noidia" />
+                                    <label for="onepay_noidia">Thẻ ATM ngân hàng nội địa</label>
+                                </li>
+                            }
+                            @if (config.LoadOption("AccessCode") != null)
+                            {
+                                <li>
+                                    <input type="radio" id="onepay_quocte" name="ptthanhtoan" value="onepay_quocte" />
+                                    <label for="onepay_quocte">Thẻ Visa/Master Card</label>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <!-- End aside-block -->
+                    <div id="update-total">
+                        @Html.Action("UpdateTotal", "Common")
+                    </div>
+                    <!-- End method-payment -->
+                    <div class="aside-block">
+                        <div class="btn"><i class="fa fa-shopping-cart"></i><a href="/">Tiếp tục mua hàng</a></div>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model PixelCMS.Core.Models.ShoppingCartModels
+@if (Model != null && Model.Cart != null && Model.Cart.ListItem.Count > 0)
+{
+    <div class="total-block aside-block">
+            <ul>
+              @*  <li class="cf">
+                    <span>Thành tiền : </span><span class="float-right">@Model.Cart.GetTotal().ToString("N0") ₫</span>
+                </li>
+                <li class="cf">
+                    <span>Phí vận chuyển : </span><span class="float-right">@Model.FixedFee.ToString("N0") ₫</span>
+                </li>*@
+               
+                <li class="cf">
+                    <div class="all-total"><span>Tổng tiền : </span><span class="float-right red">@(Model.Total > 0 ? Model.Total.ToString("N0") : Model.Cart.GetTotal().ToString("N0")) ₫</span></div>
+                </li>
+            </ul>
+        </div>
+}

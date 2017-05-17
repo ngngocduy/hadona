@@ -1,0 +1,121 @@
+﻿@{
+    if (Html.Action("LoadOption", "Common", new { code = "meta-advancedtitle" }) != null)
+    {
+        ViewBag.Title = Resources.common_home;
+    }
+    else
+    {
+        ViewBag.Title = Html.Action("LoadOption", "Common", new { code = "meta-advancedtitle" });
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+@section Metas {
+    <meta name="keywords" content="@Html.Action("LoadOption", "Common", new { code = "meta-keywords" })" />
+    <meta name="description" content="@Html.Action("LoadOption", "Common", new { code = "meta-description" })" />
+    @Html.Raw(Html.Action("LoadOption", "Common", new { code = "meta-htmlheader" }))
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("admin"))
+    {
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+<!--1 homeconten, 3 homecontent1,2 _NewsInHome1, 4 _NewsInHome, 6 spbanchay-->
+
+@{
+    var why = "";
+    string spm = "";
+    if (currentlang == "vi")
+    {
+        why = "Tại sao bạn chọn sản phẩm của chúng tôi?";
+        spm = "Sản phẩm mới";
+    }
+    else
+    {
+        why = "Why did you choose our products?";
+        spm = "New products";
+    }
+}
+
+<!--#end Header-->
+@Html.Action("HomeSlide", "Widget")
+
+<section id="characteristic">
+    <div class="container">
+        <div class="sec-title">
+            <h3 class="sec-txt hidden">Natural taste from the farm!</h3>
+        </div>
+        <div class="char-intro">
+            @Html.Action("baiviet", "widget", new { box = "chao-mung-ban-den-voi-kpa" })
+        </div>
+
+        <div class="characteristic-items">
+            @Html.Action("GetPostInCat", "Widget", new { vitri = 1 })
+        </div>
+    </div>
+</section>
+
+<section id="why-choose">
+    <div class="container">
+        <div class="sec-title">
+            <h3 class="sec-txt">@why</h3>
+        </div>
+        <figure class="why-choose-img"><img src="/theme/Images/food5.png" /></figure>
+        <div class="why-choose-items cf">
+            @Html.Action("GetPostInCat", "Widget", new { vitri = 3 })
+        </div>
+    </div>
+</section>
+
+<section id="featured-products">
+    <div class="container">
+        <div class="sec-title">
+            @Html.Action("baiviet", "widget", new { box = "san-pham-moi" })
+        </div>
+        <!--List Products-->
+        <div class="list-items">
+            <ul>
+                @Html.Action("GetPostInCat", "Widget", new { vitri = 6 })
+            </ul>
+        </div>
+        <!--end List Products-->
+    </div>
+</section>
+
+<section id="news-home" class="">
+    <div class="container">
+        <div class="sec-title">
+            @Html.Action("baiviet", "widget", new { box = "tin-tuc-trang-chu" })
+        </div>
+        <!--News Home-->
+        <div class="news-items slide-general">
+            @Html.Action("GetPostInCat", "Widget", new { vitri = 4 })
+        </div>
+        <!--end News Home-->
+    </div>
+</section>
+<section id="brands">
+    <div class="container">
+        @Html.Action("slideDoiTac", "Widget")
+    </div>
+</section>
+
+
+@*<div class="tool-bar">
+        <div class="container clearfix">
+            @Html.Action("SearchBox", "Common")
+
+            <div class="box-social">
+                <a href="@Html.Action("LoadOption", "Common", new { code = "social-facebook" })" class="trans"><img src="/theme/img/icon_social_01.png" alt="icon social"></a>
+                <a href="@Html.Action("LoadOption", "Common", new { code = "social-twiter" })" class="trans"><img src="/theme/img/icon_social_02.png" alt="icon social"></a>
+                <a href="@Html.Action("LoadOption", "Common", new { code = "social-google" })" class="trans"><img src="/theme/img/icon_social_03.png" alt="icon social"></a>
+                <a href="#" class="trans"><img src="/theme/img/icon_social_04.png" alt="icon social"></a>
+                <a href="#" class="trans"><img src="/theme/img/icon_social_05.png" alt="icon social"></a>
+                <a href="#" class="trans"><img src="/theme/img/icon_social_06.png" alt="icon social"></a>
+                <a href="#" class="trans"><img src="/theme/img/icon_social_07.png" alt="icon social"></a>
+                <a href="@Html.Action("LoadOption", "Common", new { code = "social-mail" })" class="trans"><img src="/theme/img/icon_social_08.png" alt="icon social"></a>
+            </div>
+        </div>
+    </div>*@

@@ -1,0 +1,80 @@
+﻿@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Post>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+<ul>
+    @if (Model.FirstOrDefault() != null)
+    {
+        int count = 0;
+        foreach (var item in Model.OrderBy(x => x.Order).Take(5))
+        {
+            /* Parallel Lang */
+            if (item.Lang != currentlang)
+            {
+                /* Parallel Lang */
+
+                var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                if (itemlang != null)
+                {
+                    item.Id = itemlang.Id;
+                    item.Title = itemlang.Title;
+                    item.Description = itemlang.Description;
+                    item.Content = itemlang.Content;
+                }
+
+            }
+            /* End Parallel Lang */
+
+            count++;
+            /* var icon = Html.Raw("");
+             if(count==1)
+             {
+                 icon = Html.Raw("ico icon_support");
+             }
+             else if(count==2)
+             {
+                 icon = Html.Raw("ico icon_contact");
+             }
+             else if (count == 3)
+             {
+                 icon = Html.Raw("ico icon_regis_agent");
+             }
+             else if (count == 4)
+             {
+                 icon = Html.Raw("ico icon_regis_score");
+             }
+             else if (count == 5)
+             {
+                 icon = Html.Raw("ico icon_feedback");
+             }
+            */
+            
+        <li class="mtf columns">
+            <a href="@Html.Action("LoadAttribute", "Common", new { code = "banner-link", id = item.Id })">
+                <div class="item">
+                    @*<i class="@icon"></i>*@
+                    <img class="img-box" src="@item.Thumb"/>
+                    @item.Title @Html.Action("AdminEdit", "Common", new { id = item.Id })
+                    @Html.Raw(item.Content)
+                </div>
+            </a>
+        </li>
+                    
+                   
+        }
+    }
+</ul>
+
+<style>
+    .img-box
+    {
+        display: block;
+        width: 105px;
+        height: 105px;
+        margin: 10px auto;
+    }
+</style>
+
+

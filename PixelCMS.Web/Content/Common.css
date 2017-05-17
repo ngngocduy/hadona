@@ -1,0 +1,105 @@
+/* PIXEL CMS */
+/* Admin Panel CSS */
+/* SaiGonPixel Media JSC */
+/* http://saigonpixel.vn */
+/* Author: ZhouHai - hai.chau@saigonpixel.vn - tuanhai.chau@gmail.com */
+
+.apanel-container {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 20px;
+    z-index: 9999;
+    border: 1px solid #d9d9d9;
+
+    background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+.apanel-container .onoff{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('adminpanel/minus.gif') no-repeat center;
+    cursor: pointer;
+
+    display: none;
+}
+.apanel-container .on {
+    background: url('adminpanel/add.gif') no-repeat center;
+}
+
+
+    .apanel-container  .apanel-title a{
+        display: block;
+    }
+
+.apanel-container .apanel-title a:hover {
+    background: #f7dbc8;
+}
+
+.apanel-title-off {
+    display: none;
+}
+
+.cart-table {
+    border: 1px solid #d9d9d9;
+}
+
+.cart-table td {
+    border-top: 1px solid #d9d9d9    
+}
+
+/* Error */
+.error-container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 20px;
+    color: rgb(22, 22, 22);
+}
+    .error-container h1 {
+        display: inline-block;
+        color: #d9d9d9;
+        font-size: 80px;
+        margin: 0;
+    }
+    .error-container h2 {
+        color: #9f9f9f;
+        text-transform: uppercase;
+        line-height: 100%;
+        margin: 0;
+    }
+
+    .error-container p {
+        font-size: 12px;
+        line-height: 150%;
+        color: #9f9f9f;
+    }
+        .error-container p a {
+            text-decoration: none;
+            color: #9f9f9f;
+        }
+
+    .error-container .error-btn {
+        text-decoration: none;
+        display: inline-block;
+        color: #FFF;
+        background: #9f9f9f;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+        .error-container .error-btn:hover {
+            background: #454545;
+        }
+
+    .error-container hr {
+        margin: 20px 0;
+    }

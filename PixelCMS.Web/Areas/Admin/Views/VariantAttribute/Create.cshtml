@@ -1,0 +1,74 @@
+﻿@using PixelCMS.Core.Models
+@model PixelCMS.Core.Models.VariantAttribute
+
+@{
+    ViewBag.Title = "Tạo biến thể";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+}
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Tạo biến thể</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(x => x.PostId)
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Tạo" class="btn btn-blue" />
+                        <a href="@Url.Action("Index", new { postid = Model.PostId })" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                   @* <tr>
+                        <td class="label">Tên thuộc tính</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Name, new { required = true })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td class="label">
+                            Tên nhóm thuộc tính
+                             <i title="Nhóm thuộc tính này được tạo sẵn ở menu'Sản phẩm-->Thuộc tính biến thể-->Chọn nhóm thuộc tính'" class="fa fa-question-circle"></i>
+                        </td>
+                        <td>@Html.DropDownList("VariantGroup_Id")
+                            @Html.ValidationMessageFor(model => model.VariantGroup_Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            Loại input
+                             <i title="Là cách hiển thị của thuộc tính.VD:Ô màu sắc sẽ hiển thị nhìu ô màu sắc." class="fa fa-question-circle"></i>
+                        </td>
+                        <td>
+                            <select name="Type">
+                                <option value="0">Chọn</option>
+                                <option value="1">Ô màu sắc</option>
+                                <option value="2">Ô check(Cho chọn nhiều)</option>
+                                <option value="3">Ô tròn radio(Cho chọn 1)</option>
+                                 <option value="5">Ô vuông radio(Cho chọn 1 'có css')</option>
+                                <option value="4">Danh sách đổ xuống</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">kích hoạt</td>
+                        <td>
+                            @Html.CheckBoxFor(model => model.Active)
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+    </div>
+
+</section>

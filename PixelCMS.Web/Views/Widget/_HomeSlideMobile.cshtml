@@ -1,0 +1,8 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+
+        @foreach (var item in Model.OrderByDescending(x => x.Order).Take(6))
+        {
+            <div class="item"><a href='' target='_parent' title='Banner 1'><img src="@item.Thumb" alt='Banner 1' title='Banner 1' /></a></div>
+            @*<a href="@Html.Action("LoadAttribute", "Common", new {code = "banner-link", id = item.Id})" class="trans"><img width="120" src="@item.Thumb" alt=""></a>*@
+        }
+

@@ -1,0 +1,146 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.ShippingModel
+@helper render()
+{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var city = db.Cities.ToList();
+    foreach (var ct in city)
+    {
+    <optgroup label='@ct.Name'>
+        @foreach (var dt in ct.Districts)
+        {
+            <option value='@dt.Id'>@dt.Name</option>
+        }
+    </optgroup>
+    }
+}
+<script src="~/Scripts/Multiselect/js/jquery.multi-select.js"></script>
+<link href="~/Scripts/Multiselect/css/multi-select.css" rel="stylesheet" />
+<script src="~/Scripts/Multiselect/js/jquery.quicksearch.js"></script>
+<script type="text/javascript">
+    function changecity() {
+        var selectedItem = $("#CityList").val();
+        var ddlStates = $("#@Html.IdFor(model => model.DistrictList)");
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+            data: { "CityId": selectedItem },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                //change quan huyenn
+                $("#DistrictId").val($("#DistrictList").val());
+                //
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to retrieve states.');
+            }
+        });
+    }
+</script>
+
+<div style="float: right">
+    <select id='optgroup' multiple='multiple'>
+        @render()
+    </select>
+    <script>
+        $(function () {
+            var selectedIds = [];
+            //  $('#optgroup').multiSelect({ selectableOptgroup: true });
+            //search
+            $('#optgroup').multiSelect({
+
+                //selectableOptgroup: true,
+                selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='try \"TP\"'>",
+                selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='try \"TP\"'>",
+                afterInit: function (ms) {
+                    var that = this,
+                        $selectableSearch = that.$selectableUl.prev(),
+                        $selectionSearch = that.$selectionUl.prev(),
+                        selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                        selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+
+                    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                        .on('keydown', function (e) {
+                            if (e.which === 40) {
+                                that.$selectableUl.focus();
+                                return false;
+                            }
+                        });
+                    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                        .on('keydown', function (e) {
+                            if (e.which == 40) {
+                                that.$selectionUl.focus();
+                                return false;
+                            }
+                        });
+                },
+                afterSelect: function (values) {
+                    this.qs1.cache();
+                    this.qs2.cache();
+                    selectedIds.push(values);
+                    $("#selectedItem").val(selectedIds.join(','));
+                },
+                afterDeselect: function (values) {
+                    this.qs1.cache();
+                    this.qs2.cache();
+
+                    /*alert(values);
+                    selectedIds = jQuery.grep(selectedIds, function (a) {
+                        return a != values;
+                    });
+                    
+                     $("#selectedItem").val(selectedIds.join(','));*/
+
+                    var s = $("#selectedItem").val();
+                    if (s == values) {
+                    }
+                    var i = s.split(',');
+                    i = jQuery.grep(i, function (a) {
+                        return a != values;
+                    });
+                    $("#selectedItem").val(i.join(','));
+                }
+            });
+        });
+    </script>
+</div>
+<table>
+    <tr>
+        <td>Tỉnh/TP:(*)</td>
+        <td>@Html.DropDownList("CityList", null, new { onchange = "changecity()" })</td>
+    </tr>
+    <tr>
+        <td>Quận/Huyện:(*)</td>
+        <td>@Html.DropDownList("DistrictList", null, new { onchange = "changedt()" })
+            @Html.HiddenFor(model => model.DistrictId)
+            <script>
+                $(function () {
+                    $("#DistrictId").val($("#DistrictList").val());
+                });
+                function changedt() {
+                    $("#DistrictId").val($("#DistrictList").val());
+                }
+            </script>
+        </td>
+    </tr>
+    <tr>
+        <td>Phí cố định:</td>
+        <td>@Html.TextBoxFor(m => m.FixedFee)</td>
+    </tr>
+    <tr>
+        <td>Min weight</td>
+        <td>@Html.TextBoxFor(m => m.MinWeight)</td>
+    </tr>
+    <tr>
+        <td>Max weight</td>
+        <td>@Html.TextBoxFor(m => m.MaxWeight)</td>
+    </tr>
+    <tr>
+        <td>Phí cho từng đơn vị</td>
+        <td>@Html.TextBoxFor(m => m.FeeOfUnit)</td>
+    </tr>
+</table>

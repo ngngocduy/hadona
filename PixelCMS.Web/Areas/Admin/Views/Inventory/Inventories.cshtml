@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.InventoryModel>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = "Thông báo hàng tồn kho cao";   
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-bar-chart-o"></i>Thông báo hàng tồn kho cao</h1>
+
+            <table class="grid">
+                <tr>
+                    <th>Tên sản phẩm
+                    </th>
+                    <th>Thuộc tính
+                    </th>
+                    @*<th>Tên chi nhánh
+                    </th>*@
+                    <th>Số lượng trong kho
+                    </th>
+                    <th>Mã SKU
+                    </th>
+                 @*   <th></th>*@
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.ProductName
+
+                        </td>
+                        <td>
+                            @item.Attribute
+                        </td>
+                        @*<td>
+                            @item.Agent.Name
+                        </td>*@
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>
+                            @item.SKU
+                        </td>
+                       @* <td>
+                            <a href="@Url.Action("Edit", "VariantAttributeCombination", new { id = vari.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>@Resources.admin_common_edit</a>
+
+                        </td>*@
+                    </tr>
+                }
+            </table>
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+            </div>
+
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,61 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Post
+@if (Model != null)
+{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    if (Model.Lang != currentlang)
+    {
+        var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+        if (Modellang != null)
+        {
+            Model.Id = Modellang.Id;
+            Model.Title = Modellang.Title;
+            Model.Description = Modellang.Description;
+            Model.Content = Modellang.Content;
+        }
+    }
+
+    var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = Model.Id });
+    @Html.Action("AdminEdit", "Common", new { id = Model.Id })
+    if (ViewBag.box1 == "box1")
+    {
+        <div class="image-about">
+            <figure class="image">
+                <img src="@Model.Thumb" alt="About us">
+            </figure>
+        </div>
+            <div class="infor-about">
+                @Html.Raw(Model.Content)
+             
+            </div>
+
+    }
+    else if (ViewBag.box2 == "box2")
+    {
+    @Html.Raw(Model.Content)
+    }
+    else if (ViewBag.box3 == "box3")
+    {
+         @Html.Raw(Model.Content)
+    }
+     else if (ViewBag.box4 == "box4")
+    {
+         @Html.Raw(Model.Content)
+    }
+     else if (ViewBag.dichvu == "dichvu")
+    {
+            <h1 class="title-page">@Model.Title</h1>
+            <div class="content clearfix">
+                <!-- Nội dung động -->  
+                  @Html.Raw(Model.Content)              
+                <!-- Nội dung động -->
+            </div>
+    }
+    else
+    {
+@Html.Raw(Model.Content)
+    }
+
+}

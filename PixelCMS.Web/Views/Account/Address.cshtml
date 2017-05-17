@@ -1,0 +1,66 @@
+﻿@{
+    int count = 0;
+    ViewBag.Title = "Địa chỉ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<PixelCMS.Core.Models.Address>
+
+<div id="main-container">
+    <div class="page-top-leader omega">
+        <div class="container_12 relatived clearfix">
+            <h1 class="page-title">Địa chỉ</h1>
+            @*<div class="breadcrumb">
+                <span class="br_before">You are in:</span>
+                <a href="index.html">@Resources.common_home</a>
+                <span class="br_sep">/</span>
+                <span class="cur_link">@Resources.cart_cart</span>
+            </div>*@
+        </div>
+    </div>
+    <!-- .page-top-leader -->
+    <div class="container_12 full-container shopping-cart-zone">
+        <div class="cart-info grid_3">
+            @Html.Partial("_MenuLeft")
+        </div>
+        <div class="cart-info grid_9">
+            <div class="checkout-tab">
+
+                @foreach (var item in Model)
+                {
+                    count++;
+                    if (count == 1)
+                    {
+                    <div class="checkout-heading">Địa chỉ thanh toán</div>
+                    }
+                    else
+                    {
+                    <div class="checkout-heading">Địa chỉ Giao hàng</div>
+                    }
+                    <div class="checkout-content clearfix">
+                        <label>@Resources.cart_customer_name:</label>
+                        @Html.DisplayFor(model => item.Name)
+                        <br>
+                        <label>@Resources.contact_email:</label>
+                        @Html.DisplayFor(model => item.Email)
+                        <br>
+                        <label>@Resources.contact_form_phone:</label>
+                        @Html.DisplayFor(model => item.Phone)
+                        <br>
+                        <label>@Resources.contact_form_address:</label>
+                        @Html.DisplayFor(model => item.Address1)
+                    </div>
+                    <a href="EditAddress?Type=@item.Type" class="button style-button">@Resources.admin_common_edit</a>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+@section css
+{
+    <link rel="stylesheet" href="~/Theme/css/text.css" media="screen">
+    <link rel="stylesheet" href="~/Theme/css/icons/icons.css" media="screen">
+    <link id="custom-style" rel="stylesheet" href="~/Theme/css/styles/deep-blue.css" media="screen">
+    <link href="~/Content/Common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Theme/css/custom.css" media="screen">
+}

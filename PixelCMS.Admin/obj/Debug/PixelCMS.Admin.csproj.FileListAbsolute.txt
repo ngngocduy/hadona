@@ -1,0 +1,200 @@
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PixelCMS.Admin.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\EntityFramework.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Microsoft.CSharp.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PagedList.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PagedList.Mvc.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PixelCMS.Core.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Resources.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Configuration.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Data.Entity.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Transactions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Entity.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Helpers.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Mvc.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Razor.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.WebPages.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Xml.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Xml.Linq.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\WebMatrix.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\WebMatrix.WebData.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Mono.Math.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PixelCMS.Core.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Resources.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\EntityFramework.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PagedList.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\PagedList.Mvc.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Helpers.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Mvc.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.Razor.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.WebPages.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\WebMatrix.Data.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\WebMatrix.WebData.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\Mono.Math.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Admin\bin\en\Resources.resources.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\update_tkm_shop\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16004\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16006\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16006\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16007\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16007\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll
+D:\project\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+D:\project\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+D:\project\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
+E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
+E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
+E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb

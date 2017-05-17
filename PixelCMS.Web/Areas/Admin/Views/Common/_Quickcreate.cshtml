@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Language>
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var postypes = db.PostTypes.Where(x => x.Active == true && x.QuickCreate == true).ToList();
+    var roles = Roles.GetRolesForUser().ToList();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+
+@if(postypes != null){   
+     
+    <table class="grid">
+            <tr>
+                <th>@Resources.admin_common_quickcreate</th>
+            </tr>
+
+        <tr><td>
+
+@foreach (var item in postypes)
+    {
+        bool CreatePermission = false;
+        foreach (var role in roles)
+        {
+            var roleid = db.webpages_Roles.FirstOrDefault(x => x.RoleName == role).RoleId;
+            if (db.Roles_PostType.FirstOrDefault(x => x.PostType_Id == item.Id && x.Role_Id == roleid).Create == true)
+            {
+                CreatePermission = true;
+            }
+        }  
+    
+    if(CreatePermission == true){
+        if (Model.Count() > 1 && item.Has_Parallel_Language == false && item.Has_Lang == true)
+        {
+            <div class="quick-create">
+                    <a class="drop-head btn btn-blue btn-large" href="#">@Resources.admin_common_create @item.PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name</a>
+                    <ul>
+                        @foreach (var langs in Model)
+                { 
+                    <li><a href="@Url.Action("Create", "Content", new { type = item.Id, culture = langs.Code })">
+                        <img src="@langs.Flag" title="@langs.Name" />
+                        @langs.Name</a></li>
+                }
+                    </ul>
+            </div>
+        }
+        else
+        {
+            <div class="quick-create">
+                <a class="drop-head btn btn-blue btn-large" href="@Url.Action("Create", "Content", new { type = item.Id })">@Resources.admin_common_create @item.PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name</a>
+            </div>
+        
+        }
+        
+        }
+    }
+            </td></tr>
+        </table>
+}
+
+

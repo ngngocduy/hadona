@@ -1,0 +1,14 @@
+﻿@if (ViewBag.Id != null)
+{
+    if (Roles.IsUserInRole("admin") || Roles.IsUserInRole("tkmadmin"))
+    {
+        if (ViewBag.menu == "menu")
+        {
+    <a style="color: red;font-size: 16px;padding: 0px;margin: 0px" target="_blank" href="@Url.Action("EditMenuItem", "Menu", new { id = ViewBag.Id, area = "admin" })" title="Edit menu"><i class="fa fa-pencil-square-o"></i></a>
+        }
+        else
+        {
+    <a style="color: red;font-size: 16px;padding: 0px;margin: 0px" target="_blank" href="@Url.Action("Edit", "Content", new { id = ViewBag.Id, area = "admin" })" title="Admin edit"><i class="fa fa-pencil-square-o"></i></a>
+        }
+    }
+}

@@ -1,0 +1,117 @@
+﻿@model PixelCMS.Core.Models.PostAttribute
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = "Thêm thuộc tính";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var langs = db.Languages.OrderBy(x => x.Order).ToList();
+    var currentlang = langs.FirstOrDefault();
+    int langlist = langs.Count();
+}
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Thêm thuộc tính</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+            
+                    <aside id="control">
+                        <div>
+                            <input type="submit" value="Tạo" class="btn btn-blue" />
+                            <a href="@Url.Action("Index", "Attribute")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                        </div>
+                    </aside>
+    
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">Thông tin cơ bản</th>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Mã</td>
+                            <td>@Html.TextBoxFor(model => model.Code, new { minlength = "3", maxlength = "20", required = true })</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <ul class="tabs-nav">
+                                    <li class="active"><a href="#tab-@currentlang.Code">
+                                        <img src="@currentlang.Flag" />
+                                        @currentlang.Name</a></li>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <li><a href="#tab-@lang.Code">
+                                            <img src="@lang.Flag" />
+                                            @lang.Name</a></li>
+                                    }
+                                </ul>
+
+                                <div class="tabs-container">
+                                    <div class="tab-content" id="tab-@currentlang.Code">
+                                        <table class="grid form-input">
+                                            <tr>
+                                                <td class="label">@Resources.admin_content_title</td>
+                                                <td>
+                                                    <input type="text" name="name-@currentlang.Code" /></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    @foreach (var lang in langs.Where(x => x.Id != currentlang.Id))
+                                    {
+                                        <div class="tab-content" id="tab-@lang.Code">
+                                            <table class="grid form-input">
+                                                <tr>
+                                                    <td class="label">@Resources.admin_content_title</td>
+                                                    <td>
+                                                        <input type="text" name="name-@lang.Code" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    }
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Loại</td>
+                            <td>@Html.DropDownList("Edit_Type")</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Nhóm</td>
+                            <td>@Html.DropDownList("Group")</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">Ghi chú</td>
+                            <td>@Html.TextAreaFor(model => model.Description)</td>
+                        </tr>
+
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

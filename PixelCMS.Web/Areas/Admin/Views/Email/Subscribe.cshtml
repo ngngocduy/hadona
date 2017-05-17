@@ -1,0 +1,181 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.EmailSubscribe>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var roles = db.webpages_Roles.ToList();
+    ViewBag.Title = "Email Subscribe";
+    ViewBag.PTitle = "Email";
+    ViewBag.PDescription = "Quản lý email";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    Email đã xóa thành công !
+</div>
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-pencil-square"></i>Đăng ký bản tin</h1>
+
+            <aside id="control">
+                <div>
+                    <span style="color: red">@TempData["error"]</span>
+                    <form action="@Url.Action("UploadFile", "Email")" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="file" id="file" />
+                        <input type="submit" value="import csv" />
+                    </form>
+                    <a href="@Url.Action("CreateSubscribe", "Email")" class="btn btn-blue"><i class="fa fa-plus"></i>Thêm Email</a>
+                    <a id="Add" href="#" class="btn btn-blue"><i class="fa fa-plus"></i>Thêm Email vào nhóm</a>
+                    <a href="@Url.Action("UserRoles", "User")" class="btn btn-blue"><i class="fa fa-plus"></i>Tạo nhóm</a>
+                    <a href="@Url.Action("DownloadSubscribe", "Email")" class="btn"><i class="fa fa-download"></i>Xuất danh sách dưới dạng CSV</a>
+                    <a href="@Url.Action("Index", "Email")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                </div>
+            </aside>
+            <table class="grid" id="newsletter-subscriptions-grid">
+                <tr>
+                    <th>
+                        <input type="checkbox" id="mail_matter" /></th>
+                    <th width="25%">Email</th>
+                    <th width="25%">Nhóm</th>
+                    <th width="23%">Ngày đăng ký</th>
+                    <th width="7%">Kích hoạt</th>
+                    <th width="20%"></th>
+                </tr>
+                @foreach (var item in Model.OrderByDescending(x=>x.Date))
+                {
+                    <tr>
+                        <td>
+                            <input type='checkbox' value='@item.Id' class='mail_child'/>
+                        </td>
+                        <td>
+                            <strong>@item.Email</strong>
+                        </td>
+                        <td>
+                            @foreach (var rl in item.webpages_Roles)
+                            {
+                                @rl.RoleName @Html.Raw(",") 
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Active)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("EditSubscribe", "Email", new { id = item.Id })" class="btn btn-small">
+                                <img src="~/Areas/Admin/Content/icon/pencil.png" />
+                                Sửa</a>
+                      <a href="@Url.Action("DeleteSubscribe", "Email", new { id = item.Id })" class="btn btn-small delete-link">
+                            <img src="~/Areas/Admin/Content/icon/delete.png" />
+                            Xóa</a></td>
+                    </tr>
+                }
+            </table>
+
+            <br />
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Subscribe", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                Đang xem trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (trong @Model.PageCount trang)
+            </div>
+
+            <div id="update1">
+                @Html.Action("Group")
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>Bạn có chắc muốn xóa email này.</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+<script>
+    //checkall group
+    var selectedIds = [];
+    var selectedIdsGroup = [];
+    $(function () {
+        $('#mail_matter').click(function () {
+            $('.mail_child').attr('checked', $(this).prop("checked")).prop('checked', this.checked).change();
+        });
+
+        //wire up checkboxes Email.
+        $('#newsletter-subscriptions-grid').on('change', 'input[type=checkbox][class=mail_child]', function (e) {
+            var $check = $(this);
+            if ($check.is(":checked") == true) {
+                var checked = jQuery.inArray($check.val(), selectedIds);
+                if (checked == -1) {
+                    //add id to selectedIds.
+                    selectedIds.push($check.val());
+                }
+            }
+            else {
+                var checked1 = jQuery.inArray($check.val(), selectedIds);
+                if (checked1 > -1) {
+                    //remove id from selectedIds.
+                    selectedIds = $.grep(selectedIds, function (item, index) {
+                        return item != $check.val();
+                    });
+                }
+            }
+        });
+
+
+        $("#Add").click(function (e) {
+            if (selectedIds != "" && selectedIdsGroup != "") {
+                if (confirm("Xác nhận thêm Email vào nhóm")) {
+                    $.ajax({
+                        url: '@Url.Action("addEmailToGroup")?selectedIds=' + selectedIds.join(",") + '&selectedIdsGroup=' + selectedIdsGroup.join(","),
+                        type: "POST",
+                        data: {},
+                        success: function (result) {
+                            if (result.succsess == true) {
+                                // alert('Thêm Email vào nhóm thành công');
+                                window.location.reload();
+                            }
+                        }
+                    });
+                selectedIds = [];
+                selectedIdsGroup = [];
+            }
+        } else {
+            alert('Vui lòng chọn cả Email và nhóm');
+        }
+        });
+    });
+</script>

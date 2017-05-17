@@ -1,0 +1,115 @@
+﻿    <footer>
+         <div class="bottom">
+            <ul class="advantages row">
+                <li class="col-3">
+                    <div class="item">
+                        <a href="/vi/thanh-toan-khi-nhan-hang">
+                            <i class="fa fa-cc-visa"></i>
+                            <p>Thanh toán khi nhận hàng</p>
+                        </a>
+                    </div>
+                </li>
+                <li class="col-3">
+                    <div class="item">
+                        <a href="/vi/giao-hang-mien-phi">
+                            <i class="fa fa-motorcycle"></i>
+                            <p>Giao hàng miễn phí</p>
+                        </a>
+                    </div>
+                </li>
+                <li class="col-3">
+                    <div class="item">
+                        <a href="/vi/mien-phi-thu-va-tra-hang">
+                            <i class="fa fa-refresh"></i>
+                            <p>Miễn phí thử và trả hàng</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul class="footer-links cf">
+            <li><a href="/vi/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+            <li>|</li>
+            <li><a href="/vi/dieu-khoan">Điều khoản</a></li>
+            <li>|</li>
+            <li><a href="/vi/lien-he">Liên hệ</a></li>
+        </ul>
+        <div class="footer-info cf">
+       @Html.Action("LoadOption", "Common", new { code = "common-copyright" })
+        </div>
+    </footer>
+    <div class="tkm"><a href="http://www.vietwebsite.com">Thiết kế web</a> <a href="http://www.thekymoi.com">thế kỷ mới</a></div>
+
+
+@*<footer>
+    <div class="container">
+        <div class="row">
+            <div class="f-col col-md-3 col-sm-3 col-xs-3">
+                <div class="foot-title">suka.com.vn</div>
+                <div class="foot-content clearfix">
+                    <!-- Nội dung động -->
+                    
+                    @Html.Action("LoadOption", "Common", new { code = "suka.com.vn" })
+                   
+                    <!-- /Nội dung động -->
+                </div>
+                <!-- End foot-content -->
+            </div>
+            <!-- End f-col -->
+            <div class="f-col col-md-4 col-sm-4 col-xs-4">
+                <div class="foot-title">Hỗ trợ khách hàng</div>
+                <div class="foot-content clearfix">
+                    <!-- Nội dung động -->
+                    
+                    @Html.Action("LoadOption", "Common", new { code = "htkh" })
+                    
+                    <!-- /Nội dung động -->
+                </div>
+                <!-- End foot-content -->
+            </div>
+            <!-- End f-col -->
+            <div class="f-col col-md-5 col-sm-5 col-xs-5">
+                <div class="foot-title">Kết nối cùng suka.com.vn</div>
+                <div class="foot-content clearfix">
+
+                    <div id="fb-root"></div>
+                    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-like-box" data-href="@Html.Action("LoadOption", "Common", new { code = "social-facebook" })" data-width="458" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
+
+                    <div class="social clearfix">
+                        <ul class="list-social pull-right clearfix">
+                            <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-facebook" })">
+                                <div id="fb"></div>
+                            </a></li>
+                            <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-googleplus" })">
+                                <div id="gp"></div>
+                            </a></li>
+                            <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-youtube" })">
+                                <div id="yt"></div>
+                            </a></li>
+                            <li><a href="@Html.Action("LoadOption", "Common", new { code = "social-zing" })">
+                                <div id="zi"></div>
+                            </a></li>
+                        </ul>
+                        <p class="title-social pull-right">FOLLOW US</p>
+                    </div>
+                    @Html.Action("EmailSubscribe","Common")
+                   
+                </div>
+                <!-- End foot-content -->
+            </div>
+            <!-- End f-col -->
+        </div>
+        <!-- End row -->
+        <div class="content">
+            @Html.Action("LoadOption", "Common", new { code = "common-copyright" })
+        </div>
+    </div>
+    <!-- End container -->
+</footer>*@

@@ -1,0 +1,125 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Cat>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    var count = Request.Url.Segments.Count();
+    var slug = Request.Url.Segments[count - 1];
+    var fullslug = db.Slugs.FirstOrDefault(x => x.Slug_Full == slug);
+
+    if (ViewBag.CatTitle != null)
+    {
+        ViewBag.Title = ViewBag.CatTitle;
+    }
+    else
+    {
+        //ViewBag.Title = ViewBag.CategoryCurrent;
+        ViewBag.Title = ViewBag.TypeName;
+    }
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+    {
+
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+
+<div class="breadcumb">
+    <div class="container">
+        @Html.Action("Breadcrumb", "Common", new { breadcrumb = ViewBag.BreadCrumb })
+    </div>
+</div>
+<div class="common">
+    <div class="container">
+        @foreach (var cat in Model)
+        {
+            <div class="view-more left bold no-link">
+                <a>@cat.Name</a>
+                <a href="@Html.Action("LoadURL", "Common", new { type = "cat", id = cat.Id })" class="viewall">
+                    Xem tất cả
+                </a>
+            </div>
+            <div class="clearfix detail01">
+                <div class="right-detail pros">
+                    <div class=" row clearfix">
+                        @foreach (var item in cat.Posts.Where(x => x.Active).OrderByDescending(x => x.Order).Take(8))
+                        {
+
+                            /* Parallel Lang */
+                            if (item.Lang != currentlang)
+                            {
+                                /* Parallel Lang */
+
+                                var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                                if (itemlang != null)
+                                {
+                                    item.Id = itemlang.Id;
+                                    item.Title = itemlang.Title;
+                                    item.Description = itemlang.Description;
+                                    item.Content = itemlang.Content;
+                                }
+
+                            }
+                            /* End Parallel Lang */
+                            var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+
+                            <div class="col-sm-3">
+                                <div class="image" style="position: relative">
+                                    @if (item.Thumb != null)
+                                    {
+                                        <a href="@modelurl" class="trans">
+                                            <img src="@item.Thumb.Replace("Upload/", "Upload/_Thumbs/")" />
+                                            <div class="caption">
+                                                @item.Description
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                                <div class="name"><a href="@modelurl" class="trans">@item.Title @Html.Action("AdminEdit", "Common", new { id = item.Id })</a></div>
+                                <p class="price">Giá : @item.Price</p>
+                            </div>
+
+                        }
+                        <div class="clearfix"></div>
+                        @*   @Html.PagedListPager(Model, page => Url.Action("Slug", new { page }))*@
+                    </div>
+                </div>
+            </div>
+
+
+            @*     <div class="module main-content">
+                <div class="title-bar"><h1>@item.Name</h1></div>
+                <div class="module-content">
+                    <div class="row">
+                        @foreach (var post in item.Posts.Where(x => x.Active).OrderByDescending(x => x.Order))
+                        {
+                            @Html.Partial("~/Views/Widget/_ProductBox.cshtml", post)
+                        }
+                    </div>
+                </div>
+            </div>*@
+        }
+    </div>
+</div>
+   
+

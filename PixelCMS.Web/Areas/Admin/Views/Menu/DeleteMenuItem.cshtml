@@ -1,0 +1,74 @@
+﻿@model PixelCMS.Core.Models.MenuItem
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_menu_item;
+    ViewBag.PTitle = "Menu";
+    ViewBag.PDescription = "Quản lý Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    string menulang = ViewBag.MenuLangCode;
+    int menuid = (int)ViewBag.MenuId;
+    var langlist = db.Languages.Where(x => x.Active == true).Count();
+}
+
+<section id="main">
+<div class="container">
+    <div class="sixteen columns">
+        <h1><i class="fa fa-th-list"></i> @Resources.admin_menu_item</h1>
+
+        <aside id="control">
+            <div>
+                 @if (langlist > 1)
+                 {
+                    <a class="btn" href="@Url.Action("Index", "Menu", new { culture = menulang })"><i class="fa fa-chevron-left"></i> @Resources.admin_common_back</a>
+                 }
+                 else
+                 {
+                    <a class="btn" href="@Url.Action("Index", "Menu")"><i class="fa fa-chevron-left"></i> @Resources.admin_common_back</a>
+                 }
+            </div>
+        </aside>
+
+    </div>
+    <div class="nine columns">
+
+        @Html.Action("MenuItemList", "Menu", new { menuid = menuid })
+
+   </div>
+    <div class="seven columns">
+
+
+        <table class="grid form-input">
+            <tr>
+                <th colspan="2">@Resources.admin_menu_itemlist "@ViewBag.MenuName"
+                    @if (langlist > 1)
+                    {
+                <i>(@ViewBag.MenuLang)</i>
+                    }
+                </th>
+            </tr>
+
+            <tr>
+                <td class="button-submit-zone">@Resources.admin_content_delete @Resources.admin_menu_item "@ViewBag.MenuItemName"</td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Resources.admin_ask_suredelete @Resources.admin_menu_item
+                        @using (Html.BeginForm()) {
+                        <div class="form-actions">
+                                <input type="submit" value="@Resources.admin_content_delete" class="btn btn-red" /> <a class="btn" href="@Url.Action("MenuItem", "Menu", new { id = menuid })"><i class="fa fa-chevron-left"></i> @Resources.admin_common_back (@Resources.admin_common_create)</a>
+                        </div>
+                        }
+                </td>
+            </tr>
+
+            </table>
+        
+    </div>
+</div>
+
+    </section>

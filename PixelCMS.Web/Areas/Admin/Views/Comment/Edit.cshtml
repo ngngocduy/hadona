@@ -1,0 +1,78 @@
+﻿@model PixelCMS.Core.Models.Comment
+
+@{
+    ViewBag.Title = "Tạo tag ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Tạo tag</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(m => m.Id)
+                 @Html.HiddenFor(m => m.Name)
+                 @Html.HiddenFor(m => m.Post_Id)
+                 @Html.HiddenFor(m => m.Email)
+                 @Html.HiddenFor(m => m.Product_Rate)
+                 @Html.HiddenFor(m => m.Content)
+                 @Html.HiddenFor(m => m.CreateDate)
+                 @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input type="submit" value="Sửa" class="btn btn-blue" />
+                        <a href="@Url.Action("Index")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Tên người comment </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Tên sản phẩm</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Post.Title)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Sao</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Product_Rate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Email</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nội dung comment</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Content)
+                        </td>
+                    </tr>
+                         <tr>
+                        <td class="label">Cho phép hiển thị</td>
+                        <td>
+                            @Html.CheckBoxFor(modelItem => Model.Active)
+                        </td>
+                    </tr>
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,234 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.MenuItem>
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttype = db.PostTypes.Select(x => new { x.Id, x.Name, x.PostType_Name }).ToList();
+    var postlist = db.Posts.Select(x => new { x.Id, x.Title, x.PostType }).ToList();
+    var catlist = db.Cats.Select(x => new { x.Id, x.Name, x.PostType }).ToList();
+}
+
+<div style="padding: 10px;">
+
+    @helper renderlevel(MenuItem menuItem)
+{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Select(x => new { x.Id, x.Name, x.PostType_Name }).ToList();
+    var postlist = db.Posts.Select(x => new { x.Id, x.Title, x.PostType }).ToList();
+    var catlist = db.Cats.Select(x => new { x.Id, x.Name, x.PostType }).ToList();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    foreach (var item in Model.Where(x => x.Owner_Id == menuItem.Id))
+    {
+        <div class="menu-item">
+            <a style="margin-left: @(item.Level*20)px !important" class="menu-item-2">@item.Name</a>
+
+            @if (item.Active == false)
+            {
+                <i class="fa fa-eye-slash"></i>
+            }
+            <ul>
+                <li>
+                    @if (item.Type == 1)
+                    {
+                        <a><strong>URL:</strong> @item.Url</a>
+                    }
+                    else if (item.Type == 100)
+                    {
+                        var posttype1 = posttype.FirstOrDefault(x => x.Id == item.PostType);
+                        <a><strong>@Resources.admin_common_posttype:</strong> @posttype1.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</a>
+                    }
+                    else if (item.Type == 2)
+                    {
+                        var post1 = postlist.FirstOrDefault(x => x.Id == item.Post);
+                        <a><strong>@Resources.admin_common_page:</strong> @post1.Title
+                            <br />
+                            (@posttype.FirstOrDefault(x => x.Id == post1.PostType.Id).PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name)</a>
+                    }
+                    else if (item.Type == 3)
+                    {
+                        var cat1 = catlist.FirstOrDefault(x => x.Id == item.Cat);
+                        <a><strong>@Resources.admin_content_category:</strong> @cat1.Name
+                            <br />
+                            (@posttype.FirstOrDefault(x => x.Id == cat1.PostType.Id).PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name)</a>
+                    }
+                    else if (item.Type == 4)
+                    {
+                        <a><strong>@Resources.common_home</strong>(@Resources.admin_menu_dependlang)</a>
+                    }
+                    else if (item.Type == 5)
+                    {
+                        <a><strong>@Resources.contact</strong>(@Resources.admin_menu_dependlang)</a>
+                    }
+                    else if (item.Type == 6)
+                    {
+                        <a><strong>@Resources.common_search</strong>(@Resources.admin_menu_dependlang)</a>
+                    }
+                </li>
+                <li><a href="@Url.Action("EditMenuItem", "Menu", new { id = item.Id })">
+                    <img src="~/Areas/Admin/Content/icon/pencil.png" />
+                    @Resources.admin_common_edit</a></li>
+                <li><a href="@Url.Action("DeleteMenuItem", "Menu", new { id = item.Id })" class="delete-link">
+                    <img src="~/Areas/Admin/Content/icon/delete.png" />
+                    @Resources.admin_content_delete</a></li>
+            </ul>
+        </div>
+        <br />
+        @renderlevel(item);
+    }
+    }
+    
+
+    @foreach (var item1 in Model.Where(x => x.Owner_Id==null))
+    {
+        <div class="menu-item">
+            <a class="menu-item-1">@item1.Name</a>
+            @if (item1.Active == false)
+            {
+                <i class="fa fa-eye-slash"></i>
+            }
+            <ul>
+                <li>
+                    @if (item1.Type == 1)
+                    {
+                        <a><strong>URL:</strong> @item1.Url</a>
+                    }
+                    else if (item1.Type == 100)
+                    {
+                        var posttype1 = posttype.FirstOrDefault(x => x.Id == item1.PostType);
+                        <a><strong>@Resources.admin_common_posttype:</strong> @posttype1.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</a>
+                    }
+                    else if (item1.Type == 2)
+                    {
+                        var post1 = postlist.FirstOrDefault(x => x.Id == item1.Post);
+                        <a><strong>@Resources.admin_common_page:</strong> @post1.Title
+                            <br />
+                            (@posttype.FirstOrDefault(x => x.Id == post1.PostType.Id).PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name)</a>
+                    }
+                    else if (item1.Type == 3)
+                    {
+                        var cat1 = catlist.FirstOrDefault(x => x.Id == item1.Cat);
+                        <a><strong>@Resources.admin_content_category:</strong> @cat1.Name
+                            <br />
+                            (@posttype.FirstOrDefault(x => x.Id == cat1.PostType.Id).PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name)</a>
+                    }
+                    else if (item1.Type == 4)
+                    {
+                        <a><strong>@Resources.common_home</strong>(@Resources.admin_menu_dependlang)</a>
+                    }
+                    else if (item1.Type == 5)
+                    {
+                        <a><strong>@Resources.contact</strong>(@Resources.admin_menu_dependlang)</a>
+                    }
+                    else if (item1.Type == 6)
+                    {
+                        <a><strong>@Resources.common_search</strong>(@Resources.admin_menu_dependlang)</a>
+                    }
+                </li>
+                <li><a href="@Url.Action("EditMenuItem", "Menu", new { id = item1.Id })">
+                    <img src="~/Areas/Admin/Content/icon/pencil.png" />
+                    @Resources.admin_common_edit</a></li>
+                <li><a href="@Url.Action("DeleteMenuItem", "Menu", new { id = item1.Id })" class="delete-link">
+                    <img src="~/Areas/Admin/Content/icon/delete.png" />
+                    @Resources.admin_content_delete</a></li>
+            </ul>
+        </div>
+        <br />
+        
+        @renderlevel(item1)
+
+@*foreach (var item2 in Model.Where(x => x.Level == 2 && x.Owner_Id == item1.Id)) { 
+        <div class="menu-item">
+            <a class="menu-item-2">@item2.Name</a>
+
+            @if(item1.Active == false || item2.Active == false){
+                <i class="fa fa-eye-slash"></i>
+            }
+
+            <ul>
+        <li>
+            @if (item2.Type == 1){
+                <a><strong>URL:</strong> @item2.Url</a>
+            }
+            else if(item2.Type == 100){
+                var posttype2 = posttype.FirstOrDefault(x=>x.Id == item1.PostType);
+                <a><strong>@Resources.admin_common_posttype:</strong> @posttype2.PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name</a>
+            }
+            else if (item2.Type == 2){
+                var post2 = postlist.FirstOrDefault(x => x.Id == item2.Post);
+                <a><strong>@Resources.admin_common_page:</strong> @post2.Title <br /> (@posttype.FirstOrDefault(x=>x.Id == post2.PostType.Id).PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name)</a>
+            }
+            else if (item2.Type == 3){
+                var cat2 = catlist.FirstOrDefault(x => x.Id == item2.Cat);
+                <a><strong>@Resources.admin_content_category:</strong> @cat2.Name <br /> (@posttype.FirstOrDefault(x=>x.Id == cat2.PostType.Id).PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name)</a>
+            }
+            else if (item2.Type == 4){
+                <a><strong>@Resources.common_home</strong>(@Resources.admin_menu_dependlang)</a>
+            }
+            else if (item2.Type == 5){
+                <a><strong>@Resources.contact</strong>(@Resources.admin_menu_dependlang)</a>
+            }
+            else if (item2.Type == 6){
+                <a><strong>@Resources.common_search</strong>(@Resources.admin_menu_dependlang)</a>
+            }
+        </li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("EditMenuItem", "Menu", new { id = item2.Id })"><img src="~/Areas/Admin/Content/icon/pencil.png" /> @Resources.admin_common_edit</a></li>
+        <li><a href="@Url.Action("DeleteMenuItem", "Menu", new { id = item2.Id })" class="delete-link"><img src="~/Areas/Admin/Content/icon/delete.png" /> @Resources.admin_content_delete</a></li>
+    </ul>
+    </div>
+    <br />
+    
+        foreach (var item3 in Model.Where(x => x.Level == 3 && x.Owner_Id == item2.Id)) { 
+        <div class="menu-item">
+            <a class="menu-item-3">@item3.Name</a>
+
+            @if(item1.Active == false || item2.Active == false || item3.Active == false){
+                <i class="fa fa-eye-slash"></i>
+            }
+
+            <ul>
+        <li>
+            @if (item3.Type == 1){
+                <a><strong>URL:</strong> @item3.Url</a>
+            }
+            else if(item3.Type == 100){
+                var posttype3 = posttype.FirstOrDefault(x=>x.Id == item1.PostType);
+                <a><strong>@Resources.admin_common_posttype:</strong> @posttype3.PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name</a>
+            }
+            else if (item3.Type == 2){
+                var post3 = postlist.FirstOrDefault(x => x.Id == item3.Post);
+                <a><strong>@Resources.admin_common_page:</strong> @post3.Title <br /> (@posttype.FirstOrDefault(x=>x.Id == post3.PostType.Id).PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name)</a>
+            }
+            else if (item3.Type == 3){
+                var cat3 = catlist.FirstOrDefault(x => x.Id == item3.Cat);
+                <a><strong>@Resources.admin_content_category:</strong> @cat3.Name <br /> (@posttype.FirstOrDefault(x=>x.Id == cat3.PostType.Id).PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name)</a>
+            }
+            else if (item3.Type == 4){
+                <a><strong>@Resources.common_home</strong>(@Resources.admin_menu_dependlang)</a>
+            }
+            else if (item3.Type == 5){
+                <a><strong>@Resources.contact</strong>(@Resources.admin_menu_dependlang)</a>
+            }
+            else if (item3.Type == 6){
+                <a><strong>@Resources.common_search</strong>(@Resources.admin_menu_dependlang)</a>
+            }
+        </li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("EditMenuItem", "Menu", new { id = item3.Id })"><img src="~/Areas/Admin/Content/icon/pencil.png" /> @Resources.admin_common_edit</a></li>
+        <li><a href="@Url.Action("DeleteMenuItem", "Menu", new { id = item3.Id })" class="delete-link"><img src="~/Areas/Admin/Content/icon/delete.png" /> @Resources.admin_content_delete</a></li>
+    </ul>
+    </div>
+            <br />
+    
+    
+        }
+    }*@
+    
+    }
+    <hr />
+    <div class="menu-item">
+        <i class="fa fa-eye-slash"></i>: @Resources.admin_menu_invisible
+    </div>
+
+</div>

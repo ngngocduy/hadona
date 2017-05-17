@@ -1,0 +1,57 @@
+﻿@model PixelCMS.Core.Models.SMTP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+
+<div class="container">
+    <div class="sixteen columns">
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SMTP</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Port)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Port)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Server)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Server)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+ </div>
+</div>
+</section>

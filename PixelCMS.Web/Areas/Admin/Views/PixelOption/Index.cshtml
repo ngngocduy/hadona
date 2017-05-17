@@ -1,0 +1,221 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Option>
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_px_pixeloption;
+    ViewBag.PTitle = Resources.admin_px_pixeloption;
+    ViewBag.PDescription = "Quản lý tùy chỉnh (chuyên sâu)";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var optiongroups = db.OptionGroups.ToList();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_config @Resources.admin_status_deletedsuccessfully
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_edit @Resources.admin_common_config @Resources.admin_status_successfully
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_create @Resources.admin_common_config @Resources.admin_status_successfully
+</div>
+
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_px_pixeloption</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                <aside id="control">
+                    <div>
+                        <a href="@Url.Action("Create", "PixelOption")" class="btn btn-blue"><i class="fa fa-plus"></i>@Resources.admin_common_create @Resources.admin_common_config</a>
+                        <a href="@Url.Action("OptionGroup", "PixelOption")" class="btn"><i class="fa fa-folder-open"></i>@Resources.admin_px_configgroup</a>
+                    </div>
+                </aside>
+
+                <table class="grid">
+                    <tr>
+                        <th>
+                            @Resources.admin_common_name
+                        </th>
+                        <th>
+                            @Resources.admin_common_value
+                        </th>
+                        <th>
+                            @Resources.admin_common_code
+                        </th>
+                        <th>
+                            @Resources.admin_common_type
+                        </th>
+                        <th>
+                            @Resources.admin_content_order
+                        </th>
+                        <th>
+                            @Resources.admin_content_active
+                        </th>
+                        <th>
+                            @Resources.admin_common_public
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    <script>
+                        $(function () {
+                            $(".button-submit-zone").click(function () {
+                                $(".tab-pane").hide("500");
+                                var att = $(this).attr("att");
+                                $("." + att).show("500");
+                                $('.checker').show("500");
+                            });
+                        })
+                    </script>
+
+                    @foreach (var group in optiongroups.OrderBy(x => x.Order))
+                    {
+                        if (Model.Where(x => x.Group == group.Id).FirstOrDefault() != null)
+                        { 
+                        <tr>
+                            <td colspan="8" class="button-submit-zone" att="@group.Id" style="cursor: pointer">
+                                <strong>@group.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</strong>
+                            </td>
+                        </tr>
+                            foreach (var item in Model.Where(x => x.Group == group.Id))
+                            {
+                        <tr class="tab-pane @group.Id" style="display: none">
+                            <td>
+                                @item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name
+                            </td>
+                            <td>
+                                @if (item.Value != null)
+                                {
+                                    if (item.Value.Length > 31)
+                                    {
+                                    @item.Value.Substring(0, 30) <span>...</span>
+                                    }
+                                    else
+                                    {
+                                    @item.Value
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Code)
+                            </td>
+                            <td>
+                                @if (item.Edit_Type == 1)
+                                {
+                                    <span>Textbox</span>
+                                }
+                                else if (item.Edit_Type == 2)
+                                {
+                                    <span>TextArea</span>
+                                }
+                                else if (item.Edit_Type == 3)
+                                {
+                                    <span>CKEditor</span>
+                                }
+                                else if (item.Edit_Type == 4)
+                                {
+                                    <span>Image Browse</span>
+                                }
+                                else if (item.Edit_Type == 5)
+                                {
+                                    <span>Passwords</span>
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Order)
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(modelItem => item.Active, new { onclick = "UpdateActive(" + item.Id + ")" })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Public)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Edit", "PixelOption", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>@Resources.admin_common_edit</a>
+                                <a href="@Url.Action("Delete", "PixelOption", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>@Resources.admin_content_delete</a>
+                            </td>
+                        </tr>
+                            }
+
+                        }
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>@Resources.admin_ask_suredelete @Resources.admin_common_config</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "@Resources.admin_content_delete": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "@Resources.admin_common_back": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+    <script>
+        $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+else if (ViewBag.Status == "edit-done")
+{ 
+    <script>
+        $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+
+<script>
+    function UpdateActive(id) {
+        $.ajax({
+            url: '@Url.Action("UpdateActive")',
+            type: "POST",
+            data: { id: id },
+            success: function (result) {
+                if (result.success == true) {
+                    $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                }
+            }
+        });
+    }
+</script>

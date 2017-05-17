@@ -1,0 +1,155 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@{
+    Layout = "";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<!-- Grid-->
+@if (Model != null)
+{
+    int count = 0;
+    int stt = 1;
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            count++;
+            @Html.Partial("~/Views/Widget/_ProductBox.cshtml", item)
+             
+            if(count%3==0)
+            {
+                <div class="clearfix"></div>
+            }
+                
+        }
+    </div>
+    <div class="paging">
+        <ul class="pagination pull-left">
+            @* Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+            @if (Model.HasPreviousPage)
+            {
+                <li>@Ajax.ActionLink("«", "ProductGrid", new
+                                                             {
+                                                                 page = 1,
+                                                                 slug = ViewBag.slug,
+                                                                 minprice = ViewBag.min,
+                                                                 maxprice = ViewBag.max,
+                                                                 manuft = ViewBag.manuft,
+                                                                 attributies = ViewBag.att,
+                                                                 percent = ViewBag.percent
+                                                             },
+                                     new AjaxOptions
+                                         {
+                                             UpdateTargetId = "update1",
+                                             LoadingElementId = "ajaxloading",
+                                             HttpMethod = "post"
+                                         })
+                </li>
+                <li>
+                    @Html.Raw(" ")
+                    @Ajax.ActionLink("Prev", "ProductGrid", new
+                                                                {
+                                                                    page = Model.PageNumber - 1,
+                                                                    slug = ViewBag.slug,
+                                                                    minprice = ViewBag.min,
+                                                                    maxprice = ViewBag.max,
+                                                                    manuft = ViewBag.manuft,
+                                                                    attributies = ViewBag.att,
+                                                                    percent = ViewBag.percent
+                                                                }, new AjaxOptions
+                                                                       {
+                                                                           UpdateTargetId = "update1",
+                                                                           LoadingElementId = "ajaxloading",
+                                                                           HttpMethod = "post"
+                                                                       })
+                </li>
+            }
+            else
+            {
+                @:<li><a>«</a></li>
+                @Html.Raw(" ")
+                @:<li><a>Prev</a></li>
+            }
+            @for (int i = 1; i < Model.PageCount + 1; i++)
+            {
+                if (i == Model.PageNumber)
+                {
+                <li class="active"><a>@i</a>@Html.Raw("")</li>
+                }
+                else
+                {
+                <li class="">@Ajax.ActionLink(i.ToString(), "ProductGrid",
+                                                  new
+                                                      {
+                                                          page = i,
+                                                          slug = ViewBag.slug,
+                                                          minprice = ViewBag.min,
+                                                          maxprice = ViewBag.max,
+                                                          manuft = ViewBag.manuft,
+                                                          attributies = ViewBag.att,
+                                                          percent = ViewBag.percent
+                                                      },
+                                                  new AjaxOptions
+                                                      {
+                                                          UpdateTargetId = "update1",
+                                                          LoadingElementId = "ajaxloading",
+                                                          HttpMethod = "post"
+                                                      }
+                                      )
+                    @Html.Raw(" ")</li>
+                }
+            }
+            @if (Model.HasNextPage)
+            {
+                <li>@Ajax.ActionLink("Next", "ProductGrid", new
+                                                                {
+                                                                    page = Model.PageNumber + 1,
+                                                                    slug = ViewBag.slug,
+                                                                    minprice = ViewBag.min,
+                                                                    maxprice = ViewBag.max,
+                                                                    manuft = ViewBag.manuft,
+                                                                    attributies = ViewBag.att,
+                                                                    percent = ViewBag.percent
+                                                                },
+                                     new AjaxOptions
+                                         {
+                                             UpdateTargetId = "update1",
+                                             LoadingElementId = "ajaxloading",
+                                             HttpMethod = "post"
+                                         })
+                    @Html.Raw(" ")
+                </li>
+                <li>
+                    @Ajax.ActionLink("»", "ProductGrid", new
+                                                             {
+                                                                 page = Model.PageCount,
+                                                                 slug = ViewBag.slug,
+                                                                 minprice = ViewBag.min,
+                                                                 maxprice = ViewBag.max,
+                                                                 manuft = ViewBag.manuft,
+                                                                 attributies = ViewBag.att,
+                                                                 percent = ViewBag.percent
+                                                             },
+                                     new AjaxOptions
+                                         {
+                                             UpdateTargetId = "update1",
+                                             LoadingElementId = "ajaxloading",
+                                             HttpMethod = "post"
+                                         })
+                </li>
+            }
+            else
+            {
+                @:<li><a>Next</a></li>
+                @Html.Raw(" ")
+                @:<li><a>»</a></li>
+            }
+        </ul>
+        @* <div class="results">
+             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            Hiển thị sản phẩm từ 1 tới 27 trên tổng số 3983 sản phẩm
+        </div>*@
+    </div>
+}
+
+
+

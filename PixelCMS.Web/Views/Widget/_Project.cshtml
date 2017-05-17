@@ -1,0 +1,28 @@
+﻿
+@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Post>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    int count = 0;
+}
+<div class="list-service project">
+    <div class="row">
+        @foreach (var item in Model.OrderByDescending(x => x.Order).Take(6))
+        {
+            var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = item.Id });
+            count++;
+            <div class="col-md-4 col-sm-4">
+                <div class="inner">
+                    <a href="@Modelurl" class="trans">
+                        <img src="@item.Thumb">
+                        <div class="caption">
+                            @item.Description
+                        </div>
+                    </a>
+                </div>
+                <div class="caption2">@item.Title</div>
+            </div>
+        }
+    </div>
+</div>

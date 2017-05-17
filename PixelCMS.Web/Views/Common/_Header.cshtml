@@ -1,0 +1,80 @@
+﻿@{ var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();}
+@*<div class="wrapper outer-header">
+    <div class="wrap" style="z-index: 2;">
+        <div class="container inner-header">
+
+            <div class="header cf">
+                <div class="logo">
+                    <a href="/">
+                        <img src="@Html.Action("LoadOption", "Common", new { code = "common-logo" })"></a>
+                </div>
+                <div class="html-content float-left">
+                    <p>@Html.Action("LoadOption", "Common", new { code = "content-logo" })</p>
+                </div>
+                <div class="form-head">
+                    <div class="block">
+                        <div class="block-content cf">
+                            <div class="map-contact"><a href="@Html.Action("LoadOption", "Common", new { code = "link-ban-do" })">@Resources.XemBanDoTaiDay </a></div>
+                            <div class="lang">
+                                <a href="@Url.Action("SetCulture", "Home", new { culture = "vi" })">
+                                    <img src="/theme/images/vi.png"></a>
+                                <a href="@Url.Action("SetCulture", "Home", new { culture = "en" })">
+                                    <img src="/theme/images/uk.png"></a>
+                                <a href="@Url.Action("SetCulture", "Home", new { culture = "zh" })">
+                                    <img src="/theme/images/cn.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End block -->
+                    <div class="block">
+                        <div class="block-content cf">
+                            @Html.Action("SearchBox", "Common")
+                        </div>
+                    </div>
+                    <!-- End block -->
+                </div>
+                <!-- End form-head -->
+                <!-- End form-head -->
+            </div>
+            <!-- End header -->
+        </div>
+        <!-- End container -->
+    </div>
+    <!-- End wrap -->
+    @Html.Action("Menu", "Common", new { positioncode = "menu-header" })
+</div>*@
+
+    <script>
+    function changelang(code) {
+        //var code = $('#lang').val();
+        var pathname = window.location.pathname;
+        $.ajax({
+            url: '@Url.Action("SetCulture", "Common", new { area = "" })',
+            type: 'POST',
+            data: { culture: code, pathname: pathname },
+            // async:true,
+            // cache:false,
+            // timeout: 10000,
+            success: function (result) {
+                window.location.replace(result.url);
+            }
+        });
+    }
+</script>
+
+<header>
+    <div class="container">
+        <div id="logo"><a href="/@currentlang"><img src="@Html.Action("LoadOption", "Common", new {code = "common-logo"})" alt="KPA" title="KPA" /></a></div>
+        <!-- Main Menu-->
+        @Html.Action("Menu", "Common", new { positioncode = "menu-header" })
+        <!--end Main Menu-->
+
+        <div class="language">
+            <a href="#" onclick="changelang('vi')" title="" class="vietname active"><img src="~/Upload/images/Common/covn.gif" /></a>
+            <a href="#" onclick="changelang('en')" title="" class="england"><img src="~/Upload/images/Common/coanh.gif" /></a>
+        </div>
+    </div>
+</header>
+
+
+

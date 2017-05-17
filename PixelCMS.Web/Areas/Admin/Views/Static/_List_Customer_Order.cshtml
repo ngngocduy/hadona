@@ -1,0 +1,251 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Order>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = Resources.admin_cart_order;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var statuslist = db.Order_Status.Where(x => x.Active).OrderBy(x => x.Order).ToList();
+    bool a_accsess = false;
+    var admin = db.webpages_Roles.FirstOrDefault(z => z.RoleName == "admin");
+    if (admin != null)
+    {
+        var accsess = db.Roles_Access.FirstOrDefault(x => x.Role_Id == admin.RoleId);
+        //nếu admin có quyền truy cập vào attribute thì hiển thị..
+        if (accsess != null && accsess.Attribute)
+        {
+            a_accsess = true;
+        }
+    }
+}
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_cart_order @Resources.admin_status_deletedsuccessfully
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>@Resources.admin_common_update @Resources.admin_cart_order @Resources.admin_status_successfully
+</div>
+
+<style>
+    .label {
+        padding: 6px;
+        margin-right: 5px;
+    }
+
+    input {
+        margin-right: 5px;
+    }
+
+    table.grid {
+        width: 100%;
+        border: 1px solid #e3e3e3;
+        margin: 0px 0px;
+        border-bottom: 2px solid #bfd7e2;
+        padding: 0;
+    }
+</style>
+<section id="main">
+    <div class="container" style="width: 98%">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_cart_order</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns" style="width: 98% !important; padding-top: 10px;">
+                @using (Html.BeginForm(FormMethod.Get))
+                {
+                    <div class="divsearch">
+                        <label class="label">Từ ngày</label>
+                        <input name="tungay" id="tungay" type="" />
+                        <label class="label">Đến ngày</label>
+                        <input name="denngay" id="denngay" type="" />
+                        <label class="label">Tên khách hàng </label>
+                        <input name="ten" id="ten" type="" />
+                        <input id="tim" class="btn" value="Tìm" type="submit" />
+                    </div>
+                }
+
+                <div style="float: left; margin-top: 10px;">
+                    <select id="category" onchange="location = this.options[this.selectedIndex].value;">
+                        <option>..Xem theo tình trạng đơn hàng...</option>
+                        <option value="@Url.Action("Index", "Cart")">..Tất cả...</option>
+                        @foreach (var item in statuslist)
+                        {
+                            <option value="@Url.Action("Index", "Cart", new { orderstatus = item.Id })">@item.Order_Item_Language.FirstOrDefault().Name</option>
+                        }
+                    </select>
+                </div>
+                <table class="grid">
+                    <tr>
+                        <th>Mã
+                        </th>
+                        <th>
+                            @Resources.admin_cart_customer_name
+                        </th>
+                        @if (a_accsess)
+                        {
+                            <th>Phí vận chuyển
+                            </th>  
+                        }
+                        <th>Tổng tiền
+                        </th>
+                        <th>
+                            @Resources.admin_cart_datecreateorder
+                        </th>
+                        <th>
+                            @Resources.admin_cart_status
+                        </th>
+                        @if (a_accsess)
+                        {
+                            <th>T.Toán T.Tuyến
+                            </th>
+                        }
+                        <th>Xem</th>
+                        <th style="width: 16%"></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            @if (a_accsess)
+                            {
+                                <td>
+                                    @string.Format("{0:0,0}", item.ShipFee)
+                                </td>
+                            }
+
+                            <td>
+                                @string.Format("{0:0,0}", item.Total)
+                            </td>
+                            <td>
+                                @string.Format("{0:d}", item.Date_Add)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Order_Status.Order_Item_Language.FirstOrDefault().Name)
+                            </td>
+                            @if (a_accsess)
+                            {
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PaymentText)
+                                </td>
+                            }
+
+                            <td>@Html.CheckBoxFor(modelItem => item.View, new { onclick = "view(" + @item.Id + ")" })</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Cart", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>Chi tiết</a>
+                                @if (User.IsInRole("tkmadmin") || User.IsInRole("admin"))
+                                {
+                                    <a href="@Url.Action("Delete", "Cart", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>@Resources.admin_content_delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+                <div>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, tungay = ViewBag.tungay, denngay = ViewBag.denngay }))
+                    @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div id="delete-dialog" title="@Resources.admin_common_confirm">
+    <p>@Resources.admin_ask_suredelete @Resources.admin_cart_order</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "@Resources.admin_content_delete": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "@Resources.admin_common_back": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+    <script>
+        $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+else if (ViewBag.Status == "edit-done")
+{ 
+    <script>
+        $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+
+<script>
+    function view(id) {
+        $.ajax({
+            url: '@Url.Action("view")?id=' + id,
+            type: "POST",
+            data: {},
+            success: function (result) {
+                if (result.succsess == true) {
+                    $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                    // window.location.reload();
+                }
+            }
+        });
+    }
+</script>
+<script>
+    $(function () {
+        //set lại ngày sau khi search
+        $("#tungay").val('@ViewBag.tungay');
+        $("#denngay").val('@ViewBag.denngay');
+    });
+
+    $(function () {
+        $("#tungay").datepicker({
+            // showOn: "button",
+            //  buttonImage: "/Theme/images/icons/calendar.gif",
+            // buttonImageOnly: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+    $(function () {
+        $("#denngay").datepicker({
+            // showOn: "button",
+            //  buttonImage: "/Theme/images/icons/calendar.gif",
+            //  buttonImageOnly: true,
+            //  changeMonth: true,
+            // changeYear: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+</script>

@@ -1,0 +1,32 @@
+﻿@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Post>
+
+<div id="slide_banner">
+    @if (Model.FirstOrDefault() != null)
+    {
+        pixelcmsEntities db = new pixelcmsEntities();
+        var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+        foreach (var item in Model.Where(x => x.Lang == "vi").OrderByDescending(x => x.Order))
+        {
+
+            /* Parallel Lang */
+            if (item.Lang != currentlang)
+            {
+                /* Parallel Lang */
+                var postlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+                if (postlang != null)
+                {
+                    item.Id = postlang.Id;
+                    item.Title = postlang.Title;
+                    item.Description = postlang.Description;
+                    // post.Content = postlang.Content;
+                }
+            }
+            @*<a href="@Html.Action("LoadAttribute", "Common", new { code = "banner - link", id = item.Id })">
+                    <img src="@item.Thumb" alt="">
+                </a>*@
+    var modelurl = Html.Action("LoadURL", "Common", new { type = "post", id = item.Id });
+    <div class="item"><a href='' target='_parent' title='Banner 1'><img src="@item.Thumb" alt='Banner 1' title='Banner 1' /></a></div>
+        }
+    }
+</div>

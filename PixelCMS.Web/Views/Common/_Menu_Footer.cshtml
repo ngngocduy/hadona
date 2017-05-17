@@ -1,0 +1,69 @@
+﻿@using PixelCMS.Core.Models
+@model IEnumerable<PixelCMS.Core.Models.MenuItem>
+@helper renderlevel1(MenuItem menuItem)
+{
+int countchild = 0;
+foreach (var item2 in Model.Where(x => x.Owner_Id == menuItem.Id))
+{
+
+    var checkchild = Model.Any(x => x.Owner_Id == item2.Id);
+    string liClass = "";
+    string aClass = "trans";
+        <div class="col-cat col-xs-12">
+            @* <h3>Loa</h3>*@
+            <ul>
+                @foreach (var item in Model.Where(x => x.Owner_Id == item2.Id))
+                {
+                    countchild++;
+                <li class="@(countchild==1?"ttl":"")">
+                    @switch (item.Type)
+                        {
+                            case 1:
+                        <a @aClass href="@item.Url">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                            case 100:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "posttype", id = item.PostType})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                            case 2:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "post", id = item.Post})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                            case 3:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "cat", id = item.Cat})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                            case 4:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "home"})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                            case 5:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "contact"})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                            case 6:
+                        <a @aClass href="@Html.Action("LoadURL", "Common", new {type = "search"})">@item.Name @Html.Action("AdminEdit", "Common", new { menu = "menu", id = item.Id })</a>
+                                break;
+                        }
+
+                </li>
+                }
+
+            </ul>
+        </div>
+
+}
+}
+
+@{int count = 0;}
+@foreach (var item1 in Model.Where(x => x.Owner_Id == null))
+{
+    var checkchild = Model.Any(x => x.Owner_Id == item1.Id);
+    count++;
+   if (checkchild)
+    {
+        <div class="list-cat">
+            <div class="container clearfix">
+                @renderlevel1(item1)
+            </div>
+        </div>
+    }
+                }
+
+
+

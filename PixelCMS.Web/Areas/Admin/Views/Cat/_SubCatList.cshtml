@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Cat>
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = Model.FirstOrDefault().PostType;
+    int count = 0;
+    
+}
+@*buil cap con*@
+@helper renderlevel(int? level)
+{
+    string sp = "";
+
+    for (int i = 0; i < level; i++)
+    {
+        sp = sp + @Html.Raw("-----");
+    }
+    @Html.Raw(sp)
+}
+<table class="sublist">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td width="50%">
+                <span>@renderlevel(item.Level)</span>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="width: 15%">
+                @item.Order
+            </td>
+            <td>
+                @if (ViewBag.CatEditPermission != "false")
+                {
+                    <a href="@Url.Action("Edit", "Cat", new { id = item.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>@Resources.admin_common_edit</a>
+                }
+                @if (ViewBag.CatDeletePermission != "false")
+                {
+                    <a href="@Url.Action("Delete", "Cat", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>@Resources.admin_content_delete</a>
+                }
+            </td>
+            @if(posttype.Has_Active){
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Active)
+                            </td>
+                            }
+
+                            @if(posttype.Has_feature) { 
+                            <td width="50px">
+                                @Html.DisplayFor(modelItem => item.Feature)
+                            </td>
+                            }
+        </tr>
+                        
+                if (db.Cats.FirstOrDefault(x => x.Owner_Id == item.Id) != null)
+                {
+        <tr>
+            <td colspan="100%" class="sublist-td">
+                @Html.Action("SubCatList", "Cat", new { id = item.Id })
+            </td>
+        </tr>
+                }
+
+    }
+
+
+</table>

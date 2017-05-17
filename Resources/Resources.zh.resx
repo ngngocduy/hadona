@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account_login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="account_loginaccount" xml:space="preserve">
+    <value>User Login</value>
+  </data>
+  <data name="account_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="account_register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="account_registernote" xml:space="preserve">
+    <value>Do not have an account, click register to create yourself an account at</value>
+  </data>
+  <data name="account_registertitle" xml:space="preserve">
+    <value>Register Account</value>
+  </data>
+  <data name="account_rememberme" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="account_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="admin_accessdenied" xml:space="preserve">
+    <value>Bạn không có quyền truy cập vào đường dẫn này.</value>
+  </data>
+  <data name="admin_accessdenied_des" xml:space="preserve">
+    <value>Opps! You don't have permission to access this page OR something wrong while data processing. Technical contact if necessary.</value>
+  </data>
+  <data name="admin_ask_surecopy" xml:space="preserve">
+    <value>Are you sure you want to copy</value>
+  </data>
+  <data name="admin_ask_suredelete" xml:space="preserve">
+    <value>Are you sure you want to delete this</value>
+  </data>
+  <data name="admin_attribute" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="admin_attribute_chooseattribute" xml:space="preserve">
+    <value>Choose attributes you want to use...</value>
+  </data>
+  <data name="admin_cart_customer_name" xml:space="preserve">
+    <value>Customer's name</value>
+  </data>
+  <data name="admin_cart_datecreateorder" xml:space="preserve">
+    <value>Created time</value>
+  </data>
+  <data name="admin_cart_lastvieworder" xml:space="preserve">
+    <value>Last view</value>
+  </data>
+  <data name="admin_cart_order_code" xml:space="preserve">
+    <value>Order code</value>
+  </data>
+  <data name="admin_cart_order_details" xml:space="preserve">
+    <value>Order Details</value>
+  </data>
+  <data name="admin_cart_order_note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="admin_cart_order_saveandedit" xml:space="preserve">
+    <value>Save and continue editing</value>
+  </data>
+  <data name="admin_cart_order_saveandupdate" xml:space="preserve">
+    <value>Save and update product infomation</value>
+  </data>
+  <data name="admin_cart_sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="admin_cart_status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="admin_cat_deletelevel" xml:space="preserve">
+    <value>To optimize the management, we're limited to 3 levels of support categories. Please check the level change categories.</value>
+  </data>
+  <data name="admin_cat_deleteowner" xml:space="preserve">
+    <value>This category can not be deleted because it contains child categories.</value>
+  </data>
+  <data name="admin_cat_feature" xml:space="preserve">
+    <value>Feature Category</value>
+  </data>
+  <data name="admin_common_accounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="admin_common_attribute" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="admin_common_back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="admin_common_changepassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="admin_common_cms" xml:space="preserve">
+    <value>CMS</value>
+  </data>
+  <data name="admin_common_code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="admin_common_config" xml:space="preserve">
+    <value>Config</value>
+  </data>
+  <data name="admin_common_confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="admin_common_content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="admin_common_create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="admin_common_dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="admin_common_deletedwarning" xml:space="preserve">
+    <value>is deleted cannot be restore. You can press "Back" button to cancel.</value>
+  </data>
+  <data name="admin_common_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="admin_common_hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="admin_common_logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="admin_common_name" xml:space="preserve">
+    <value>名字</value>
+  </data>
+  <data name="admin_common_page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="admin_common_posttype" xml:space="preserve">
+    <value>Post Type</value>
+  </data>
+  <data name="admin_common_product" xml:space="preserve">
+    <value>产品</value>
+  </data>
+  <data name="admin_common_public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="admin_common_quickcreate" xml:space="preserve">
+    <value>Quick Create</value>
+  </data>
+  <data name="admin_common_save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="admin_common_stats" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="admin_common_type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="admin_common_update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="admin_common_updated" xml:space="preserve">
+    <value>has been updated</value>
+  </data>
+  <data name="admin_common_updatesuccessfully" xml:space="preserve">
+    <value>Update successfully!</value>
+  </data>
+  <data name="admin_common_value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="admin_common_warning" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="admin_content_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="admin_content_addpicture" xml:space="preserve">
+    <value>Add image</value>
+  </data>
+  <data name="admin_content_advancetitle" xml:space="preserve">
+    <value>Advanced Title</value>
+  </data>
+  <data name="admin_content_author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="admin_content_browsefile" xml:space="preserve">
+    <value>Browse Files</value>
+  </data>
+  <data name="admin_content_browsepicture" xml:space="preserve">
+    <value>Browses images</value>
+  </data>
+  <data name="admin_content_callforprice" xml:space="preserve">
+    <value>Call for price</value>
+  </data>
+  <data name="admin_content_category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="admin_content_chooseyourcategory" xml:space="preserve">
+    <value>Choose your categories...</value>
+  </data>
+  <data name="admin_content_content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="admin_content_createddate" xml:space="preserve">
+    <value>Created date</value>
+  </data>
+  <data name="admin_content_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="admin_content_description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="admin_content_error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="admin_content_feature" xml:space="preserve">
+    <value>Feature</value>
+  </data>
+  <data name="admin_content_friendlyurl" xml:space="preserve">
+    <value>Friendly URL</value>
+  </data>
+  <data name="admin_content_group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="admin_content_headerhtml" xml:space="preserve">
+    <value>Header HTML (Use HTML)</value>
+  </data>
+  <data name="admin_content_imageslist" xml:space="preserve">
+    <value>Images List</value>
+  </data>
+  <data name="admin_content_info" xml:space="preserve">
+    <value>Infomation</value>
+  </data>
+  <data name="admin_content_keyword" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="admin_content_language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="admin_content_lastedit" xml:space="preserve">
+    <value>Last edited date</value>
+  </data>
+  <data name="admin_content_managecategory" xml:space="preserve">
+    <value>Manage Catogeries</value>
+  </data>
+  <data name="admin_content_manageimages" xml:space="preserve">
+    <value>Manage images</value>
+  </data>
+  <data name="admin_content_metadescription" xml:space="preserve">
+    <value>Meta Descriptions</value>
+  </data>
+  <data name="admin_content_note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="admin_content_oldprice" xml:space="preserve">
+    <value>Old Price</value>
+  </data>
+  <data name="admin_content_order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="admin_content_owner" xml:space="preserve">
+    <value>owner</value>
+  </data>
+  <data name="admin_content_picture" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="admin_content_price" xml:space="preserve">
+    <value>价格</value>
+  </data>
+  <data name="admin_content_root" xml:space="preserve">
+    <value>root</value>
+  </data>
+  <data name="admin_content_saveandcreate" xml:space="preserve">
+    <value>Save and create new</value>
+  </data>
+  <data name="admin_content_saveandedit" xml:space="preserve">
+    <value>Save and continue editing</value>
+  </data>
+  <data name="admin_content_saveandpicture" xml:space="preserve">
+    <value>Save and manage images</value>
+  </data>
+  <data name="admin_content_title" xml:space="preserve">
+    <value>称号</value>
+  </data>
+  <data name="admin_content_updateorder" xml:space="preserve">
+    <value>Update Order</value>
+  </data>
+  <data name="admin_content_updateordersuccessfully" xml:space="preserve">
+    <value>Successfully updated order</value>
+  </data>
+  <data name="admin_content_withlang" xml:space="preserve">
+    <value>with language</value>
+  </data>
+  <data name="admin_email_datereceived" xml:space="preserve">
+    <value>Date received</value>
+  </data>
+  <data name="admin_email_phone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="admin_email_searchwithtitle" xml:space="preserve">
+    <value>Search with title</value>
+  </data>
+  <data name="admin_email_sender" xml:space="preserve">
+    <value>Sender</value>
+  </data>
+  <data name="admin_email_senderemail" xml:space="preserve">
+    <value>Sender Email</value>
+  </data>
+  <data name="admin_email_subscribe" xml:space="preserve">
+    <value>Email Subscribe list</value>
+  </data>
+  <data name="admin_email_viewed" xml:space="preserve">
+    <value>Viewed</value>
+  </data>
+  <data name="admin_lang_code" xml:space="preserve">
+    <value>Language code</value>
+  </data>
+  <data name="admin_lang_construction" xml:space="preserve">
+    <value>UnderConstruction</value>
+  </data>
+  <data name="admin_lang_flag" xml:space="preserve">
+    <value>Flag</value>
+  </data>
+  <data name="admin_lang_name" xml:space="preserve">
+    <value>Language name</value>
+  </data>
+  <data name="admin_lang_shortcode" xml:space="preserve">
+    <value>Language shortcode</value>
+  </data>
+  <data name="admin_menu_deactive" xml:space="preserve">
+    <value>Deactive</value>
+  </data>
+  <data name="admin_menu_deletelevel" xml:space="preserve">
+    <value>To optimize the management, we're limited to 3 levels of support menu items. Please check the level change items.</value>
+  </data>
+  <data name="admin_menu_deleteowner" xml:space="preserve">
+    <value>This menu item can not be deleted because it contains child items.</value>
+  </data>
+  <data name="admin_menu_dependlang" xml:space="preserve">
+    <value>Depends on the language</value>
+  </data>
+  <data name="admin_menu_details" xml:space="preserve">
+    <value>详细</value>
+  </data>
+  <data name="admin_menu_eachlang" xml:space="preserve">
+    <value>Menu of each language independently</value>
+  </data>
+  <data name="admin_menu_infomation" xml:space="preserve">
+    <value>Menu infomation</value>
+  </data>
+  <data name="admin_menu_invisible" xml:space="preserve">
+    <value>Invisible (Deactive)</value>
+  </data>
+  <data name="admin_menu_item" xml:space="preserve">
+    <value>Menu Item</value>
+  </data>
+  <data name="admin_menu_itemcat" xml:space="preserve">
+    <value>Choose Category</value>
+  </data>
+  <data name="admin_menu_itemlist" xml:space="preserve">
+    <value>Menu Item List</value>
+  </data>
+  <data name="admin_menu_itemowner" xml:space="preserve">
+    <value>Menu owner</value>
+  </data>
+  <data name="admin_menu_itempage" xml:space="preserve">
+    <value>Choose Page</value>
+  </data>
+  <data name="admin_menu_itemposttype" xml:space="preserve">
+    <value>Choose PostType</value>
+  </data>
+  <data name="admin_menu_itemtype" xml:space="preserve">
+    <value>Item Type</value>
+  </data>
+  <data name="admin_menu_list" xml:space="preserve">
+    <value>Menu List</value>
+  </data>
+  <data name="admin_menu_name" xml:space="preserve">
+    <value>Menu name</value>
+  </data>
+  <data name="admin_menu_position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="admin_menu_pressdetails" xml:space="preserve">
+    <value>Press details button to manage menu item</value>
+  </data>
+  <data name="admin_order_status" xml:space="preserve">
+    <value>Order Status</value>
+  </data>
+  <data name="admin_posttype_access" xml:space="preserve">
+    <value>Post Type Access rules</value>
+  </data>
+  <data name="admin_posttype_accessdescription" xml:space="preserve">
+    <value>Click on role's name to turn on/off all role's access rules.</value>
+  </data>
+  <data name="admin_posttype_accessrules" xml:space="preserve">
+    <value>Access Rules</value>
+  </data>
+  <data name="admin_posttype_aspost" xml:space="preserve">
+    <value>Is this a Post Content?</value>
+  </data>
+  <data name="admin_posttype_authordisplay" xml:space="preserve">
+    <value>Display Author</value>
+  </data>
+  <data name="admin_posttype_basicfeatures" xml:space="preserve">
+    <value>Basic features</value>
+  </data>
+  <data name="admin_posttype_categorydescription" xml:space="preserve">
+    <value>Category Description</value>
+  </data>
+  <data name="admin_posttype_categorydisplay" xml:space="preserve">
+    <value>Display categories</value>
+  </data>
+  <data name="admin_posttype_categoryfeature" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="admin_posttype_categoryimage" xml:space="preserve">
+    <value>Category image</value>
+  </data>
+  <data name="admin_posttype_contentfeature" xml:space="preserve">
+    <value>Main content (CKEditor)</value>
+  </data>
+  <data name="admin_posttype_create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="admin_posttype_createnewfeature" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="admin_posttype_datecreatedisplay" xml:space="preserve">
+    <value>Display Date created</value>
+  </data>
+  <data name="admin_posttype_dateeditdisplay" xml:space="preserve">
+    <value>Display Date edited</value>
+  </data>
+  <data name="admin_posttype_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="admin_posttype_descriptionfeature" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="admin_posttype_display" xml:space="preserve">
+    <value>Display (index page)</value>
+  </data>
+  <data name="admin_posttype_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="admin_posttype_editordisplay" xml:space="preserve">
+    <value>Display Editor</value>
+  </data>
+  <data name="admin_posttype_manageimagefeature" xml:space="preserve">
+    <value>Manage Image (unlimited photo)</value>
+  </data>
+  <data name="admin_posttype_mediadescription" xml:space="preserve">
+    <value>Description for images in Media.</value>
+  </data>
+  <data name="admin_posttype_menushow" xml:space="preserve">
+    <value>Can show on menu</value>
+  </data>
+  <data name="admin_posttype_metafeature" xml:space="preserve">
+    <value>Meta tag</value>
+  </data>
+  <data name="admin_posttype_morefeatures" xml:space="preserve">
+    <value>More features</value>
+  </data>
+  <data name="admin_posttype_multilanguage" xml:space="preserve">
+    <value>Multilanguage</value>
+  </data>
+  <data name="admin_posttype_onofffeature" xml:space="preserve">
+    <value>On/Off</value>
+  </data>
+  <data name="admin_posttype_orderfeature" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="admin_posttype_pageownerfeature" xml:space="preserve">
+    <value>Page owner</value>
+  </data>
+  <data name="admin_posttype_parallellanguage" xml:space="preserve">
+    <value>Parallel Languages</value>
+  </data>
+  <data name="admin_posttype_picturefeature" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="admin_posttype_pricefeature" xml:space="preserve">
+    <value>价格</value>
+  </data>
+  <data name="admin_posttype_quickcreate" xml:space="preserve">
+    <value>Quick Create button</value>
+  </data>
+  <data name="admin_posttype_showseolink" xml:space="preserve">
+    <value>Show posttype on seolink</value>
+  </data>
+  <data name="admin_posttype_slugedit" xml:space="preserve">
+    <value>Edit slug</value>
+  </data>
+  <data name="admin_posttype_statsatdashboard" xml:space="preserve">
+    <value>View Stats at Dashboard</value>
+  </data>
+  <data name="admin_posttype_thumbnaildisplay" xml:space="preserve">
+    <value>Display thumbnail</value>
+  </data>
+  <data name="admin_posttype_titlefeature" xml:space="preserve">
+    <value>Title (if this feature is off, title will create automaticly)</value>
+  </data>
+  <data name="admin_posttype_view" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="admin_status_allwillremove" xml:space="preserve">
+    <value>All content of this post type will be remove.</value>
+  </data>
+  <data name="admin_status_copiedsuccessfully" xml:space="preserve">
+    <value>copied successfully</value>
+  </data>
+  <data name="admin_status_deletedsuccessfully" xml:space="preserve">
+    <value>deleted successfully</value>
+  </data>
+  <data name="admin_status_successfully" xml:space="preserve">
+    <value>顺利</value>
+  </data>
+  <data name="admin_user_account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="admin_user_role" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="admin_user_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="cart_cart" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="cart_checkout" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="cart_continueshopping" xml:space="preserve">
+    <value>Continue Shopping</value>
+  </data>
+  <data name="cart_customer_address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="cart_customer_infomation" xml:space="preserve">
+    <value>Customer Infomation</value>
+  </data>
+  <data name="cart_customer_name" xml:space="preserve">
+    <value>Customer name</value>
+  </data>
+  <data name="cart_customer_phone" xml:space="preserve">
+    <value>电话号码</value>
+  </data>
+  <data name="cart_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="cart_noitem" xml:space="preserve">
+    <value>You don't have any product in your cart.</value>
+  </data>
+  <data name="cart_order_note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="cart_productname" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="cart_quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="cart_sendorder" xml:space="preserve">
+    <value>Send Order</value>
+  </data>
+  <data name="cart_total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="cart_totalmoney" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="cart_unitprice" xml:space="preserve">
+    <value>Unit Price</value>
+  </data>
+  <data name="cart_yourcart" xml:space="preserve">
+    <value>Your shopping cart</value>
+  </data>
+  <data name="common_backstep" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="common_backtohome" xml:space="preserve">
+    <value>Return to homepage</value>
+  </data>
+  <data name="common_by" xml:space="preserve">
+    <value>By</value>
+  </data>
+  <data name="common_category" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="common_construction_description" xml:space="preserve">
+    <value>The page you visit is under construction, please come back later.</value>
+  </data>
+  <data name="common_customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="common_date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="common_description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="common_home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="common_in" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="common_inputyouremail" xml:space="preserve">
+    <value>Input your Email</value>
+  </data>
+  <data name="common_nopic" xml:space="preserve">
+    <value>No image</value>
+  </data>
+  <data name="common_nopost" xml:space="preserve">
+    <value>Don't has any content here, please go back later.</value>
+  </data>
+  <data name="common_page" xml:space="preserve">
+    <value>页面</value>
+  </data>
+  <data name="common_pagenotfound" xml:space="preserve">
+    <value>Page not found</value>
+  </data>
+  <data name="common_pagenotfound_description" xml:space="preserve">
+    <value>The page you access is temporary interrupted, does not exist or an error in processing. &lt;br&gt; Please check back later. &lt;br&gt; We apologize for the inconvenience. &lt;br&gt; (If status this ongoing please contact the administrator.)</value>
+  </data>
+  <data name="common_readmore" xml:space="preserve">
+    <value>阅读更多</value>
+  </data>
+  <data name="common_search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="common_searchkeywordsinput" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="common_searchnotfound" xml:space="preserve">
+    <value>搜索未找到关键字：</value>
+  </data>
+  <data name="common_searchresultwithkeywords" xml:space="preserve">
+    <value>Results with keywords: </value>
+  </data>
+  <data name="common_send" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="common_viewingpage" xml:space="preserve">
+    <value>Viewing page</value>
+  </data>
+  <data name="CongDong" xml:space="preserve">
+    <value>社区</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>联系</value>
+  </data>
+  <data name="contact_address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="contact_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="contact_form_address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="contact_form_email" xml:space="preserve">
+    <value>Input your email</value>
+  </data>
+  <data name="contact_form_fail" xml:space="preserve">
+    <value>Your message has not been sent, please try again or contact with us by phone (sorry about this  inconvenience).</value>
+  </data>
+  <data name="contact_form_phone" xml:space="preserve">
+    <value>电话号码</value>
+  </data>
+  <data name="contact_form_subject" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="contact_form_success" xml:space="preserve">
+    <value>Your message has been sent successfully!</value>
+  </data>
+  <data name="contact_form_text" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="contact_form_yourname" xml:space="preserve">
+    <value>Input your name</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Contact Infomation</value>
+  </data>
+  <data name="contact_location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="contact_phone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="contact_slug" xml:space="preserve">
+    <value>联系</value>
+  </data>
+  <data name="HoTroTrucTuyen" xml:space="preserve">
+    <value>在线支持</value>
+  </data>
+  <data name="login_fail" xml:space="preserve">
+    <value>The username or password is incorrect.</value>
+  </data>
+  <data name="login_login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="login_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="login_rememberme" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="login_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="NhanMailTuChungToi" xml:space="preserve">
+    <value>获取邮件从美国</value>
+  </data>
+  <data name="NhapMailCuaBan" xml:space="preserve">
+    <value>输入您的邮件</value>
+  </data>
+  <data name="project_showall" xml:space="preserve">
+    <value>Show all</value>
+  </data>
+  <data name="project_visitwebsite" xml:space="preserve">
+    <value>Visit Website</value>
+  </data>
+  <data name="ThongKeTruyCap" xml:space="preserve">
+    <value>访问统计</value>
+  </data>
+  <data name="TinTuc" xml:space="preserve">
+    <value>新闻</value>
+  </data>
+  <data name="web_photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="web_shopphotos" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="XemBanDoTaiDay" xml:space="preserve">
+    <value>看地图，在这里</value>
+  </data>
+  <data name="ThongTinLienHe" xml:space="preserve">
+    <value>联系信息</value>
+  </data>
+</root>

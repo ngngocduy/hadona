@@ -1,0 +1,35 @@
+﻿@model PixelCMS.Core.Models.LoginModel
+<div class="panel cf">
+    <div class="form-login float-left">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            <input type="hidden" name="checkout" value="checkout" />
+            @Html.AntiForgeryToken()
+            <span style="color: red">@Html.ValidationSummary(true) @TempData["errorlogin"]</span> 
+            <div class="frow">
+                @Html.TextBoxFor(m => m.UserName, new { placeholder = Resources.login_username })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>  
+            <div class="frow">
+                @Html.PasswordFor(m => m.Password, new { placeholder = Resources.account_password })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>  
+            <div class="frow">
+                <button type="submit" class="float-left">@Resources.account_login</button>
+            </div>
+        }
+    </div>
+    <div class="note-login float-right">
+        <!-- Nội dung động -->
+        <p>
+            Nếu bạn đã có tài khoản hoặc từng mua hàng tại website của chúng tôi, 
+                    hãy sử dụng tài khoản hoặc email đã từng mua hàng để đăng nhập.
+        </p>
+        <p><a href="#">Tham khảo về quyền lợi đối với khách hàng có tài khoản trên website.</a></p>
+        <p><a href="#">Tham khảo về thông tin khuyến mãi và thẻ ưu đãi đối với khách hàng V.I.P</a></p>
+        <!-- /Nội dung động -->
+    </div>
+</div>
+<!-- End panel -->
+
+

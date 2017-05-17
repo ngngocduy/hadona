@@ -1,0 +1,76 @@
+﻿@using PixelCMS.Core.Models
+@model PixelCMS.Core.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Quản lý tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+
+    string confirm = "";
+    int userid = 0;
+    var username = User.Identity.Name;
+    if (!string.IsNullOrEmpty(username))
+    {
+        UsersContext u = new UsersContext();
+        var upro = u.UserProfiles.FirstOrDefault(x => x.UserName == username);
+        var mbship = db.webpages_Membership.FirstOrDefault(x => x.UserId == upro.UserId);
+        confirm = mbship.ConfirmationToken;
+        userid = mbship.UserId;
+    }
+}
+@section css{
+    @* <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/account.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/custom/css/form.css" rel="stylesheet" type="text/css">
+}
+<div class="main">
+<div class="container">
+    <div class="product-detail">
+        <div class="wrap-page cf">
+           @* @Html.Partial("_MenuLeft")*@
+            <!-- End aside-infomation -->
+
+            <div class="main-account float-right">
+                <div class="form-account">
+                    <p style="color: royalblue">@ViewBag.StatusMessage</p>
+
+                    @if (ViewBag.HasLocalPassword)
+                    {
+                        @Html.Partial("_ChangePasswordPartial")
+                    }
+                    else
+                    { 
+                        @Html.Partial("_SetPasswordPartial")
+                    }
+                    @if (Roles.IsUserInRole("admin") || Roles.IsUserInRole("tkmadmin"))
+                    {
+                        <a  href="@Url.Action("Index", "Dashboard")"><i class="fa fa-chevron-circle-right"></i>Về trang Quản trị </a>
+                        
+                        if (string.IsNullOrEmpty(confirm))
+                        {
+                        <input id="chbox" onclick="UpdatePrice(1,@userid)" type="checkbox" /> <label for="chbox"> Không vào trang đổi mật khẩu lần đăng nhập sau.</label>
+                        }
+                    }
+                </div>
+                <!-- End form-account -->
+            </div>
+            <!-- End main-account -->
+        </div>
+        <!-- End wrap-page -->
+    </div>
+</div>
+    </div>
+<script>
+    function UpdatePrice(value,userid) {
+        $.ajax({
+            url: '@Url.Action("Updatecf")',
+            type: "POST",
+            data: { value: value,userid:userid},
+            success: function (result) {
+                /*if (result.success == true) {
+                    $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                }*/
+            }
+        });
+    }
+</script>

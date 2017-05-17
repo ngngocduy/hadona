@@ -1,0 +1,77 @@
+﻿@model PixelCMS.Core.Models.SMTP
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+
+<div class="container">
+    <div class="sixteen columns">
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SMTP</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Port)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Port)
+            @Html.ValidationMessageFor(model => model.Port)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Server)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Server)
+            @Html.ValidationMessageFor(model => model.Server)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.User)
+            @Html.ValidationMessageFor(model => model.User)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+ </div>
+</div>
+</section>

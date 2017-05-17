@@ -1,0 +1,146 @@
+﻿@using PixelCMS.Core.Models
+@model PixelCMS.Core.Models.VariantAttributeCombination
+
+@{
+    ViewBag.Title = "Tạo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    pixelcmsEntities db = new pixelcmsEntities();
+    var post = db.Posts.SingleOrDefault(x => x.Id == Model.PostId);
+}
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+            <h1>Tạo kết hợp thuộc tính</h1>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(x => x.PostId)
+@*@Html.TextBoxFor(x => x.Attribute)*@
+                @Html.ValidationSummary(true)
+                <aside id="control">
+                    <div>
+                        <input onclick="create()" type="button" value="Tạo" class="btn btn-blue" />
+                        <input style="display: none" id="createRoot" type="submit" value="Tạo" class="btn btn-blue" />
+                        <a href="@Url.Action("Index", new { postid = Model.PostId })" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+                    </div>
+                </aside>
+                <!-- load thuộc tính-->
+@*<div id="GroupATT">
+                    @{
+                var post = db.Posts.SingleOrDefault(x => x.Id == Model.PostId);
+                foreach (var item in post.VariantAttributes.Where(x => x.Active))
+                {
+                        <h5 style="font-weight: bold" class="float-left">@item.GroupVariant.Name</h5> 
+
+                    foreach (var child in item.Variants)
+                    {
+                        if (item.Type == 1)//loại ô màu sắc
+                        {
+                        <input class="float-left" type="radio" id="@child.OptionVariant.Id" name="@item.GroupVariant.Name" value="@child.OptionVariant.Id"/>
+                        <label class="float-left" for="@child.OptionVariant.Id">
+                            <div style="border: solid 1px black; width: 15px;height: 15px;background-color: #@child.OptionVariant.Color"></div>
+                        </label>
+                        }
+                        else
+                            if (item.Type == 2)//2 là loại checkbox
+                            {
+                        <input class="float-left" type="checkbox" name="@item.GroupVariant.Name" value="@child.OptionVariant.Id" id="@child.OptionVariant.Id"/>
+                        <label class="float-left" for="@child.OptionVariant.Id">@child.OptionVariant.Name</label>
+                            }
+                            else
+                                if (item.Type == 3)//loại radio
+                                {
+                        <input class="float-left" type="radio" id="@child.OptionVariant.Id" name="@item.GroupVariant.Name" value="@child.OptionVariant.Id"/>
+                        <label class="float-left" for="@child.OptionVariant.Id">@child.OptionVariant.Name</label>
+                                }
+                    }
+                    if (item.Type == 4)
+                    {
+                        @Html.DropDownList(item.GroupVariant.Name, item.Variants.Select(i => new SelectListItem()
+                                                                                      {
+                                                                                          Value = i.OptionVariant.Id.ToString(),
+                                                                                          Text = i.OptionVariant.Name
+                                                                                          // Selected = "select" == item.RecordID.ToString() ? true : false
+                                                                                      }))                      
+                    }
+                        <div style="clear: both"></div>
+                        <br />
+                }
+                    }
+                </div>*@
+                
+                @Html.Partial("~/Areas/Admin/Views/Shared/_VariantCombination.cshtml", post)
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+                    <tr>
+                        <td class="label">Tồn kho</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Quantity, new { type = "number" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Mã SKU</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.SKU)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Thiết lập lại giá bán</td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Price)
+                            @Html.ValidationMessageFor(model => model.Price)
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+    </div>
+
+</section>
+<script>
+    function create() {
+        var s = "";
+        var bool = true;
+        //required dropdown
+        $("#GroupATT select").each(function (parameters) {
+            var val = $(this).val();
+            var name = $(this).attr('name');
+            if (val == "") {
+                s = s + " (" + name + ")";
+                bool = false;
+            }
+        });
+        if (s != "") {
+            alert("Vui lòng chọn " + s);
+            return false;
+        }
+        //required radiobutom
+        $('#GroupATT .Group input[type=radio]').each(function () {
+            var $check = $(this);
+            var name = $(this).attr('name');
+            if (validateRadio($('#GroupATT input[name=' + name + ']input[type=radio]'))) {
+                bool = true;
+                return true;
+            }
+            else {
+                alert('vui lòng chọn ' + name);
+                bool = false;
+                return false;
+            }
+        });
+
+        if (bool == true) {
+            $("#createRoot").click();
+        }
+    }
+    function validateRadio(radios) {
+        for (var i = 0; i < radios.length; ++i) {
+            if (radios[i].checked) return true;
+        }
+        return false;
+    }
+</script>

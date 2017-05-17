@@ -1,0 +1,29 @@
+﻿@{
+    //gọi cookie
+    HttpCookie cookierq = Request.Cookies["wishlist"];
+}
+<div class="click-trigger wishlistcount">
+    <span class="cart-top"></span>
+    <div class="cart-data ">
+
+        @if (cookierq != null)
+        {
+            if (!string.IsNullOrEmpty(cookierq["productid"]))
+            {
+                var wl = cookierq["productid"].Split(',');
+            <a href="@Url.Action("WishLists", "Content")">
+                <span class="count">Danh sách yêu thích ( @Html.Raw(wl.Count()))
+                </span>
+            </a>
+            }
+            else
+            {
+            <span class="count">Danh sách yêu thích (0)</span>
+            }
+        }
+        else
+        {
+            <span class="count">Danh sách yêu thích (0)</span>
+        }
+    </div>
+</div>

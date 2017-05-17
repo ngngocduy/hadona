@@ -1,0 +1,66 @@
+﻿@model PixelCMS.Core.Models.MenuPosition
+@{
+    ViewBag.Title = Resources.admin_common_edit + " " + Resources.admin_menu_position;
+    ViewBag.PTitle = "Menu";
+    ViewBag.PDescription = "Quản lý Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+    <section id="main">
+        <div class="container">
+            <div class="sixteen columns">
+                <h1>@Resources.admin_common_edit @Resources.admin_menu_position</h1>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.Id)
+
+    <aside id="control">
+        <div>
+            <input type="submit" value="@Resources.admin_common_edit" class="btn btn-blue" /> <a href="@Url.Action("MenuPosition", "Menu")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+        </div>
+        </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">@Resources.admin_menu_infomation</th>
+                    </tr>
+
+                    <tr>
+                        <td class="label">@Resources.admin_menu_position</td>
+                        <td>@Html.TextBoxFor(model => model.Name, new { minlength = "2", maxlength = "140", required = true })</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">@Resources.admin_common_code</td>
+                        <td>@Html.TextBoxFor(model => model.Code, new { minlength = "2", maxlength = "20", required = true })</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">@Resources.admin_content_note</td>
+                        <td>@Html.TextAreaFor(model => model.Description)</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">@Resources.admin_content_active</td>
+                        <td>@Html.EditorFor(model => model.Active)</td>
+                    </tr>
+
+                    </table>
+    
+}
+
+               
+        </div>
+    </div>
+        </section>
+
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

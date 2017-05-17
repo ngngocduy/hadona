@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+<ul>
+    @foreach(var item in Model.Take(5))
+    {
+        var modelurl = Html.Action("LoadURL", "Common", new {type = "post", id = item.Id});
+      <li><a href="@modelurl">@item.Title</a></li>  
+    }
+    
+</ul>

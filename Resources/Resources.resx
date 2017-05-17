@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account_login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="account_loginaccount" xml:space="preserve">
+    <value>Đăng nhập tài khoản</value>
+  </data>
+  <data name="account_password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="account_register" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="account_registernote" xml:space="preserve">
+    <value>Bạn chưa có tài khoản, nhấn đăng ký để tạo cho mình một tài khoản tại website</value>
+  </data>
+  <data name="account_registertitle" xml:space="preserve">
+    <value>Đăng ký tài khoản</value>
+  </data>
+  <data name="account_rememberme" xml:space="preserve">
+    <value>Ghi nhớ đăng nhập</value>
+  </data>
+  <data name="account_username" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="admin_accessdenied" xml:space="preserve">
+    <value>Bạn không có quyền truy cập vào đường dẫn này.</value>
+  </data>
+  <data name="admin_accessdenied_des" xml:space="preserve">
+    <value>Bạn không được phép truy cập vào đường dẫn này HOẶC có lỗi trong quá trình xử lý dữ liệu. Hãy liên hệ với kỹ thuật viên nếu cần.</value>
+  </data>
+  <data name="admin_ask_surecopy" xml:space="preserve">
+    <value>Bạn có chắc muốn copy</value>
+  </data>
+  <data name="admin_ask_suredelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa</value>
+  </data>
+  <data name="admin_attribute" xml:space="preserve">
+    <value>Thuộc tính linh hoạt</value>
+  </data>
+  <data name="admin_attribute_chooseattribute" xml:space="preserve">
+    <value>Chọn thuộc tính cần hiển thị...</value>
+  </data>
+  <data name="admin_cart_customer_name" xml:space="preserve">
+    <value>Tên khách hàng</value>
+  </data>
+  <data name="admin_cart_datecreateorder" xml:space="preserve">
+    <value>Ngày đặt</value>
+  </data>
+  <data name="admin_cart_lastvieworder" xml:space="preserve">
+    <value>Lần xem cuối</value>
+  </data>
+  <data name="admin_cart_order" xml:space="preserve">
+    <value>Đơn hàng</value>
+  </data>
+  <data name="admin_cart_orderstatus" xml:space="preserve">
+    <value>Tình trạng đơn hàng</value>
+  </data>
+  <data name="admin_cart_order_code" xml:space="preserve">
+    <value>Mã đơn hàng</value>
+  </data>
+  <data name="admin_cart_order_details" xml:space="preserve">
+    <value>Chi tiết đơn hàng</value>
+  </data>
+  <data name="admin_cart_order_note" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="admin_cart_order_saveandedit" xml:space="preserve">
+    <value>Lưu và tiếp tục chỉnh sửa</value>
+  </data>
+  <data name="admin_cart_order_saveandupdate" xml:space="preserve">
+    <value>Lưu và cập nhật thông tin sản phẩm</value>
+  </data>
+  <data name="admin_cart_sales" xml:space="preserve">
+    <value>Bán hàng</value>
+  </data>
+  <data name="admin_cart_status" xml:space="preserve">
+    <value>Tình trạng</value>
+  </data>
+  <data name="admin_cat_deletelevel" xml:space="preserve">
+    <value>Có thể chuyên mục cấp cha không thể nằm trong cấp con,hoặc 1 lỗi nào đó xãy ra. Có thể liên hệ vs kỹ thuật.</value>
+  </data>
+  <data name="admin_cat_deleteowner" xml:space="preserve">
+    <value>Chuyên mục này không thể xóa vì nó có chứa các chuyên mục con.</value>
+  </data>
+  <data name="admin_cat_feature" xml:space="preserve">
+    <value>Chuyên mục đặc biệt</value>
+  </data>
+  <data name="admin_common_accounts" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="admin_common_attribute" xml:space="preserve">
+    <value>Thuộc tính</value>
+  </data>
+  <data name="admin_common_back" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="admin_common_changepassword" xml:space="preserve">
+    <value>Đổi mật khẩu</value>
+  </data>
+  <data name="admin_common_cms" xml:space="preserve">
+    <value>CMS</value>
+  </data>
+  <data name="admin_common_code" xml:space="preserve">
+    <value>Mã</value>
+  </data>
+  <data name="admin_common_config" xml:space="preserve">
+    <value>Tùy chỉnh</value>
+  </data>
+  <data name="admin_common_confirm" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="admin_common_content" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="admin_common_create" xml:space="preserve">
+    <value>Tạo</value>
+  </data>
+  <data name="admin_common_dashboard" xml:space="preserve">
+    <value>Trang chính</value>
+  </data>
+  <data name="admin_common_deletedwarning" xml:space="preserve">
+    <value>đã xóa sẽ không lấy lại được dữ liệu, hãy cân nhắc trước khi xóa. Bạn có thể nhấn nút quay lại nếu không muốn xóa nữa.</value>
+  </data>
+  <data name="admin_common_edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="admin_common_hello" xml:space="preserve">
+    <value>Xin chào</value>
+  </data>
+  <data name="admin_common_logout" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="admin_common_name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="admin_common_page" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="admin_common_posttype" xml:space="preserve">
+    <value>Loại nội dung</value>
+  </data>
+  <data name="admin_common_product" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="admin_common_public" xml:space="preserve">
+    <value>Công khai</value>
+  </data>
+  <data name="admin_common_quickcreate" xml:space="preserve">
+    <value>Thêm nhanh</value>
+  </data>
+  <data name="admin_common_save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="admin_common_stats" xml:space="preserve">
+    <value>Thống kê</value>
+  </data>
+  <data name="admin_common_type" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="admin_common_update" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="admin_common_updated" xml:space="preserve">
+    <value>đã được cập nhật</value>
+  </data>
+  <data name="admin_common_updatesuccessfully" xml:space="preserve">
+    <value>Cập nhật thành công!</value>
+  </data>
+  <data name="admin_common_value" xml:space="preserve">
+    <value>Giá trị</value>
+  </data>
+  <data name="admin_common_warning" xml:space="preserve">
+    <value>Chú ý!</value>
+  </data>
+  <data name="admin_content_active" xml:space="preserve">
+    <value>Kích hoạt</value>
+  </data>
+  <data name="admin_content_addpicture" xml:space="preserve">
+    <value>Thêm ảnh</value>
+  </data>
+  <data name="admin_content_advancetitle" xml:space="preserve">
+    <value>Tiêu đề nâng cao</value>
+  </data>
+  <data name="admin_content_author" xml:space="preserve">
+    <value>Tác giả</value>
+  </data>
+  <data name="admin_content_browsefile" xml:space="preserve">
+    <value>Duyệt File</value>
+  </data>
+  <data name="admin_content_browsepicture" xml:space="preserve">
+    <value>Duyệt ảnh</value>
+  </data>
+  <data name="admin_content_callforprice" xml:space="preserve">
+    <value>Liên hệ để biết giá</value>
+  </data>
+  <data name="admin_content_category" xml:space="preserve">
+    <value>Chuyên mục</value>
+  </data>
+  <data name="admin_content_chooseyourcategory" xml:space="preserve">
+    <value>Chọn chuyên mục...</value>
+  </data>
+  <data name="admin_content_content" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="admin_content_createddate" xml:space="preserve">
+    <value>Ngày tạo</value>
+  </data>
+  <data name="admin_content_delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="admin_content_description" xml:space="preserve">
+    <value>Tóm tắt</value>
+  </data>
+  <data name="admin_content_error" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="admin_content_feature" xml:space="preserve">
+    <value>Đặc biệt</value>
+  </data>
+  <data name="admin_content_friendlyurl" xml:space="preserve">
+    <value>Đường dẫn thân thiện (SEO)</value>
+  </data>
+  <data name="admin_content_group" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="admin_content_headerhtml" xml:space="preserve">
+    <value>Header HTML (Phải sử dụng HTML)</value>
+  </data>
+  <data name="admin_content_imageslist" xml:space="preserve">
+    <value>Danh sách hình ảnh</value>
+  </data>
+  <data name="admin_content_info" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="admin_content_keyword" xml:space="preserve">
+    <value>Từ khóa</value>
+  </data>
+  <data name="admin_content_language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="admin_content_lastedit" xml:space="preserve">
+    <value>Chỉnh sửa lần cuối</value>
+  </data>
+  <data name="admin_content_managecategory" xml:space="preserve">
+    <value>Quản lý chuyên mục</value>
+  </data>
+  <data name="admin_content_manageimages" xml:space="preserve">
+    <value>Quản lý hình ảnh</value>
+  </data>
+  <data name="admin_content_metadescription" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="admin_content_note" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="admin_content_oldprice" xml:space="preserve">
+    <value>Giá cũ</value>
+  </data>
+  <data name="admin_content_order" xml:space="preserve">
+    <value>Thứ tự</value>
+  </data>
+  <data name="admin_content_owner" xml:space="preserve">
+    <value>cha</value>
+  </data>
+  <data name="admin_content_picture" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="admin_content_price" xml:space="preserve">
+    <value>Giá</value>
+  </data>
+  <data name="admin_content_root" xml:space="preserve">
+    <value>gốc</value>
+  </data>
+  <data name="admin_content_saveandcreate" xml:space="preserve">
+    <value>Lưu và tạo thêm</value>
+  </data>
+  <data name="admin_content_saveandedit" xml:space="preserve">
+    <value>Lưu và tiếp tục chỉnh sửa</value>
+  </data>
+  <data name="admin_content_saveandpicture" xml:space="preserve">
+    <value>Lưu và quản lý hình ảnh</value>
+  </data>
+  <data name="admin_content_title" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="admin_content_updateorder" xml:space="preserve">
+    <value>Cập nhật thứ tự</value>
+  </data>
+  <data name="admin_content_updateordersuccessfully" xml:space="preserve">
+    <value>Cập nhật thứ tự thành công</value>
+  </data>
+  <data name="admin_content_withlang" xml:space="preserve">
+    <value>với ngôn ngữ</value>
+  </data>
+  <data name="admin_email_datereceived" xml:space="preserve">
+    <value>Ngày nhận</value>
+  </data>
+  <data name="admin_email_phone" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="admin_email_searchwithtitle" xml:space="preserve">
+    <value>Tìm theo tiêu đề</value>
+  </data>
+  <data name="admin_email_sender" xml:space="preserve">
+    <value>Người gửi</value>
+  </data>
+  <data name="admin_email_senderemail" xml:space="preserve">
+    <value>Email người gửi</value>
+  </data>
+  <data name="admin_email_subscribe" xml:space="preserve">
+    <value>Email đăng ký bản tin</value>
+  </data>
+  <data name="admin_email_viewed" xml:space="preserve">
+    <value>Đã xem</value>
+  </data>
+  <data name="admin_lang_code" xml:space="preserve">
+    <value>Mã ngôn ngữ đầy đủ</value>
+  </data>
+  <data name="admin_lang_construction" xml:space="preserve">
+    <value>Tạm đóng</value>
+  </data>
+  <data name="admin_lang_flag" xml:space="preserve">
+    <value>Cờ</value>
+  </data>
+  <data name="admin_lang_name" xml:space="preserve">
+    <value>Tên ngôn ngữ</value>
+  </data>
+  <data name="admin_lang_shortcode" xml:space="preserve">
+    <value>Mã ngôn ngữ rút gọn</value>
+  </data>
+  <data name="admin_menu_deactive" xml:space="preserve">
+    <value>Chưa kích hoạt</value>
+  </data>
+  <data name="admin_menu_deletelevel" xml:space="preserve">
+    <value>Nhằm tối ưu trong việc quản lý, chung tôi chỉ giới hạn hỗ trợ giá trị menu 3 cấp. Vui lòng kiểm tra lại việc thay đổi cấp độ giá trị menu.</value>
+  </data>
+  <data name="admin_menu_deleteowner" xml:space="preserve">
+    <value>Giá trị menu này không thể xóa vì nó có chứa các giá trị con.</value>
+  </data>
+  <data name="admin_menu_dependlang" xml:space="preserve">
+    <value>Phụ thuộc vào ngôn ngữ</value>
+  </data>
+  <data name="admin_menu_details" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="admin_menu_eachlang" xml:space="preserve">
+    <value>Menu của mỗi ngôn ngữ sẽ độc lập với nhau</value>
+  </data>
+  <data name="admin_menu_infomation" xml:space="preserve">
+    <value>Thông tin menu</value>
+  </data>
+  <data name="admin_menu_invisible" xml:space="preserve">
+    <value>Ẩn (Không kích hoạt)</value>
+  </data>
+  <data name="admin_menu_item" xml:space="preserve">
+    <value>Giá trị menu</value>
+  </data>
+  <data name="admin_menu_itemcat" xml:space="preserve">
+    <value>Chọn chuyên mục</value>
+  </data>
+  <data name="admin_menu_itemlist" xml:space="preserve">
+    <value>Danh sách giá trị menu</value>
+  </data>
+  <data name="admin_menu_itemowner" xml:space="preserve">
+    <value>Menu cha</value>
+  </data>
+  <data name="admin_menu_itempage" xml:space="preserve">
+    <value>Chọn trang</value>
+  </data>
+  <data name="admin_menu_itemposttype" xml:space="preserve">
+    <value>Chọn loại nội dung</value>
+  </data>
+  <data name="admin_menu_itemtype" xml:space="preserve">
+    <value>Kiểu menu</value>
+  </data>
+  <data name="admin_menu_list" xml:space="preserve">
+    <value>Danh sách menu</value>
+  </data>
+  <data name="admin_menu_name" xml:space="preserve">
+    <value>Tên menu</value>
+  </data>
+  <data name="admin_menu_position" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
+  <data name="admin_menu_pressdetails" xml:space="preserve">
+    <value>Chọn nút chi tiết để quản lý các phần tử của mỗi menu</value>
+  </data>
+  <data name="admin_posttype_access" xml:space="preserve">
+    <value>Quyền truy cập loại nội dung</value>
+  </data>
+  <data name="admin_posttype_accessdescription" xml:space="preserve">
+    <value>Nhấn vào tên nhóm để bật/tắt tất cả các quyền.</value>
+  </data>
+  <data name="admin_posttype_accessrules" xml:space="preserve">
+    <value>Quyền truy cập</value>
+  </data>
+  <data name="admin_posttype_aspost" xml:space="preserve">
+    <value>Bài Viết?</value>
+  </data>
+  <data name="admin_posttype_authordisplay" xml:space="preserve">
+    <value>Hiển thị người tạo</value>
+  </data>
+  <data name="admin_posttype_basicfeatures" xml:space="preserve">
+    <value>Các tính năng cơ bản</value>
+  </data>
+  <data name="admin_posttype_categorydescription" xml:space="preserve">
+    <value>Mô tả chuyên mục</value>
+  </data>
+  <data name="admin_posttype_categorydisplay" xml:space="preserve">
+    <value>Hiển thị chuyên mục</value>
+  </data>
+  <data name="admin_posttype_categoryfeature" xml:space="preserve">
+    <value>Chuyên mục</value>
+  </data>
+  <data name="admin_posttype_categoryimage" xml:space="preserve">
+    <value>Hình chuyên mục</value>
+  </data>
+  <data name="admin_posttype_contentfeature" xml:space="preserve">
+    <value>Nội dung chính (CKEditor)</value>
+  </data>
+  <data name="admin_posttype_create" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="admin_posttype_createnewfeature" xml:space="preserve">
+    <value>Tạo mới</value>
+  </data>
+  <data name="admin_posttype_datecreatedisplay" xml:space="preserve">
+    <value>Hiển thị ngày giờ tạo</value>
+  </data>
+  <data name="admin_posttype_dateeditdisplay" xml:space="preserve">
+    <value>Hiển thị ngày giờ sửa</value>
+  </data>
+  <data name="admin_posttype_delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="admin_posttype_descriptionfeature" xml:space="preserve">
+    <value>Tóm tắt</value>
+  </data>
+  <data name="admin_posttype_display" xml:space="preserve">
+    <value>Hiển thị</value>
+  </data>
+  <data name="admin_posttype_edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="admin_posttype_editordisplay" xml:space="preserve">
+    <value>Hiển thị người sửa</value>
+  </data>
+  <data name="admin_posttype_manageimagefeature" xml:space="preserve">
+    <value>Quản lý hình ảnh(thêm hình không giới hạn)</value>
+  </data>
+  <data name="admin_posttype_mediadescription" xml:space="preserve">
+    <value>Mô tả cho các hình ảnh trong media</value>
+  </data>
+  <data name="admin_posttype_menushow" xml:space="preserve">
+    <value>Hiên thị trên menu</value>
+  </data>
+  <data name="admin_posttype_metafeature" xml:space="preserve">
+    <value>Các thông sô Meta</value>
+  </data>
+  <data name="admin_posttype_morefeatures" xml:space="preserve">
+    <value>Tính năng thêm</value>
+  </data>
+  <data name="admin_posttype_multilanguage" xml:space="preserve">
+    <value>Phân chia ngôn ngữ</value>
+  </data>
+  <data name="admin_posttype_onofffeature" xml:space="preserve">
+    <value>Bật/Tắt</value>
+  </data>
+  <data name="admin_posttype_orderfeature" xml:space="preserve">
+    <value>Sắp xếp thứ tự</value>
+  </data>
+  <data name="admin_posttype_pageownerfeature" xml:space="preserve">
+    <value>Phân cấp trang</value>
+  </data>
+  <data name="admin_posttype_parallellanguage" xml:space="preserve">
+    <value>Ngôn ngữ song song</value>
+  </data>
+  <data name="admin_posttype_picturefeature" xml:space="preserve">
+    <value>Hình đại diện</value>
+  </data>
+  <data name="admin_posttype_pricefeature" xml:space="preserve">
+    <value>Giá cả</value>
+  </data>
+  <data name="admin_posttype_quickcreate" xml:space="preserve">
+    <value>Nút thêm nhanh</value>
+  </data>
+  <data name="admin_posttype_showseolink" xml:space="preserve">
+    <value>Hiển thị loại bài viết trên seolink</value>
+  </data>
+  <data name="admin_posttype_slugedit" xml:space="preserve">
+    <value>Chỉnh sửa Slug</value>
+  </data>
+  <data name="admin_posttype_statsatdashboard" xml:space="preserve">
+    <value>Thống kê ở trang chính</value>
+  </data>
+  <data name="admin_posttype_thumbnaildisplay" xml:space="preserve">
+    <value>Hiển thị ảnh thu nhỏ</value>
+  </data>
+  <data name="admin_posttype_titlefeature" xml:space="preserve">
+    <value>Tiêu đề (nếu tắt tiêu đề sẽ tạo tự động)</value>
+  </data>
+  <data name="admin_posttype_view" xml:space="preserve">
+    <value>Xem</value>
+  </data>
+  <data name="admin_px_configgroup" xml:space="preserve">
+    <value>Nhóm tùy chỉnh</value>
+  </data>
+  <data name="admin_px_pixeloption" xml:space="preserve">
+    <value>Quản lý tùy chỉnh</value>
+  </data>
+  <data name="admin_status_allwillremove" xml:space="preserve">
+    <value>Tất cả các bài viết/nội dung thuộc loại nội dung này cũng sẽ bị xóa.</value>
+  </data>
+  <data name="admin_status_copiedsuccessfully" xml:space="preserve">
+    <value>đã copy thành công!</value>
+  </data>
+  <data name="admin_status_deletedsuccessfully" xml:space="preserve">
+    <value>đã xóa thành công!</value>
+  </data>
+  <data name="admin_status_successfully" xml:space="preserve">
+    <value>thành công!</value>
+  </data>
+  <data name="admin_user_account" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="admin_user_role" xml:space="preserve">
+    <value>Nhóm thành viên</value>
+  </data>
+  <data name="admin_user_username" xml:space="preserve">
+    <value>Tên tài khoản</value>
+  </data>
+  <data name="cart_cart" xml:space="preserve">
+    <value>Giỏ hàng</value>
+  </data>
+  <data name="cart_checkout" xml:space="preserve">
+    <value>Thanh toán</value>
+  </data>
+  <data name="cart_delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="cart_productname" xml:space="preserve">
+    <value>Tên sản phẩm</value>
+  </data>
+  <data name="cart_quantity" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="cart_total" xml:space="preserve">
+    <value>Tổng cộng</value>
+  </data>
+  <data name="cart_totalmoney" xml:space="preserve">
+    <value>Tổng tiền</value>
+  </data>
+  <data name="cart_unitprice" xml:space="preserve">
+    <value>Đơn giá</value>
+  </data>
+  <data name="cart_yourcart" xml:space="preserve">
+    <value>Giỏ hàng của bạn</value>
+  </data>
+  <data name="common_backstep" xml:space="preserve">
+    <value>Quay lại trang vừa xem</value>
+  </data>
+  <data name="common_backtohome" xml:space="preserve">
+    <value>Quay lại trang chủ</value>
+  </data>
+  <data name="common_by" xml:space="preserve">
+    <value>Bởi</value>
+  </data>
+  <data name="common_category" xml:space="preserve">
+    <value>Danh mục</value>
+  </data>
+  <data name="common_construction_description" xml:space="preserve">
+    <value>Trang bạn truy cập đang được xây dựng, vui lòng quay lại sau.</value>
+  </data>
+  <data name="common_customer" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="common_date" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="common_description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="common_home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="common_in" xml:space="preserve">
+    <value>trong</value>
+  </data>
+  <data name="common_inputyouremail" xml:space="preserve">
+    <value>Điền Email của bạn</value>
+  </data>
+  <data name="common_nopic" xml:space="preserve">
+    <value>Không có hình ảnh nào</value>
+  </data>
+  <data name="common_nopost" xml:space="preserve">
+    <value>Chưa có nội dung nào</value>
+  </data>
+  <data name="common_page" xml:space="preserve">
+    <value>trang</value>
+  </data>
+  <data name="common_pagenotfound" xml:space="preserve">
+    <value>Không tìm thấy trang</value>
+  </data>
+  <data name="common_pagenotfound_description" xml:space="preserve">
+    <value>Trang mà bạn truy cập tạm thời bị gián đoạn, không tồn tại hoặc có lỗi trong việc xử lý. &lt;br&gt; Vui lòng quay lại sau. &lt;br&gt; Chúng tôi rất xin lỗi vì sự bất tiện. &lt;br&gt; (Nếu tình trạng này vẫn diễn ra xin vui lòng liên hệ với quản trị viên.)</value>
+  </data>
+  <data name="common_readmore" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="common_search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="common_searchkeywordsinput" xml:space="preserve">
+    <value>Nhập từ khóa</value>
+  </data>
+  <data name="common_searchnotfound" xml:space="preserve">
+    <value>Không tìm thấy nội dung phù hợp với từ khóa: </value>
+  </data>
+  <data name="common_searchresultwithkeywords" xml:space="preserve">
+    <value>Kết quả tìm kiếm với từ khóa: </value>
+  </data>
+  <data name="common_send" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+  <data name="common_viewingpage" xml:space="preserve">
+    <value>Đang xem trang</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="contact_address" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="contact_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="contact_form_address" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="contact_form_email" xml:space="preserve">
+    <value>Điền email của bạn</value>
+  </data>
+  <data name="contact_form_fail" xml:space="preserve">
+    <value>Tin nhắn của bạn chưa được gửi đi, vui lòng thử lại hoặc liên hệ với chúng tôi qua điện thoại (Xin lỗi vì sự bất tiện này).</value>
+  </data>
+  <data name="contact_form_phone" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="contact_form_subject" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="contact_form_success" xml:space="preserve">
+    <value>Tin nhắn của bạn đã được gửi đi thành công!</value>
+  </data>
+  <data name="contact_form_text" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="contact_form_yourname" xml:space="preserve">
+    <value>Điền tên của bạn</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Thông tin liên hệ</value>
+  </data>
+  <data name="contact_location" xml:space="preserve">
+    <value>Địa điểm</value>
+  </data>
+  <data name="contact_phone" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="contact_slug" xml:space="preserve">
+    <value>lien-he</value>
+  </data>
+  <data name="login_fail" xml:space="preserve">
+    <value>Tên tài khoản hoặc mật khẩu không đúng.</value>
+  </data>
+  <data name="login_login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="login_password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="login_rememberme" xml:space="preserve">
+    <value>Nhớ trạng thái đăng nhập?</value>
+  </data>
+  <data name="login_username" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="project_showall" xml:space="preserve">
+    <value>Xem tất cả</value>
+  </data>
+  <data name="project_visitwebsite" xml:space="preserve">
+    <value>Xem Website</value>
+  </data>
+  <data name="sgp_copyright" xml:space="preserve">
+    <value>Website thiết kế bởi SGP Media</value>
+  </data>
+  <data name="sgp_copyright_withlink" xml:space="preserve">
+    <value>Website thiết kế bởi &lt;a href="http://saigonpixel.vn/vi/thiet-ke-website-chuyen-nghiep"&gt;SGP Media&lt;/a&gt;</value>
+  </data>
+  <data name="web_photo" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="web_shopphotos" xml:space="preserve">
+    <value>Hình ảnh cửa hàng</value>
+  </data>
+  <data name="cart_continueshopping" xml:space="preserve">
+    <value>Tiếp tục mua hàng</value>
+  </data>
+  <data name="cart_customer_address" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="cart_customer_infomation" xml:space="preserve">
+    <value>Thông tin khách hàng</value>
+  </data>
+  <data name="cart_customer_name" xml:space="preserve">
+    <value>Họ và tên khác hàng</value>
+  </data>
+  <data name="cart_customer_phone" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="cart_noitem" xml:space="preserve">
+    <value>Chưa có sản phẩm nào trong giỏ hàng của bạn</value>
+  </data>
+  <data name="cart_order_note" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="cart_sendorder" xml:space="preserve">
+    <value>Gửi đơn hàng</value>
+  </data>
+  <data name="CongDong" xml:space="preserve">
+    <value>Cộng đồng</value>
+  </data>
+  <data name="HoTroTrucTuyen" xml:space="preserve">
+    <value>Hỗ trợ trực tuyến</value>
+  </data>
+  <data name="NhanMailTuChungToi" xml:space="preserve">
+    <value>Nhận mail từ chúng tôi</value>
+  </data>
+  <data name="ThongKeTruyCap" xml:space="preserve">
+    <value>Thống kê truy cập</value>
+  </data>
+  <data name="TinTuc" xml:space="preserve">
+    <value>Tin Tức</value>
+  </data>
+  <data name="NhapMailCuaBan" xml:space="preserve">
+    <value>Nhập email của bạn</value>
+  </data>
+  <data name="XemBanDoTaiDay" xml:space="preserve">
+    <value>Xem bản đồ tại đây</value>
+  </data>
+  <data name="ThongTinLienHe" xml:space="preserve">
+    <value>Thông tin liên hệ</value>
+  </data>
+  <data name="DanhMuc" xml:space="preserve">
+    <value>DANH MỤC</value>
+  </data>
+  <data name="ThiTruong" xml:space="preserve">
+    <value>THỊ TRƯỜNG</value>
+  </data>
+  <data name="ChatLieu" xml:space="preserve">
+    <value>Chất liệu</value>
+  </data>
+  <data name="MuaNgay" xml:space="preserve">
+    <value>MUA NGAY</value>
+  </data>
+  <data name="dichvu" xml:space="preserve">
+    <value>Dịch vụ</value>
+  </data>
+  <data name="duan" xml:space="preserve">
+    <value>Dự án</value>
+  </data>
+  <data name="SanPhamLienQuan" xml:space="preserve">
+    <value>Sản phẩm liên quan</value>
+  </data>
+  <data name="ThongSoKyThuat" xml:space="preserve">
+    <value>Thông số kỹ thuật</value>
+  </data>
+</root>

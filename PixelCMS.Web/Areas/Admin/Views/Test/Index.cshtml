@@ -1,0 +1,81 @@
+﻿@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Discount>
+
+@{
+    ViewBag.Title = "Index";
+    pixelcmsEntities db = new pixelcmsEntities();
+    var cat = db.Cats;
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Styles.Render("~/Content/jqueryui/css")
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Test", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" /> <input type="submit" value="Upload" />
+}
+
+<h2>700 * 300</h2>
+<div class="row-fluid">
+    <img src="~/Upload/images/resized/100x100/DSC05097.jpg" alt="image" />
+</div>
+<h2>500 * 200</h2>
+<div class="row-fluid">
+    <img src="~/Images/@ViewBag.images?w=500&h=300" alt="image" />
+</div>
+<h2>100 * 100</h2>
+<div class="row-fluid">
+    <img src="~/Images/@ViewBag.images?w=100&h=100" alt="image" />
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.webpages_Roles.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.webpages_Roles.RoleName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

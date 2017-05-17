@@ -1,0 +1,70 @@
+﻿@model PixelCMS.Core.Models.RegisterModel
+<div class="cont box blue">
+    <form id="formrgt" name="formrgt1">
+        <div class="box-heading">
+            <span>ĐĂNG KÝ TÀI KHOẢN</span>
+            <em class="shapes right"></em>
+            <em class="line"></em>
+        </div>
+        <div class="clearfix">
+            <span>Tên đăng nhập</span>
+            @Html.TextBoxFor(m => m.UserName, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <span>Mật khẩu</span>
+            @Html.PasswordFor(m => m.Password, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <span>Nhắc lại mật khẩu</span>
+            @Html.PasswordFor(m => m.ConfirmPassword, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <span>Họ và tên</span>
+            @Html.TextBoxFor(m => m.FullName, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <span>Email</span>
+            @Html.TextBoxFor(m => m.Email, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <span>Xác nhận Email</span>
+            @Html.TextBoxFor(m => m.ConfirmEmail, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <span>Số điện thoại liên lạc</span>
+            @Html.TextBoxFor(m => m.Phone, new { size = "50" })
+        </div>
+        <div class="clearfix">
+            <input type="button" id="btnrgt" class="button pull-right" value="@Resources.account_register" />
+        </div>
+    </form>
+</div>
+
+<script>
+    $(function () {
+        $("#btnrgt").click(function () {
+            var url = '@Url.Action("PopupRegisterPost", "Account")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#formrgt").serializeArray(),
+                success: function (data) {
+                    if (data.mess == false) {
+                        if (data.Error != "") {
+                            $("#alert-cart").css('background', '#EB4578').html("<p style='color:white'>" + data.Error + "</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                            //alert(data.Error);
+                        } else {
+                            alert('Vui lòng điền đầy đủ thông tin bắt buộc');
+                        }
+                    }
+                    else if (data.mess == true) {
+                        window.location.reload();
+                        $("#alert-cart").css('background', '#d9edf7').html("<p>Đăng ký thành công.Bạn có thể đăng nhập</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                    }
+                },
+                //dataType: dataType
+            });
+        });
+    })
+</script>
+

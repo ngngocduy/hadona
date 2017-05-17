@@ -1,0 +1,25 @@
+﻿@using PixelCMS.Core.Models
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var chuaxem = db.Orders.Where(x => x.View == false).Count();
+}
+@if (ViewBag.Disable != "false")
+{
+    <a href="@Url.Action("Index", "Email")" style="float: left">
+        <div title="Liên hệ mới" class="email-count-box">
+            <i class="fa fa-envelope"></i><span>(@ViewBag.emailcount)</span>
+        </div>
+    </a>
+    
+}
+@*<a href="@Url.Action("Index", "Cart")" style="float: left">
+    <div title="Có (@chuaxem) đơn hàng mới chưa xem" class="email-count-box">
+        <i class="fa fa-bar-chart-o"></i><span>(@chuaxem)</span>
+    </div>
+</a>*@
+
+@*<a href="/LCSK/TKMAgent.html" target="_blank" style="float: left">
+    <div title="Quản lý livechat" class="email-count-box">
+        <i class="fa fa-comment"></i><span>Chat</span>
+    </div>
+</a>*@

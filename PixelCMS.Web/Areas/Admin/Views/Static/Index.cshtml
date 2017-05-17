@@ -1,0 +1,156 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Order>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = Resources.admin_cart_order;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var statuslist = db.Order_Status.Where(x => x.Active).OrderBy(x => x.Order).ToList();
+    bool a_accsess = false;
+    var admin = db.webpages_Roles.FirstOrDefault(z => z.RoleName == "admin");
+    if (admin != null)
+    {
+        var accsess = db.Roles_Access.FirstOrDefault(x => x.Role_Id == admin.RoleId);
+        //nếu admin có quyền truy cập vào attribute thì hiển thị..
+        if (accsess != null && accsess.Attribute)
+        {
+            a_accsess = true;
+        }
+    }
+   
+}
+@helper renderlevel(int ngay, int thang, int nam)
+{
+    string src = "";
+    decimal tongtienad = 0;
+    var tongtien = Model.Where(x => x.Date_Add.Day == ngay && x.Date_Add.Month == thang && x.Date_Add.Year == nam);
+    //var tongtien =  DB.GetTable<ESHOP_ORDER>().Where(x => x.ORDER_PUBLISHDATE.Value.Day == ngaynam && x.ORDER_PUBLISHDATE.Value.Month == thang && x.ORDER_PUBLISHDATE.Value.Year == nam);
+    if (tongtien.ToList().Count > 0)
+    {
+        foreach (var item in tongtien)
+        {
+            tongtienad += decimal.Parse(item.Total.ToString());
+        }
+
+    }
+    if (decimal.Parse(tongtienad.ToString()) == 0)
+    {
+        src = "0";
+    }
+    else
+    {
+        src = tongtienad.ToString();
+    }
+    @src;
+}
+<section id="main">
+    <div class="container" style="width: 98%">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Thống kê theo năm  @DateTime.Now.Year</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 98%; padding: 15px;">
+            @using (Html.BeginForm(FormMethod.Get))
+            {
+                <div class="row-form">
+                    <div class="span2">Lựa chọn tháng </div>
+                    <div class="span3">
+                        <select id="thangct" name="thangct">
+                            <option>Chọn tháng</option>
+                            @* <option value="@Url.Action("Index", "Cart")">..Tất cả...</option>*@
+                            @for (int i = 1; i <= 12; i++)
+                            {
+                                <option value="@i">Tháng @i</option>
+                            }
+                        </select>
+                        @*<asp:dropdownlist id="drthang" runat="server"></asp:dropdownlist>*@
+                    </div>
+                    <div class="span2">Lựa chọn năm </div>
+                    <div class="span3">
+                        <select id="YearCt" name="YearCt">
+                            <option>Chọn tháng</option>
+                            @* <option value="@Url.Action("Index", "Cart")">..Tất cả...</option>*@
+                            @for (int i = 2010; i <= DateTime.Now.Year + 5; i++)
+                            {
+                                <option value="@i">Năm @i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="span2">
+                        @* <asp:linkbutton id="lbthongke" runat="server" class="btn" onclick="lbthongke_Click">Xem Thông Tin</asp:linkbutton>*@
+                        <input id="tim" class="btn" value="Xem thống kê" type="submit" />
+                    </div>
+                </div>
+            }
+            @if (Model != null)
+            {
+
+                //for (int i = 1; i < 30; i++)
+                //{
+                //    thangad += "Ngày " + 1 + ",";
+                //    tongtiennam = renderlevel(i,
+                //}               
+                <div class="block">
+                    <script>
+                        $(function () {
+                            $('#container').highcharts({
+                                chart: {
+                                    type: 'spline'
+                                },
+                                title: {
+                                    text: 'Thông kê doanh số <%=  DateTime.Now.Year %>'
+                                },
+                                subtitle: {
+                                    text: 'xem thông tin doanh thu các tháng'
+                                },
+                                xAxis: {
+                                    categories: [ @Html.Raw(ViewBag.Thang)]
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: 'Mức thu'
+                                    },
+                                    labels: {
+                                        formatter: function () {
+                                            return this.value + 'VNĐ';
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    crosshairs: true,
+                                    shared: true
+                                },
+                                plotOptions: {
+                                    spline: {
+                                        marker: {
+                                            radius: 4,
+                                            lineColor: '#666666',
+                                            lineWidth: 1
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    name: 'Tổng doanh thu',
+                                    marker: {
+                                        symbol: 'square'
+                                    },
+                                    data: [@ViewBag.Nam]
+
+                                }]
+                            });
+                        });
+                    </script>
+                    <script src="http://code.highcharts.com/highcharts.js"></script>
+                    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+            }
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 98%; padding: 15px;margin-top:15px;">
+            @Html.Raw(ViewBag.TongViews)
+        </div>
+    </div>
+</section>

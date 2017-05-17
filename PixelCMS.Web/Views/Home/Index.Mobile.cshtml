@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+}
+@Html.Action("HomeSlideMobile","Widget")
+
+@Html.Action("GetPostInCatMobile", "Widget",new {vitri=1})

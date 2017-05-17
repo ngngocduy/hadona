@@ -1,0 +1,54 @@
+﻿@model PixelCMS.Core.Models.webpages_Roles
+@{
+    ViewBag.Title = "Sửa nhóm thành viên";
+    ViewBag.PTitle = "Sửa nhóm thành viên";
+    ViewBag.PDescription = "Sửa nhóm thành viên";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+        <div class="container">
+            <div class="sixteen columns">
+                <h1><i class="fa fa-users"></i> Sửa nhóm thành viên</h1>
+
+                
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.RoleId)
+
+        <aside id="control">
+        <div>
+            <input type="submit" value="Sửa" class="btn btn-blue" /> <a href="@Url.Action("UserRoles", "User")" class="btn"><i class="fa fa-chevron-left"></i>Quay lại</a>
+        </div>
+        </aside>
+    
+                <table class="grid form-input">
+                    <tr>
+                        <th colspan="2">Thông tin cơ bản</th>
+                    </tr>
+
+                    <tr>
+                        <td class="label">Tên nhóm</td>
+                        <td>@Html.TextBoxFor(model => model.RoleName, new { minlength = "5", maxlength = "140", required = true })</td>
+                    </tr>
+
+            </table>  
+    
+} 
+                
+               <div class="hint">
+                   <h4><i class="fa fa-info-circle"></i> Ghi chú</h4>
+                   <p>Để hiệu chỉnh các quyền truy cập của nhóm thành viên, ta truy cập vào phần "Quyền truy cập" của mỗi nhóm.</p>
+               </div>    
+                
+                 
+    </div></div>
+    </section>
+
+
+@Scripts.Render("~/bundles/jqueryval");
+<script src="~/Scripts/messages_vi.js "></script>
+<script>
+    $("form").validate();
+</script>

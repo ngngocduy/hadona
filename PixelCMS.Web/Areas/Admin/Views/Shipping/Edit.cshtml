@@ -1,0 +1,92 @@
+﻿@model PixelCMS.Core.Models.ShippingModel
+@{
+    ViewBag.Title = "Shipping Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main">
+
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Chỉnh sửa Shipping</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                <aside id="control">
+                    <div>
+                        <a href="@Url.Action("Index")" class="btn"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+
+                    </div>
+                </aside>
+                @using (Html.BeginForm())
+                {
+                    @Html.HiddenFor(m => m.Id)
+                    <script type="text/javascript">
+                        function changecity() {
+                            var selectedItem = $("#CityList").val();
+                            var ddlStates = $("#@Html.IdFor(model => model.DistrictList)");
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+                data: { "CityId": selectedItem },
+                success: function (data) {
+                    ddlStates.html('');
+                    $.each(data, function (id, option) {
+                        ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                    //change quan huyenn
+                    $("#DistrictId").val($("#DistrictList").val());
+                    //
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Failed to retrieve states.');
+                }
+            });
+        }
+                    </script>
+                    <table>
+                        <tr>
+                            <td>Tỉnh/TP:(*)</td>
+                            <td>@Html.DropDownList("CityList", null, new { onchange = "changecity()" })</td>
+                        </tr>
+                        <tr>
+                            <td>Quận/Huyện:(*)</td>
+                            <td>@Html.DropDownList("DistrictList", null, new { onchange = "changedt()" })
+                                @Html.HiddenFor(model => model.DistrictId)
+                                <script>
+                                    $(function () {
+                                        $("#DistrictId").val($("#DistrictList").val());
+                                    });
+                                    function changedt() {
+                                        $("#DistrictId").val($("#DistrictList").val());
+                                    }
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phí cố định(vnd):</td>
+                            <td>@Html.TextBoxFor(m => m.FixedFee)</td>
+                        </tr>
+                        <tr>
+                            <td>Min weight(kg):</td>
+                            <td>@Html.TextBoxFor(m => m.MinWeight)</td>
+                        </tr>
+                        <tr>
+                            <td>Max weight(kg):</td>
+                            <td>@Html.TextBoxFor(m => m.MaxWeight)</td>
+                        </tr>
+                        <tr>
+                            <td>Phí cho từng đơn vị(fee/kg):</td>
+                            <td>@Html.TextBoxFor(m => m.FeeOfUnit)</td>
+                        </tr>
+                    </table>
+                    <input type="submit" class="btn btn-blue" value="@Resources.admin_common_save " />
+                }
+            </div>
+        </div>
+    </div>
+</section>

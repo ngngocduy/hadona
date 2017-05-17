@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="@PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture()">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta http-equiv="content-language" content="@PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture()" />
+
+    <title>@ViewBag.Title | @Html.Action("LoadOption", "Common", new { code = "common-sitename" })</title>
+
+    @if (Html.Action("LoadOption", "Common", new { code = "common-favicon" }) != null)
+    {
+        <link rel="shortcut icon" href="@Html.Action("LoadOption", "Common", new { code = "common-favicon" })" type="image/png" />
+    }
+
+    @RenderSection("metas", required: false)
+
+    <!--***********************************************************************************-->
+    <!-- Thế kỷ Mới - http://www.thekymoi.com                                              -->
+    <!-- Copyright (c) 2016 by TheKyMoi                                                    -->
+    <!-- Address: 69 bạch đằng p2 q.Tan Binh tphcm                                         -->
+    <!-- http://vinamail.vn/                                                               -->
+    <!--***********************************************************************************-->
+    @*<script src="~/Scripts/jquery-1.8.2.js"></script>*@
+    <script type='text/javascript' src='/theme/Scripts/jquery-2.1.4.min.js'></script>
+    @*<script src="~/Scripts/jquery-2.1.1.min.js"></script>*@
+
+    <link rel="stylesheet" href="/theme/Styles/template.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/Styles/layout.css" type="text/css" />
+
+    @Html.Action("LoadOption", "Common", new { code = "google-analytics" })
+</head>
+
+<body>
+    <div id="home-page">
+        @* @Html.Action("MenuMobile", "Common", new { positioncode = "menu-header" })*@
+        @Html.Action("Header", "Common")
+        <div id="checkdiv"></div>
+        @RenderBody()
+
+        @Html.Action("Footer", "Common")
+    </div>
+    <div class="alert alert-success" id="alert-cart" style="height: 50px; background-color: #d9edf7; display: none; position: fixed; top: 0px; left: 0px; width: 100%; text-align: center; z-index: 8999">
+    </div>
+    <div style="position: fixed; top: 50%; left: 50%; display: none; z-index: 9000"
+         id="loading">
+        <img src="~/Content/adminpanel/loading-image.gif" />
+    </div>
+    <p id="back-top" style="display: none;">
+        <a href="#top"><span></span></a>
+    </p>
+
+    @RenderSection("adminpanel", required: false)
+    @RenderSection("scriptsfooter", required: false)
+
+    
+ 
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            var sticky_navigation_offset_top = $('#checkdiv').offset().top;
+            var sticky_navigation = function () {
+                var scroll_top = $(window).scrollTop();
+                if (scroll_top > sticky_navigation_offset_top) {
+                    $('header').addClass("header-fixed");
+                } else {
+                    $('header').removeClass("header-fixed");
+                }
+            };
+
+            sticky_navigation();
+            $(window).scroll(function () {
+                sticky_navigation();
+            });
+        }); // JavaScript Document
+    </script>
+    <script type='text/javascript' src="/theme/Scripts/owl.carousel.js"></script>
+    <script type='text/javascript' src="/theme/Scripts/wow.min.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <script type="text/javascript" src="/theme/Scripts/jquery.fancybox.pack.js-v=2.1.5.js"></script>
+    <script type='text/javascript' src="/theme/Scripts/all_scripts.js"></script>
+
+    @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/jqueryui/css")
+    @Scripts.Render("~/bundles/jqueryui")
+    @RenderSection("css", required: false)
+    @*<script src="/Scripts/custom.js"></script>*@
+
+    <script>
+        $(document).ajaxStart(function () {
+            $("#loading").css("display", "block");
+        });
+
+        $(document).ajaxComplete(function () {
+            $("#loading").css("display", "none");
+        });
+    </script>
+
+</body>
+</html>

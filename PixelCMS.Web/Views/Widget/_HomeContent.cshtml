@@ -1,0 +1,50 @@
+﻿@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Cat>
+@{ int countcat = 0;
+    int tmp = 2;
+}
+@foreach (var item in Model)
+{
+    countcat++;
+    if (countcat == 2)
+    {
+        tmp = 4;
+    }
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    if (item.Lang != currentlang)
+    {
+        var Modellang = db.Cats.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+        if (Modellang != null) { item.Name = Modellang.Name; }
+    }
+    var Caturl = Html.Action("LoadUrl", "Common", new { type = "cat", id = item.Id });
+    int count = 0;
+
+    foreach (var post in item.Posts.Where(x => x.Active & x.PostType.Code== "support").OrderByDescending(x => x.Order).ThenByDescending(x => x.Date_Create).Take(20))
+    {
+        count++;
+        /* Parallel Lang */
+        if (post.Lang != currentlang)
+        {
+            /* Parallel Lang */
+            var postlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == post.Id);
+            if (postlang != null)
+            {
+                post.Id = postlang.Id;
+                post.Title = postlang.Title;
+                post.Description = postlang.Description;
+                // post.Content = postlang.Content;
+            }
+        }
+        /* End Parallel Lang */
+
+        var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = post.Id });
+
+        <div class="char-item">
+            <span class="number">@post.Title @Html.Action("AdminEdit", "Common", new { id = post.Id })</span>
+            <span class="char-title">@post.Description</span>
+            <span class="char-txt">@Html.Raw(post.Content)</span>
+        </div>
+    }
+}
+

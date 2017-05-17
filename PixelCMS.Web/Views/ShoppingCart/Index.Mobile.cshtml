@@ -1,0 +1,407 @@
+﻿@using PixelCMS.Controllers
+@using PixelCMS.Core.Models
+@model PixelCMS.Web.Models.Order.OrderModel
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/Layout.Mobile.cshtml";
+    ShoppingCart objCart = (ShoppingCart)Session["Cart"];
+    pixelcmsEntities db = new pixelcmsEntities();
+    var ship = db.Addresses.FirstOrDefault(z => z.Username == User.Identity.Name && z.Type == 2);
+    var config = new CommonController();
+}
+<script type="text/javascript">
+    function changecity() {
+        //set value for CityId
+        $("#CityId").val($("#CityList").val());
+
+        var selectedItem = $("#CityList").val();
+        var ddlStates = $("#@Html.IdFor(model => model.DistrictList)");
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+            data: { CityId: selectedItem },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                //change quan huyenn
+                $("#DistrictId").val($("#DistrictList").val());
+                //
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Vui long chọn tỉnh/tp.');
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    function changecityship() {
+        //set value for CityIdShip
+        $("#Shipping_CityId").val($("#Shipping_CityList").val());
+
+        var selectedItem = $("#Shipping_CityList").val();
+        var ddlStates = $("#Shipping_DistrictList");
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.Action("GetDistrictsByCityId", "Account", new RouteValueDictionary() { { "area", "" } }))",
+            data: { "CityId": selectedItem },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                //change quan huyenn
+                $("#Shipping_DistrictId").val($("#Shipping_CityList").val());
+                //
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Vui long chọn tỉnh/tp.');
+            }
+        });
+
+    }
+</script>
+
+<script>
+    $(function () {
+        if ("@Model.dcgh" == "False") {
+            //$("#dcgh").click();
+            $("#content_dcgh").show(500);
+        }
+    });
+    //change
+    function changename() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#Shipping_Name").val($("#Name").val());
+        }
+    }
+    function changeaddress() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#Shipping_Address").val($("#Address").val());
+        }
+    }
+    function changephone() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#Shipping_Phone").val($("#Phone").val());
+        }
+    }
+
+    function clickdcgh() {
+        if ($("#dcgh").prop("checked") == true) {
+            $("#content_dcgh").hide(500);
+            $("#Shipping_Name").val($("#Name").val());
+            $("#Shipping_Address").val($("#Address").val());
+            $("#Shipping_Phone").val($("#Phone").val());
+            $("#Shipping_CityId").val($("#CityId").val());
+            $("#Shipping_DistrictId").val($("#DistrictId").val());
+        }
+        if ($("#dcgh").prop("checked") == false) {
+            $("#content_dcgh").show(500);
+            $("#Shipping_Name").val("@(ship != null ? ship.Name : "")");
+            $("#Shipping_Address").val("@(ship != null ? ship.Address1 : "")");
+            $("#Shipping_Phone").val("@(ship != null ? ship.Phone : "")");
+            $("#Shipping_CityId").val("");
+            $("#Shipping_DistrictId").val("");
+            $("#Shipping_CityList").val("");
+            $("#Shipping_DistrictList").val("");
+        }
+    }
+</script>
+
+@*<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">*@
+<link href="/Theme/custom/css/default.css" rel="stylesheet" type="text/css">
+<link href="/Theme/custom/css/cart.css" rel="stylesheet" type="text/css">
+<link href="/Theme/custom/css/form.css" rel="stylesheet" type="text/css">
+<script src="/Theme/custom/js/TemScript.js"></script>
+
+<section class="main">
+
+    <div class="accor member-panel">
+
+        @if (objCart != null && objCart.GetCount() > 0)
+        {
+            <div class="accor-bar title-panel">
+                Giỏ hàng
+            </div>
+            <div class="panel cf">
+                <div class="title-head"><i class="fa fa-arrow-circle-right"></i>Giỏ hàng</div>
+                <div class="cart-list">
+                    <div class="row">
+                        <p class="orange bold float-left">Sản phẩm của tôi</p>
+                        <p class="gray float-right">Số lượng</p>
+                    </div>
+                    <div class="table-cart row">
+
+                        @foreach (var item in objCart.ListItem)
+                        {
+                            <div class="item-cart cf">
+                                <div class="img-item-cart">
+                                    <img src="@item.PostImage">
+                                </div>
+                                <div class="info-item-cart">
+                                    <div class="title">@item.PostTitle</div>
+                                    <p class="red bold">@(item.Price.ToString("N0")) VNĐ</p>
+                                    @*<p style="color: #999; text-decoration: line-through;">480.000 VNĐ</p>*@
+                                </div>
+                                <div class="action">
+                                    <input value="@(item.Quantity)" id="quantity-post-@(item.PostId)_@(item.Attribute)" title="@Resources.cart_quantity" type="text" class="quantity-box" value="1">
+                                    <i class="update_cart fa fa-refresh effect" onclick="return UpdateQuantity(@item.PostId,$(this).parent().find('input').val(),'@(item.Attribute)');" title="Cập nhật"></i>
+                                    <a href="#"><i class="fa fa-times effect"onclick="return RemoveFromCart(@item.PostId,'@(item.Attribute)');">Xóa</i></a>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <!-- End row -->
+
+                </div>
+                <!-- End cart-list -->
+
+            </div>   
+        }
+        else
+        {
+            <p>Giỏ hàng trống...</p>
+        }
+
+        @if (objCart != null && objCart.GetCount() > 0)
+        {
+            <!--Đăng nhập -->
+            if (!User.Identity.IsAuthenticated)
+            {
+            <div class="accor-bar title-panel">ĐĂNG NHẬP</div>
+            @Html.Action("login", "ShoppingCart")
+            
+            }
+            <!--Ko cần Đăng nhập -->
+            using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            <div class="accor-bar title-panel">
+                Thanh toán 
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    @Html.Raw("không cần đăng nhập") 
+                                }
+            </div>
+            <div class="panel cf">
+                <!--Hình thức thanh toán-->
+                <div class="method-payment aside-block">
+                    <div class="form-title"><i class="fa fa-play-circle"></i>Hình thức @Resources.cart_checkout</div>
+                    <ul>
+                        <li>
+                            <input type="radio" id="tienmat" name="ptthanhtoan" value="tienmat" checked="checked">
+                            <label for="tienmat">Thanh toán tiền mặt</label>
+                        </li>
+                        @if (config.LoadOption("NL_secure_pass") != null)
+                        {
+                            <li>
+                                <input type="radio" id="nganluong" name="ptthanhtoan" value="nganluong" />
+                                <label for="nganluong">Ngân lượng</label>
+                            </li>
+                        }
+                        @if (config.LoadOption("AccessCode1") != null)
+                        {
+                            <li>
+                                <input type="radio" id="onepay_noidia" name="ptthanhtoan" value="onepay_noidia" />
+                                <label for="onepay_noidia">Thẻ ATM ngân hàng nội địa</label>
+                            </li>
+                        }
+                        @if (config.LoadOption("AccessCode") != null)
+                        {
+                            <li>
+                                <input type="radio" id="onepay_quocte" name="ptthanhtoan" value="onepay_quocte" />
+                                <label for="onepay_quocte">Thẻ Visa/Master Card</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <!--tổng tiền-->
+                <div id="update-total">
+                    @Html.Action("UpdateTotal", "Common")
+                </div>
+
+                <!--Thông tin khách-->
+                <div class="form-info-member">
+                    <div class="form-title"><i class="fa fa-play-circle"></i>@Resources.cart_customer_infomation</div>
+                    <span style="color: red">@Html.ValidationSummary(true) @TempData["mess"]</span>
+                    <fieldset>
+                        <div class="frow">
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Name, new { onchange = "changename()", required = "required", placeholder = "Tên khách hàng" })
+                                @Html.ValidationMessageFor(model => model.Name)
+                            </div>
+                        </div>
+
+                        <div class="frow">
+
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Phone, new { onchange = "changephone()", required = "required", placeholder = Resources.cart_customer_phone })
+                                @Html.ValidationMessageFor(model => model.Phone)
+                            </div>
+                        </div>
+
+                        <div class="frow">
+                            <div class="form-right">
+                                @Html.DropDownList("CityList", null, "Chọn Tỉnh/TP", new { onchange = "changecity()" })
+                                @Html.HiddenFor(model => model.CityId)
+                                @Html.ValidationMessageFor(model => model.CityId)
+                                <script>
+                                    $(function () {
+                                        $("#CityId").val($("#CityList").val());
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <div class="form-right">
+                                @Html.DropDownList("DistrictList", null, "Chọn Quận/Huyện", new { onchange = "changedt()" })
+                                @Html.HiddenFor(model => model.DistrictId)
+                                @Html.ValidationMessageFor(model => model.DistrictId)
+                                <script>
+                                    $(function () {
+                                        $("#DistrictId").val($("#DistrictList").val());
+                                    });
+                                    function changedt() {
+                                        $("#DistrictId").val($("#DistrictList").val());
+                                        if ($("#dcgh").prop("checked") == true) {
+                                            $("#Shipping_CityId").val($("#CityId").val());
+                                            $("#Shipping_DistrictId").val($("#DistrictId").val());
+
+                                            var url = "/Common/UpdateTotal?DistrictId=" + $("#DistrictId").val();
+                                            $("#update-total").load(url);
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        <div class="frow">
+
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Address, new { onchange = "changeaddress()", required = "required", placeholder = Resources.cart_customer_address })
+                                @Html.ValidationMessageFor(model => model.Address)
+                            </div>
+                        </div>
+
+                        <div class="frow">
+
+                            <div class="form-right">
+                                @Html.TextAreaFor(model => model.Note, new { placeholder = Resources.cart_order_note })
+                            </div>
+                        </div>
+
+                        <div class="frow">
+                            <div class="form-right">
+                                @Html.TextBoxFor(model => model.Email, new { placeholder = Resources.contact_email })
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+
+                        <div class="frow">
+                            <div class="form-right">
+                                @Html.CheckBox("dcgh", new { onclick = "clickdcgh()" })
+                                <label for="dcgh" style="color: royalblue">Địa chỉ thanh toán và địa chỉ giao hàng giống nhau</label><br />
+                            </div>
+                        </div>
+
+                        <div id="content_dcgh" style="display: none">
+                            <div class="form-title"><i class="fa fa-play-circle"></i>Địa chỉ giao hàng</div>
+
+                            <div class="frow">
+                                <div class="form-right">
+                                    @Html.TextBoxFor(model => model.Shipping_Name, new { required = "required", placeholder = "Tên khách hàng" })
+                                    @Html.ValidationMessageFor(model => model.Shipping_Name)
+                                </div>
+                            </div>
+
+                            <div class="frow">
+                                <div class="form-right">
+                                    @Html.TextBoxFor(model => model.Shipping_Phone, new { required = "required", placeholder = Resources.cart_customer_phone })
+                                    @Html.ValidationMessageFor(model => model.Shipping_Phone)
+                                </div>
+                            </div>
+
+                            <div class="frow">
+
+                                <div class="form-right">
+                                    @Html.DropDownList("Shipping_CityList", null, "Chọn Tỉnh/TP", new { onchange = "changecityship()" })
+                                    @Html.HiddenFor(model => model.Shipping_CityId)
+                                    @Html.ValidationMessageFor(model => model.Shipping_CityId)
+                                    <script>
+                                        $(function () {
+                                            $("#Shipping_CityId").val($("#Shipping_CityList").val());
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="frow">
+
+                                <div class="form-right">
+                                    @Html.DropDownList("Shipping_DistrictList", null, "Chọn Quận/Huyện", new { onchange = "changedtship()" })
+                                    @Html.HiddenFor(model => model.Shipping_DistrictId)
+                                    @Html.ValidationMessageFor(model => model.Shipping_DistrictId)
+                                    <script>
+                                        $(function () {
+                                            $("#Shipping_DistrictId").val($("#Shipping_DistrictList").val());
+                                        });
+                                        function changedtship() {
+                                            $("#Shipping_DistrictId").val($("#Shipping_DistrictList").val());
+
+                                            var url = "/Common/UpdateTotal?DistrictId=" + $("#Shipping_DistrictId").val();
+                                            $("#update-total").load(url);
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="frow">
+                                <div class="form-right">
+                                    @Html.TextBoxFor(model => model.Shipping_Address, new { required = "required", placeholder = Resources.cart_customer_address })
+                                    @Html.ValidationMessageFor(model => model.Shipping_Address)
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="frow">
+                            <div class="form-right">
+                                <button id="gui" type="submit">@Resources.cart_sendorder</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- end .cart-buttons -->
+                        
+            }
+
+        }
+
+@*  <div class="accor-bar title-panel">Chọn hình thức thanh toán</div>
+        <div class="panel cf">
+           
+        </div>*@
+
+@* <div class="accor-bar title-panel">Tổng tiền</div>
+        <div class="panel cf">
+            <!-- End aside-block -->
+                   
+        </div>*@
+
+    </div>
+    <!-- End member-panel -->
+
+</section>
+
+
+<style>
+    .form-info-member .form-right
+    {
+        width: 100% !important;
+    }
+</style>

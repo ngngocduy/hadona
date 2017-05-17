@@ -1,0 +1,369 @@
+﻿<!-- PIXELCMS 2.3 15:12 12/03/2014 -->
+@model IEnumerable<PixelCMS.Core.Models.PostAttribute>
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+}
+
+@if (Model != null)
+{
+    var attributesgroups = db.AttributeGroups.Select(x => new { x.Id, x.PostType_Name }).ToList();
+    int attributeid = 0;
+    foreach (var group in attributesgroups)
+    {
+        if (Model.Where(g => g.Group == group.Id).FirstOrDefault() != null)
+        {
+
+            
+    <tr>
+        <td class="button-submit-zone" colspan="2">@group.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</td>
+    </tr>
+
+    foreach (var items in Model.Where(g => g.Group == group.Id))
+    {
+        attributeid++;
+        <tr>
+            <td class="label">@items.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</td>
+            <td>
+                @if (ViewBag.PostId != null)
+                {
+                    int postid = (int)ViewBag.PostId;
+                    if (db.Post_PostAttribute.Where(p => p.Id_Post == postid && p.Id_Attribute == items.Id).Select(x => new { x.Value, x.Id_Attribute }).FirstOrDefault() != null)
+                    {
+                        var attributevalue = db.Post_PostAttribute.Where(p => p.Id_Post == postid).Select(x => new { x.Value, x.Id_Attribute }).ToList();
+                        var attributevalueitem = attributevalue.Where(x => x.Id_Attribute == items.Id).FirstOrDefault().Value;
+                        switch (items.Edit_Type)
+                        {
+                            case 1: //Textbox
+                    <input type="text" name="attribute-@attributeid" value ="@attributevalueitem" maxlength = "2040" />
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                                break;
+                            case 2: //Textarea
+                    <textarea rows="3" name="attribute-@attributeid" maxlength = "2040">@attributevalueitem</textarea>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                                break;
+                            case 3: //Dropdownlist
+                    <select name="attribute-@attributeid">
+                        @foreach (var values in db.AttributeValues.Where(x => x.Attribute == items.Id))
+                        {
+                            if (values.Id == Convert.ToInt32(attributevalueitem))
+                            {
+                            <option selected="selected" value="@values.Id">@values.Value</option>
+                            }
+                            else
+                            {
+                            <option value="@values.Id">@values.Value</option>
+                            }
+                        }
+                    </select>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                        break;
+                            case 4: //Ratiobutton
+
+                        break;
+                            case 5: //FileUpload
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid" value ="@attributevalueitem"/>
+                    <input type="button" id="BrowseURL-@attributeid" value="Duyệt ảnh" class="btn btn-file" /> 
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script language="javascript" type="text/javascript">
+                        $(function () {
+                            $("#BrowseURL-@attributeid").click(function () {
+                                var ckfinder = new CKFinder({ resourceType: 'Images' });
+                                ckfinder.selectActionFunction = function (fileUrl) {
+                                    $("#attribute-@attributeid").val(fileUrl)
+                                        };
+                                        ckfinder.popup();
+                            });
+                        });
+                    </script>
+                        break;
+                            case 6: // Datepicker
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid" value ="@attributevalueitem"/>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script>
+                        $(function () {
+                            $("#attribute-@attributeid").datepicker({
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: 'dd-mm-yy'
+                            });
+                        });
+                    </script>
+                        break;
+                            case 7: // CKEditor
+                    <textarea class="input-xxlarge" id="attribute-@attributeid" name="attribute-@attributeid" maxlength = "2040">@attributevalueitem</textarea>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script>
+                        CKEDITOR.replace('attribute-@attributeid', {
+                            height: '150px',
+                            toolbarGroups: /*[{ name: 'basicstyles', groups: ['basicstyles'] }, { name: 'colors' },
+                                            { name: 'document', items: ['Source'] }]*/
+                                [
+['Styles', 'Format', 'Font', 'FontSize'],
+['Image', 'Table', '-', 'Link', 'Flash', 'Smiley', 'TextColor', 'BGColor', 'Source'],
+['Bold', 'Italic', 'Underline', 'StrikeThrough', '-', 'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Outdent', 'Indent', '-', 'Print'],
+['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                                ]
+												,
+                            filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                            filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                            filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                            filebrowserUploadUrl:
+                                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                            filebrowserImageUploadUrl:
+                                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                            filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+
+                        });
+                    </script>
+                        break;
+                            case 8: // FileUpload
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid" value ="@attributevalueitem"/>
+                    <input type="button" id="BrowseURL-@attributeid" value="Upload File" class="btn btn-file" /> 
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script language="javascript" type="text/javascript">
+                        $(function () {
+                            $("#BrowseURL-@attributeid").click(function () {
+                                var ckfinder = new CKFinder();
+                                ckfinder.selectActionFunction = function (fileUrl) {
+                                    $("#attribute-@attributeid").val(fileUrl)
+                                        };
+                                        ckfinder.popup();
+                            });
+                        });
+                    </script>
+                        break;
+                        }
+
+                    }
+                    else
+                    {
+
+
+                        switch (items.Edit_Type)
+                        {
+                            case 1: //Textbox
+                    <input type="text" name="attribute-@attributeid" maxlength = "2040"/>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                                break;
+                            case 2: //Textarea
+                    <textarea rows="3" id="attribute-@attributeid" name="attribute-@attributeid" maxlength = "2040" ></textarea>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                                break;
+                            case 3: //Dropdownlist
+                    <select id="attribute-@attributeid"  name="attribute-@attributeid">
+                        @foreach (var values in db.AttributeValues.Where(x => x.Attribute == items.Id))
+                        {
+                            <option value="@values.Id">@values.Value</option>
+                        }
+                    </select>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                        break;
+                            case 4: //Ratiobutton
+
+                        break;
+                            case 5: //FileUpload
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid"/>
+                    <input type="button" id="BrowseURL-@attributeid" value="Duyệt ảnh" class="btn btn-file"/> 
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script language="javascript" type="text/javascript">
+                        $(function () {
+                            $("#BrowseURL-@attributeid").click(function () {
+                                var ckfinder = new CKFinder({ resourceType: 'Images' });
+                                ckfinder.selectActionFunction = function (fileUrl) {
+                                    $("#attribute-@attributeid").val(fileUrl)
+                                        };
+                                        ckfinder.popup();
+                            });
+                        });
+                    </script>
+                        break;
+                            case 6: // Datepicker
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid"/>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script>
+                        $(function () {
+                            $("#attribute-@attributeid").datepicker({
+                                height: '150px',
+                                toolbarGroups: /*[{ name: 'basicstyles', groups: ['basicstyles'] }, { name: 'colors' },
+                                            { name: 'document', items: ['Source'] }]*/
+                                    [
+    ['Styles', 'Format', 'Font', 'FontSize'],
+    ['Image', 'Table', '-', 'Link', 'Flash', 'Smiley', 'TextColor', 'BGColor', 'Source'],
+    ['Bold', 'Italic', 'Underline', 'StrikeThrough', '-', 'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Outdent', 'Indent', '-', 'Print'],
+    ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                                    ]
+												,
+                                filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                                filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                                filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                                filebrowserUploadUrl:
+                                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                                filebrowserImageUploadUrl:
+                                    '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                                filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+
+                            });
+                        });
+                    </script>
+                        break;
+                            case 7: // CKEditor
+                    <textarea maxlength = "2040" class="input-xxlarge" id="attribute-@attributeid" name="attribute-@attributeid"></textarea>
+                <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script>
+                        CKEDITOR.replace('attribute-@attributeid', {
+                            height: '150px',
+                            toolbarGroups: /*[{ name: 'basicstyles', groups: ['basicstyles'] }, { name: 'colors' },
+                                            { name: 'document', items: ['Source'] }]*/
+                                [
+['Styles', 'Format', 'Font', 'FontSize'],
+['Image', 'Table', '-', 'Link', 'Flash', 'Smiley', 'TextColor', 'BGColor', 'Source'],
+['Bold', 'Italic', 'Underline', 'StrikeThrough', '-', 'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Outdent', 'Indent', '-', 'Print'],
+['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                                ]
+												,
+                            filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                            filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                            filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                            filebrowserUploadUrl:
+                                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                            filebrowserImageUploadUrl:
+                                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                            filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+
+                        });
+                    </script>
+                        break;
+                            case 8: // FileUpload
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid"/>
+                    <input type="button" id="BrowseURL-@attributeid" value="Duyệt File" class="btn btn-file"/> 
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script language="javascript" type="text/javascript">
+                        $(function () {
+                            $("#BrowseURL-@attributeid").click(function () {
+                                var ckfinder = new CKFinder();
+                                ckfinder.selectActionFunction = function (fileUrl) {
+                                    $("#attribute-@attributeid").val(fileUrl)
+                                        };
+                                        ckfinder.popup();
+                            });
+                        });
+                    </script>
+                        break;
+                        }
+
+
+                    }
+
+                }
+                else
+                {
+
+                    switch (items.Edit_Type)
+                    {
+                        case 1: //Textbox
+                    <input type="text" name="attribute-@attributeid" maxlength = "2040"/>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                            break;
+                        case 2: //Textarea
+                    <textarea rows="3" id="attribute-@attributeid" name="attribute-@attributeid" maxlength = "2040" ></textarea>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                            break;
+                        case 3: //Dropdownlist
+                    <select id="attribute-@attributeid"  name="attribute-@attributeid">
+                        @foreach (var values in db.AttributeValues.Where(x => x.Attribute == items.Id))
+                        {
+                            <option value="@values.Id">@values.Value</option>
+                        }
+                    </select>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                        break;
+                        case 4: //Ratiobutton
+
+                        break;
+                        case 5: //FileUpload
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid"/>
+                    <input type="button" id="BrowseURL-@attributeid" value="Duyệt ảnh" class="btn btn-file" /> 
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script language="javascript" type="text/javascript">
+                        $(function () {
+                            $("#BrowseURL-@attributeid").click(function () {
+                                var ckfinder = new CKFinder({ resourceType: 'Images' });
+                                ckfinder.selectActionFunction = function (fileUrl) {
+                                    $("#attribute-@items.Id").val(fileUrl)
+                                        };
+                                        ckfinder.popup();
+                            });
+                        });
+                    </script>
+                        break;
+                        case 6: // Datepicker
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid"/>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script>
+                        $(function () {
+                            $("#attribute-@attributeid").datepicker({
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: 'dd-mm-yy'
+                            });
+                        });
+                    </script>
+                        break;
+                        case 7: // CKEditor
+                    <textarea class="input-xxlarge" id="attribute-@attributeid" name="attribute-@attributeid" maxlength = "2040"></textarea>
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script>
+                        CKEDITOR.replace('attribute-@attributeid', {
+                            height: '150px',
+                            toolbarGroups: /*[{ name: 'basicstyles', groups: ['basicstyles'] }, { name: 'colors' },
+                                            { name: 'document', items: ['Source'] }]*/
+                                [
+['Styles', 'Format', 'Font', 'FontSize'],
+['Image', 'Table', '-', 'Link', 'Flash', 'Smiley', 'TextColor', 'BGColor', 'Source'],
+['Bold', 'Italic', 'Underline', 'StrikeThrough', '-', 'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Outdent', 'Indent', '-', 'Print'],
+['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                                ]
+												,
+                            filebrowserBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html',
+                            filebrowserImageBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Images',
+                            filebrowserFlashBrowseUrl: '../../../Content/ckeditor/ckfinder/ckfinder.html?type=Flash',
+                            filebrowserUploadUrl:
+                                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files&currentFolder=/archive/',
+                            filebrowserImageUploadUrl:
+                                '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images&currentFolder=/cars/',
+                            filebrowserFlashUploadUrl: '../../../Content/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+
+                        });
+                    </script>
+                        break;
+
+                        case 8: // FileUpload
+                    <input type="text" name="attribute-@attributeid" id="attribute-@attributeid"/>
+                    <input type="button" id="BrowseURL-@attributeid" value="Upload File" class="btn btn-file" /> 
+                    <input type="hidden" name="attributeId-@attributeid" value="@items.Id"/>
+                    <script language="javascript" type="text/javascript">
+                        $(function () {
+                            $("#BrowseURL-@attributeid").click(function () {
+                                var ckfinder = new CKFinder();
+                                ckfinder.selectActionFunction = function (fileUrl) {
+                                    $("#attribute-@attributeid").val(fileUrl)
+                                        };
+                                        ckfinder.popup();
+                            });
+                        });
+                    </script>
+                        break;
+                    }
+
+                }
+
+            </td>
+        </tr>
+    }
+        
+        }
+    }
+}
+

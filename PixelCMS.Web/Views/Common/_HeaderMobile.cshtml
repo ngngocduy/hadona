@@ -1,0 +1,86 @@
+﻿@using PixelCMS.Helpers
+@{
+    var currentlang = CultureHelper.GetCurrentNeutralCulture();
+}
+<header>
+    <div class="top">
+        <ul class="cf">
+            <li><a class="signup-page fancybox.iframe" href="@Url.Action("PopupRegisterMobile", "Account")">Đăng ký</a></li>
+            @if (!string.IsNullOrEmpty(User.Identity.Name))
+            {
+                <li><p style="color: white">Chào @User.Identity.Name</p>
+                    @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()">Đăng xuất</a>
+                    }
+                </li>
+            }
+            else
+            {
+                <li><a class="login-page fancybox.iframe" href="@Url.Action("PopupLoginMobile", "Account")">Đăng nhập</a></li>
+            }
+            <li><a href="@Url.Action("Index", "ShoppingCart")">Giỏ hàng</a></li>
+        </ul>
+    </div>
+    <div class="logo">
+        <a href="/">
+            <img src="@Html.Action("LoadOption", "Common", new { code = "common-logo" })"></a>
+    </div>
+
+    @using (Html.BeginForm("Search", "Content", FormMethod.Get))
+    {
+        <div class="search">
+            <div class="input-group">
+                <input id="keywords" type="text" name="keywords" class="" placeholder="Tìm kiếm..">
+                <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <!-- /input-group -->
+        </div>
+    }
+</header>
+<script type="text/javascript">
+    $(function () {
+        var url = '@Url.Action("getsp", "Common")';
+        $('#keywords').autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url,
+                    data: { query: request.term },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.Title,
+                                value: item.Title,
+                                // icon: item.Thumb,
+                                //desc: item.Description,
+                                id: item.Id,
+                                slug: item.slug,
+                                //  price: item.Price,
+                                // sku: item.SKU
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                window.location = "http://" + window.location.host + '/@currentlang/' + ui.item.slug;
+            },
+            minLength: 1
+        })
+        .autocomplete("instance")._renderItem = function (ul, item) {
+            item.label = item.label.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + $.ui.autocomplete.escapeRegex(this.term) + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<strong>$1</strong>");
+            //xet điều kiện để lấy ảnh thumb
+            if (item.icon != null && item.icon != "" && item.icon != undefined) {
+                item.icon = item.icon.replace("Upload/", "Upload/_Thumbs/");
+            }
+
+            return $("<li class=\"search-result cl\">")
+              .append(" <a>" + item.label + "</a>")
+              .appendTo(ul);
+        };
+    });
+
+</script>

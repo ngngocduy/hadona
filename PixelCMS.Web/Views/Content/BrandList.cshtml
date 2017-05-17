@@ -1,0 +1,110 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Post>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models;
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    /*
+        var count = Request.Url.Segments.Count();
+        var slug = Request.Url.Segments[count - 1];
+        var fullslug = db.Slugs.FirstOrDefault(x => x.Slug_Full == slug);*/
+
+    if (ViewBag.CatTitle != null)
+    {
+        ViewBag.Title = ViewBag.CatTitle;
+    }
+    else
+    {
+        //ViewBag.Title = ViewBag.CategoryCurrent;
+        ViewBag.Title = ViewBag.TypeName;
+    }
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Metas {
+    @if (ViewBag.CatKey != null)
+    {
+        <meta name="keywords" content="@ViewBag.CatKey" />
+    }
+    @if (ViewBag.CatDescription != null)
+    {
+        <meta name="description" content ="@ViewBag.CatDescription" />
+    }
+    @if (ViewBag.CatHead != null)
+    {
+        @Html.Raw(ViewBag.CatHead)
+    }
+}
+@section adminpanel{
+    @if (User.IsInRole("tkmadmin") || User.IsInRole("rootadmin"))
+    {
+  
+        @Html.Action("AdminPanel", "Common")
+    }
+}
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+}
+
+<section class="main offcanvas-siderbars">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+            <li>
+                <a style="color: rgb(153, 153, 153);" href="#">Hãng sản xuất
+                </a>
+            </li>
+        </ol>
+
+        <section class="row">
+            <section class="main-column col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">@ViewBag.TypeName</h3>
+                    </div>
+                </div>
+                <!-- Bộ lọc -->
+                @* @Html.Action("Filter", "Common")*@
+                @if (Model != null)
+                {
+                    int count = 0;
+                    int stt = 1;
+                    <div id="update1">
+                        <div class="body-frame">
+                            <div class="row">
+                                 @Html.Partial("~/Views/Widget/_ProductBoxList.cshtml",Model.Where(x=>x.Active).OrderByDescending(x=>x.Order))
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="foot-frame clearfix">
+                        <ul class="pagination pull-left">
+                            @Html.PagedListPager(Model, page => Url.Action("BrandList", new { page }))
+                            @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.common_page) 
+                        </ul>
+                    </div>
+                }
+            </section>
+        </section>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</section>
+<!-- END Columns -->
+
+@section css{
+    @if (ViewBag.Banner != null)
+    {
+        <style>
+            #main-container .page-top-leader {
+                background: #FFF url(@ViewBag.Banner) no-repeat top right;
+            }
+        </style>   
+    }
+    else
+    {
+        @Html.Action("PageBg", "Widget")
+    }
+}

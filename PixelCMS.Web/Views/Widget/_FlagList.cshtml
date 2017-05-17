@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Language>
+
+@if (Model.Count() > 1)
+{
+    foreach (var item in Model)
+    {
+        <a href="~/@item.Code"><img src="@item.Flag" /> </a>
+    }
+}

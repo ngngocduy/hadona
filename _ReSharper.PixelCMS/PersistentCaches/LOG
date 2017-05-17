@@ -1,0 +1,5 @@
+2016/02/24-08:24:43.287 26bc Recovering log #903
+2016/02/24-08:24:43.356 26bc Level-0 table #905: started
+2016/02/24-08:24:43.598 26bc Level-0 table #905: 342909 bytes OK
+2016/02/24-08:24:43.816 26bc Delete type=0 #903
+2016/02/24-08:24:43.927 26bc Delete type=3 #901

@@ -1,0 +1,322 @@
+﻿@model PixelCMS.Core.Models.MenuItem
+@using PixelCMS.Core.Models;
+@{
+    ViewBag.Title = Resources.admin_menu_item;
+    ViewBag.PTitle = "Menu";
+    ViewBag.PDescription = "Quản lý Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    string menulang = ViewBag.MenuLangCode;
+    int menuid = (int)ViewBag.MenuId;
+    var menuinfo = db.Menus.Find(menuid);
+    var langlist = db.Languages.Where(x => x.Active == true).Count();
+    var posttype = db.PostTypes.Where(x => x.Active == true && x.Menu == true).ToList();
+    var postlist = db.Posts.Where(x => x.PostType.Menu == true && x.PostType.Active == true && x.PostType.Has_Cat == false && x.Lang == menulang).ToList();
+    var catlist = db.Cats.Where(x => x.PostType.Has_Cat == true && x.PostType.Active == true && x.PostType.Menu == true && x.Lang == menulang).ToList();
+
+
+    if (ViewBag.MenuItemType == 1)
+    {                          
+    <style>
+        #type-2,
+        #type-100,
+        #type-3 {
+            display: none;
+        }
+    </style>
+    }
+    else if (ViewBag.MenuItemType == 100)
+    {
+    <style>
+        #type-1,
+        #type-2,
+        #type-3 {
+            display: none;
+        }
+    </style>
+    }
+    else if (ViewBag.MenuItemType == 2)
+    {
+    <style>
+        #type-1,
+        #type-100,
+        #type-3 {
+            display: none;
+        }
+    </style>
+    }
+    else if (ViewBag.MenuItemType == 3)
+    {
+    <style>
+        #type-1,
+        #type-100,
+        #type-2 {
+            display: none;
+        }
+    </style>
+    }
+    else if (Model.Type == 4 || Model.Type == 5 || Model.Type == 6)
+    {
+    <style>
+        #type-1,
+        #type-100,
+        #type-2,
+        #type-3,
+        #type-4,
+        #type-5,
+        #type-6 {
+            display: none;
+        }
+    </style>
+        
+    }
+}
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>@Resources.admin_menu_item</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+
+                <aside id="control">
+                    <div>
+                        @if (langlist > 1)
+                        {
+                            <a class="btn" href="@Url.Action("Index", "Menu", new { culture = menulang })"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        }
+                        else
+                        {
+                            <a class="btn" href="@Url.Action("Index", "Menu")"><i class="fa fa-chevron-left"></i>@Resources.admin_common_back</a>
+                        }
+
+                    </div>
+                </aside>
+
+            </div>
+            <div class="nine columns">
+
+                @Html.Action("MenuItemList", "Menu", new { menuid = menuid })
+
+            </div>
+            <div class="seven columns">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.Menu)
+
+                            
+                    <table class="grid form-input">
+                        <tr>
+                            <th colspan="2">@Resources.admin_menu_itemlist (@ViewBag.MenuName)
+                    @if (langlist > 1)
+                    {
+                        <i>(@ViewBag.MenuLang)</i>
+                    }
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="button-submit-zone">@Resources.admin_common_edit @Resources.admin_common_value "@ViewBag.MenuItemName"</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_menu_itemtype</td>
+                            <td>@Html.DropDownList("Type")</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_common_name</td>
+                            <td>@Html.TextBoxFor(model => model.Name, new { minlength = "2", maxlength = "141", required = true })</td>
+                        </tr>
+
+                        <tr id="type-1" class="menu-type">
+                            <td class="label">URL</td>
+                            <td>@Html.EditorFor(model => model.Url)</td>
+                        </tr>
+
+                        <tr id="type-100" class="menu-type">
+                            <td class="label">@Resources.admin_common_posttype</td>
+                            <td>
+                                <select id="PostType" name="PostType">
+                                    <option value>-- @Resources.admin_menu_itemposttype --</option>
+                                    @foreach (var item in posttype)
+                                    {
+                                        if (item.Id == ViewBag.MenuItemPostType)
+                                        {
+                                        <option selected="selected" value="@item.Id">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</option>
+                                        }
+                                        else
+                                        {
+                                        <option value="@item.Id">@item.PostType_Name.FirstOrDefault(x => x.Lang == currentculture).Name</option>
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr id="type-2" class="menu-type">
+                            <td class="label">@Resources.admin_common_page</td>
+                            <td>
+                                <select id="Post" name="Post">
+                                    <option value>-- @Resources.admin_menu_itempage --</option>
+                                    @foreach (var item in posttype)
+                                    {
+                                        if (postlist.Where(x => x.PostType.Id == item.Id).FirstOrDefault() != null)
+                                        {
+                                        <optgroup label="@item.Name">
+                                            @foreach (var items in postlist.Where(x => x.PostType.Id == item.Id))
+                                            {
+                                                if (items.Id == ViewBag.MenuItemPost)
+                                                {
+                                                <option selected="selected" value="@items.Id">@items.Title</option>
+                                                }
+                                                else
+                                                {
+                                                <option value="@items.Id">@items.Title</option>
+                                                }
+                                            }
+                                        </optgroup>
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr id="type-3" class="menu-type">
+
+                            <td class="label">@Resources.admin_content_category</td>
+                            <td>@Html.DropDownList("Cat", "-- Chọn chuyên mục --")</td>
+                            @* <select id="Cat" name="Cat">
+                                <option value>-- @Resources.admin_menu_itemcat --</option>
+                                @helper renderlevel(int? level)
+{
+    string sp = "";
+    for (int i = 1; i < level; i++)
+    {
+        sp = sp + @Html.Raw("---");
+    }
+                                    @Html.Raw(sp)
+                                }
+                                @foreach (var item in posttype)
+                                {
+                                    if (catlist.Where(x => x.PostType.Id == item.Id).FirstOrDefault() != null)
+                                    {
+                                    <optgroup label="@item.Name">
+                                        @foreach (var items in catlist.Where(x => x.PostType.Id == item.Id && x.Owner_Id == null))
+                                        {
+                                            if (items.Id == ViewBag.MenuItemCat)
+                                            {
+                                            <option selected="selected" value="@items.Id">
+                                                @items.Name
+                                            </option>
+                                            }
+                                            else
+                                            {
+                                            <option value="@items.Id">
+                                                @items.Name
+                                                @foreach (var i in catlist.Where(x => x.PostType.Id == item.Id && x.Owner_Id == items.Id))
+                                                {
+                                                    <span>@renderlevel(items.Level) </span>
+                                                    @i.Name
+                                                }
+                                            </option>
+                                            }
+                                        }
+                                    </optgroup>
+                                    }
+                                }
+                            </select>*@
+                        </tr>
+                        <tr>
+                            <td class="label">@Resources.admin_menu_itemowner</td>
+                            <td>@Html.DropDownList("Owner_Id", "-- Menu gốc --")</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_order</td>
+                            <td>@Html.EditorFor(model => model.Order)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label">@Resources.admin_content_active</td>
+                            <td>@Html.EditorFor(model => model.Active)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="label button-submit-zone"></td>
+                            <td class="button-submit-zone">
+                                <input type="submit" value="@Resources.admin_common_edit" class="btn btn-blue" />
+                                <a class="btn" href="@Url.Action("MenuItem", "Menu", new { id = menuid })">@Resources.admin_common_back (@Resources.admin_common_create)</a>
+                            </td>
+
+                        </tr>
+
+                        @if (menuinfo.Field_1_Enable == true)
+                        {
+                            <tr>
+                                <td class="label">@menuinfo.Field_1_Label</td>
+                                <td>@Html.EditorFor(model => model.Field_1, new { maxlength = "141" })
+                                    <input type="button" id="BrowseURL-Thumb" value="@Resources.admin_content_browsepicture" class="btn btn-file" />
+                                </td>
+                            </tr>
+                        }
+
+                        @if (menuinfo.Field_2_Enable == true)
+                        {
+                            <tr>
+                                <td class="label">@menuinfo.Field_2_Label</td>
+                                <td>@Html.TextAreaFor(model => model.Field_2, new { maxlength = "3000" })</td>
+                            </tr>
+                        }
+
+                        @if (menuinfo.Field_3_Enable == true)
+                        {
+                            <tr>
+                                <td class="label">@menuinfo.Field_3_Label</td>
+                                <td>@Html.EditorFor(model => model.Field_3, new { maxlength = "141" })</td>
+                            </tr>
+                        }
+
+
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(function () {
+        $('#Type').change(function () {
+            $('.menu-type').hide();
+            $('#type-' + $(this).val()).show();
+        });
+    });
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#BrowseURL-Thumb").click(function () {
+            var ckfinder = new CKFinder({ resourceType: 'Images' });
+            ckfinder.selectActionFunction = function (fileUrl) {
+                $("#Field_1").val(fileUrl)
+            };
+            ckfinder.popup();
+        });
+    });
+</script>

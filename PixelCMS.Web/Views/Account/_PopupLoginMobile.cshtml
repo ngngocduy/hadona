@@ -1,0 +1,87 @@
+﻿@model PixelCMS.Core.Models.LoginModel
+<head>
+    <meta charset="utf-8">
+    @*<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />*@
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="/Theme/mobile/css/form.css" rel="stylesheet" type="text/css">
+    <link href="/Theme/mobile/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Fancy box -->
+    <link href="/Theme/mobile/libs/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css">
+    <script src="/Theme/mobile/libs/fancybox/jquery.fancybox.js"></script>
+
+    @*<script src="/Theme/mobile/js/script.js"></script>*@
+</head>
+<body>
+    <section class="main">
+        <div class="title-head"><i class="fa fa-arrow-circle-right"></i>Đăng nhập</div>
+        <div class="frm-payment wrap-page">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="frow">
+                        <label>Tài khoán</label>
+                        <br>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Tài khoản" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                    <div class="frow">
+                        <label>Mật khẩu *</label>
+                        <br>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Mật khẩu" })
+                    </div>
+                </div>
+                <div id="btnlogin" class="btn-primary"><a href="#">Đăng nhập</a></div>
+            </form>
+            @* <p style="text-align: center; font-size: 16px; margin-top: 10px;">Or</p>*@
+
+            @* <div style="text-align: center;">
+                 @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+                
+            </div>*@
+        </div>
+        <!-- End frm-payment -->
+
+    </section>
+
+
+    <div class="alert alert-success" id="alert-cart" style="background-color: #d9edf7; display: none; position: fixed; top: 0px; left: 0px; width: 100%; text-align: center; z-index: 8999">
+    </div>
+    <div style="position: fixed; top: 50%; left: 50%; display: none;"
+        id="loading">
+        <img src="~/Content/adminpanel/loading-image.gif" />
+    </div>
+</body>
+<script>
+    //jquery-1.8.2.js level up
+    $("#loading").ajaxStart(function () {
+        $(this).show();
+    });
+    $("#loading").ajaxComplete(function () {
+        $(this).hide();
+    });
+</script>
+<script>
+    $(function () {
+        $("#btnlogin").click(function () {
+            var url = '@Url.Action("PopupLoginPost", "Account")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(".form-horizontal").serializeArray(),
+                success: function (data) {
+                    if (data.mess == false) {
+                        $("#alert-cart").css('background', '#EB4578').html("<p style='color:white'>Tên đăng nhập hoặc mật khẩu không đúng</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                    }
+                    else {
+                        $("#alert-cart").css('background', '#d9edf7').html("<p>Đăng nhập thành công</p>").fadeIn("fast").delay(1500).fadeOut("fast");
+                        window.open("/", "_parent");
+                    }
+                },
+                //dataType: dataType
+            });
+        });
+
+    })
+</script>
+

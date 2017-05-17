@@ -1,0 +1,159 @@
+﻿@using PagedList.Mvc
+@using PixelCMS.Core.Models
+@model PagedList.IPagedList<PixelCMS.Core.Models.UserProfile>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var roles = db.webpages_Roles.ToList();
+
+    ViewBag.Title = "Tài khoản";
+    ViewBag.PTitle = "Tài khoản";
+    ViewBag.PDescription = "Quản lý tài khoản";
+    ViewBag.LastCR = "Tài khoản<span class=\"divider-last\">&nbsp;</span></li>";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-info" id="delete-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>Thành viên đã xóa thành công !
+</div>
+
+<div class="alert alert-info" id="edit-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>Chỉnh sửa thành công !
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i>Tạo thành viên mới thành công !
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="head">
+            <div class="isw-cloud"></div>
+            <h1>Tài khoản</h1>
+
+            <div class="clear"></div>
+        </div>
+        <div class="block-fluid table-sorting" style="float: left; width: 100%;">
+            <div class="sixteen columns">
+                <aside id="control">
+                    <div>
+
+                        <a href="@Url.Action("Create", "User")" class="btn btn-blue">
+                            <i class="fa fa-plus"></i>
+                            Thêm tài khoản</a>
+                        <a href="@Url.Action("UserRoles", "User")" class="btn">Nhóm thành viên</a>
+                        <a href="@Url.Action("LostPassword", "Account", new { area = "" })" class="btn ">Reset password</a>
+                    </div>
+                </aside>
+                <div class="sixteen columns alpha omega">
+                    <table class="grid">
+                        <tr>
+                            <th>Username</th>
+                            <th>Nhóm</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            var currentroles = db.webpages_UsersInRoles.Where(y => y.UserId == item.UserId).ToList();
+                            if (!User.IsInRole("tkmadmin"))
+                            {
+                                if (currentroles.FirstOrDefault(x => x.RoleId == 1) == null)
+                                {
+                            <tr>
+                                <td>@item.UserName</td>
+                                <td>
+                                    @if (currentroles.FirstOrDefault() != null)
+                                    {
+                                        foreach (var rl in currentroles)
+                                        {
+                                        <span>@rl.webpages_Roles.RoleName, </span>
+                                        }
+                                    }
+                                </td>
+                                <td>@item.Email</td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "User", new { id = item.UserId })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>Sửa</a>
+                                    <a href="@Url.Action("Delete", "User", new { id = item.UserId })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>Xóa</a>
+                                </td>
+                            </tr>
+                                }
+                            }
+                            else
+                            {
+                            <tr>
+                                <td>@item.UserName</td>
+                                <td>
+                                    @if (currentroles.FirstOrDefault() != null)
+                                    {
+                                        foreach (var rl in currentroles)
+                                        {
+                                        <span>@rl.webpages_Roles.RoleName, </span>
+                                        }
+                                    }
+                                </td>
+                                <td>@item.Email</td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "User", new { id = item.UserId })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>Sửa</a>
+                                    <a href="@Url.Action("Delete", "User", new { id = item.UserId })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i>Xóa</a>
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                    <div>
+                        <br />
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { cat = ViewBag.CatId, page }))
+                        @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.common_page)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="delete-dialog" title="Xác nhận">
+    <p>Bạn có chắc muốn xóa thành viên này?</p>
+</div>
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        $("#delete-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+    <script>
+        $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}
+else if (ViewBag.Status == "edit-done")
+{ 
+    <script>
+        $("#edit-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+    </script>
+}

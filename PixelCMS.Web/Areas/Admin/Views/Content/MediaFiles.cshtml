@@ -1,0 +1,163 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.MediaFile>
+@using PixelCMS.Core.Models;
+@{
+    int t = (int)ViewBag.Type;
+    int p = (int)ViewBag.PostId;
+    pixelcmsEntities db = new pixelcmsEntities();
+    var posttype = db.PostTypes.Find(t);
+    var currentculture = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    var posttypename = posttype.PostType_Name.FirstOrDefault(x=>x.Lang == currentculture).Name;
+    
+    ViewBag.Title = Resources.admin_content_manageimages + " " + posttypename;
+    ViewBag.PTitle = posttypename;
+    ViewBag.PDescription = ViewBag.Description;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    <script src="~/Content/ckeditor/ckfinder/ckfinder.js"></script>
+}
+
+<div id="delete-dialog" title="@Resources.admin_common_confirm">
+    <p>@Resources.admin_ask_suredelete</p>
+</div>
+
+<div class="alert alert-info" id="create-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> @Resources.admin_common_create @Resources.admin_content_picture @Resources.admin_status_successfully
+</div>
+
+<div class="alert alert-info" id="order-success" style="display: none;">
+    <i class="fa fa-exclamation-circle"></i> @Resources.admin_content_updateordersuccessfully
+</div>
+
+<section id="main">
+
+    <div class="container">
+        <div class="sixteen columns">
+        <h1><i class="fa fa-picture-o"></i> @Resources.admin_content_manageimages <br /><strong>"@ViewBag.PostName"</strong></h1>
+
+        <aside id="control">
+            <div>
+                <a href="@Url.Action("Edit", "Content", new { id = ViewBag.PostId })" class="btn"><i class="fa fa-chevron-left"></i> @Resources.admin_common_back</a>
+            </div>
+        </aside>
+
+
+@using (Html.BeginForm())
+        {
+
+        <div id="mediafile-list">
+            <table class="grid">
+                <tr>
+                    @if(posttype.Has_MediaDescription == true){
+                    <th colspan="5">@Resources.admin_content_imageslist</th>
+                    }
+                    else{
+                    <th colspan="4">@Resources.admin_content_imageslist</th>
+                    }
+                </tr>
+                <tr class="button-submit-zone">
+                    <td>Thumbnail
+                    </td>
+                    <td>URL
+                    </td>
+
+                    @if (posttype.Has_MediaDescription == true)
+                    {
+                    <td>@Resources.admin_content_description
+                    </td>
+                    }
+                        
+                    <td>@Resources.admin_content_order
+                    </td>
+                    <td></td>
+                @{var orderid = 0;}
+                @foreach (var item in Model)
+                {
+                    orderid = orderid + 1;
+                    <tr>
+                        <td>
+                            <img src="@Html.Raw(item.URL.Replace("Upload/", "Upload/_Thumbs/"))" style="max-width: 100px" /></td>
+                        <td>@item.URL</td>
+
+                        @if (posttype.Has_MediaDescription == true)
+                        {
+                        <td>@item.Description</td>
+                        }
+                            
+                        <td>
+                            <input type="number" id="Order-@orderid" name="Order-@orderid" value="@item.Order" />
+                            <input type="hidden" id="OrderId-@orderid" name="OrderId-@orderid" value="@item.Id" />
+                        </td>
+                        <td>
+                            <a href="@Url.Action("MediaEdit","Content",new{id=item.Id})" class="btn btn-small edit-link"><i class="fa fa-pencil-square-o"></i> @Resources.admin_common_edit</a>
+                            <a href="@Url.Action("MediaDelete", "Content", new { id = item.Id })" class="btn btn-small btn-red delete-link"><i class="fa fa-trash-o"></i> @Resources.admin_content_delete</a>
+                        </td>
+                    </tr>
+                }
+
+                <tr>
+                    @if(posttype.Has_MediaDescription != null){
+                    <td colspan="3"></td>
+                    }
+                    else{
+                    <td colspan="2"></td>
+                    }
+                        
+                    <td class="button-submit-zone"><input class="btn btn-green" type="submit" value="@Resources.admin_content_updateorder" /></td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </div>
+    
+        }
+
+        @Html.Action("MediaFiles_Upload", "Content", new { id = p })
+
+
+    </div>
+</div>
+    </section>
+
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Xóa": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '@Boolean.TrueString') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+
+
+            },
+            "Trở lại": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+
+@if (ViewBag.Status == "create-done")
+{
+<script>
+    $("#create-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}
+else if (ViewBag.Status == "order-done")
+{
+<script>
+    $("#order-success:hidden:first").fadeIn("slow").delay(1500).fadeOut("slow");
+</script>
+}

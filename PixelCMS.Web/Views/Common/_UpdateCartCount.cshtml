@@ -1,0 +1,87 @@
+﻿@model PixelCMS.Core.Models.ShoppingCartModels
+
+@*<a href="#" id="btnCart">
+
+
+    <p>Giỏ hàng</p>
+</a>*@
+<a class="cartcount" href="@Url.Action("Index","ShoppingCart")">
+        @if (Model != null && Model.Cart != null)
+        {
+            @Html.Raw("("+ Model.Cart.GetCount().ToString("N0") + ")")
+        }
+        else
+        {
+            @Html.Raw("(0)")
+        }
+</a>
+
+@*<div class="dropdown-menu">
+    <form class="form-horizontal" role="form">
+        <div class="content">
+            @if (Model != null && Model.Cart != null && Model.Cart.ListItem.Count > 0)
+            {
+                <div class="mini-cart-info">
+                    <table>
+                        <tbody>
+                            @foreach (var item in Model.Cart.ListItem.Take(10))
+                            {
+                                <tr>
+                                    <td class="image">
+                                        <a href="@Html.Action("LoadUrl", "Common", new { type = "post", id = item.PostId })">
+                                            @if (item.PostImage != null)
+                                            {
+                                                <a href="@Html.Action("LoadUrl", "Common", new { type = "post", id = item.PostId })">@item.PostTitle
+                                                    <br />
+                                                    <img src="@item.PostImage.Replace("Upload/", "Upload/_Thumbs/")"alt="@item.PostTitle" />
+                                                </a>
+                                                       
+                                            }
+                                        </a>
+                                    </td>
+                                    @if (!string.IsNullOrEmpty(item.VariantName))
+                                    {
+                                        <td class="quantity">@Html.Raw(item.VariantName)</td>
+                                    }
+                                    <td class="quantity">x@(item.Quantity)</td>
+                                    <td class="total">@(item.Total)₫</td>
+                                    <td class="remove"><a title="Xóa" href="#" onclick="return RemoveFromCart(@item.PostId,'@(item.Attribute)');">X</a></td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mini-cart-total">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="right"><b>Tổng tiền:</b></td>
+                                <td class="right">@Model.Cart.GetTotal().ToString("N0")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="checkout">
+                    <a class="button btn btn-primary" href="@Url.Action("Index", "ShoppingCart")">Xem giỏ hàng</a>
+                    <a class="button btn btn-success" href="@Url.Action("Index", "ShoppingCart")">Thanh toán</a>
+                </div>
+            }
+            else
+            {
+                <div class="empty">Giỏ hàng trống</div>
+            }
+        </div>
+        <!-- End content -->
+    </form>
+</div>*@
+
+<script>
+    $(function () {
+        $(".cart-inner a").click(function () {
+            $("#cart").toggleClass("active");
+        });
+    });
+</script>

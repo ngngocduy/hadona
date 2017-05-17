@@ -1,0 +1,2368 @@
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\Saigonpixel version1.1\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Resources.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Shop\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PixelCMS.Web.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PixelCMS.Web.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Antlr3.Runtime.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\CKFinder.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\EntityFramework.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\EPPlus.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Facebook.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\MF.Dev.ExportHelper.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.CSharp.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Owin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Owin.Security.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Newtonsoft.Json.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Owin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PagedList.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PagedList.Mvc.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PixelCMS.Admin.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PixelCMS.Core.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Resources.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Simple.ImageResizer.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Configuration.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Data.DataSetExtensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Data.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Data.Entity.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Drawing.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.EnterpriseServices.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Net.Http.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Net.Http.Formatting.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Net.Http.WebRequest.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Transactions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Abstractions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.ApplicationServices.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.DynamicData.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Entity.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Extensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Helpers.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Http.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Http.WebHost.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Mvc.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Optimization.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Razor.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Routing.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Services.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.WebPages.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.WebPages.Razor.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Xml.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Xml.Linq.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\WebGrease.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\WebMatrix.Data.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\WebMatrix.WebData.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\ElFinder.Net.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\CsvHelper.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Mono.Math.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PixelCMS.Admin.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PixelCMS.Core.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Resources.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Antlr3.Runtime.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\CKFinder.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.Core.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\EntityFramework.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\EPPlus.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Facebook.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Owin.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Owin.Security.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Newtonsoft.Json.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PagedList.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\PagedList.Mvc.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Optimization.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.WebPages.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.WebPages.Razor.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Net.Http.Formatting.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Helpers.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Http.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Http.WebHost.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Mvc.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\System.Web.Razor.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\WebMatrix.Data.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\WebMatrix.WebData.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\CsvHelper.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\CsvHelper.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\Mono.Math.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\en\Resources.resources.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\update_tkm_shop\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\SuKa\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\News\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\hoatuoitamvan\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\BanhTrangNganHa\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\BaoBiHuyPhat\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\TuHao\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Http.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Http.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\minhlonghung\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\TheKyMoi_Project\CMS_GT03\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\100Project\GT16004\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\100Project\GT16006\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\CKFinder.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\EntityFramework.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\EPPlus.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Facebook.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Owin.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PagedList.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Configuration.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Data.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Drawing.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Net.Http.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Transactions.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Services.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.WebPages.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Xml.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\WebGrease.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\CsvHelper.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Mono.Math.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Resources.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\CKFinder.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\EntityFramework.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\EPPlus.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Facebook.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PagedList.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\CsvHelper.pdb
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\CsvHelper.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\Mono.Math.xml
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\Data\Projects\100Project\GT16007\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\CKFinder.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\EntityFramework.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\EPPlus.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Facebook.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Owin.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PagedList.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Http.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\WebGrease.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Mono.Math.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\CsvHelper.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Web.dll.config
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Configuration.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Data.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Drawing.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Net.Http.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Transactions.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Services.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Xml.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Resources.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\CKFinder.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\EntityFramework.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\EPPlus.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Facebook.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PagedList.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Http.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\CsvHelper.pdb
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\CsvHelper.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\Mono.Math.xml
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\DATA\TheKyMoi_Project\TanHungDung\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Web.dll.config
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\CKFinder.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\EntityFramework.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\EPPlus.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Facebook.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Owin.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PagedList.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Configuration.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Data.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Drawing.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Net.Http.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Transactions.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Http.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Services.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Xml.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\WebGrease.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Mono.Math.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\CKFinder.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\EntityFramework.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\EPPlus.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Facebook.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PagedList.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Http.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Mono.Math.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\CsvHelper.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\Resources.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\CsvHelper.pdb
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\CsvHelper.xml
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\DATA\TheKyMoi_Project\Langrover\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Web.dll.config
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\CKFinder.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\EntityFramework.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\EPPlus.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Facebook.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Owin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PagedList.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Configuration.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Data.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Drawing.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Net.Http.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Transactions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Http.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Services.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Xml.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\WebGrease.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\CsvHelper.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Mono.Math.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\CKFinder.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\EntityFramework.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\EPPlus.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Facebook.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PagedList.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Http.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\CsvHelper.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\CsvHelper.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\Mono.Math.xml
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\OneDrive\DATA\TheKyMoi_Project\Unimech\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Web.dll.config
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\CKFinder.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\EntityFramework.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\EPPlus.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Facebook.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Owin.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PagedList.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Configuration.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Data.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Drawing.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Net.Http.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Transactions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Http.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Services.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Xml.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\WebGrease.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\CsvHelper.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Mono.Math.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Resources.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\CKFinder.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\EntityFramework.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\EPPlus.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Facebook.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PagedList.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Http.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\CsvHelper.pdb
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\CsvHelper.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\Mono.Math.xml
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\bin\zh\Resources.resources.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\OneDrive\DATA\TheKyMoi_Project\KPA\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Web.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Antlr3.Runtime.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\CKFinder.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\EntityFramework.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\EPPlus.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Facebook.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Newtonsoft.Json.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Owin.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\PagedList.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\PagedList.Mvc.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Simple.ImageResizer.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Helpers.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Mvc.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Optimization.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Razor.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\WebGrease.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\WebMatrix.Data.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\WebMatrix.WebData.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\ElFinder.Net.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\CsvHelper.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Mono.Math.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Web.dll.config
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.CSharp.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Configuration.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Data.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Data.Entity.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Drawing.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.EnterpriseServices.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Transactions.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Abstractions.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.DynamicData.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Entity.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Extensions.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Routing.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Services.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Xml.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Xml.Linq.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\CKFinder.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\EntityFramework.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\EPPlus.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Facebook.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Newtonsoft.Json.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\PagedList.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\PagedList.Mvc.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Optimization.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.WebPages.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Helpers.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Mvc.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\System.Web.Razor.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\WebMatrix.Data.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\WebMatrix.WebData.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\CsvHelper.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\CsvHelper.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\project\Project Mẫu\PixelCMS.Web\bin\Mono.Math.xml
+D:\project\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+D:\project\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+D:\project\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Web.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.dll.config
+D:\project\Project Mẫu\PixelCMS.Web\bin\Resources.pdb
+D:\project\Project Mẫu\PixelCMS.Web\bin\en\Resources.resources.dll
+D:\project\Project Mẫu\PixelCMS.Web\bin\zh\Resources.resources.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Web.dll.config
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Web.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Web.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\Antlr3.Runtime.dll
+E:\Project Mẫu\PixelCMS.Web\bin\CKFinder.dll
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.Core.dll
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Project Mẫu\PixelCMS.Web\bin\EntityFramework.dll
+E:\Project Mẫu\PixelCMS.Web\bin\EPPlus.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Facebook.dll
+E:\Project Mẫu\PixelCMS.Web\bin\MF.Dev.ExportHelper.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.CSharp.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Security.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Newtonsoft.Json.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Owin.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PagedList.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PagedList.Mvc.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Simple.ImageResizer.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Simple.ImageResizer.MvcExtensions.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.ComponentModel.DataAnnotations.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Configuration.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Data.DataSetExtensions.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Data.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Data.Entity.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Drawing.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.EnterpriseServices.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.Formatting.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.WebRequest.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Transactions.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Abstractions.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.ApplicationServices.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.DynamicData.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Entity.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Extensions.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Helpers.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.WebHost.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Mvc.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Optimization.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Razor.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Routing.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Services.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Xml.dll
+E:\Project Mẫu\PixelCMS.Web\bin\System.Xml.Linq.dll
+E:\Project Mẫu\PixelCMS.Web\bin\WebGrease.dll
+E:\Project Mẫu\PixelCMS.Web\bin\WebMatrix.Data.dll
+E:\Project Mẫu\PixelCMS.Web\bin\WebMatrix.WebData.dll
+E:\Project Mẫu\PixelCMS.Web\bin\ElFinder.Net.dll
+E:\Project Mẫu\PixelCMS.Web\bin\CsvHelper.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.dll
+E:\Project Mẫu\PixelCMS.Web\bin\Mono.Math.dll
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\Resources.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\Antlr3.Runtime.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\CKFinder.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.Core.xml
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+E:\Project Mẫu\PixelCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Project Mẫu\PixelCMS.Web\bin\EntityFramework.xml
+E:\Project Mẫu\PixelCMS.Web\bin\EPPlus.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Facebook.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Owin.Security.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Newtonsoft.Json.xml
+E:\Project Mẫu\PixelCMS.Web\bin\PagedList.xml
+E:\Project Mẫu\PixelCMS.Web\bin\PagedList.Mvc.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Optimization.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.WebPages.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.WebPages.Deployment.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.WebPages.Razor.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Net.Http.Formatting.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Helpers.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Http.WebHost.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Mvc.xml
+E:\Project Mẫu\PixelCMS.Web\bin\System.Web.Razor.xml
+E:\Project Mẫu\PixelCMS.Web\bin\WebMatrix.Data.xml
+E:\Project Mẫu\PixelCMS.Web\bin\WebMatrix.WebData.xml
+E:\Project Mẫu\PixelCMS.Web\bin\CsvHelper.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\CsvHelper.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Org.Mentalis.Security.Cryptography.xml
+E:\Project Mẫu\PixelCMS.Web\bin\Mono.Math.xml
+E:\Project Mẫu\PixelCMS.Web\bin\en\Resources.resources.dll
+E:\Project Mẫu\PixelCMS.Web\bin\zh\Resources.resources.dll
+E:\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
+E:\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
+E:\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb

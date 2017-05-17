@@ -1,0 +1,7 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+    @foreach (var item in Model)
+    {
+        <a href="@Html.Action("LoadAttribute", "Common", new { code = "banner-link", id = item.Id })">
+            <img src="@item.Thumb"></a>
+    }
+

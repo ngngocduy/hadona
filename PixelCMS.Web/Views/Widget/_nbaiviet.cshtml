@@ -1,0 +1,42 @@
+﻿@using PixelCMS
+@model IEnumerable<PixelCMS.Core.Models.Post>
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+    int count = 0;
+}
+@foreach (var item in Model.Where(x => x.Active).OrderByDescending(x => x.Order).Take(6))
+{
+    count++;
+    /* Parallel Lang */
+    if (item.Lang != currentlang)
+    {
+        var itemlang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == item.Id);
+        if (itemlang != null)
+        {
+            item.Id = itemlang.Id;
+            item.Title = itemlang.Title;
+            item.Description = itemlang.Description;
+            //item.Content = itemlang.Content;
+        }
+    }
+    var modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = item.Id }); 
+    <div class="col-xs-12 col-sm-4 animated wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1000ms">
+        <div class="content">
+            <!-- Nội dung động -->
+            <div style="text-align: center;">
+                <a href="@modelurl"><img src="@item.Thumb"></a>
+                 <a href="@modelurl"><h3>@item.Title</h3></a>
+                <p>@item.Description</p>
+            </div>
+            <!-- Nội dung động -->
+        </div>
+    </div>
+    if (count % 3 == 0)
+    {
+    <div class="cf"></div>
+    }
+}
+
+
+

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b460e717bfa1427db5c82c5c79a7531f" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="pixelcmsModel.Address" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.AttributeGroup" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.AttributeValue" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.City" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Counter" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.EmailSubscribe" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Language" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.MediaFile" Width="1.5" PointX="15" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Menu" Width="1.5" PointX="7.5" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.MenuPosition" Width="1.5" PointX="5.25" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.OptionGroup" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Order_Item_Language" Width="1.5" PointX="15.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Order_Status" Width="1.5" PointX="13.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.PixelOption" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.PostAttribute" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.PostTag" Width="1.5" PointX="15" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.PostType_Name" Width="1.5" PointX="7.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Roles_PostType" Width="1.5" PointX="10.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.Slug" Width="1.5" PointX="15" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.SpecialCat" Width="1.5" PointX="15" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.webpages_OAuthMembership" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.webpages_Roles" Width="1.5" PointX="8.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pixelcmsModel.webpages_UsersInRoles" Width="1.5" PointX="10.875" PointY="20.375" IsExpanded="true" />
+        <AssociationConnector Association="pixelcmsModel.FK__PostAttri__Group__56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__PostType___Attri__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__Attribute__Attri__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__Menu__MenuPositi__41EDCAC5" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__PostType___Optio__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__Order_Ite__Statu__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__PostType___Attri__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__Roles_Pos__Role___5F7E2DAC" ManuallyRouted="false" />
+        <AssociationConnector Association="pixelcmsModel.FK__webpages___RoleI__634EBE90" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="pixelcmsModel.District" Width="1.5" PointX="1.125" PointY="37.375" />
+        <AssociationConnector Association="pixelcmsModel.FK__Address__Distric__395884C4" />
+        <AssociationConnector Association="pixelcmsModel.FK__District__City_I__40058253" />
+        <EntityTypeShape EntityType="pixelcmsModel.Shipping" Width="1.5" PointX="2.25" PointY="24.125" />
+        <AssociationConnector Association="pixelcmsModel.FK_Shipping_District" />
+        <EntityTypeShape EntityType="pixelcmsModel.Agent" Width="1.5" PointX="5.25" PointY="17.25" />
+        <EntityTypeShape EntityType="pixelcmsModel.StockImport" Width="1.5" PointX="0.5" PointY="7.625" />
+        <EntityTypeShape EntityType="pixelcmsModel.Inventory" Width="1.5" PointX="6.4857648473632352" PointY="8.5789031426324058" />
+        <AssociationConnector Association="pixelcmsModel.FK_Inventory_Agent" />
+        <EntityTypeShape EntityType="pixelcmsModel.SMTP" Width="1.5" PointX="10.977992925317023" PointY="11.816587245006387" />
+        <EntityTypeShape EntityType="pixelcmsModel.EmailCampaign" Width="1.5" PointX="14.375" PointY="10.625" />
+        <AssociationConnector Association="pixelcmsModel.FK_EmailCampaign_SMTP" />
+        <AssociationConnector Association="pixelcmsModel.Webpages_EmailSubscribe" />
+        <EntityTypeShape EntityType="pixelcmsModel.Discount" Width="1.5" PointX="12.625" PointY="26.25" />
+        <AssociationConnector Association="pixelcmsModel.FK_Discount_webpages_Roles" />
+        <EntityTypeShape EntityType="pixelcmsModel.Product_ProductAttribute" Width="1.5" PointX="4.3682641668097411" PointY="13.639167583379507" />
+        <EntityTypeShape EntityType="pixelcmsModel.ProductAttribute" Width="1.5" PointX="7.4245715138616841" PointY="29.17515691983288" />
+        <EntityTypeShape EntityType="pixelcmsModel.ProductAttributeGroup" Width="1.5" PointX="7.3391805455736732" PointY="8.1586895921075211" />
+        <AssociationConnector Association="pixelcmsModel.FK_Product_ProductAttribute_ProductAttribute" />
+        <AssociationConnector Association="pixelcmsModel.FK_ProductAttribute_ProductAttributeGroup" />
+        <EntityTypeShape EntityType="pixelcmsModel.webpages_Membership" Width="1.5" PointX="8.0034018028543343" PointY="14.42866190449738" />
+        <EntityTypeShape EntityType="pixelcmsModel.ExtraUserInformation" Width="1.5" PointX="8.02638742328919" PointY="30.203820272443732" />
+        <EntityTypeShape EntityType="pixelcmsModel.MenuItem" Width="1.5" PointX="12.625" PointY="1.5" />
+        <AssociationConnector Association="pixelcmsModel.FK__MenuItem__Menu__43D61337" />
+        <EntityTypeShape EntityType="pixelcmsModel.Post_PostAttribute" Width="1.5" PointX="9.75" PointY="27.625" />
+        <AssociationConnector Association="pixelcmsModel.FK__Post_Post__Id_At__51300E55" />
+        <EntityTypeShape EntityType="pixelcmsModel.Product" Width="1.5" PointX="2.6947465328009552" PointY="27.968749700099579" />
+        <AssociationConnector Association="pixelcmsModel.FK_Discount_Product" />
+        <AssociationConnector Association="pixelcmsModel.FK_Inventory_Product" />
+        <AssociationConnector Association="pixelcmsModel.FK_Product_ProductAttribute_Product" />
+        <AssociationConnector Association="pixelcmsModel.FK_StockImport_Product" />
+        <EntityTypeShape EntityType="pixelcmsModel.Order" Width="1.5" PointX="4.4473691044595878" PointY="17.49371369997678" />
+        <AssociationConnector Association="pixelcmsModel.FK__Order__Status_Id__47A6A41B" />
+        <EntityTypeShape EntityType="pixelcmsModel.GroupVariant" Width="1.5" PointX="11.177793899168165" PointY="4.6206022075473339" />
+        <EntityTypeShape EntityType="pixelcmsModel.Variant" Width="1.5" PointX="2.0990578001826341" PointY="24.969143759910551" />
+        <EntityTypeShape EntityType="pixelcmsModel.VariantAttribute" Width="1.5" PointX="1.6757592846060914" PointY="14.351348287589545" />
+        <AssociationConnector Association="pixelcmsModel.FK_VariantAttribute_GroupVariant" />
+        <AssociationConnector Association="pixelcmsModel.FK_Variant_VariantAttribute" />
+        <EntityTypeShape EntityType="pixelcmsModel.VariantAttributeCombination" Width="1.5" PointX="3.25" PointY="2.75" />
+        <EntityTypeShape EntityType="pixelcmsModel.Order_Details" Width="1.5" PointX="9.6923297446651056" PointY="30.063713549665973" />
+        <AssociationConnector Association="pixelcmsModel.FK__Order_Det__Order__498EEC8D" />
+        <EntityTypeShape EntityType="pixelcmsModel.LoginHistory" Width="1.5" PointX="9.55401443389897" PointY="13.361886760854109" />
+        <EntityTypeShape EntityType="pixelcmsModel.Roles_Access" Width="1.5" PointX="9.8854538900244311" PointY="10.93317479404303" />
+        <EntityTypeShape EntityType="pixelcmsModel.OptionVariant" Width="1.5" PointX="6.8099754763813571" PointY="29.368045448031296" />
+        <AssociationConnector Association="pixelcmsModel.FK_OptionVariant_GroupVariant" />
+        <AssociationConnector Association="pixelcmsModel.FK_Variant_OptionVariant" />
+        <EntityTypeShape EntityType="pixelcmsModel.Option" Width="1.5" PointX="5.228956385156585" PointY="23.337913598556963" />
+        <AssociationConnector Association="pixelcmsModel.FK__Option__Group__46B27FE2" />
+        <AssociationConnector Association="pixelcmsModel.FK__PostType___Optio__5BAD9CC8" />
+        <EntityTypeShape EntityType="pixelcmsModel.Manufacturer" Width="1.5" PointX="6.992884573989028" PointY="0.51597277844137179" />
+        <EntityTypeShape EntityType="pixelcmsModel.Post" Width="1.5" PointX="2.2086358397307975" PointY="0.61250847606570857" />
+        <EntityTypeShape EntityType="pixelcmsModel.PostType" Width="1.5" PointX="7.9058202839949256" PointY="6.24389697902086" />
+        <AssociationConnector Association="pixelcmsModel.FK_Product_Supplier" />
+        <AssociationConnector Association="pixelcmsModel.FK__MediaFile__Post___40F9A68C" />
+        <AssociationConnector Association="pixelcmsModel.FK__MenuItem__Post__44CA3770" />
+        <AssociationConnector Association="pixelcmsModel.FK__MenuItem__PostTy__45BE5BA9" />
+        <AssociationConnector Association="pixelcmsModel.FK__Order_Det__Produ__4A8310C6" />
+        <AssociationConnector Association="pixelcmsModel.FK__Post__Owner_Id__4C6B5938" />
+        <AssociationConnector Association="pixelcmsModel.FK__Post_Post__Id_Po__5224328E" />
+        <AssociationConnector Association="pixelcmsModel.FK__Slug__Post__6166761E" />
+        <AssociationConnector Association="pixelcmsModel.FK_Post_PostType" />
+        <AssociationConnector Association="pixelcmsModel.FK_Post_Product" />
+        <AssociationConnector Association="pixelcmsModel.FK_VariantAttribute_Post" />
+        <AssociationConnector Association="pixelcmsModel.FK_VariantAttributeCombination_Post" />
+        <AssociationConnector Association="pixelcmsModel.FK__PostType___Postt__5D95E53A" />
+        <AssociationConnector Association="pixelcmsModel.FK__Roles_Pos__PostT__5E8A0973" />
+        <AssociationConnector Association="pixelcmsModel.FK__Slug__PostType__625A9A57" />
+        <AssociationConnector Association="pixelcmsModel.Post_SpecialCat" />
+        <AssociationConnector Association="pixelcmsModel.Post_Tag" />
+        <AssociationConnector Association="pixelcmsModel.PostAttribute_PostType" />
+        <EntityTypeShape EntityType="pixelcmsModel.Cat" Width="1.5" PointX="10.720390922725382" PointY="14.700935206702415" />
+        <AssociationConnector Association="pixelcmsModel.FK__Cat__Owner_Id__6442E2C9" />
+        <AssociationConnector Association="pixelcmsModel.FK__Cat__Type__3D2915A8" />
+        <AssociationConnector Association="pixelcmsModel.FK__MenuItem__Cat__6FB49575" />
+        <AssociationConnector Association="pixelcmsModel.FK__Slug__Cat__1209AD79" />
+        <AssociationConnector Association="pixelcmsModel.Post_Cat" />
+        <EntityTypeShape EntityType="pixelcmsModel.Email" Width="1.5" PointX="4.5711275695688691" PointY="9.0662600887316565" />
+        <EntityTypeShape EntityType="pixelcmsModel.Comment" Width="1.5" PointX="6.4751916911803153" PointY="11.033567955267415" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

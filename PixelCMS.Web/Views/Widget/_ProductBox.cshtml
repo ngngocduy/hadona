@@ -1,0 +1,63 @@
+﻿@using PixelCMS
+@model PixelCMS.Core.Models.Post
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    var currentlang = PixelCMS.Helpers.CultureHelper.GetCurrentNeutralCulture();
+
+    string username = User.Identity.Name;
+}
+@*/* Parallel Lang */*@
+@if (Model.Lang != currentlang)
+{
+    var Modellang = db.Posts.FirstOrDefault(x => x.Lang == currentlang && x.MainLang_Id == Model.Id);
+    if (Modellang != null)
+    {
+
+        Model.Id = Modellang.Id;
+        Model.Title = Modellang.Title;
+        Model.Description = Modellang.Description;
+        Model.Content = Modellang.Content;
+    }
+}
+@*/* End Parallel Lang */*@
+@{
+    var Modelurl = Html.Action("LoadUrl", "Common", new { type = "post", id = Model.Id }); 
+}
+<div class="product">
+    <div class="image">
+        <div class="img-overflow ImageWrapper ContentWrapperC chrome-fix">
+            <a href="@Modelurl" title="">
+                @if (Model.Thumb != null)
+                {
+                    <img src="@Model.Thumb.Replace("/Upload/", "/Upload/_Thumbs/")"/>
+                }
+            </a>
+            <div class="ContentC">
+                <div class="Content">
+                    <p>
+                        @Model.Description
+                    </p>
+                    <ul class="function">
+                        <li>
+                            <a href="@Modelurl" >
+                                <button type="button" class="btn btnitem">
+                                    <strong>Đặt ngay</strong>
+                                </button>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="des-product">
+            <a href="@Modelurl">
+                <h3>@Model.Title @Html.Action("AdminEdit", "Common", new { id = Model.Id })</h3>
+            </a>
+            <div class="price">
+              <span class="price-new">@string.Format("{0:0,0}", Model.Price)đ</span>
+            </div>
+        </div>
+</div>
+

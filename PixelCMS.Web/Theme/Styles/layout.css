@@ -1,0 +1,166 @@
+@media only screen and (min-width:1920px) {
+.lBg-page,.rBg-page{position:absolute;z-index:2}
+.lBg-page{left:0}
+.rBg-page{right:0}
+.lBg-pro-page{top:56%}
+.rBg-pro-page{top:45%}
+.lBg-about-page{top:88%}
+.lBg-contact-page{top:68%}
+}
+@media only screen and (min-width:981px) {
+.char-intro{margin-left:-250px;width:500px;padding:60px 40px 210px;margin-top:300px}
+.char-intro:before{height:350px;top:-280px}
+.char-intro:after{height:276px;bottom:-80px}
+.characteristic-items{top:380px}
+.characteristic-items .char-item{width:calc((100% - 500px)/2)}
+#home-page #why-choose .why-choose-img{margin-top:-150px;margin-left:-205px}
+.why-choose-items .why-item{width:calc((100% - 410px)/2)}
+.main-about-img{position:absolute;z-index:2;top:0;text-align:center}
+.about-content{border:5px solid #ECE1E1}
+.about-content h3{position:absolute;top:-20px;display:inline-block}
+.top-about .main-about-img{left:0;width:470px}
+.top-about .about-content{width:calc(100% - 360px);margin-left:360px;padding:10px 30px 80px 140px;margin-bottom:120px}
+.tabs-about-img{position:absolute;bottom:-60px;right:0;width:100%;z-index:2}
+.top-about h3{left:0;padding:0 30px 0 140px}
+.bot-about .about-content{width:calc(100% - 575px);padding:10px 60px 30px;text-align:right}
+.bot-about h3{left:10px;padding:0 10px 0 10px}
+.bot-about .main-about-img{right:0}
+.bot-about .main-about-img img{max-width:530px}
+.bands-content .img-brand{width:450px}
+.brand-info{margin-left:500px}
+.list-items li{width:33.3%}
+.list-items li:nth-child(3n+1){clear:both}
+.form_account .row_input{width:420px}
+}
+@media only screen and (min-width:769px) {
+#characteristic{padding-bottom:100px}
+.char-intro{left:50%;min-height:605px}
+.characteristic-items{position:absolute;width:100%}
+.characteristic-items .char-item{float:left;clear:left}
+.characteristic-items .char-item:first-child,.characteristic-items .char-item:nth-child(3){margin-bottom:50px}
+#home-page #why-choose .why-choose-img{position:absolute;left:50%;top:50%}
+#why-choose .why-img-sub{padding-right:80px;text-align:center}
+#sub-page .why-choose-items .why-item{width:100%;text-align:left}
+#cssmenu #menu-button{display:none}
+#cssmenu > ul > li{float:left;display:inline-block}
+#cssmenu > ul > li > h3 > a{position:relative;padding-left:35px;line-height:85px}
+.header-fixed #cssmenu > ul > li > h3 > a{line-height:55px}
+#cssmenu > ul > li.active > h3 > a:before{position:absolute;top:50%;margin-top:-7px;left:15px;width:15px;height:15px;content:'';background:url(../Images/home-icon.png) 0 0 no-repeat;background-position:0 -15px}
+#cssmenu ul ul{position:absolute;left:-9999px;top:80px;opacity:0;min-width:200px;background-color:#FFF;border-top:3px solid #A3CD39;-webkit-transition:opacity .3s ease,top .25s ease;-moz-transition:opacity .3s ease,top .25s ease;-ms-transition:opacity .3s ease,top .25s ease;-o-transition:opacity .3s ease,top .25s ease;transition:opacity .3s ease,top .25s ease;z-index:9999}
+#cssmenu ul ul ul{top:100%}
+#cssmenu ul ul li{position:relative;margin:0;text-align:left;white-space:nowrap;min-width:180px}
+#cssmenu > ul > li:hover > ul{left:auto;top:100%;opacity:1}
+#cssmenu > ul > li:nth-child(n+4):hover > ul{right:0}
+#cssmenu ul ul li:hover > ul{left:100%;top:0;opacity:1}
+#cssmenu > ul > li:nth-child(n+4):hover > ul > li > ul{left:auto;right:100%}
+#cssmenu ul ul li a{filter:none;display:block;line-height:32px;padding:0 10px}
+#cssmenu ul ul li:hover > h4 > a,#cssmenu ul ul ul li:hover a{text-decoration:underline}
+.info-contact-foo{padding-left:50px}
+}
+@media only screen and (min-width:641px) {
+.info-footer span:not(:last-child){padding-right:30px}
+.info-contact-foo span:not(:first-child){padding-left:30px}
+.row_input{overflow:hidden}
+.form-web .col_form{width:49%}
+.form-web .col_form:nth-child(2n){float:right}
+}
+@media only screen and (min-width:481px) {
+.copyright{padding-right:80px}
+}
+@media only screen and (min-width:769px) and (max-width:980px) {
+.char-intro{margin-left:-150px;width:300px;padding:80px 40px 120px;margin-top:150px}
+.char-intro:before{height:200px;top:-130px}
+.char-intro:after{height:186px;bottom:-80px}
+.characteristic-items{top:280px}
+.characteristic-items .char-item{width:calc((100% - 300px)/2)}
+#home-page #why-choose .why-choose-img{width:200px;margin-top:-100px;margin-left:-100px}
+.why-choose-items .why-item{width:calc((100% - 200px)/2)}
+.list-items li{width:50%}
+.list-items li:nth-child(2n+1){clear:both}
+#footer_menu li:nth-child(2n+1){clear:both}
+#footer_menu .columns{width:50%!important}
+#footer_menu li:nth-child(2n+1) .col_F_ct{padding-left:0}
+}
+@media only screen and (min-width:641px) and (max-width:768px) {
+.list-items li{width:33.3%}
+.list-items li:nth-child(3n+1){clear:both}
+}
+@media only screen and (min-width:481px) and (max-width:980px) {
+.bands-content .img-brand{width:40%}
+.brand-info{margin-left:45%}
+}
+@media only screen and (min-width:481px) and (max-width:769px) {
+.page-news .img-news{width:40%}
+}
+@media only screen and (min-width:381px) and (max-width:640px) {
+.list-items li{width:50%}
+.list-items li:nth-child(2n+1){clear:both}
+}
+@media only screen and (max-width:1920px) {
+.lBg-page,.rBg-page{display:none}
+}
+@media only screen and (max-width:1199px) {
+.banner-subpage #slide_banner img{width:auto!important;height:320px!important}
+.info-footer span:first-child{display:block;margin-bottom:3px}
+}
+@media only screen and (max-width:980px) {
+.main-about-img{width:100%;text-align:center}
+.about-content{padding-top:20px}
+.top-about h3{clear:both;padding-top:20px}
+.row-about{margin-bottom:20px}
+}
+@media only screen and (max-width:768px) {
+.sec-title h3.sec-txt{font-size:40px}
+.char-intro{width:100%;padding:80px 40px 120px;margin-top:150px}
+.characteristic-items{margin-top:70px}
+.char-intro:before{height:200px;top:-130px;background-size:auto 100%}
+.char-intro:after{height:186px;bottom:-80px}
+.characteristic-items .char-item,.why-choose-items .why-item{width:100%;text-align:center!important;margin:10px 0}
+#why-choose .why-choose-img{text-align:center}
+#why-choose .why-choose-img img{max-height:300px;position:relative;margin-top:-40px}
+#cssmenu ul{width:100%;display:none}
+#cssmenu > ul{display:inherit!important;position:fixed;top:0;right:0;height:100%;min-height:100%;width:400px;max-width:100%;z-index:9602;overflow-y:auto;padding:50px 30px 0 40px;background-color:#A1CC39;-ms-transition:-ms-transform .5s ease;-webkit-transition:-webkit-transform .5s ease;transition:transform .5s ease;-ms-transform:translate3d(100%,0,0);-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0);text-align:left}
+#cssmenu > ul.open{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}
+#cssmenu ul ul{background:0 0;border:none}
+#cssmenu ul li,#cssmenu ul li a{width:100%}
+#cssmenu li:hover>ul>li,#cssmenu ul ul li{height:auto}
+#cssmenu a{display:block;width:100%;color:#FFF;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+#cssmenu li{float:left;position:relative}
+#cssmenu a:hover,#cssmenu li.active>a{color:#2F1E10!important}
+#cssmenu ul ul a{padding-left:15px}
+#cssmenu ul ul ul a{padding-left:30px}
+#cssmenu ul ul,#cssmenu ul ul ul,#cssmenu.align-right ul ul{position:relative;left:0;width:100%;margin:0;text-align:left}
+#cssmenu ul ul>li.has-sub>a:after,#cssmenu ul ul>li.has-sub>a:before,#cssmenu>ul>li.has-sub>a:after,#cssmenu>ul>li.has-sub>a:before{display:none}
+#cssmenu #menu-button{position:relative;display:inline-block;width:40px;height:40px;line-height:40px;margin-top:22px;cursor:pointer;color:#FFF;font-size:120%;font-weight:700;text-transform:uppercase}
+header.header-fixed #cssmenu #menu-button{margin-top:10px}
+#cssmenu #menu-button.menu-opened{position:fixed;top:0;right:0;z-index:9999;display:inline-block;height:36px;color:#2F1E10;cursor:pointer;text-transform:uppercase;font-size:1.2em;clear:both;z-index:99999999;padding-left:30px;margin-top:0;text-indent:-9999px;background-color:#2F1E10}
+header.header-fixed #cssmenu #menu-button.menu-opened{margin-top:0}
+#cssmenu #menu-button.menu-opened:before,#cssmenu #menu-button.menu-opened:after{background:#2F1E10;left:8px}
+#cssmenu #menu-button:after{position:absolute;top:18px;left:8px;display:block;height:6px;width:24px;border-top:3px solid #2F1E10;border-bottom:3px solid #2F1E10;content:''}
+#cssmenu #menu-button:before{position:absolute;top:10px;left:8px;display:block;height:3px;width:24px;background:#2F1E10;content:''}
+#cssmenu #menu-button.menu-opened:after{top:16px;left:8px;border:0;height:3px;width:24px;background:#FFF;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+#cssmenu #menu-button.menu-opened:before{top:16px;left:8px;background:#FFF;width:24px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+#cssmenu .submenu-button{position:absolute;z-index:99;right:0;top:0;display:block;background-color:#2F1E10;color:#333;height:42px;width:40px;cursor:pointer}
+#cssmenu .submenu-button.submenu-opened{background-color:#2F1E10}
+#cssmenu ul ul .submenu-button{height:39px;width:40px}
+#cssmenu .submenu-button:after{position:absolute;top:19px;left:15px;width:12px;height:2px;display:block;background:#FFF;content:''}
+#cssmenu ul ul .submenu-button:after{top:17px;left:15px}
+#cssmenu .submenu-button.submenu-opened:after{background:#FFF}
+#cssmenu .submenu-button:before{position:absolute;top:14px;left:20px;display:block;width:2px;height:12px;background:#FFF;content:''}
+#cssmenu ul ul .submenu-button:before{top:12px;left:20px}
+#cssmenu .submenu-button.submenu-opened:before{display:none}
+.row_input{clear:both}
+.row-account .inputbox{width:100%!important}
+}
+@media only screen and (max-width:640px) {
+.info-footer span,.info-contact-foo span{display:block;margin-bottom:5px}
+.form-web .col_form{width:100%;margin-top:10px}
+}
+@media only screen and (max-width:480px) {
+.page-news .img-news{width:100%;margin-right:0;margin-bottom:20px}
+.bands-content .img-brand{width:100%}
+}
+@media only screen and (max-width:380px) {
+body{overflow-x:hidden}
+.list-items li{width:100%}
+}

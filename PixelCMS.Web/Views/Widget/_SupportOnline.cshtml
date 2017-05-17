@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+
+        <div class="module-content">
+<ul class="support">
+
+    @if (Model.FirstOrDefault() != null)
+    {
+        foreach (var item in Model.OrderByDescending(x => x.Order).Take(5))
+        {
+           @* <li>
+                <a href="ymsgr:sendim?@Html.Action("LoadAttribute", "Common", new { code = "yahoo", id = item.Id })">
+                    <img src="http://opi.yahoo.com/online?u=@Html.Action("LoadAttribute", "Common", new { code = "yahoo", id = item.Id })&m=g&t=1" /></a>
+                <p>@item.Title</p>
+            </li>*@
+        
+        <li class="cf">
+                    <i class="icon-sp">
+                        <img width="24" height="24" src="@item.Thumb"></i> <a href="Skype:@Html.Action("LoadAttribute", "Common", new { code = "skype", id = item.Id })?chat"><span>@item.Title</span></a>
+                </li>
+        }
+    }
+</ul>
+</div>
+
+

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PixelCMS.Core.Models.Post>
+@if (Model.FirstOrDefault() != null) { 
+    <div class="featured-module module clearfix">
+          <div class="box-heading"><h3>Sản phẩm tiêu biểu</h3></div>
+            <div class="slides">
+           @Html.Partial("_ProductBoxList")
+        </div><!-- end .slides -->
+      </div><!-- .featured-module -->
+}

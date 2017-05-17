@@ -1,0 +1,110 @@
+﻿@model PagedList.IPagedList<PixelCMS.Core.Models.Inventory>
+@using PagedList.Mvc;
+@using PixelCMS.Core.Models
+@{
+    pixelcmsEntities db = new pixelcmsEntities();
+    ViewBag.Title = "Thông báo hàng tồn kho thấp";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section id="main">
+    <div class="container">
+        <div class="sixteen columns">
+            <h1><i class="fa fa-bar-chart-o"></i>Thông báo hàng tồn kho thấp</h1>
+
+            <table class="grid">
+                <tr>
+                    <th>Tên sản phẩm
+                    </th>
+                    <th>Thuộc tính
+                    </th>
+                    @* <th>Tên chi nhánh
+                    </th>*@
+                    <th>Số lượng trong kho
+                    </th>
+                    <th>Mã SKU
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    var post = item.Product.Posts.FirstOrDefault();
+                    if (post != null)
+                    {
+                        if (post.VariantAttributeCombinations.Count > 0)//xet biến thể
+                        {
+                            var variant = post.VariantAttributeCombinations.Where(x => x.Quantity <= item.Product.Inv_min_Quantity);
+                            foreach (var vari in variant)
+                            {
+                    <tr>
+                        <td>
+                            @post.Title
+
+                        </td>
+                        <td>
+                            @if (vari.Attribute != null)
+                            {
+                                var att = vari.Attribute.Split(',');
+                                foreach (var s in att)
+                                {
+                                    int id = int.Parse(s);
+                                    var varopt = db.OptionVariants.FirstOrDefault(x => x.Id == id);
+
+                                @Html.Raw(varopt.GroupVariant.Name + ":" + varopt.Name) <br />
+                                }
+                            }
+                        </td>
+                        @* <td>
+                            @item.Agent.Name
+                        </td>*@
+                        <td>
+                            @vari.Quantity
+                        </td>
+                        <td>
+                            @vari.SKU
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "VariantAttributeCombination", new { id = vari.Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>@Resources.admin_common_edit</a>
+
+                        </td>
+                    </tr>
+                        
+                            }
+                        }//nl nếu ko có biến thể 
+                        else if (item.Quantity <= item.Product.Inv_min_Quantity)
+                        {
+                    <tr>
+                        <td>
+                            @post.Title
+                        </td>
+                        <td></td>
+                        @*<td>
+                            @item.Agent.Name
+                        </td>*@
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>
+                            @item.Product.SKU
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Content", new { id = item.Product.Posts.FirstOrDefault().Id })" class="btn btn-small"><i class="fa fa-pencil-square-o"></i>@Resources.admin_common_edit</a>
+
+                        </td>
+                    </tr>
+                        }
+                    }
+
+
+                }
+
+            </table>
+
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                @Resources.common_viewingpage @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) (@Resources.common_in @Model.PageCount @Resources.admin_common_page)
+            </div>
+
+        </div>
+    </div>
+</section>
+
