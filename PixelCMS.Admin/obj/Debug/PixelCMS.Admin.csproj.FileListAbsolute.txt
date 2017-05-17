@@ -194,7 +194,6 @@ D:\project\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.pdb
 E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
 E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll
 E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.pdb
-E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojFakesResolveAssemblyReference.cache
 E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.csprojResolveAssemblyReference.cache
 E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.dll
 E:\Project Mẫu\PixelCMS.Admin\obj\Debug\PixelCMS.Admin.pdb

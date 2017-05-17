@@ -2366,3 +2366,5 @@ E:\Project Mẫu\PixelCMS.Web\bin\zh\Resources.resources.dll
 E:\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.csprojResolveAssemblyReference.cache
 E:\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.dll
 E:\Project Mẫu\PixelCMS.Web\obj\Debug\PixelCMS.Web.pdb
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Admin.dll.config
+E:\Project Mẫu\PixelCMS.Web\bin\PixelCMS.Core.dll.config
